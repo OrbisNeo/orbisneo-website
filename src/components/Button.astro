@@ -1,0 +1,94 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary";
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  class?: string;
+}
+
+const { href, variant = "primary", type = "button", disabled, class: className } = Astro.props;
+const classes = ["btn", `btn--${variant}`, className].filter(Boolean).join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes} aria-disabled={disabled ? "true" : undefined}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} disabled={disabled}>
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 44px;
+    border: 2px solid transparent;
+    transition:
+      background var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .btn--primary {
+    background: var(--color-action);
+    color: #fff;
+    border-color: var(--color-action);
+  }
+
+  .btn--primary:hover {
+    background: var(--color-action-hover);
+    border-color: var(--color-action-hover);
+  }
+
+  .btn--primary:active {
+    background: var(--color-action-active);
+    border-color: var(--color-action-active);
+  }
+
+  .btn--primary[disabled],
+  .btn--primary[aria-disabled="true"] {
+    background: var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-text-soft);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-action);
+    border-color: var(--color-action);
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-mist);
+  }
+
+  .btn--secondary:active {
+    background: #DCEDEE;
+  }
+
+  .btn--secondary[disabled],
+  .btn--secondary[aria-disabled="true"] {
+    color: var(--color-text-soft);
+    border-color: var(--color-text-soft);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+</style>
