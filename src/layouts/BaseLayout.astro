@@ -4,13 +4,21 @@ import "@fontsource-variable/source-sans-3";
 import "../styles/tokens.css";
 import "../styles/base.css";
 
+import type { Lang } from "../i18n/ui";
+import { t } from "../i18n/ui";
+import Seo from "../components/Seo.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
 interface Props {
   title: string;
-  lang?: "en" | "nl";
+  description?: string;
+  lang?: Lang;
+  showChrome?: boolean;
 }
 
-const { title, lang = "en" } = Astro.props;
-const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const { title, description, lang = "en", showChrome = true } = Astro.props;
+const copy = t(lang);
 ---
 
 <!doctype html>
@@ -18,10 +26,40 @@ const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-    <title>{title}</title>
+    <Seo title={title} description={description} lang={lang} />
   </head>
   <body>
-    <slot />
+    <a class="skip-link" href="#main">{copy.skipLink}</a>
+    {showChrome && <SiteHeader lang={lang} />}
+    <main id="main">
+      <slot />
+    </main>
+    {showChrome && <SiteFooter lang={lang} />}
   </body>
 </html>
+
+<style is:global>
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-action);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0 0 var(--radius-sm) 0;
+    transform: translateY(-120%);
+    transition: transform var(--duration-fast) var(--ease-out);
+    z-index: calc(var(--z-overlay) + 1);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+    outline-offset: 3px;
+  }
+
+  main {
+    min-height: 50vh;
+  }
+</style>

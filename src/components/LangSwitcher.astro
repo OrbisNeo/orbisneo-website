@@ -1,0 +1,70 @@
+---
+import type { Lang } from "../i18n/ui";
+import { alternateFor, homeFor } from "../i18n/routes";
+
+interface Props {
+  lang: Lang;
+  path?: string;
+}
+
+const { lang, path = Astro.url.pathname } = Astro.props;
+const otherLang: Lang = lang === "en" ? "nl" : "en";
+const alt = alternateFor(lang, path) ?? homeFor(otherLang);
+---
+
+<nav class="lang" aria-label="Language">
+  <a
+    href={homeFor(lang)}
+    hreflang={lang}
+    lang={lang}
+    class="lang__link lang__link--active"
+    aria-current="true"
+  >
+    {lang === "en" ? "EN" : "NL"}
+  </a>
+  <span class="lang__sep" aria-hidden="true">|</span>
+  <a
+    href={alt}
+    hreflang={otherLang}
+    lang={otherLang}
+    class="lang__link"
+  >
+    {otherLang === "en" ? "EN" : "NL"}
+  </a>
+</nav>
+
+<style>
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--fs-small);
+    font-weight: 600;
+  }
+
+  .lang__link {
+    color: var(--color-text-soft);
+    text-decoration: none;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .lang__link--active {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-neo);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .lang__link:hover:not(.lang__link--active) {
+    text-decoration: underline;
+    text-decoration-color: var(--color-neo);
+  }
+
+  .lang__sep {
+    color: var(--color-border);
+  }
+</style>

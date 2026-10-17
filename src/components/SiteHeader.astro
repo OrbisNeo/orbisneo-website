@@ -1,0 +1,277 @@
+---
+import type { Lang } from "../i18n/ui";
+import { t } from "../i18n/ui";
+import { navRoutes, homeFor } from "../i18n/routes";
+import LangSwitcher from "./LangSwitcher.astro";
+
+interface Props {
+  lang: Lang;
+  path?: string;
+}
+
+const { lang, path = Astro.url.pathname } = Astro.props;
+const copy = t(lang);
+const isActive = (href: string) => path === href;
+---
+
+<header class="site-header" data-sticky>
+  <div class="site-header__inner container">
+    <a href={homeFor(lang)} class="site-header__brand" aria-label={copy.footer.brand}>
+      <span class="site-header__wordmark">Orbis Neo</span>
+      <span class="site-header__sub">Consulting</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul>
+        {navRoutes.map((route) => (
+          <li>
+            <a
+              href={route[lang]}
+              class={isActive(route[lang]) ? "is-active" : ""}
+              aria-current={isActive(route[lang]) ? "page" : undefined}
+            >
+              {copy.nav[route.navKey]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="site-header__right">
+      <LangSwitcher lang={lang} path={path} />
+      <button
+        type="button"
+        class="site-header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-menu-toggle
+      >
+        <span class="visually-hidden" data-label-open>{copy.nav.menuOpen}</span>
+        <span class="visually-hidden" data-label-close hidden>{copy.nav.menuClose}</span>
+        <span class="site-header__menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="mobile-menu"
+    hidden
+    data-mobile-menu
+  >
+    <nav aria-label="Primary mobile">
+      <ul>
+        {navRoutes.map((route) => (
+          <li>
+            <a
+              href={route[lang]}
+              class={isActive(route[lang]) ? "is-active" : ""}
+              aria-current={isActive(route[lang]) ? "page" : undefined}
+            >
+              {copy.nav[route.navKey]}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="mobile-menu__footer">
+        <LangSwitcher lang={lang} path={path} />
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+  const openLabel = document.querySelector<HTMLElement>("[data-label-open]");
+  const closeLabel = document.querySelector<HTMLElement>("[data-label-close]");
+
+  if (btn && menu && openLabel && closeLabel) {
+    const close = () => {
+      btn.setAttribute("aria-expanded", "false");
+      menu.hidden = true;
+      openLabel.hidden = false;
+      closeLabel.hidden = true;
+      document.body.style.removeProperty("overflow");
+    };
+
+    const open = () => {
+      btn.setAttribute("aria-expanded", "true");
+      menu.hidden = false;
+      openLabel.hidden = true;
+      closeLabel.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+
+    btn.addEventListener("click", () => {
+      if (btn.getAttribute("aria-expanded") === "true") close();
+      else open();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") close();
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background: var(--color-bg);
+    border-bottom: 1px solid transparent;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    min-height: 88px;
+  }
+
+  .site-header__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    color: var(--color-text);
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .site-header__wordmark {
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
+    font-weight: 650;
+    font-size: 1.75rem;
+    color: var(--color-petrol);
+  }
+
+  .site-header__sub {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-neo);
+    margin-top: 2px;
+  }
+
+  .site-header__nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .site-header__nav ul {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-header__nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: var(--space-2) 0;
+  }
+
+  .site-header__nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-neo);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .site-header__nav a.is-active {
+    text-decoration: underline;
+    text-decoration-color: var(--color-neo);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .site-header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .site-header__menu-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: var(--radius-sm);
+  }
+
+  .site-header__menu-icon {
+    display: block;
+    width: 24px;
+    height: 18px;
+    position: relative;
+  }
+
+  .site-header__menu-icon span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 1px;
+  }
+
+  .site-header__menu-icon span:nth-child(1) { top: 0; }
+  .site-header__menu-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .site-header__menu-icon span:nth-child(3) { bottom: 0; }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 88px 0 0 0;
+    background: var(--color-bg);
+    padding: var(--space-6) var(--gutter);
+    overflow-y: auto;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: var(--space-3) 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .mobile-menu a.is-active {
+    color: var(--color-action);
+  }
+
+  .mobile-menu__footer {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 1023.98px) {
+    .site-header__nav { display: none; }
+    .site-header__menu-btn { display: inline-flex; }
+  }
+</style>

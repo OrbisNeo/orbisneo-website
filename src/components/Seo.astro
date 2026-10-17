@@ -1,0 +1,27 @@
+---
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  title: string;
+  description?: string;
+  lang: Lang;
+  noindex?: boolean;
+}
+
+const { title, description, lang, noindex } = Astro.props;
+const siteOrigin = Astro.site?.origin ?? "https://www.orbisneoconsulting.com";
+const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
+const envNoindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const noindexFinal = noindex ?? envNoindex;
+---
+
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<link rel="canonical" href={canonical} />
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={lang === "en" ? "en_GB" : "nl_NL"} />
+<meta name="twitter:card" content="summary_large_image" />
+{noindexFinal && <meta name="robots" content="noindex, nofollow" />}
