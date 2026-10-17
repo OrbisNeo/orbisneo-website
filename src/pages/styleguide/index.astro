@@ -1,0 +1,326 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const colors = [
+  { name: "orbis", hex: "#32434A", use: "Hoofdtekst, koppen" },
+  { name: "neo", hex: "#46969F", use: "Accentlijnen, grote cijfers, iconen, logo" },
+  { name: "petrol", hex: "#2B525C", use: "Nadrukkoppen, verloop donker" },
+  { name: "action", hex: "#2B6F78", use: "Links, primaire knoppen" },
+  { name: "action-hover", hex: "#245E66", use: "Hover knop en link" },
+  { name: "action-active", hex: "#1F5158", use: "Ingedrukte knop" },
+  { name: "text-soft", hex: "#4A5A60", use: "Bijschriften, metadata" },
+  { name: "bg", hex: "#FFFFFF", use: "Paginagrond" },
+  { name: "surface", hex: "#F2F5F1", use: "Vlakken, kaarten" },
+  { name: "surface-warm", hex: "#F7F5F0", use: "Afwisselende secties" },
+  { name: "mist", hex: "#E6F0F0", use: "Lichte tint van Neo" },
+  { name: "border", hex: "#E2E6E2", use: "Decoratieve randen" },
+  { name: "error", hex: "#B42318", use: "Foutmeldingen formulier" },
+  { name: "success", hex: "#1E6B3A", use: "Bevestiging formulier" },
+];
+
+const typeScale = [
+  { label: "Display", token: "--fs-display", font: "Fraunces", sample: "Breng focus terug in de top" },
+  { label: "H1", token: "--fs-h1", font: "Fraunces", sample: "Over Orbis Neo" },
+  { label: "H2", token: "--fs-h2", font: "Fraunces", sample: "Hoe wij werken" },
+  { label: "H3", token: "--fs-h3", font: "Fraunces", sample: "Een voorbeeld uit de praktijk" },
+  { label: "H4", token: "--fs-h4", font: "Source Sans 3", sample: "Resultaat" },
+  { label: "Lead", token: "--fs-lead", font: "Source Sans 3", sample: "De eerste alinea zet het verhaal neer." },
+  { label: "Body", token: "--fs-body", font: "Source Sans 3", sample: "Lopende tekst zoals in een artikel." },
+  { label: "Small", token: "--fs-small", font: "Source Sans 3", sample: "Bijschrift onder een afbeelding." },
+  { label: "Label", token: "--fs-label", font: "Source Sans 3", sample: "GESPREK PLANNEN" },
+];
+---
+
+<BaseLayout title="Styleguide — tokens" lang="nl">
+  <main class="container styleguide">
+    <header>
+      <p class="eyebrow">Interne pagina</p>
+      <h1>Design tokens</h1>
+      <p class="lead">
+        Overzicht van kleuren, typografie en knoppen uit het productdocument v1.0.
+        Deze pagina is <code>noindex</code> en komt niet in de sitemap.
+      </p>
+    </header>
+
+    <section>
+      <h2>Kleuren</h2>
+      <ul class="swatches">
+        {colors.map((c) => (
+          <li class="swatch">
+            <span class="swatch__chip" style={`background:${c.hex};`} aria-hidden="true"></span>
+            <div class="swatch__meta">
+              <code>--color-{c.name}</code>
+              <span class="swatch__hex">{c.hex}</span>
+              <span class="swatch__use">{c.use}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Verlopen</h2>
+      <div class="gradient" style="background: var(--gradient-footer);">
+        <span>--gradient-footer</span>
+      </div>
+      <div class="gradient" style="background: var(--gradient-brand); color: #fff;">
+        <span>--gradient-brand</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typeschaal</h2>
+      <table class="typescale">
+        <thead>
+          <tr><th scope="col">Label</th><th scope="col">Token</th><th scope="col">Font</th><th scope="col">Voorbeeld</th></tr>
+        </thead>
+        <tbody>
+          {typeScale.map((t) => (
+            <tr>
+              <td><code>{t.label}</code></td>
+              <td><code>{t.token}</code></td>
+              <td>{t.font}</td>
+              <td class={`sample sample--${t.label.toLowerCase()}`}>{t.sample}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Knoppen</h2>
+      <div class="buttons">
+        <button type="button" class="btn btn--primary">Primair</button>
+        <button type="button" class="btn btn--primary" disabled>Primair uitgeschakeld</button>
+        <button type="button" class="btn btn--secondary">Secundair</button>
+        <button type="button" class="btn btn--secondary" disabled>Secundair uitgeschakeld</button>
+        <a href="#" class="link">Tekstlink</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Focusring</h2>
+      <p>Tab met het toetsenbord naar de knoppen hierboven om de focusring te zien (3 px, kleur <code>--color-focus</code>).</p>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .styleguide {
+    padding-block: var(--section-y);
+  }
+
+  .eyebrow {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+    margin-bottom: var(--space-2);
+  }
+
+  .lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: var(--measure);
+  }
+
+  section {
+    margin-top: var(--space-9);
+    padding-top: var(--space-7);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .swatches {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-5);
+  }
+
+  .swatch {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .swatch__chip {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .swatch__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .swatch__meta code {
+    font-size: 0.85rem;
+    color: var(--color-petrol);
+  }
+
+  .swatch__hex {
+    font-size: var(--fs-small);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .swatch__use {
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+  }
+
+  .gradient {
+    display: flex;
+    align-items: center;
+    padding: var(--space-6) var(--space-5);
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    min-height: 120px;
+  }
+
+  .gradient span {
+    font-family: var(--font-body);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.7);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .typescale {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-4);
+  }
+
+  .typescale th,
+  .typescale td {
+    padding: var(--space-3);
+    text-align: left;
+    vertical-align: baseline;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .typescale th {
+    font-weight: 700;
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .sample {
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
+  }
+
+  .sample--display { font-size: var(--fs-display); line-height: var(--lh-tight); font-weight: 650; }
+  .sample--h1 { font-size: var(--fs-h1); font-weight: 650; }
+  .sample--h2 { font-size: var(--fs-h2); font-weight: 600; }
+  .sample--h3 { font-size: var(--fs-h3); font-weight: 600; }
+  .sample--h4 { font-size: var(--fs-h4); font-family: var(--font-body); font-weight: 700; font-variation-settings: normal; }
+  .sample--lead { font-size: var(--fs-lead); font-family: var(--font-body); font-weight: 400; font-variation-settings: normal; }
+  .sample--body { font-size: var(--fs-body); font-family: var(--font-body); font-weight: 400; font-variation-settings: normal; }
+  .sample--small { font-size: var(--fs-small); font-family: var(--font-body); font-weight: 500; font-variation-settings: normal; }
+  .sample--label {
+    font-size: var(--fs-label);
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-variation-settings: normal;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out);
+    min-height: 44px;
+  }
+
+  .btn--primary {
+    background: var(--color-action);
+    color: #fff;
+    border: 2px solid var(--color-action);
+  }
+
+  .btn--primary:hover {
+    background: var(--color-action-hover);
+    border-color: var(--color-action-hover);
+  }
+
+  .btn--primary:active {
+    background: var(--color-action-active);
+    border-color: var(--color-action-active);
+  }
+
+  .btn--primary[disabled] {
+    background: var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-text-soft);
+    cursor: not-allowed;
+  }
+
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-action);
+    border: 2px solid var(--color-action);
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-mist);
+  }
+
+  .btn--secondary:active {
+    background: #DCEDEE;
+  }
+
+  .btn--secondary[disabled] {
+    color: var(--color-text-soft);
+    border-color: var(--color-text-soft);
+    cursor: not-allowed;
+  }
+
+  .link {
+    color: var(--color-action);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background: var(--color-surface);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+</style>
