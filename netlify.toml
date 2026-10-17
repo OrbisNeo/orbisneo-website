@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[context.production.environment]
+  PUBLIC_SITE_ENV = "production"
+  PUBLIC_NOINDEX = "true"
+
+[context.deploy-preview.environment]
+  PUBLIC_SITE_ENV = "preview"
+  PUBLIC_NOINDEX = "true"
+
+[context.branch-deploy.environment]
+  PUBLIC_SITE_ENV = "preview"
+  PUBLIC_NOINDEX = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
