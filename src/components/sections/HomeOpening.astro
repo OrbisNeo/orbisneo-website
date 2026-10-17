@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import type { Lang } from "../../i18n/ui";
+import portrait from "../../assets/people/daniel-fokker.jpg";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === "en"
+  ? {
+      eyebrow: "For boards of mid-market and larger companies",
+      heading: "AI is transforming your organisation from the inside.",
+      lead: "I help you stay in control of the areas it affects most. Not awareness sessions, but practical direction.",
+      caption: "Daniel Fokker, interim Head of IT and consultant in AI strategy, policy and governance",
+      scrollHint: "25 years in the domains AI is now changing most",
+      cta: "Plan a short intro (15 min)",
+      contactHref: "/contact/",
+    }
+  : {
+      eyebrow: "Voor directies van middelgrote en grote organisaties",
+      heading: "AI verandert uw organisatie van binnenuit.",
+      lead: "Ik help u grip houden op de gebieden waar het grootste effect zit. Geen awareness-sessies, maar praktische sturing.",
+      caption: "Daniel Fokker, interim Head of IT en adviseur AI-strategie, -beleid en -governance",
+      scrollHint: "25 jaar in de domeinen die AI nu het sterkst verandert",
+      cta: "Plan een kort kennismakingsgesprek (15 min)",
+      contactHref: "/kennismaken/",
+    };
+---
+
+<section class="opening container" aria-labelledby="opening-heading">
+  <div class="opening__text">
+    <p class="opening__eyebrow">{copy.eyebrow}</p>
+    <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
+    <p class="opening__lead">{copy.lead}</p>
+    <a href={copy.contactHref} class="opening__link">{copy.cta}</a>
+  </div>
+
+  <figure class="opening__portrait">
+    <Image
+      src={portrait}
+      alt={copy.caption}
+      widths={[280, 420, 560]}
+      sizes="(max-width: 767px) 70vw, (max-width: 1023px) 32vw, 420px"
+      loading="eager"
+    />
+    <figcaption>{copy.caption}</figcaption>
+  </figure>
+
+  <p class="opening__scroll">{copy.scrollHint}</p>
+</section>
+
+<style>
+  .opening {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-8);
+    align-items: center;
+    padding-block: var(--section-y);
+    position: relative;
+  }
+
+  .opening__eyebrow {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-4);
+  }
+
+  .opening__heading {
+    font-size: var(--fs-display);
+    font-weight: 650;
+    line-height: var(--lh-tight);
+    margin: 0 0 var(--space-5);
+    max-width: 15ch;
+  }
+
+  .opening__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-6);
+    max-width: 52ch;
+  }
+
+  .opening__link {
+    display: inline-block;
+    color: var(--color-action);
+    font-weight: 600;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+
+  .opening__portrait {
+    margin: 0;
+    text-align: center;
+  }
+
+  .opening__portrait :global(img) {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin-inline: auto;
+  }
+
+  .opening__portrait figcaption {
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+    margin-top: var(--space-3);
+    max-width: 36ch;
+    margin-inline: auto;
+  }
+
+  .opening__scroll {
+    grid-column: 1 / -1;
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+    margin: var(--space-6) 0 0;
+  }
+
+  @media (max-width: 1023.98px) {
+    .opening {
+      grid-template-columns: 1fr;
+      text-align: left;
+    }
+    .opening__portrait {
+      order: -1;
+    }
+    .opening__portrait :global(img) {
+      max-width: 240px;
+    }
+  }
+</style>

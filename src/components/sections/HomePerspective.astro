@@ -1,0 +1,72 @@
+---
+import type { Lang } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === "en"
+  ? {
+      heading: "Perspective",
+      subtitle: "How I look at AI in organisations",
+      placeholder: "Articles follow soon.",
+      more: "All articles",
+      moreHref: "/blog/",
+    }
+  : {
+      heading: "Visie",
+      subtitle: "Hoe ik naar AI in organisaties kijk",
+      placeholder: "Artikelen volgen binnenkort.",
+      more: "Alle artikelen",
+      moreHref: "/blog/overzicht/",
+    };
+---
+
+<section id="perspective" class="perspective" aria-labelledby="perspective-heading">
+  <div class="container">
+    <header class="perspective__header">
+      <h2 id="perspective-heading">{copy.heading}</h2>
+      <p class="perspective__subtitle">{copy.subtitle}</p>
+    </header>
+
+    <div class="perspective__placeholder" data-reveal>
+      <p>[PLACEHOLDER: {copy.placeholder}]</p>
+      <p>
+        <a href={copy.moreHref}>{copy.more} →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .perspective {
+    padding-block: var(--section-y);
+    background: var(--color-bg);
+  }
+
+  .perspective__header {
+    margin-bottom: var(--space-7);
+  }
+
+  .perspective__subtitle {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: var(--space-2) 0 0;
+  }
+
+  .perspective__placeholder {
+    padding: var(--space-7);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-border);
+    text-align: center;
+  }
+
+  .perspective__placeholder a {
+    color: var(--color-action);
+    font-weight: 600;
+    text-decoration: none;
+  }
+</style>

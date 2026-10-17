@@ -1,58 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Button from "../components/Button.astro";
+import HomeOpening from "../components/sections/HomeOpening.astro";
+import HomeCases from "../components/sections/HomeCases.astro";
+import HomePerspective from "../components/sections/HomePerspective.astro";
+import HomeServices from "../components/sections/HomeServices.astro";
+import HomeClients from "../components/sections/HomeClients.astro";
+import HomeContact from "../components/sections/HomeContact.astro";
 ---
 
 <BaseLayout
   title="Orbis Neo Consulting"
-  description="Perspective on organisation, strategy and AI."
+  description="AI is transforming your organisation from the inside. Practical direction for boards of mid-market and larger companies."
   lang="en"
 >
-  <section class="hero container">
-    <p class="hero__eyebrow">Under construction</p>
-    <h1 class="hero__title">A quieter kind of consulting.</h1>
-    <p class="hero__lead">
-      This site is being rebuilt. The new version ships in small, reviewable
-      steps and is deliberately not yet indexed by search engines.
-    </p>
-    <div class="hero__actions">
-      <Button href="/styleguide/" variant="secondary">View the styleguide</Button>
-    </div>
-  </section>
+  <HomeOpening lang="en" />
+  <HomeCases lang="en" />
+  <HomePerspective lang="en" />
+  <HomeServices lang="en" />
+  <HomeClients lang="en" />
+  <HomeContact lang="en" />
 </BaseLayout>
 
-<style>
-  .hero {
-    padding-block: var(--section-y);
-  }
-
-  .hero__eyebrow {
-    font-size: var(--fs-label);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-soft);
-    margin: 0 0 var(--space-3);
-  }
-
-  .hero__title {
-    font-size: var(--fs-display);
-    font-weight: 650;
-    line-height: var(--lh-tight);
-    max-width: 18ch;
-    margin: 0 0 var(--space-5);
-  }
-
-  .hero__lead {
-    font-size: var(--fs-lead);
-    color: var(--color-text-soft);
-    max-width: 52ch;
-    margin: 0 0 var(--space-6);
-  }
-
-  .hero__actions {
-    display: flex;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-  }
-</style>
+<script>
+  import "../scripts/reveal.ts";
+</script>
