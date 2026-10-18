@@ -189,14 +189,32 @@ const copy = lang === "en"
   }
 
   @media (max-width: 1023.98px) {
+    /* On narrow screens the face sits in the TOP half of the viewport and
+       the text drops to the bottom, so face and text do not overlap. */
+    .opening {
+      align-content: end;
+    }
+
+    .opening__wrap {
+      padding-top: 55svh;
+    }
+
+    .opening__bg :global(img) {
+      /* 79% horizontally pins Daniel's face (at ~71% of the source) in the
+         middle of the frame; 25% vertically keeps the head high so it sits
+         above the text that drops to the bottom. */
+      object-position: 79% 25%;
+    }
+
     .opening__scrim {
       background:
         linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.92) 0%,
-          rgba(255, 255, 255, 0.78) 30%,
-          rgba(255, 255, 255, 0.55) 60%,
-          rgba(255, 255, 255, 0.2) 100%
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.2) 42%,
+          rgba(255, 255, 255, 0.82) 55%,
+          rgba(255, 255, 255, 0.94) 70%,
+          rgba(255, 255, 255, 0.96) 100%
         );
     }
   }
