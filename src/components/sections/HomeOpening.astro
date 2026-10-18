@@ -60,11 +60,17 @@ const copy = lang === "en"
   const section = document.querySelector<HTMLElement>("[data-opening]");
 
   if (section && layers.length && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Fade only applies when the background is fixed (desktop). On narrower
+    // viewports the background scrolls with the section, so no opacity drive.
+    const fixedMq = matchMedia("(min-width: 1024px)");
+
     const update = () => {
+      if (!fixedMq.matches) {
+        for (const el of layers) el.style.opacity = "";
+        return;
+      }
       const rect = section.getBoundingClientRect();
       const h = window.innerHeight || 800;
-      // 1 while section fills viewport; fades to 0 when the section's bottom
-      // is above the viewport bottom (i.e. you have scrolled past the hero).
       const t = Math.max(0, Math.min(1, rect.bottom / h));
       const opacity = String(t);
       for (const el of layers) el.style.opacity = opacity;
@@ -72,6 +78,7 @@ const copy = lang === "en"
     update();
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update, { passive: true });
+    fixedMq.addEventListener("change", update);
   }
 </script>
 
@@ -190,20 +197,31 @@ const copy = lang === "en"
 
   @media (max-width: 1023.98px) {
     /* On narrow screens the face sits in the TOP half of the viewport and
-       the text drops to the bottom, so face and text do not overlap. */
+       the text drops to the bottom, so face and text do not overlap.
+       Photo and scrim are absolute (not fixed) so they scroll with the
+       hero; the text never crosses back over the face while scrolling. */
     .opening {
-      align-content: end;
+      display: block;
+    }
+
+    .opening__bg,
+    .opening__scrim {
+      position: absolute;
     }
 
     .opening__wrap {
-      padding-top: 55svh;
+      padding-top: 42svh;
+      padding-bottom: var(--space-4);
+    }
+
+    .opening__lead {
+      margin-bottom: var(--space-4);
     }
 
     .opening__bg :global(img) {
       /* 79% horizontally pins Daniel's face (at ~71% of the source) in the
-         middle of the frame; 25% vertically keeps the head high so it sits
-         above the text that drops to the bottom. */
-      object-position: 79% 25%;
+         middle of the frame; 20% vertically keeps the head high. */
+      object-position: 79% 20%;
     }
 
     .opening__scrim {
@@ -211,11 +229,27 @@ const copy = lang === "en"
         linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0.2) 42%,
-          rgba(255, 255, 255, 0.82) 55%,
-          rgba(255, 255, 255, 0.94) 70%,
+          rgba(255, 255, 255, 0.12) 30%,
+          rgba(255, 255, 255, 0.85) 44%,
+          rgba(255, 255, 255, 0.96) 58%,
           rgba(255, 255, 255, 0.96) 100%
         );
+    }
+
+    /* Smaller display size on mobile so the heading does not wrap into
+       seven lines; lead and CTA fit above the fold. */
+    .opening__heading {
+      font-size: clamp(1.75rem, 1rem + 3.2vw, 2.25rem);
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
+    }
+
+    .opening__eyebrow {
+      margin-bottom: var(--space-3);
+    }
+
+    .opening__scroll {
+      display: none;
     }
   }
 
