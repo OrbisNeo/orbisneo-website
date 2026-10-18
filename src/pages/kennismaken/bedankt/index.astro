@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Bedankt — Orbis Neo Consulting"
+  description="Uw bericht is ontvangen."
+  lang="nl"
+  noindex={true}
+>
+  <section class="thanks container">
+    <h1>Bedankt</h1>
+    <p class="thanks__lead">
+      Uw bericht is ontvangen. Ik reageer binnen een werkdag. Lees in de tussentijd gerust een paar blogs of de dienstenpagina.
+    </p>
+    <p class="thanks__links">
+      <a href="/blog/overzicht/" class="link">Lees de blog</a>
+      <span aria-hidden="true">·</span>
+      <a href="/diensten/" class="link">Bekijk de diensten</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .thanks {
+    padding-block: var(--section-y);
+    max-width: 680px;
+  }
+
+  .thanks__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: var(--space-4) 0 var(--space-7);
+  }
+
+  .thanks__links {
+    display: flex;
+    gap: var(--space-4);
+    align-items: baseline;
+    font-size: var(--fs-lead);
+  }
+
+  .link {
+    color: var(--color-action);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>

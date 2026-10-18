@@ -13,6 +13,7 @@ export const routes: RoutePair[] = [
   { en: "/blog/", nl: "/blog/overzicht/", navKey: "blog" },
   { en: "/news/", nl: "/nieuws/" },
   { en: "/contact/", nl: "/kennismaken/", navKey: "contact" },
+  { en: "/contact/thanks/", nl: "/kennismaken/bedankt/" },
   { en: "/privacy/", nl: "/privacybeleid/" },
 ];
 

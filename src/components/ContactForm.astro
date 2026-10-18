@@ -1,0 +1,390 @@
+---
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === "en"
+  ? {
+      labels: {
+        name: "Your name",
+        email: "Email address",
+        phone: "Phone number",
+        servicesLegend: "What is your question about?",
+        services: {
+          "board-scan": "Board scan",
+          "ambition-session": "Ambition and position session",
+          "ai-financial-framework": "AI financial framework",
+          "fractional-support": "Fractional support",
+          "not-sure": "Not sure yet",
+        },
+        message: "Your request",
+        consentPrefix: "I agree that Orbis Neo may contact me. See the ",
+        consentLinkText: "privacy statement",
+        consentSuffix: ".",
+        submit: "Send message",
+        required: "Required",
+        requiredMark: " *",
+        optional: "Optional",
+      },
+      action: "/contact/thanks/",
+      privacyHref: "/privacy/",
+      errors: {
+        name: "Please enter your name.",
+        email: "Please enter a valid email address.",
+        message: "Please tell me a bit about your question.",
+        consent: "Please accept the privacy statement to continue.",
+      },
+    }
+  : {
+      labels: {
+        name: "Uw naam",
+        email: "E-mailadres",
+        phone: "Telefoonnummer",
+        servicesLegend: "Waar gaat uw vraag over?",
+        services: {
+          "board-scan": "Directie scan",
+          "ambition-session": "Ambitie- en positie sessie",
+          "ai-financial-framework": "Financieel kader voor AI",
+          "fractional-support": "Interim-ondersteuning",
+          "not-sure": "Weet ik nog niet",
+        },
+        message: "Uw vraag",
+        consentPrefix: "Ik ga akkoord dat Orbis Neo contact met mij opneemt. Zie het ",
+        consentLinkText: "privacybeleid",
+        consentSuffix: ".",
+        submit: "Verstuur bericht",
+        required: "Verplicht",
+        requiredMark: " *",
+        optional: "Optioneel",
+      },
+      action: "/kennismaken/bedankt/",
+      privacyHref: "/privacybeleid/",
+      errors: {
+        name: "Vul uw naam in.",
+        email: "Vul een geldig e-mailadres in.",
+        message: "Vertel kort waar het over gaat.",
+        consent: "Accepteer het privacybeleid om door te gaan.",
+      },
+    };
+
+const serviceKeys = ["board-scan", "ambition-session", "ai-financial-framework", "fractional-support", "not-sure"] as const;
+---
+
+<form
+  name="contact"
+  method="POST"
+  action={copy.action}
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  novalidate
+  class="form"
+  data-contact-form
+  data-errors={JSON.stringify(copy.errors)}
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="language" value={lang} />
+
+  <p class="visually-hidden" aria-hidden="true">
+    <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <div class="form__row">
+    <label for="f-name" class="form__label">
+      {copy.labels.name}<span aria-hidden="true">{copy.labels.requiredMark}</span>
+    </label>
+    <input
+      id="f-name"
+      name="name"
+      type="text"
+      autocomplete="name"
+      required
+      aria-required="true"
+      class="form__input"
+    />
+    <p id="f-name-error" class="form__error" hidden></p>
+  </div>
+
+  <div class="form__row">
+    <label for="f-email" class="form__label">
+      {copy.labels.email}<span aria-hidden="true">{copy.labels.requiredMark}</span>
+    </label>
+    <input
+      id="f-email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      required
+      aria-required="true"
+      class="form__input"
+    />
+    <p id="f-email-error" class="form__error" hidden></p>
+  </div>
+
+  <div class="form__row">
+    <label for="f-phone" class="form__label">{copy.labels.phone}</label>
+    <input
+      id="f-phone"
+      name="phone"
+      type="tel"
+      autocomplete="tel"
+      class="form__input"
+    />
+  </div>
+
+  <fieldset class="form__fieldset">
+    <legend class="form__legend">{copy.labels.servicesLegend}</legend>
+    {serviceKeys.map((key) => (
+      <label class="form__check">
+        <input type="checkbox" name="services[]" value={key} />
+        <span>{copy.labels.services[key]}</span>
+      </label>
+    ))}
+  </fieldset>
+
+  <div class="form__row">
+    <label for="f-message" class="form__label">
+      {copy.labels.message}<span aria-hidden="true">{copy.labels.requiredMark}</span>
+    </label>
+    <textarea
+      id="f-message"
+      name="message"
+      rows="6"
+      required
+      aria-required="true"
+      class="form__input form__textarea"
+    ></textarea>
+    <p id="f-message-error" class="form__error" hidden></p>
+  </div>
+
+  <div class="form__row form__row--consent">
+    <label class="form__check form__check--consent">
+      <input type="checkbox" name="consent" value="yes" required aria-required="true" />
+      <span>
+        {copy.labels.consentPrefix}
+        <a href={copy.privacyHref}>{copy.labels.consentLinkText}</a>
+        {copy.labels.consentSuffix}
+        <span aria-hidden="true">{copy.labels.requiredMark}</span>
+      </span>
+    </label>
+    <p id="f-consent-error" class="form__error" hidden></p>
+  </div>
+
+  <button type="submit" class="form__submit">
+    {copy.labels.submit}
+  </button>
+</form>
+
+<style>
+  .form {
+    display: grid;
+    gap: var(--space-5);
+    max-width: 580px;
+  }
+
+  .form__row {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .form__label {
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--color-text);
+  }
+
+  .form__input {
+    font: inherit;
+    padding: 0 var(--space-4);
+    height: 52px;
+    border: 1.5px solid #B9C4C4;
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .form__textarea {
+    height: auto;
+    padding: var(--space-3) var(--space-4);
+    line-height: var(--lh-body);
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .form__input:hover {
+    border-color: var(--color-text-soft);
+  }
+
+  .form__input:focus {
+    border-color: var(--color-action);
+    border-width: 2px;
+    padding-inline: calc(var(--space-4) - 0.5px);
+  }
+
+  .form__input[aria-invalid="true"] {
+    border-color: var(--color-error);
+  }
+
+  .form__error {
+    font-size: var(--fs-small);
+    color: var(--color-error);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .form__error::before {
+    content: "⚠";
+    font-size: 1rem;
+  }
+
+  .form__fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .form__legend {
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--color-text);
+    padding: 0;
+    margin-bottom: var(--space-2);
+  }
+
+  .form__check {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    cursor: pointer;
+    padding: var(--space-2) 0;
+    min-height: 32px;
+  }
+
+  .form__check input {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--color-action);
+    cursor: pointer;
+  }
+
+  .form__check--consent {
+    align-items: flex-start;
+  }
+
+  .form__check--consent span {
+    line-height: 1.5;
+  }
+
+  .form__submit {
+    justify-self: start;
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    background: var(--color-action);
+    color: #fff;
+    border: 2px solid var(--color-action);
+    cursor: pointer;
+    min-height: 44px;
+    transition: background var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .form__submit:hover {
+    background: var(--color-action-hover);
+    border-color: var(--color-action-hover);
+  }
+
+  .form__submit:active {
+    background: var(--color-action-active);
+    border-color: var(--color-action-active);
+  }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
+  if (form) {
+    const errorsRaw = form.getAttribute("data-errors") ?? "{}";
+    const errors = JSON.parse(errorsRaw) as Record<string, string>;
+
+    const showError = (fieldId: string, msg: string | null) => {
+      const field = document.getElementById(fieldId) as HTMLInputElement | HTMLTextAreaElement | null;
+      const errEl = document.getElementById(`${fieldId}-error`);
+      if (!field || !errEl) return;
+      if (msg) {
+        field.setAttribute("aria-invalid", "true");
+        field.setAttribute("aria-describedby", `${fieldId}-error`);
+        errEl.textContent = msg;
+        errEl.hidden = false;
+      } else {
+        field.removeAttribute("aria-invalid");
+        field.removeAttribute("aria-describedby");
+        errEl.textContent = "";
+        errEl.hidden = true;
+      }
+    };
+
+    const validate = (): boolean => {
+      let firstInvalid: HTMLElement | null = null;
+
+      const name = form.elements.namedItem("name") as HTMLInputElement;
+      if (!name.value.trim()) {
+        showError("f-name", errors.name);
+        firstInvalid ??= name;
+      } else showError("f-name", null);
+
+      const email = form.elements.namedItem("email") as HTMLInputElement;
+      const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim());
+      if (!emailOk) {
+        showError("f-email", errors.email);
+        firstInvalid ??= email;
+      } else showError("f-email", null);
+
+      const message = form.elements.namedItem("message") as HTMLTextAreaElement;
+      if (message.value.trim().length < 5) {
+        showError("f-message", errors.message);
+        firstInvalid ??= message;
+      } else showError("f-message", null);
+
+      const consent = form.elements.namedItem("consent") as HTMLInputElement;
+      const consentEl = document.getElementById("f-consent-error");
+      if (!consent.checked) {
+        if (consentEl) {
+          consentEl.textContent = errors.consent;
+          consentEl.hidden = false;
+        }
+        firstInvalid ??= consent;
+      } else if (consentEl) {
+        consentEl.textContent = "";
+        consentEl.hidden = true;
+      }
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return false;
+      }
+      return true;
+    };
+
+    form.addEventListener("submit", (e) => {
+      if (!validate()) e.preventDefault();
+    });
+
+    for (const el of form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea")) {
+      el.addEventListener("blur", () => {
+        if (el.name === "name" || el.name === "email" || el.name === "message" || el.name === "consent") {
+          validate();
+        }
+      });
+    }
+  }
+</script>

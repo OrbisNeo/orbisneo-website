@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="Contact — Orbis Neo Consulting"
+  description="Get in touch with Orbis Neo. A first conversation takes fifteen minutes and is free of obligation."
+  lang="en"
+>
+  <section class="contact container">
+    <div class="contact__intro">
+      <h1>Please contact Orbis Neo</h1>
+      <p class="contact__lead">
+        A first conversation takes fifteen minutes and is free of obligation. Share a bit about your situation and I'll come back within one working day.
+      </p>
+      <dl class="contact__details">
+        <dt>Email</dt>
+        <dd><a href="mailto:info@orbisneoconsulting.com">[PLACEHOLDER: info@orbisneoconsulting.com]</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+31653380329">+31 6 53 38 03 29</a></dd>
+        <dt>Based in</dt>
+        <dd>Amersfoort, Netherlands</dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/danielfokker" rel="me noopener" target="_blank">linkedin.com/in/danielfokker</a></dd>
+      </dl>
+    </div>
+
+    <div class="contact__form">
+      <ContactForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding-block: var(--section-y);
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .contact__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: 48ch;
+    margin: var(--space-4) 0 var(--space-7);
+  }
+
+  .contact__details {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-2) var(--space-4);
+    margin: 0;
+  }
+
+  .contact__details dt {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+  }
+
+  .contact__details dd {
+    margin: 0;
+  }
+
+  @media (max-width: 1023.98px) {
+    .contact {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

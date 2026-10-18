@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import type { Lang } from "../i18n/ui";
 import { t } from "../i18n/ui";
 import { navRoutes, homeFor } from "../i18n/routes";
 import LangSwitcher from "./LangSwitcher.astro";
+import logo from "../assets/brand/logo.png";
 
 interface Props {
   lang: Lang;
@@ -18,8 +20,14 @@ const isActive = (href: string) => path === href;
 <header class="site-header" data-sticky>
   <div class="site-header__inner container">
     <a href={homeFor(lang)} class="site-header__brand" aria-label={copy.footer.brand}>
-      <span class="site-header__wordmark">Orbis Neo</span>
-      <span class="site-header__sub">Consulting</span>
+      <Image
+        src={logo}
+        alt="Orbis Neo Consulting"
+        widths={[220, 320, 440]}
+        sizes="220px"
+        loading="eager"
+        class="site-header__logo"
+      />
     </a>
 
     <nav class="site-header__nav" aria-label="Primary">
@@ -138,29 +146,22 @@ const isActive = (href: string) => path === href;
 
   .site-header__brand {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-    color: var(--color-text);
+    align-items: center;
     text-decoration: none;
     line-height: 1;
   }
 
-  .site-header__wordmark {
-    font-family: var(--font-display);
-    font-variation-settings: var(--font-display-settings);
-    font-weight: 650;
-    font-size: 1.75rem;
-    color: var(--color-petrol);
+  .site-header__brand :global(.site-header__logo) {
+    display: block;
+    height: 44px;
+    width: auto;
+    max-width: 220px;
   }
 
-  .site-header__sub {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-neo);
-    margin-top: 2px;
+  @media (max-width: 1023.98px) {
+    .site-header__brand :global(.site-header__logo) {
+      height: 36px;
+    }
   }
 
   .site-header__nav {
