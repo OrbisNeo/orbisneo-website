@@ -40,6 +40,9 @@ const altPath = lang === "en" ? alts.nl : alts.en;
       <slot />
     </main>
     {showChrome && <SiteFooter lang={lang} />}
+    <script>
+      import "../scripts/lang-switch.ts";
+    </script>
   </body>
 </html>
 
