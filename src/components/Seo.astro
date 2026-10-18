@@ -1,23 +1,33 @@
 ---
 import type { Lang } from "../i18n/ui";
+import type { Alternates } from "../i18n/routes";
+import { alternatesFor } from "../i18n/routes";
 
 interface Props {
   title: string;
   description?: string;
   lang: Lang;
   noindex?: boolean;
+  alternates?: Alternates;
 }
 
-const { title, description, lang, noindex } = Astro.props;
+const { title, description, lang, noindex, alternates } = Astro.props;
 const siteOrigin = Astro.site?.origin ?? "https://www.orbisneoconsulting.com";
 const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
 const envNoindex = import.meta.env.PUBLIC_NOINDEX === "true";
 const noindexFinal = noindex ?? envNoindex;
+
+const alts: Alternates = alternates ?? alternatesFor(lang, Astro.url.pathname);
+const enUrl = alts.en ? new URL(alts.en, siteOrigin).toString() : null;
+const nlUrl = alts.nl ? new URL(alts.nl, siteOrigin).toString() : null;
 ---
 
 <title>{title}</title>
 {description && <meta name="description" content={description} />}
 <link rel="canonical" href={canonical} />
+{enUrl && <link rel="alternate" hreflang="en" href={enUrl} />}
+{nlUrl && <link rel="alternate" hreflang="nl" href={nlUrl} />}
+{enUrl && <link rel="alternate" hreflang="x-default" href={enUrl} />}
 <meta property="og:title" content={title} />
 {description && <meta property="og:description" content={description} />}
 <meta property="og:url" content={canonical} />

@@ -5,7 +5,7 @@ urlSlug: beginnen-met-ai
 description: "Start niet met tools, maar met de juiste vragen Stel je voor: je organisatie investeert tienduizenden euro’s in AI-tools. Er..."
 pubDate: 2026-01-20
 category: "AI in organisations"
-heroImage: "../../../assets/blog/getting-started-with-ai.jpeg"
+heroImage: "../../../assets/blog/getting-started-with-ai/hero.jpeg"
 heroAlt: "Beginnen met AI?"
 legacyUrl: "https://orbisneo.nl/nl/beginnen_met_ai/"
 ---
@@ -21,8 +21,6 @@ AI faalt zelden technisch.
 AI faalt bestuurlijk.
 
 .kb-image44\_21e81f-13 .kb-image-has-overlay:after{opacity:0.3;}
-
-![](https://orbisneo.nl/wp-content/uploads/2026/01/1.jpeg)
 
 ## **De grootste misvatting bij starten met AI**
 

@@ -6,7 +6,7 @@ description: "Successful AI adoption does not start with tools. It starts with s
 pubDate: 2026-01-20
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/getting-started-with-ai.jpeg"
+heroImage: "../../../assets/blog/getting-started-with-ai/hero.jpeg"
 heroAlt: "Getting Started with AI?"
 legacyUrl: "https://orbisneo.nl/getting-started-with-ai/"
 ---

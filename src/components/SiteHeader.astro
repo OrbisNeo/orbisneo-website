@@ -7,9 +7,10 @@ import LangSwitcher from "./LangSwitcher.astro";
 interface Props {
   lang: Lang;
   path?: string;
+  altPath?: string | null;
 }
 
-const { lang, path = Astro.url.pathname } = Astro.props;
+const { lang, path = Astro.url.pathname, altPath } = Astro.props;
 const copy = t(lang);
 const isActive = (href: string) => path === href;
 ---
@@ -38,7 +39,7 @@ const isActive = (href: string) => path === href;
     </nav>
 
     <div class="site-header__right">
-      <LangSwitcher lang={lang} path={path} />
+      <LangSwitcher lang={lang} path={path} altPath={altPath} />
       <button
         type="button"
         class="site-header__menu-btn"
@@ -78,7 +79,7 @@ const isActive = (href: string) => path === href;
         ))}
       </ul>
       <div class="mobile-menu__footer">
-        <LangSwitcher lang={lang} path={path} />
+        <LangSwitcher lang={lang} path={path} altPath={altPath} />
       </div>
     </nav>
   </div>

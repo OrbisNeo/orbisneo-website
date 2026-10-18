@@ -6,7 +6,7 @@ description: "Introductie Ethisch AI is een onderwerp waar mensen heel snel heel
 pubDate: 2025-10-24
 updatedDate: 2026-01-06
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ethical-ai.jpeg"
+heroImage: "../../../assets/blog/ethical-ai/hero.jpeg"
 heroAlt: "An unrecognizable person with binary code projected, symbolizing cybersecurity and digital coding."
 legacyUrl: "https://orbisneo.nl/nl/ethisch_ai/"
 ---
@@ -25,8 +25,6 @@ Dat is ook de richting die je nu in wet- en normenkaders ziet. De [EU AI Act](h
 Hier is mijn nuchtere aanpak: vijf soorten afspraken waarmee “ethisch AI” ineens uitvoerbaar wordt. Zonder ethiekcommissie die één keer per kwartaal vergadert en daarna weer verdwijnt.
 
 .kb-image42\_42adef-1e .kb-image-has-overlay:after{opacity:0.3;}
-
-![](https://orbisneo.nl/wp-content/uploads/2025/12/an-unrecognizable-person-with-binary-code-projected.jpeg)
 
 ## **1\. Afspraken over doel en grens**
 

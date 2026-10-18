@@ -11,6 +11,13 @@ interface Props {
 
 const { post, alt } = Astro.props;
 const lang = langOf(post);
+
+const altPath = alt ? `/blog/${alt.data.urlSlug}/` : null;
+const selfPath = `/blog/${post.data.urlSlug}/`;
+const alternates = {
+  en: lang === "en" ? selfPath : altPath,
+  nl: lang === "nl" ? selfPath : altPath,
+};
 const dateLabel = post.data.pubDate.toLocaleDateString(lang === "en" ? "en-GB" : "nl-NL", {
   day: "numeric",
   month: "long",
@@ -42,7 +49,12 @@ const copy = lang === "en"
     };
 ---
 
-<BaseLayout title={`${post.data.title} — Orbis Neo`} description={post.data.description} lang={lang}>
+<BaseLayout
+  title={`${post.data.title} — Orbis Neo`}
+  description={post.data.description}
+  lang={lang}
+  alternates={alternates}
+>
   <article class="article container">
     <nav class="article__breadcrumbs" aria-label="Breadcrumb">
       <ol>
