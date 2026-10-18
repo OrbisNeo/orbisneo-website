@@ -8,14 +8,21 @@
 [context.production.environment]
   PUBLIC_SITE_ENV = "production"
   PUBLIC_NOINDEX = "true"
+  LANG_USE_GEO = "false"
 
 [context.deploy-preview.environment]
   PUBLIC_SITE_ENV = "preview"
   PUBLIC_NOINDEX = "true"
+  LANG_USE_GEO = "false"
 
 [context.branch-deploy.environment]
   PUBLIC_SITE_ENV = "preview"
   PUBLIC_NOINDEX = "true"
+  LANG_USE_GEO = "false"
+
+[[edge_functions]]
+  function = "language"
+  path = "/"
 
 [[headers]]
   for = "/*"
