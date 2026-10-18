@@ -1,5 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import type { Lang } from "../../i18n/ui";
+import { inLang } from "../../i18n/utils";
+import BlogCard from "../BlogCard.astro";
 
 interface Props {
   lang: Lang;
@@ -7,18 +10,21 @@ interface Props {
 
 const { lang } = Astro.props;
 
+const all = await getCollection("blog", (p) => !p.data.draft);
+const posts = inLang(all, lang)
+  .sort((a, b) => +b.data.pubDate - +a.data.pubDate)
+  .slice(0, 3);
+
 const copy = lang === "en"
   ? {
       heading: "Perspective",
       subtitle: "How I look at AI in organisations",
-      placeholder: "Articles follow soon.",
       more: "All articles",
       moreHref: "/blog/",
     }
   : {
       heading: "Visie",
       subtitle: "Hoe ik naar AI in organisaties kijk",
-      placeholder: "Artikelen volgen binnenkort.",
       more: "Alle artikelen",
       moreHref: "/blog/overzicht/",
     };
@@ -31,12 +37,13 @@ const copy = lang === "en"
       <p class="perspective__subtitle">{copy.subtitle}</p>
     </header>
 
-    <div class="perspective__placeholder" data-reveal>
-      <p>[PLACEHOLDER: {copy.placeholder}]</p>
-      <p>
-        <a href={copy.moreHref}>{copy.more} →</a>
-      </p>
+    <div class="perspective__grid" data-reveal>
+      {posts.map((p) => <BlogCard post={p} lang={lang} />)}
     </div>
+
+    <p class="perspective__more">
+      <a href={copy.moreHref}>{copy.more} →</a>
+    </p>
   </div>
 </section>
 
@@ -56,17 +63,33 @@ const copy = lang === "en"
     margin: var(--space-2) 0 0;
   }
 
-  .perspective__placeholder {
-    padding: var(--space-7);
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    border: 1px dashed var(--color-border);
-    text-align: center;
+  .perspective__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
   }
 
-  .perspective__placeholder a {
+  .perspective__more {
+    margin-top: var(--space-6);
+    font-size: var(--fs-lead);
+  }
+
+  .perspective__more a {
     color: var(--color-action);
     font-weight: 600;
     text-decoration: none;
+  }
+
+  .perspective__more a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 1023.98px) {
+    .perspective__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767.98px) {
+    .perspective__grid { grid-template-columns: 1fr; }
   }
 </style>
