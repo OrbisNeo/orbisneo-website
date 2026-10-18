@@ -9,19 +9,19 @@ interface Props {
 
 const { lang } = Astro.props;
 const all = await getCollection("cases");
-const cases = sortByOrder(inLang(all, lang));
+const cases = sortByOrder(inLang(all, lang).filter((c) => c.data.featured));
 
 const copy = lang === "en"
   ? {
-      heading: "Twenty-five years, four chapters",
-      intro: "I've spent twenty-five years in the areas AI is now disrupting most: IT delivery and software development, IT operations and management, enterprise architecture, HR and IT financial management.",
+      heading: "A selection from twenty-five years",
+      intro: "A few recent engagements that illustrate how I work in the areas AI is now disrupting most: IT delivery and software development, IT operations and management, enterprise architecture, HR and IT financial management. The full career is on the about page.",
       more: "Read the full career",
       moreHref: "/about/",
       labels: { situation: "Situation", result: "Result" },
     }
   : {
-      heading: "Vijfentwintig jaar, vier hoofdstukken",
-      intro: "Vijfentwintig jaar in de gebieden die AI nu het sterkst raakt: IT-delivery en softwareontwikkeling, IT-beheer, enterprise architecture, HR en IT financial management.",
+      heading: "Een selectie uit vijfentwintig jaar",
+      intro: "Een paar recente opdrachten die laten zien hoe ik werk, in de gebieden die AI nu het sterkst raakt: IT-delivery en softwareontwikkeling, IT-beheer, enterprise architecture, HR en IT financial management. De volledige loopbaan staat op de over-pagina.",
       more: "Lees de volledige loopbaan",
       moreHref: "/over/",
       labels: { situation: "Situatie", result: "Resultaat" },
