@@ -5,7 +5,7 @@ urlSlug: agent-sprawl-the-new-shadow-it
 description: "AI agents often start small and useful. But without overview, ownership and clear rules, agent sprawl can become the new shadow IT."
 pubDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/agent-sprawl.jpg"
+heroImage: "../../../assets/blog/agent-sprawl/hero.jpg"
 heroAlt: "Agent sprawl: the new shadow IT"
 legacyUrl: "https://orbisneo.nl/agent-sprawl-the-new-shadow-it/"
 ---

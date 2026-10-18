@@ -26,3 +26,14 @@ export const alternateFor = (lang: Lang, path: string): string | null => {
   if (!pair) return null;
   return lang === "en" ? pair.nl : pair.en;
 };
+
+export interface Alternates {
+  en: string | null;
+  nl: string | null;
+}
+
+export const alternatesFor = (lang: Lang, path: string): Alternates => {
+  const other = alternateFor(lang, path);
+  if (!other) return { en: null, nl: null };
+  return lang === "en" ? { en: path, nl: other } : { en: other, nl: path };
+};

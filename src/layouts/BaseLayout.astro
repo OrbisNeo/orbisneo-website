@@ -6,6 +6,8 @@ import "../styles/base.css";
 
 import type { Lang } from "../i18n/ui";
 import { t } from "../i18n/ui";
+import type { Alternates } from "../i18n/routes";
+import { alternatesFor } from "../i18n/routes";
 import Seo from "../components/Seo.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -15,10 +17,13 @@ interface Props {
   description?: string;
   lang?: Lang;
   showChrome?: boolean;
+  alternates?: Alternates;
 }
 
-const { title, description, lang = "en", showChrome = true } = Astro.props;
+const { title, description, lang = "en", showChrome = true, alternates } = Astro.props;
 const copy = t(lang);
+const alts: Alternates = alternates ?? alternatesFor(lang, Astro.url.pathname);
+const altPath = lang === "en" ? alts.nl : alts.en;
 ---
 
 <!doctype html>
@@ -26,11 +31,11 @@ const copy = t(lang);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Seo title={title} description={description} lang={lang} />
+    <Seo title={title} description={description} lang={lang} alternates={alts} />
   </head>
   <body>
     <a class="skip-link" href="#main">{copy.skipLink}</a>
-    {showChrome && <SiteHeader lang={lang} />}
+    {showChrome && <SiteHeader lang={lang} altPath={altPath} />}
     <main id="main">
       <slot />
     </main>

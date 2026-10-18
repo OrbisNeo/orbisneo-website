@@ -1,11 +1,11 @@
-import { writeFile, mkdir } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { writeFile, mkdir, rm } from "node:fs/promises";
+import { dirname, join, basename } from "node:path";
 import TurndownService from "turndown";
 
 const API = "https://orbisneo.nl/wp-json/wp/v2";
 const REPO_ROOT = new URL("..", import.meta.url).pathname;
 const CONTENT_DIR = join(REPO_ROOT, "src/content/blog");
-const IMG_DIR = join(REPO_ROOT, "src/assets/blog");
+const IMG_ROOT = join(REPO_ROOT, "src/assets/blog");
 
 interface PostMap {
   wpId: number;
@@ -36,12 +36,27 @@ td.addRule("stripEmptyParagraphs", {
 });
 
 const stripHtml = (html: string): string =>
-  html.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#8217;/g, "'").replace(/&#8216;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"').replace(/&#8211;/g, "–").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+  html
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#8217;|&#8216;|&#x2019;/g, "'")
+    .replace(/&#8220;|&#8221;/g, '"')
+    .replace(/&#8211;|&#8212;/g, "–")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 
-const yamlString = (s: string): string => {
-  const escaped = s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-  return `"${escaped}"`;
+const yamlString = (s: string): string =>
+  `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+
+const extForUrl = (url: string): string => {
+  const m = url.match(/\.(jpg|jpeg|png|webp|avif|gif)(\?|$)/i);
+  return m ? m[1].toLowerCase() : "jpg";
 };
+
+const stemFromUrl = (url: string): string =>
+  basename(url.split("?")[0]).replace(/\.[a-z]+$/i, "").replace(/-\d{3,4}x\d{3,4}$/i, "");
 
 interface WpPost {
   id: number;
@@ -56,14 +71,12 @@ interface WpPost {
   yoast_head_json?: {
     og_description?: string;
     description?: string;
-    og_image?: Array<{ url: string; width?: number; height?: number }>;
   };
 }
 
 interface WpMedia {
   source_url: string;
   alt_text: string;
-  media_details: { file: string };
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -72,49 +85,115 @@ async function fetchJson<T>(url: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-async function downloadImage(url: string, slug: string): Promise<{ localPath: string; filename: string }> {
-  const extMatch = url.match(/\.(jpg|jpeg|png|webp|avif)(\?|$)/i);
-  const ext = extMatch ? extMatch[1].toLowerCase() : "jpg";
-  const filename = `${slug}.${ext}`;
-  const localPath = join(IMG_DIR, filename);
-  await mkdir(dirname(localPath), { recursive: true });
+async function downloadImage(url: string, dir: string, filename: string): Promise<void> {
+  const target = join(dir, filename);
+  await mkdir(dirname(target), { recursive: true });
   const res = await fetch(url);
   if (!res.ok) throw new Error(`image ${url}: ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
-  await writeFile(localPath, buf);
-  return { localPath, filename };
+  await writeFile(target, buf);
 }
 
+interface ImgTag {
+  fullTag: string;
+  src: string;
+  alt: string;
+}
+
+const parseImgs = (html: string): ImgTag[] => {
+  const re = /<img\b[^>]*>/gi;
+  const out: ImgTag[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) {
+    const tag = m[0];
+    const srcMatch = tag.match(/\bsrc=["']([^"']+)["']/i);
+    const altMatch = tag.match(/\balt=["']([^"']*)["']/i);
+    if (srcMatch) {
+      out.push({
+        fullTag: tag,
+        src: srcMatch[1],
+        alt: altMatch ? altMatch[1] : "",
+      });
+    }
+  }
+  return out;
+};
+
 async function run(): Promise<void> {
+  await rm(IMG_ROOT, { recursive: true, force: true });
   await mkdir(join(CONTENT_DIR, "en"), { recursive: true });
   await mkdir(join(CONTENT_DIR, "nl"), { recursive: true });
-  await mkdir(IMG_DIR, { recursive: true });
+  await mkdir(IMG_ROOT, { recursive: true });
 
   for (const p of posts) {
     console.log(`\n→ ${p.lang}/${p.translationKey} (wp ${p.wpId})`);
     const wp = await fetchJson<WpPost>(`${API}/posts/${p.wpId}`);
+    const slugDir = join(IMG_ROOT, p.translationKey);
+    await mkdir(slugDir, { recursive: true });
 
     const title = stripHtml(wp.title.rendered);
-    const description = (wp.yoast_head_json?.og_description ?? wp.yoast_head_json?.description ?? stripHtml(wp.excerpt.rendered)).slice(0, 200);
+    const description = (
+      wp.yoast_head_json?.og_description ??
+      wp.yoast_head_json?.description ??
+      stripHtml(wp.excerpt.rendered)
+    ).slice(0, 200);
     const pubDate = wp.date.slice(0, 10);
     const modified = wp.modified.slice(0, 10);
     const includeModified = modified !== pubDate;
 
-    let heroLine = "";
-    let heroAltLine = "";
+    // Hero (featured) image
+    let heroStem = "";
+    let heroFilename = "";
+    let heroAlt = title;
     if (wp.featured_media) {
       try {
         const media = await fetchJson<WpMedia>(`${API}/media/${wp.featured_media}`);
-        const { filename } = await downloadImage(media.source_url, p.translationKey);
-        heroLine = `heroImage: "../../../assets/blog/${filename}"`;
-        heroAltLine = `heroAlt: ${yamlString(media.alt_text || title)}`;
-        console.log(`  image → ${filename}`);
+        const ext = extForUrl(media.source_url);
+        heroFilename = `hero.${ext}`;
+        heroStem = stemFromUrl(media.source_url);
+        heroAlt = media.alt_text || title;
+        await downloadImage(media.source_url, slugDir, heroFilename);
+        console.log(`  hero → ${p.translationKey}/${heroFilename} (alt: ${heroAlt.slice(0, 60)})`);
       } catch (err) {
-        console.warn(`  no image: ${(err as Error).message}`);
+        console.warn(`  no hero: ${(err as Error).message}`);
       }
     }
 
-    const body = td.turndown(wp.content.rendered).trim();
+    // Content images: download, rewrite src, drop duplicate hero
+    let html = wp.content.rendered;
+    const imgs = parseImgs(html);
+    const perLangTranslationKey = p.translationKey; // for folder lookup from markdown
+    let bodyImgIndex = 0;
+    for (const img of imgs) {
+      const stem = stemFromUrl(img.src);
+      // skip if same base image as hero (dedup)
+      if (heroStem && stem === heroStem) {
+        html = html.replace(img.fullTag, "");
+        console.log(`  skipped duplicate hero reference in body`);
+        continue;
+      }
+      bodyImgIndex++;
+      const ext = extForUrl(img.src);
+      const filename = `img-${bodyImgIndex}.${ext}`;
+      try {
+        await downloadImage(img.src, slugDir, filename);
+        console.log(`  body img → ${perLangTranslationKey}/${filename} (alt: ${img.alt.slice(0, 60) || "(empty)"})`);
+      } catch (err) {
+        console.warn(`  failed body img ${img.src}: ${(err as Error).message}`);
+        continue;
+      }
+      // Build new img tag with local src so turndown keeps the alt
+      const finalAlt = img.alt.trim() || title; // fallback to article title for decorative WP images
+      const safeAlt = finalAlt.replace(/"/g, "&quot;");
+      const newTag = `<img src="../../../assets/blog/${perLangTranslationKey}/${filename}" alt="${safeAlt}" />`;
+      html = html.replace(img.fullTag, newTag);
+    }
+
+    // Remove paragraph wrappers around now-empty content
+    html = html.replace(/<p>\s*<\/p>/g, "");
+
+    const body = td.turndown(html).trim();
+
     const frontmatter = [
       "---",
       `title: ${yamlString(title)}`,
@@ -124,7 +203,9 @@ async function run(): Promise<void> {
       `pubDate: ${pubDate}`,
       ...(includeModified ? [`updatedDate: ${modified}`] : []),
       `category: "AI in organisations"`,
-      ...(heroLine ? [heroLine, heroAltLine] : []),
+      ...(heroFilename
+        ? [`heroImage: "../../../assets/blog/${p.translationKey}/${heroFilename}"`, `heroAlt: ${yamlString(heroAlt)}`]
+        : []),
       `legacyUrl: ${yamlString(wp.link)}`,
       "---",
       "",
@@ -134,7 +215,8 @@ async function run(): Promise<void> {
 
     const target = join(CONTENT_DIR, p.lang, `${p.translationKey}.md`);
     await writeFile(target, frontmatter);
-    console.log(`  wrote ${p.lang}/${p.translationKey}.md (${body.split(/\s+/).length} words)`);
+    const wordCount = body.split(/\s+/).filter(Boolean).length;
+    console.log(`  wrote ${p.lang}/${p.translationKey}.md (${wordCount} words)`);
   }
 
   console.log("\nDone.");

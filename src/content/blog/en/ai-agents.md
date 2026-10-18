@@ -6,7 +6,7 @@ description: "AI agents are not just another tool. Learn how organisations can d
 pubDate: 2026-02-12
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ai-agents.png"
+heroImage: "../../../assets/blog/ai-agents/hero.png"
 heroAlt: "From Chaos to Clarity"
 legacyUrl: "https://orbisneo.nl/ai-agents-in-organisations/"
 ---

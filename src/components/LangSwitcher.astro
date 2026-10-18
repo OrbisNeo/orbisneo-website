@@ -5,11 +5,13 @@ import { alternateFor, homeFor } from "../i18n/routes";
 interface Props {
   lang: Lang;
   path?: string;
+  altPath?: string | null;
 }
 
-const { lang, path = Astro.url.pathname } = Astro.props;
+const { lang, path = Astro.url.pathname, altPath } = Astro.props;
 const otherLang: Lang = lang === "en" ? "nl" : "en";
-const alt = alternateFor(lang, path) ?? homeFor(otherLang);
+const resolvedAlt = altPath !== undefined ? altPath : alternateFor(lang, path);
+const alt = resolvedAlt ?? homeFor(otherLang);
 ---
 
 <nav class="lang" aria-label="Language">
