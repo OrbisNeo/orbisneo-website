@@ -1,0 +1,201 @@
+---
+import { getCollection } from "astro:content";
+import type { Lang } from "../../i18n/ui";
+import { inLang, sortByOrder } from "../../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const all = await getCollection("diensten");
+const services = sortByOrder(inLang(all, lang));
+
+const copy = lang === "en"
+  ? {
+      heading: "Four services. Each with a clear outcome.",
+      intro: "I don't deliver open-ended engagements or reports that gather dust.",
+      closing: "Which service fits your situation? Not sure? Start with the board scan.",
+      more: "See all services",
+      moreHref: "/services/",
+      contactHref: "/contact/",
+      labels: { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Price" },
+    }
+  : {
+      heading: "Vier diensten. Elk met een duidelijke uitkomst.",
+      intro: "Ik lever geen open trajecten of rapporten die in de kast blijven liggen.",
+      closing: "Welke dienst past bij uw situatie? Niet zeker? Begin met de directie scan.",
+      more: "Bekijk alle diensten",
+      moreHref: "/diensten/",
+      contactHref: "/kennismaken/",
+      labels: { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Prijs" },
+    };
+---
+
+<section id="services" class="services" aria-labelledby="services-heading">
+  <div class="container services__intro">
+    <h2 id="services-heading">{copy.heading}</h2>
+    <p>{copy.intro}</p>
+  </div>
+
+  {services.map((s, i) => (
+    <article class="service-segment" data-reveal>
+      <div class="container service-segment__inner">
+        <p class="service-segment__number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</p>
+        <div class="service-segment__body">
+          <h3 class="service-segment__title">{s.data.title}</h3>
+          <p class="service-segment__tagline">{s.data.tagline}</p>
+          <dl class="service-segment__meta">
+            <div><dt>{copy.labels.forWho}</dt><dd>{s.data.forWho}</dd></div>
+            <div><dt>{copy.labels.duration}</dt><dd>{s.data.duration}</dd></div>
+            <div><dt>{copy.labels.delivery}</dt><dd>{s.data.delivery}</dd></div>
+            <div><dt>{copy.labels.price}</dt><dd>{s.data.price}</dd></div>
+          </dl>
+        </div>
+      </div>
+    </article>
+  ))}
+
+  <div class="container services__closing">
+    <p>{copy.closing}</p>
+    <p>
+      <a href={copy.moreHref} class="btn btn--secondary">{copy.more}</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--color-surface-warm);
+  }
+
+  .services__intro {
+    padding-top: var(--section-y);
+    max-width: 68ch;
+  }
+
+  .services__intro p {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+  }
+
+  .service-segment {
+    padding-block: var(--section-y);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-segment__inner {
+    display: grid;
+    grid-template-columns: minmax(120px, 2fr) 8fr;
+    gap: var(--space-7);
+    align-items: start;
+  }
+
+  .service-segment__number {
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 600;
+    color: var(--color-neo);
+    line-height: 1;
+    margin: 0;
+    position: sticky;
+    top: 100px;
+  }
+
+  .service-segment__title {
+    font-size: var(--fs-h2);
+    margin: 0 0 var(--space-3);
+  }
+
+  .service-segment__tagline {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-6);
+    max-width: 48ch;
+  }
+
+  .service-segment__meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin: 0;
+  }
+
+  .service-segment__meta dt {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+    margin-bottom: var(--space-1);
+  }
+
+  .service-segment__meta dd {
+    margin: 0;
+  }
+
+  .services__closing {
+    padding-block: var(--section-y);
+    text-align: center;
+  }
+
+  .services__closing p:first-child {
+    font-size: var(--fs-lead);
+    margin-bottom: var(--space-5);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    min-height: 44px;
+    border: 2px solid var(--color-action);
+  }
+
+  .btn--secondary {
+    color: var(--color-action);
+    background: transparent;
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-mist);
+  }
+
+  @media (max-width: 767.98px) {
+    .service-segment__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    .service-segment__number {
+      position: static;
+    }
+    .service-segment__meta {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  :global(.js) [data-reveal] > :global(*) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  :global(.js) [data-reveal].is-visible > :global(*) {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--duration-reveal) var(--ease-out),
+      transform var(--duration-reveal) var(--ease-out);
+  }
+  :global(.js) [data-reveal].is-visible > :global(*:nth-child(2)) { transition-delay: 80ms; }
+  :global(.js) [data-reveal].is-visible > :global(*:nth-child(3)) { transition-delay: 160ms; }
+  :global(.js) [data-reveal].is-visible > :global(*:nth-child(4)) { transition-delay: 240ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(.js) [data-reveal] > :global(*) { opacity: 1; transform: none; transition: none; }
+  }
+</style>

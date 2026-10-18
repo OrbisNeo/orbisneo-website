@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import type { Lang } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const clients = (await getCollection("clients")).sort((a, b) => a.data.order - b.data.order);
+
+const heading = lang === "en"
+  ? "Organisations I have worked with"
+  : "Organisaties waar ik heb gewerkt";
+---
+
+<section id="clients" class="clients" aria-labelledby="clients-heading">
+  <div class="container">
+    <h2 id="clients-heading">{heading}</h2>
+    <ul class="clients__list">
+      {clients.map((c) => (
+        <li class="client">
+          {c.data.logo.startsWith("[PLACEHOLDER") ? (
+            <span class="client__placeholder">{c.data.name}</span>
+          ) : (
+            <img src={c.data.logo} alt={c.data.name} loading="lazy" />
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .clients {
+    padding-block: var(--section-y);
+    background: var(--color-bg);
+  }
+
+  .clients h2 {
+    text-align: center;
+    margin-bottom: var(--space-7);
+  }
+
+  .clients__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-5);
+    align-items: center;
+    justify-items: center;
+  }
+
+  .client img {
+    max-height: 48px;
+    width: auto;
+    filter: grayscale(1);
+    opacity: 0.75;
+    transition: opacity var(--duration-base) var(--ease-out);
+  }
+
+  .client img:hover {
+    opacity: 1;
+  }
+
+  .client__placeholder {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-soft);
+    font-size: var(--fs-small);
+    text-align: center;
+  }
+
+  @media (max-width: 1023.98px) {
+    .clients__list { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  @media (max-width: 767.98px) {
+    .clients__list { grid-template-columns: repeat(3, 1fr); }
+    .client img { max-height: 36px; }
+  }
+</style>

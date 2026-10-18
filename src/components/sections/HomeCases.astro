@@ -1,0 +1,178 @@
+---
+import { getCollection } from "astro:content";
+import type { Lang } from "../../i18n/ui";
+import { inLang, sortByOrder } from "../../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const all = await getCollection("cases");
+const cases = sortByOrder(inLang(all, lang));
+
+const copy = lang === "en"
+  ? {
+      heading: "Twenty-five years, four chapters",
+      intro: "I've spent twenty-five years in the areas AI is now disrupting most: IT delivery and software development, IT operations and management, enterprise architecture, HR and IT financial management.",
+      more: "Read the full career",
+      moreHref: "/about/",
+      labels: { situation: "Situation", result: "Result" },
+    }
+  : {
+      heading: "Vijfentwintig jaar, vier hoofdstukken",
+      intro: "Vijfentwintig jaar in de gebieden die AI nu het sterkst raakt: IT-delivery en softwareontwikkeling, IT-beheer, enterprise architecture, HR en IT financial management.",
+      more: "Lees de volledige loopbaan",
+      moreHref: "/over/",
+      labels: { situation: "Situatie", result: "Resultaat" },
+    };
+---
+
+<section id="cases" class="cases" aria-labelledby="cases-heading">
+  <div class="container">
+    <header class="cases__header">
+      <h2 id="cases-heading">{copy.heading}</h2>
+      <p class="cases__intro">{copy.intro}</p>
+    </header>
+
+    <ol class="cases__list">
+      {cases.map((c) => (
+        <li class="case-card" data-reveal>
+          <p class="case-card__period">{c.data.period}</p>
+          <h3 class="case-card__title">{c.data.role}</h3>
+          <p class="case-card__org">{c.data.org}</p>
+          <dl class="case-card__meta">
+            <dt>{copy.labels.situation}</dt>
+            <dd>{c.data.situation}</dd>
+            <dt>{copy.labels.result}</dt>
+            <dd>{c.data.result}</dd>
+          </dl>
+        </li>
+      ))}
+    </ol>
+
+    <p class="cases__more">
+      <a href={copy.moreHref}>{copy.more} →</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .cases {
+    background: var(--color-surface);
+    padding-block: var(--section-y);
+  }
+
+  .cases__header {
+    max-width: 68ch;
+    margin-bottom: var(--space-8);
+  }
+
+  .cases__intro {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: var(--space-3) 0 0;
+  }
+
+  .cases__list {
+    list-style: none;
+    counter-reset: case;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .case-card {
+    counter-increment: case;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    position: relative;
+    transition: box-shadow var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out);
+  }
+
+  .case-card::before {
+    content: counter(case);
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
+    font-size: 2.5rem;
+    color: var(--color-neo);
+    font-weight: 600;
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  .case-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-neo);
+  }
+
+  .case-card__period {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-2);
+  }
+
+  .case-card__title {
+    font-size: var(--fs-h3);
+    margin: 0 0 var(--space-1);
+    max-width: 20ch;
+  }
+
+  .case-card__org {
+    color: var(--color-neo);
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+
+  .case-card__meta {
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .case-card__meta dt {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+  }
+
+  .case-card__meta dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .cases__more {
+    margin-top: var(--space-7);
+    font-size: var(--fs-lead);
+  }
+
+  .cases__more a {
+    color: var(--color-action);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cases__more a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 767.98px) {
+    .cases__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

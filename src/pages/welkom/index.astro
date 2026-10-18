@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HomeOpening from "../../components/sections/HomeOpening.astro";
+import HomeCases from "../../components/sections/HomeCases.astro";
+import HomePerspective from "../../components/sections/HomePerspective.astro";
+import HomeServices from "../../components/sections/HomeServices.astro";
+import HomeClients from "../../components/sections/HomeClients.astro";
+import HomeContact from "../../components/sections/HomeContact.astro";
+---
+
+<BaseLayout
+  title="Orbis Neo Consulting"
+  description="AI verandert uw organisatie van binnenuit. Praktische sturing voor directies van middelgrote en grote organisaties."
+  lang="nl"
+>
+  <HomeOpening lang="nl" />
+  <HomeCases lang="nl" />
+  <HomePerspective lang="nl" />
+  <HomeServices lang="nl" />
+  <HomeClients lang="nl" />
+  <HomeContact lang="nl" />
+</BaseLayout>
+
+<script>
+  import "../../scripts/reveal.ts";
+</script>

@@ -1,0 +1,83 @@
+---
+import type { Lang } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === "en"
+  ? {
+      heading: "Want to find out whether this fits your situation?",
+      body: "A first conversation takes fifteen minutes and is free of obligation.",
+      cta: "Schedule an intro call",
+      ctaHref: "/contact/",
+      emailLabel: "or email directly",
+    }
+  : {
+      heading: "Benieuwd of dit bij uw situatie past?",
+      body: "Een eerste gesprek duurt vijftien minuten en is vrijblijvend.",
+      cta: "Plan een kennismaking",
+      ctaHref: "/kennismaken/",
+      emailLabel: "of mail direct",
+    };
+
+const email = "[PLACEHOLDER: info@orbisneoconsulting.com]";
+---
+
+<section id="contact" class="contact-teaser" aria-labelledby="contact-teaser-heading">
+  <div class="container">
+    <h2 id="contact-teaser-heading">{copy.heading}</h2>
+    <p>{copy.body}</p>
+    <p>
+      <a href={copy.ctaHref} class="link link--large">{copy.cta} →</a>
+    </p>
+    <p class="contact-teaser__email">
+      {copy.emailLabel}: <span>{email}</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  .contact-teaser {
+    background: var(--color-surface-warm);
+    padding-block: var(--section-y);
+    text-align: center;
+  }
+
+  .contact-teaser h2 {
+    margin: 0 0 var(--space-3);
+  }
+
+  .contact-teaser p {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: 48ch;
+    margin: 0 auto var(--space-4);
+  }
+
+  .link--large {
+    font-weight: 600;
+    font-size: var(--fs-lead);
+    color: var(--color-action);
+    text-decoration: none;
+  }
+
+  .link--large:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .contact-teaser__email {
+    font-size: var(--fs-small);
+    margin-top: var(--space-5);
+  }
+
+  .contact-teaser__email span {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--color-mist);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+</style>
