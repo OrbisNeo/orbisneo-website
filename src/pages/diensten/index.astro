@@ -1,0 +1,130 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceDetail from "../../components/ServiceDetail.astro";
+import { inLang, sortByOrder } from "../../i18n/utils";
+
+const all = await getCollection("diensten");
+const services = sortByOrder(inLang(all, "nl"));
+---
+
+<BaseLayout
+  title="Diensten — Orbis Neo Consulting"
+  description="Vier diensten. Elk met een duidelijke uitkomst. Directie scan, ambitie- en positie sessie, financieel kader voor AI en interim-ondersteuning."
+  lang="nl"
+>
+  <section class="services-intro container">
+    <h1>Vier diensten. Elk met een duidelijke uitkomst.</h1>
+    <p class="services-intro__lead">
+      Ik lever geen open trajecten of rapporten die in de kast blijven liggen. Elke dienst heeft een helder resultaat, een vaste vorm en een zichtbaar eindpunt.
+    </p>
+    <nav class="services-intro__toc" aria-label="Op deze pagina">
+      <ol>
+        {services.map((s, i) => (
+          <li>
+            <a href={`#${s.data.anchor}`}>
+              <span class="services-intro__toc-num">{String(i + 1).padStart(2, "0")}</span>
+              {s.data.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </section>
+
+  {services.map((s, i) => <ServiceDetail service={s} index={i} lang="nl" />)}
+
+  <section class="services-closing container">
+    <p>Niet zeker welke past? Begin met de directie scan.</p>
+    <a href="/kennismaken/" class="btn btn--secondary">Plan een kennismaking</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-intro {
+    padding-block: var(--section-y);
+  }
+
+  .services-intro h1 {
+    max-width: 22ch;
+  }
+
+  .services-intro__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: 68ch;
+    margin: var(--space-5) 0 var(--space-7);
+  }
+
+  .services-intro__toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-width: 68ch;
+  }
+
+  .services-intro__toc a {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .services-intro__toc a:hover {
+    background: var(--color-mist);
+  }
+
+  .services-intro__toc-num {
+    font-family: var(--font-display);
+    color: var(--color-neo);
+    font-weight: 600;
+  }
+
+  .services-closing {
+    padding-block: var(--section-y);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .services-closing p {
+    font-size: var(--fs-lead);
+    margin: 0 auto var(--space-5);
+    max-width: 48ch;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    min-height: 44px;
+    border: 2px solid var(--color-action);
+  }
+
+  .btn--secondary {
+    color: var(--color-action);
+    background: transparent;
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-mist);
+  }
+
+  @media (max-width: 767.98px) {
+    .services-intro__toc ol {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

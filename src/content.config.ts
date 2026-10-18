@@ -78,4 +78,32 @@ const clients = defineCollection({
   }),
 });
 
-export const collections = { blog, cases, diensten, clients };
+const nieuws = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/nieuws" }),
+  schema: z.object({
+    title: z.string(),
+    translationKey: z.string().regex(/^\d{4}-week-\d{2}$/),
+    urlSlug: z.string().regex(/^\d{4}-week-\d{2}$/),
+    week: z.string().regex(/^\d{4}-W\d{2}$/),
+    date: z.coerce.date(),
+    summary: z.string().max(240),
+    items: z
+      .array(
+        z.object({
+          title: z.string(),
+          url: z.string().url(),
+          source: z.string(),
+          sourceDate: z.coerce.date().optional(),
+          commentary: z.string().max(400),
+          tags: z.array(z.string()).default([]),
+        }),
+      )
+      .min(3)
+      .max(8),
+    curatedBy: z.string().default("Vera"),
+    approvedBy: z.string().optional(),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { blog, cases, diensten, clients, nieuws };

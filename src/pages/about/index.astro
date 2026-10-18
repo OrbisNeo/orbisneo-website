@@ -1,0 +1,235 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import portrait from "../../assets/people/daniel-fokker.jpg";
+import { inLang, sortByOrder } from "../../i18n/utils";
+
+const all = await getCollection("cases");
+const cases = sortByOrder(inLang(all, "en"));
+---
+
+<BaseLayout
+  title="About — Orbis Neo Consulting"
+  description="About Daniel Fokker and Orbis Neo. Twenty-five years in the domains AI is now changing most."
+  lang="en"
+>
+  <section class="about container">
+    <header class="about__header">
+      <div class="about__intro">
+        <h1>About Daniel Fokker and Orbis Neo</h1>
+        <p class="about__lead">
+          Grip starts with factual insight. I help boards of mid-market and larger companies translate AI ambition into practical direction — in domains I have worked in for twenty-five years.
+        </p>
+      </div>
+      <figure class="about__portrait">
+        <Image
+          src={portrait}
+          alt="Daniel Fokker"
+          widths={[280, 420, 560]}
+          sizes="(max-width: 767px) 60vw, 420px"
+          loading="eager"
+        />
+      </figure>
+    </header>
+
+    <section class="about__block">
+      <h2>Why my background is relevant right now</h2>
+      <p>
+        AI is reshaping exactly the domains I have worked in for a quarter of a century: IT delivery and software development, IT operations and management, enterprise architecture, HR and IT financial management. That means the questions boards face are not foreign to me — they are familiar questions in a new context.
+      </p>
+    </section>
+
+    <section class="about__block">
+      <h2>How I work</h2>
+      <p>
+        Interim or part-time, always with an endpoint and a handover to an internal owner. One or two days a week, three months minimum. Fixed rhythm, direct access, periodic reporting to the board. I don't deliver open-ended engagements or reports that gather dust.
+      </p>
+    </section>
+
+    <section class="about__block">
+      <h2>Full career</h2>
+      <ol class="about__cases">
+        {cases.map((c) => (
+          <li class="about-case">
+            <p class="about-case__period">{c.data.period}</p>
+            <h3>{c.data.role}</h3>
+            <p class="about-case__org">{c.data.org}</p>
+            <dl>
+              <dt>Situation</dt>
+              <dd>{c.data.situation}</dd>
+              <dt>Result</dt>
+              <dd>{c.data.result}</dd>
+            </dl>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="about__block">
+      <h2>Education and knowledge</h2>
+      <ul class="about__list">
+        <li>MSc Business Administration, Radboud University (2013–2017)</li>
+        <li>BSc Business Informatics, Avans (1999–2002)</li>
+        <li>TOGAF, ArchiMate, IT4IT, TBM/IT Financial Management, PRINCE2, SAFe/Agile/Scrum, Lean Six Sigma</li>
+      </ul>
+    </section>
+
+    <section class="about__block">
+      <h2>About the name: Orbis Neo</h2>
+      <p>
+        Orbis means circle or sphere; Neo means new. Taken together: a new perspective on familiar organisations. The logo shows a network of orbits and nodes — the mental image of how organisations actually run today.
+      </p>
+    </section>
+
+    <section class="about__block about__block--cta">
+      <p>
+        Want to find out whether this fits your situation? A first conversation takes fifteen minutes and is free of obligation.
+      </p>
+      <p><a href="/contact/" class="btn">Schedule an intro call →</a></p>
+    </section>
+  </section>
+</BaseLayout>
+
+<style>
+  .about {
+    padding-block: var(--section-y);
+  }
+
+  .about__header {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-7);
+    align-items: start;
+    margin-bottom: var(--space-9);
+  }
+
+  .about__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: 52ch;
+    margin: var(--space-4) 0 0;
+  }
+
+  .about__portrait {
+    margin: 0;
+  }
+
+  .about__portrait :global(img) {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
+  .about__block {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    max-width: 68ch;
+  }
+
+  .about__cases {
+    list-style: none;
+    padding: 0;
+    counter-reset: case;
+    max-width: none;
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .about-case {
+    counter-increment: case;
+    background: var(--color-surface);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+
+  .about-case::before {
+    content: counter(case);
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    font-family: var(--font-display);
+    color: var(--color-neo);
+    font-size: 2rem;
+    font-weight: 600;
+    opacity: 0.5;
+  }
+
+  .about-case__period {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-2);
+  }
+
+  .about-case__org {
+    color: var(--color-neo);
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+
+  .about-case dl {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+  }
+
+  .about-case dt {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+  }
+
+  .about-case dd {
+    margin: 0;
+  }
+
+  .about__list {
+    padding-left: var(--space-5);
+  }
+
+  .about__block--cta {
+    text-align: center;
+    margin-top: var(--space-9);
+    padding: var(--space-7);
+    background: var(--color-surface-warm);
+    border-radius: var(--radius-lg);
+    border-top: 0;
+    max-width: none;
+  }
+
+  .btn {
+    display: inline-flex;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    background: var(--color-action);
+    color: #fff;
+    min-height: 44px;
+  }
+
+  @media (max-width: 767.98px) {
+    .about__header {
+      grid-template-columns: 1fr;
+    }
+
+    .about__portrait {
+      order: -1;
+    }
+
+    .about__portrait :global(img) {
+      max-width: 240px;
+    }
+  }
+</style>

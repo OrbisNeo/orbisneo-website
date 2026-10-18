@@ -1,0 +1,130 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceDetail from "../../components/ServiceDetail.astro";
+import { inLang, sortByOrder } from "../../i18n/utils";
+
+const all = await getCollection("diensten");
+const services = sortByOrder(inLang(all, "en"));
+---
+
+<BaseLayout
+  title="Services — Orbis Neo Consulting"
+  description="Four services. Each with a clear outcome. Board scan, ambition and position session, AI financial framework and fractional support."
+  lang="en"
+>
+  <section class="services-intro container">
+    <h1>Four services. Each with a clear outcome.</h1>
+    <p class="services-intro__lead">
+      I don't deliver open-ended engagements or reports that gather dust. Each service has a clear outcome, a fixed shape and a visible endpoint.
+    </p>
+    <nav class="services-intro__toc" aria-label="On this page">
+      <ol>
+        {services.map((s, i) => (
+          <li>
+            <a href={`#${s.data.anchor}`}>
+              <span class="services-intro__toc-num">{String(i + 1).padStart(2, "0")}</span>
+              {s.data.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </section>
+
+  {services.map((s, i) => <ServiceDetail service={s} index={i} lang="en" />)}
+
+  <section class="services-closing container">
+    <p>Not sure which one fits? Start with the board scan.</p>
+    <a href="/contact/" class="btn btn--secondary">Plan an intro call</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-intro {
+    padding-block: var(--section-y);
+  }
+
+  .services-intro h1 {
+    max-width: 20ch;
+  }
+
+  .services-intro__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    max-width: 68ch;
+    margin: var(--space-5) 0 var(--space-7);
+  }
+
+  .services-intro__toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-width: 68ch;
+  }
+
+  .services-intro__toc a {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .services-intro__toc a:hover {
+    background: var(--color-mist);
+  }
+
+  .services-intro__toc-num {
+    font-family: var(--font-display);
+    color: var(--color-neo);
+    font-weight: 600;
+  }
+
+  .services-closing {
+    padding-block: var(--section-y);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .services-closing p {
+    font-size: var(--fs-lead);
+    margin: 0 auto var(--space-5);
+    max-width: 48ch;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    min-height: 44px;
+    border: 2px solid var(--color-action);
+  }
+
+  .btn--secondary {
+    color: var(--color-action);
+    background: transparent;
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-mist);
+  }
+
+  @media (max-width: 767.98px) {
+    .services-intro__toc ol {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

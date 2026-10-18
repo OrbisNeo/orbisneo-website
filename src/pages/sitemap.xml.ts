@@ -15,9 +15,15 @@ const abs = (path: string) => new URL(path, SITE).toString();
 export async function GET(_context: APIContext) {
   const entries: Entry[] = [];
 
-  // Fixed pages that currently exist: homepage and blog overview.
-  // Services, about, contact, news and privacy are added in later PRs.
-  const existingKeys = new Set(["/", "/blog/"]);
+  // Fixed pages that currently exist. Contact comes in PR 8.
+  const existingKeys = new Set([
+    "/",
+    "/services/",
+    "/about/",
+    "/blog/",
+    "/news/",
+    "/privacy/",
+  ]);
   for (const route of routes) {
     if (existingKeys.has(route.en)) {
       entries.push({

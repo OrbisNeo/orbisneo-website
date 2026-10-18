@@ -4,7 +4,8 @@ import type { Lang } from "./ui";
 type LangEntry =
   | CollectionEntry<"cases">
   | CollectionEntry<"diensten">
-  | CollectionEntry<"blog">;
+  | CollectionEntry<"blog">
+  | CollectionEntry<"nieuws">;
 
 export const langOf = (entry: LangEntry): Lang =>
   entry.id.startsWith("en/") ? "en" : "nl";
