@@ -31,36 +31,43 @@ const copy = lang === "en"
 ---
 
 <section class="opening" aria-labelledby="opening-heading" data-opening>
-  <div class="opening__bg" data-opening-bg>
+  <div class="opening__bg" data-opening-bg aria-hidden="true">
     <Image
       src={bureau}
-      alt={copy.portraitAlt}
+      alt=""
       widths={[720, 1080, 1440, 1920]}
       sizes="100vw"
       loading="eager"
     />
   </div>
-  <div class="opening__scrim" aria-hidden="true"></div>
+  <div class="opening__scrim" data-opening-bg aria-hidden="true"></div>
 
-  <div class="opening__content container">
-    <p class="opening__eyebrow">{copy.eyebrow}</p>
-    <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
-    <p class="opening__lead">{copy.lead}</p>
-    <a href={copy.contactHref} class="opening__link">{copy.cta}</a>
-    <p class="opening__scroll">{copy.scrollHint}</p>
+  <div class="opening__wrap container">
+    <div class="opening__text">
+      <p class="opening__eyebrow">{copy.eyebrow}</p>
+      <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
+      <p class="opening__lead">{copy.lead}</p>
+      <p class="opening__cta">
+        <a href={copy.contactHref} class="opening__link">{copy.cta}</a>
+      </p>
+      <p class="opening__scroll">{copy.scrollHint}</p>
+    </div>
   </div>
 </section>
 
 <script>
+  const layers = Array.from(document.querySelectorAll<HTMLElement>("[data-opening-bg]"));
   const section = document.querySelector<HTMLElement>("[data-opening]");
-  const bg = document.querySelector<HTMLElement>("[data-opening-bg]");
-  if (section && bg && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  if (section && layers.length && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const update = () => {
       const rect = section.getBoundingClientRect();
       const h = window.innerHeight || 800;
-      // fade from 1 at the top to 0 after one viewport of scrolling
-      const t = Math.max(0, Math.min(1, 1 + rect.top / h));
-      bg.style.opacity = String(t);
+      // 1 while section fills viewport; fades to 0 when the section's bottom
+      // is above the viewport bottom (i.e. you have scrolled past the hero).
+      const t = Math.max(0, Math.min(1, rect.bottom / h));
+      const opacity = String(t);
+      for (const el of layers) el.style.opacity = opacity;
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -72,48 +79,56 @@ const copy = lang === "en"
   .opening {
     position: relative;
     min-height: 100svh;
-    display: flex;
-    align-items: center;
+    display: grid;
+    align-content: center;
     overflow: hidden;
     isolation: isolate;
   }
 
-  .opening__bg {
-    position: absolute;
+  /* Fixed layers: image + scrim stay in the viewport while the page scrolls over them. */
+  .opening__bg,
+  .opening__scrim {
+    position: fixed;
     inset: 0;
-    z-index: 0;
+    pointer-events: none;
     will-change: opacity;
     transition: opacity 100ms linear;
+  }
+
+  .opening__bg {
+    z-index: 0;
   }
 
   .opening__bg :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    /* Anchor the crop to the right so Daniel's head stays in view at every width. */
+    object-position: right center;
   }
 
   .opening__scrim {
-    position: absolute;
-    inset: 0;
     z-index: 1;
     background:
       linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.96) 0%,
-        rgba(255, 255, 255, 0.9) 30%,
-        rgba(255, 255, 255, 0.55) 55%,
-        rgba(255, 255, 255, 0.1) 80%,
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(255, 255, 255, 0.94) 30%,
+        rgba(255, 255, 255, 0.6) 55%,
+        rgba(255, 255, 255, 0.15) 80%,
         rgba(255, 255, 255, 0) 100%
       );
-    pointer-events: none;
   }
 
-  .opening__content {
+  .opening__wrap {
     position: relative;
     z-index: 2;
     padding-block: var(--section-y);
-    max-width: 820px;
+    width: 100%;
+  }
+
+  .opening__text {
+    max-width: 580px;
   }
 
   .opening__eyebrow {
@@ -130,7 +145,6 @@ const copy = lang === "en"
     font-weight: 650;
     line-height: var(--lh-tight);
     margin: 0 0 var(--space-5);
-    max-width: 15ch;
     color: var(--color-text);
     text-wrap: balance;
   }
@@ -139,8 +153,11 @@ const copy = lang === "en"
     font-size: var(--fs-lead);
     color: var(--color-text);
     margin: 0 0 var(--space-6);
-    max-width: 48ch;
     font-weight: 500;
+  }
+
+  .opening__cta {
+    margin: 0;
   }
 
   .opening__link {
@@ -159,7 +176,7 @@ const copy = lang === "en"
   .opening__scroll {
     font-size: var(--fs-small);
     color: var(--color-text-soft);
-    margin: var(--space-7) 0 0;
+    margin: var(--space-8) 0 0;
   }
 
   @media (max-width: 1023.98px) {
@@ -167,16 +184,17 @@ const copy = lang === "en"
       background:
         linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.95) 0%,
-          rgba(255, 255, 255, 0.85) 40%,
-          rgba(255, 255, 255, 0.65) 70%,
-          rgba(255, 255, 255, 0.3) 100%
+          rgba(255, 255, 255, 0.98) 0%,
+          rgba(255, 255, 255, 0.92) 35%,
+          rgba(255, 255, 255, 0.7) 65%,
+          rgba(255, 255, 255, 0.35) 100%
         );
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .opening__bg {
+    .opening__bg,
+    .opening__scrim {
       transition: none;
     }
   }
