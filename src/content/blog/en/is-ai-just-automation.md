@@ -6,7 +6,7 @@ description: "Introduction I hear it more and more often in conversations with m
 pubDate: 2026-01-05
 updatedDate: 2026-01-13
 category: "AI in organisations"
-heroImage: "../../../assets/blog/is-ai-just-automation.jpg"
+heroImage: "../../../assets/blog/is-ai-just-automation/hero.jpg"
 heroAlt: "Close-up of digital data analysis displayed on a computer monitor with blue tones."
 legacyUrl: "https://orbisneo.nl/is-ai-just-automation-with-a-new-label/"
 ---
@@ -24,8 +24,6 @@ This is not an attack on AI. On the contrary. It is a plea for maturity: **we ne
 A recent [KNIME-analysis](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which) set that choice very clearly by distinguishing between traditional automation, generative AI and agentic variants, including when which approach makes sense.
 
 .kb-image306\_c5bfeb-61 .kb-image-has-overlay:after{opacity:0.3;}
-
-![Close-up of digital data analysis displayed on a computer monitor with blue tones.](https://orbisneo.nl/wp-content/uploads/2025/12/close-up-of-digital-data-analysis-displayed-on-a-computer-monitor-with-blue-tones.-3803517-2048x1363.jpg)
 
 ## **The confusion begins with the word “AI”**
 
