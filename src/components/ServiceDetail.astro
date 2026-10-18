@@ -1,0 +1,97 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  service: CollectionEntry<"diensten">;
+  index: number;
+  lang: Lang;
+}
+
+const { service, index, lang } = Astro.props;
+const labels = lang === "en"
+  ? { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Price" }
+  : { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Prijs" };
+---
+
+<article id={service.data.anchor} class="service-detail">
+  <div class="container service-detail__inner">
+    <p class="service-detail__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</p>
+    <div class="service-detail__body">
+      <h2>{service.data.title}</h2>
+      <p class="service-detail__tagline">{service.data.tagline}</p>
+      <dl class="service-detail__meta">
+        <div><dt>{labels.forWho}</dt><dd>{service.data.forWho}</dd></div>
+        <div><dt>{labels.duration}</dt><dd>{service.data.duration}</dd></div>
+        <div><dt>{labels.delivery}</dt><dd>{service.data.delivery}</dd></div>
+        <div><dt>{labels.price}</dt><dd>{service.data.price}</dd></div>
+      </dl>
+    </div>
+  </div>
+</article>
+
+<style>
+  .service-detail {
+    padding-block: var(--space-9);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-detail__inner {
+    display: grid;
+    grid-template-columns: minmax(100px, 2fr) 8fr;
+    gap: var(--space-7);
+    align-items: start;
+  }
+
+  .service-detail__number {
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--color-neo);
+    line-height: 1;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .service-detail h2 {
+    margin: 0 0 var(--space-3);
+    scroll-margin-top: 100px;
+  }
+
+  .service-detail__tagline {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: 0 0 var(--space-6);
+    max-width: 48ch;
+  }
+
+  .service-detail__meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin: 0;
+  }
+
+  .service-detail__meta dt {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+    margin-bottom: var(--space-1);
+  }
+
+  .service-detail__meta dd {
+    margin: 0;
+  }
+
+  @media (max-width: 767.98px) {
+    .service-detail__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    .service-detail__meta {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
