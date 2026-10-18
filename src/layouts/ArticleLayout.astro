@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import { langOf } from "../i18n/utils";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  alt?: CollectionEntry<"blog">;
+}
+
+const { post, alt } = Astro.props;
+const lang = langOf(post);
+const dateLabel = post.data.pubDate.toLocaleDateString(lang === "en" ? "en-GB" : "nl-NL", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+const updatedLabel = post.data.updatedDate?.toLocaleDateString(
+  lang === "en" ? "en-GB" : "nl-NL",
+  { day: "numeric", month: "long", year: "numeric" },
+);
+
+const copy = lang === "en"
+  ? {
+      breadcrumbHome: "Home",
+      breadcrumbBlog: "Blog",
+      breadcrumbHomeHref: "/",
+      breadcrumbBlogHref: "/blog/",
+      updatedLabel: "Updated",
+      authorLine: "Written by Daniel Fokker, interim Head of IT and consultant in AI strategy, policy and governance.",
+      alternateLabel: "Read this article in Dutch",
+    }
+  : {
+      breadcrumbHome: "Home",
+      breadcrumbBlog: "Blog",
+      breadcrumbHomeHref: "/welkom/",
+      breadcrumbBlogHref: "/blog/overzicht/",
+      updatedLabel: "Bijgewerkt",
+      authorLine: "Geschreven door Daniel Fokker, interim Head of IT en adviseur AI-strategie, -beleid en -governance.",
+      alternateLabel: "Lees dit artikel in het Engels",
+    };
+---
+
+<BaseLayout title={`${post.data.title} — Orbis Neo`} description={post.data.description} lang={lang}>
+  <article class="article container">
+    <nav class="article__breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href={copy.breadcrumbHomeHref}>{copy.breadcrumbHome}</a></li>
+        <li><a href={copy.breadcrumbBlogHref}>{copy.breadcrumbBlog}</a></li>
+        <li aria-current="page">{post.data.title}</li>
+      </ol>
+    </nav>
+
+    <header class="article__header">
+      <p class="article__category">{post.data.category}</p>
+      <h1>{post.data.title}</h1>
+      <p class="article__meta">
+        <span>{post.data.author}</span>
+        <span>·</span>
+        <time datetime={post.data.pubDate.toISOString()}>{dateLabel}</time>
+        {updatedLabel && (
+          <>
+            <span>·</span>
+            <span>{copy.updatedLabel}: <time datetime={post.data.updatedDate!.toISOString()}>{updatedLabel}</time></span>
+          </>
+        )}
+      </p>
+    </header>
+
+    {post.data.heroImage && (
+      <figure class="article__hero">
+        <Image
+          src={post.data.heroImage}
+          alt={post.data.heroAlt ?? post.data.title}
+          widths={[720, 1080, 1280]}
+          sizes="(max-width: 767px) 100vw, 1280px"
+          loading="eager"
+        />
+      </figure>
+    )}
+
+    <div class="article__body">
+      <slot />
+    </div>
+
+    {alt && (
+      <p class="article__alt">
+        <a href={`/blog/${alt.data.urlSlug}/`} hreflang={lang === "en" ? "nl" : "en"}>
+          {copy.alternateLabel} →
+        </a>
+      </p>
+    )}
+
+    <aside class="article__author">
+      <p>{copy.authorLine}</p>
+    </aside>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    padding-block: var(--section-y);
+    max-width: 820px;
+  }
+
+  .article__breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+  }
+
+  .article__breadcrumbs li + li::before {
+    content: "›";
+    margin-right: var(--space-2);
+    color: var(--color-border);
+  }
+
+  .article__breadcrumbs a {
+    color: var(--color-text-soft);
+    text-decoration: none;
+  }
+
+  .article__breadcrumbs a:hover {
+    color: var(--color-action);
+    text-decoration: underline;
+  }
+
+  .article__category {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-neo);
+    margin: 0 0 var(--space-3);
+  }
+
+  .article__header h1 {
+    font-size: var(--fs-h1);
+    margin: 0 0 var(--space-4);
+    max-width: 26ch;
+  }
+
+  .article__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    color: var(--color-text-soft);
+    font-size: var(--fs-small);
+    margin: 0 0 var(--space-6);
+  }
+
+  .article__hero {
+    margin: var(--space-6) 0 var(--space-7);
+  }
+
+  .article__hero :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .article__body :global(p),
+  .article__body :global(ul),
+  .article__body :global(ol) {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    max-width: 68ch;
+    margin: 0 0 var(--space-5);
+  }
+
+  .article__body :global(h2) {
+    font-size: var(--fs-h2);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+  }
+
+  .article__body :global(h3) {
+    font-size: var(--fs-h3);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .article__body :global(blockquote) {
+    border-left: 4px solid var(--color-neo);
+    padding-left: var(--space-5);
+    margin: var(--space-6) 0;
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    font-style: italic;
+  }
+
+  .article__body :global(a) {
+    color: var(--color-action);
+  }
+
+  .article__alt {
+    margin: var(--space-7) 0;
+  }
+
+  .article__alt a {
+    font-weight: 600;
+    color: var(--color-action);
+    text-decoration: none;
+  }
+
+  .article__alt a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .article__author {
+    margin-top: var(--space-8);
+    padding: var(--space-5);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-soft);
+    font-size: var(--fs-small);
+  }
+
+  .article__author p {
+    margin: 0;
+    max-width: none;
+  }
+</style>

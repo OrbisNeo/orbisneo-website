@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+import { inLang } from "../../../i18n/utils";
+
+const all = await getCollection("blog", (p) => !p.data.draft);
+const posts = inLang(all, "nl").sort((a, b) => +b.data.pubDate - +a.data.pubDate);
+const [latest, ...rest] = posts;
+---
+
+<BaseLayout
+  title="Blog — Orbis Neo Consulting"
+  description="Visie op organisatie, strategie en AI."
+  lang="nl"
+>
+  <section class="blog-overview container">
+    <header class="blog-overview__header">
+      <h1>Blog</h1>
+      <p class="blog-overview__subtitle">Visie op organisatie, strategie & AI.</p>
+    </header>
+
+    {latest && (
+      <div class="blog-overview__grid">
+        <BlogCard post={latest} lang="nl" featured />
+        {rest.map((p) => <BlogCard post={p} lang="nl" />)}
+      </div>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-overview {
+    padding-block: var(--section-y);
+  }
+
+  .blog-overview__header {
+    margin-bottom: var(--space-7);
+  }
+
+  .blog-overview__subtitle {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: var(--space-2) 0 0;
+  }
+
+  .blog-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 1023.98px) {
+    .blog-overview__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767.98px) {
+    .blog-overview__grid { grid-template-columns: 1fr; }
+  }
+</style>
