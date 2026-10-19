@@ -18,9 +18,10 @@ interface Props {
   lang?: Lang;
   showChrome?: boolean;
   alternates?: Alternates;
+  noindex?: boolean;
 }
 
-const { title, description, lang = "en", showChrome = true, alternates } = Astro.props;
+const { title, description, lang = "en", showChrome = true, alternates, noindex } = Astro.props;
 const copy = t(lang);
 const alts: Alternates = alternates ?? alternatesFor(lang, Astro.url.pathname);
 const altPath = lang === "en" ? alts.nl : alts.en;
@@ -31,7 +32,7 @@ const altPath = lang === "en" ? alts.nl : alts.en;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Seo title={title} description={description} lang={lang} alternates={alts} />
+    <Seo title={title} description={description} lang={lang} alternates={alts} noindex={noindex} />
   </head>
   <body>
     <a class="skip-link" href="#main">{copy.skipLink}</a>

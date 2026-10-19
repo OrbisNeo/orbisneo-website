@@ -15,13 +15,15 @@ const abs = (path: string) => new URL(path, SITE).toString();
 export async function GET(_context: APIContext) {
   const entries: Entry[] = [];
 
-  // Fixed pages that currently exist. Contact comes in PR 8.
+  // Fixed, indexable pages. Thank-you pages are deliberately noindex and
+  // not in the sitemap.
   const existingKeys = new Set([
     "/",
     "/services/",
     "/about/",
     "/blog/",
     "/news/",
+    "/contact/",
     "/privacy/",
   ]);
   for (const route of routes) {

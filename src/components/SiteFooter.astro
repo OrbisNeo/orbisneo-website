@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import type { Lang } from "../i18n/ui";
 import { t } from "../i18n/ui";
-import { navRoutes, routes } from "../i18n/routes";
+import { navRoutes, routes, homeFor } from "../i18n/routes";
+import logo from "../assets/brand/logo.png";
 
 interface Props {
   lang: Lang;
@@ -10,64 +12,58 @@ interface Props {
 const { lang } = Astro.props;
 const copy = t(lang);
 const privacy = routes.find((r) => r.en === "/privacy/")!;
+const news = routes.find((r) => r.en === "/news/")!;
 const year = new Date().getFullYear();
 
 const socials: Array<{ label: string; href: string }> = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/danielfokker" },
-  { label: "X", href: "https://x.com/orbis_neo" },
-  { label: "Instagram", href: "https://www.instagram.com/orbisneo" },
 ];
+
+const email = "info@orbisneoconsulting.com";
+const phone = "+31 6 53 38 03 29";
 ---
 
 <footer class="site-footer">
-  <div class="site-footer__band container">
-    <div class="site-footer__col site-footer__brand">
-      <p class="site-footer__brand-name">{copy.footer.brand}</p>
-      <p class="site-footer__strapline">{copy.footer.strapline}</p>
-    </div>
+  <div class="site-footer__inner container">
+    <a href={homeFor(lang)} class="site-footer__brand" aria-label={copy.footer.brand}>
+      <Image
+        src={logo}
+        alt="Orbis Neo Consulting"
+        widths={[260, 400]}
+        sizes="260px"
+        loading="lazy"
+        class="site-footer__logo"
+      />
+    </a>
 
-    <div class="site-footer__col">
-      <h2 class="site-footer__heading">{copy.footer.sitemapHeading}</h2>
+    <p class="site-footer__strapline">{copy.footer.strapline}</p>
+
+    <nav class="site-footer__nav" aria-label={lang === "en" ? "Footer" : "Footer"}>
       <ul>
         {navRoutes.map((r) => (
           <li><a href={r[lang]}>{copy.nav[r.navKey]}</a></li>
         ))}
-        <li>
-          <a href={privacy[lang]}>
-            {lang === "en" ? "Privacy" : "Privacybeleid"}
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="site-footer__col">
-      <h2 class="site-footer__heading">{copy.footer.contactHeading}</h2>
-      <ul>
-        <li>
-          {/* Placeholder tot open punt 4 (mailadres) is beslist */}
-          <span>[PLACEHOLDER: info@orbisneoconsulting.com]</span>
-        </li>
-        <li>{copy.footer.city}</li>
-        <li>{copy.footer.kvk} 98659456</li>
-      </ul>
-    </div>
-
-    <div class="site-footer__col">
-      <h2 class="site-footer__heading">{copy.footer.socialHeading}</h2>
-      <ul>
+        <li><a href={news[lang]}>{lang === "en" ? "News" : "Nieuws"}</a></li>
+        <li><a href={privacy[lang]}>{lang === "en" ? "Privacy" : "Privacybeleid"}</a></li>
         {socials.map((s) => (
           <li>
-            <a href={s.href} rel="me noopener" target="_blank">
-              {s.label}
-            </a>
+            <a href={s.href} rel="me noopener" target="_blank">{s.label}</a>
           </li>
         ))}
       </ul>
-    </div>
-  </div>
+    </nav>
 
-  <div class="site-footer__copyright container">
-    <small>&copy; {year} {copy.footer.copyright}</small>
+    <div class="site-footer__meta">
+      <span>{copy.footer.city}</span>
+      <span aria-hidden="true">·</span>
+      <a href={`mailto:${email}`}>{email}</a>
+      <span aria-hidden="true">·</span>
+      <a href="tel:+31653380329">{phone}</a>
+      <span aria-hidden="true">·</span>
+      <span>{copy.footer.kvk} 98659456</span>
+    </div>
+
+    <small class="site-footer__copyright">&copy; {year} {copy.footer.copyright}</small>
   </div>
 
   <div class="site-footer__accent" aria-hidden="true"></div>
@@ -76,94 +72,91 @@ const socials: Array<{ label: string; href: string }> = [
 <style>
   .site-footer {
     margin-top: var(--section-y);
-    background: var(--gradient-footer);
-    color: var(--color-text);
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
     position: relative;
-    padding-top: var(--space-9);
   }
 
-  .site-footer__band {
+  .site-footer__inner {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--space-6);
-    padding-bottom: var(--space-7);
+    gap: var(--space-5);
+    padding-block: var(--space-8) var(--space-7);
+    text-align: center;
+    justify-items: center;
   }
 
-  .site-footer__col {
-    min-width: 0;
+  .site-footer__brand {
+    display: inline-block;
   }
 
-  .site-footer__brand-name {
-    font-family: var(--font-display);
-    font-variation-settings: var(--font-display-settings);
-    font-weight: 650;
-    font-size: 1.5rem;
-    margin: 0 0 var(--space-2);
-    color: var(--color-petrol);
+  .site-footer__brand :global(.site-footer__logo) {
+    display: block;
+    height: 54px;
+    width: auto;
   }
 
   .site-footer__strapline {
+    font-size: var(--fs-body);
     color: var(--color-text-soft);
     margin: 0;
-    max-width: 36ch;
+    max-width: 44ch;
   }
 
-  .site-footer__heading {
-    font-family: var(--font-body);
-    font-size: var(--fs-label);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-soft);
-    margin: 0 0 var(--space-3);
-  }
-
-  .site-footer__col ul {
+  .site-footer__nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-5);
+    justify-content: center;
   }
 
-  .site-footer__col a {
+  .site-footer__nav a {
     color: var(--color-text);
     text-decoration: none;
+    font-weight: 600;
+    font-size: var(--fs-small);
   }
 
-  .site-footer__col a:hover {
+  .site-footer__nav a:hover {
     text-decoration: underline;
     text-decoration-color: var(--color-neo);
     text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .site-footer__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
+    justify-content: center;
+    align-items: baseline;
+    font-size: var(--fs-small);
+    color: var(--color-text-soft);
+  }
+
+  .site-footer__meta a {
+    color: var(--color-text-soft);
+    text-decoration: none;
+  }
+
+  .site-footer__meta a:hover {
+    color: var(--color-action);
+    text-decoration: underline;
+  }
+
+  .site-footer__meta span[aria-hidden="true"] {
+    color: var(--color-border);
   }
 
   .site-footer__copyright {
-    padding-block: var(--space-5) var(--space-6);
+    font-size: var(--fs-small);
     color: var(--color-text-soft);
   }
 
   .site-footer__accent {
-    height: 12px;
+    height: 8px;
     background: var(--color-neo);
-  }
-
-  @media (max-width: 767.98px) {
-    .site-footer__band {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .site-footer__strapline { margin-inline: auto; }
-
-    .site-footer__col ul {
-      align-items: center;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023.98px) {
-    .site-footer__band {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 </style>

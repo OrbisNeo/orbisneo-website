@@ -23,7 +23,7 @@ const copy = lang === "en"
       emailLabel: "of mail direct",
     };
 
-const email = "[PLACEHOLDER: info@orbisneoconsulting.com]";
+const email = "info@orbisneoconsulting.com";
 ---
 
 <section id="contact" class="contact-teaser" aria-labelledby="contact-teaser-heading">
@@ -34,7 +34,7 @@ const email = "[PLACEHOLDER: info@orbisneoconsulting.com]";
       <a href={copy.ctaHref} class="link link--large">{copy.cta} →</a>
     </p>
     <p class="contact-teaser__email">
-      {copy.emailLabel}: <span>{email}</span>
+      {copy.emailLabel}: <a href={`mailto:${email}`}>{email}</a>
     </p>
   </div>
 </section>

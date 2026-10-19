@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Netlify Forms detection</title>
+    <style>form{display:none}</style>
+  </head>
+  <body>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="language" value="en" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="checkbox" name="services[]" value="board-scan" />
+      <input type="checkbox" name="services[]" value="ambition-session" />
+      <input type="checkbox" name="services[]" value="ai-financial-framework" />
+      <input type="checkbox" name="services[]" value="fractional-support" />
+      <input type="checkbox" name="services[]" value="not-sure" />
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="consent" value="yes" />
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
