@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found | Pagina niet gevonden"
+  description="This page does not exist (anymore). Deze pagina bestaat niet (meer)."
+  lang="en"
+  noindex={true}
+>
+  <section class="notfound container">
+    <div class="notfound__col" lang="en">
+      <h1>This page does not exist (anymore).</h1>
+      <ul>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="notfound__col" lang="nl">
+      <h2>Deze pagina bestaat niet (meer).</h2>
+      <ul>
+        <li><a href="/welkom/">Homepage</a></li>
+        <li><a href="/blog/overzicht/">Blog</a></li>
+        <li><a href="/kennismaken/">Kennismaken</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound {
+    padding-block: var(--section-y);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .notfound h1 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-5);
+  }
+
+  .notfound h2 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-5);
+  }
+
+  .notfound ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-2);
+    font-size: var(--fs-lead);
+  }
+
+  @media (max-width: 767.98px) {
+    .notfound {
+      grid-template-columns: 1fr;
+      gap: var(--space-7);
+    }
+  }
+</style>
