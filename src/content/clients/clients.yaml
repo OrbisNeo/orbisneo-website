@@ -47,12 +47,12 @@
 - id: rws
   name: Rijkswaterstaat
   logo: /images/logos/rws.png
-  width: 400
-  height: 400
+  width: 341
+  height: 134
   order: 9
 - id: gemeente-rotterdam
   name: Gemeente Rotterdam
   logo: /images/logos/gemeente-rotterdam.png
-  width: 320
-  height: 320
+  width: 292
+  height: 55
   order: 10
