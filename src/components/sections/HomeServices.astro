@@ -61,6 +61,14 @@ const copy = lang === "en"
     <p>
       <a href={copy.moreHref} class="btn btn--secondary">{copy.more}</a>
     </p>
+    <p class="services__ctaLine">
+      <a
+        href={copy.contactHref}
+        data-umami-event="cta-intro-click"
+        data-umami-event-location="services"
+        data-umami-event-lang={lang}
+      >{lang === "en" ? "Or plan a short intro call →" : "Of plan direct een kennismaking →"}</a>
+    </p>
   </div>
 </section>
 

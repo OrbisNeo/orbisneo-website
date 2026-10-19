@@ -31,10 +31,20 @@ const email = "info@orbisneoconsulting.com";
     <h2 id="contact-teaser-heading">{copy.heading}</h2>
     <p>{copy.body}</p>
     <p>
-      <a href={copy.ctaHref} class="link link--large">{copy.cta} →</a>
+      <a
+        href={copy.ctaHref}
+        class="link link--large"
+        data-umami-event="cta-intro-click"
+        data-umami-event-location="contact-teaser"
+        data-umami-event-lang={lang}
+      >{copy.cta} →</a>
     </p>
     <p class="contact-teaser__email">
-      {copy.emailLabel}: <a href={`mailto:${email}`}>{email}</a>
+      {copy.emailLabel}: <a
+        href={`mailto:${email}`}
+        data-umami-event="email-click"
+        data-umami-event-location="contact-teaser"
+      >{email}</a>
     </p>
   </div>
 </section>

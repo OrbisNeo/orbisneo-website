@@ -48,7 +48,13 @@ const copy = lang === "en"
       <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
       <p class="opening__lead">{copy.lead}</p>
       <p class="opening__cta">
-        <a href={copy.contactHref} class="opening__link">{copy.cta}</a>
+        <a
+        href={copy.contactHref}
+        class="opening__link"
+        data-umami-event="cta-intro-click"
+        data-umami-event-location="hero"
+        data-umami-event-lang={lang}
+      >{copy.cta}</a>
       </p>
       <p class="opening__scroll">{copy.scrollHint}</p>
     </div>
