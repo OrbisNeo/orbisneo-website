@@ -39,7 +39,7 @@ export async function GET(_context: APIContext) {
     }
   }
 
-  // Blog articles — pair each EN with its NL via translationKey.
+  // Blog articles: pair each EN with its NL via translationKey.
   const posts = await getCollection("blog", (p) => !p.data.draft);
   const byKey = new Map<string, { en?: string; nl?: string; lastmod?: string }>();
   for (const p of posts) {

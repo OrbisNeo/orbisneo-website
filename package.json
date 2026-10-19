@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro build && tsx scripts/check-redirects.ts",
+    "build": "astro build && tsx scripts/check-content.ts && tsx scripts/check-redirects.ts",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "check:redirects": "tsx scripts/check-redirects.ts"
+    "check:redirects": "tsx scripts/check-redirects.ts",
+    "check:content": "tsx scripts/check-content.ts",
+    "check:links": "tsx scripts/check-links.ts"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
