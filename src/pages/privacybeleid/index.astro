@@ -1,72 +1,50 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Content } from "../../legal/privacy.nl.md";
 ---
 
 <BaseLayout
   title="Privacybeleid | Orbis Neo"
-  description="Privacybeleid van Orbis Neo Consulting, met Netlify, Umami cookieloze statistieken, Microsoft 365 e-mail en GitHub."
+  description="Privacybeleid van Orbis Neo: welke gegevens ik verwerk, waarom, hoe lang en welke rechten u heeft."
   lang="nl"
 >
   <section class="prose container">
-    <h1>Privacybeleid</h1>
-    <p class="prose__lead">
-      [PLACEHOLDER: Bijgewerkte tekst volgt van Vera als concept; Daniel keurt goed (open punt 18 in het productdocument).]
-    </p>
-
-    <h2>Wie verwerkt uw gegevens</h2>
-    <p>
-      Orbis Neo Consulting, Amersfoort, KvK 98659456. Voor vragen:
-      <a href="mailto:info@orbisneoconsulting.com">info@orbisneoconsulting.com</a>.
-      [PLACEHOLDER: ontvangstadres te bevestigen, open punt 4.]
-    </p>
-
-    <h2>Verwerkers die wij gebruiken</h2>
-    <ul>
-      <li>Netlify (hosting en formulierverwerking)</li>
-      <li>Umami (cookieloze bezoekersstatistieken, EU-servers)</li>
-      <li>Microsoft 365 (e-mail)</li>
-      <li>GitHub (opslag van content)</li>
-    </ul>
-
-    <h2>Functionele cookie</h2>
-    <p>
-      We gebruiken één functionele cookie, <code>on_lang</code>, om uw taalvoorkeur te onthouden bij volgende bezoeken. Voor een functionele cookie is geen toestemming vereist, maar we noemen het hier voor de volledigheid.
-    </p>
-
-    <h2>Formulierinzendingen</h2>
-    <p>
-      De informatie die u via het contactformulier deelt gebruiken we om uw vraag te beantwoorden. We bewaren deze zo lang als nodig voor dat doel en niet langer. U kunt via e-mail inzage, correctie of verwijdering aanvragen.
-    </p>
-
-    <h2>Uw rechten</h2>
-    <p>
-      Onder de AVG heeft u recht op inzage, correctie en verwijdering van uw persoonsgegevens, en op bezwaar tegen verwerking. [PLACEHOLDER: volledige tekst volgt van Vera.]
-    </p>
+    <Content />
   </section>
 </BaseLayout>
 
 <style>
   .prose {
-    padding-block: var(--section-y);
+    padding-block: var(--section-y-compact);
     max-width: 820px;
   }
 
-  .prose h1 {
+  .prose :global(h1) {
     margin-bottom: var(--space-4);
   }
 
-  .prose__lead {
-    font-size: var(--fs-lead);
-    color: var(--color-text-soft);
-    margin-bottom: var(--space-7);
+  .prose :global(h2) {
+    margin-top: var(--space-6);
   }
 
-  .prose h2 {
-    margin-top: var(--space-7);
+  .prose :global(h3) {
+    margin-top: var(--space-5);
   }
 
-  .prose p,
-  .prose ul {
+  .prose :global(p),
+  .prose :global(ul) {
     max-width: 68ch;
+  }
+
+  .prose :global(table) {
+    border-collapse: collapse;
+    margin-block: var(--space-4);
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    text-align: left;
+    padding: var(--space-2) var(--space-4) var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border);
   }
 </style>
