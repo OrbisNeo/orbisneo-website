@@ -10,8 +10,8 @@ const { lang } = Astro.props;
 const clients = (await getCollection("clients")).sort((a, b) => a.data.order - b.data.order);
 
 const heading = lang === "en"
-  ? "Organisations I have worked with"
-  : "Organisaties waar ik heb gewerkt";
+  ? "A selection of organisations I have worked with"
+  : "Een greep uit de organisaties waar ik aan heb bijgedragen";
 ---
 
 <section id="clients" class="clients" aria-labelledby="clients-heading">
@@ -45,6 +45,8 @@ const heading = lang === "en"
   }
 
   .clients h2 {
+    font-size: clamp(1.5rem, 1rem + 1.6vw, 2.25rem);
+    text-wrap: balance;
     text-align: center;
     margin-bottom: var(--space-5);
   }
