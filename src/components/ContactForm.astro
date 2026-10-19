@@ -376,7 +376,16 @@ const serviceKeys = ["board-scan", "ambition-session", "ai-financial-framework",
     };
 
     form.addEventListener("submit", (e) => {
-      if (!validate()) e.preventDefault();
+      if (!validate()) {
+        e.preventDefault();
+        return;
+      }
+      const umami = (window as unknown as { umami?: (event: string, data?: Record<string, string>) => void }).umami;
+      const services = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="services[]"]:checked'))
+        .map((i) => i.value)
+        .join(",");
+      const langInput = form.elements.namedItem("language") as HTMLInputElement | null;
+      umami?.("contact-form-submit", { lang: langInput?.value ?? "", services });
     });
 
     for (const el of form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea")) {

@@ -11,6 +11,7 @@ import { alternatesFor } from "../i18n/routes";
 import Seo from "../components/Seo.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import Analytics from "../components/Analytics.astro";
 
 interface Props {
   title: string;
@@ -33,6 +34,7 @@ const altPath = lang === "en" ? alts.nl : alts.en;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <Seo title={title} description={description} lang={lang} alternates={alts} noindex={noindex} />
+    <Analytics />
   </head>
   <body>
     <a class="skip-link" href="#main">{copy.skipLink}</a>
@@ -43,6 +45,7 @@ const altPath = lang === "en" ? alts.nl : alts.en;
     {showChrome && <SiteFooter lang={lang} />}
     <script>
       import "../scripts/lang-switch.ts";
+      import "../scripts/analytics.ts";
     </script>
   </body>
 </html>
