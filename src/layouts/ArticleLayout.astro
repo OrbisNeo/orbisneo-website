@@ -113,7 +113,7 @@ const copy = lang === "en"
 <style>
   /* Breadcrumbs en categorie staan boven de titel: aftrekken, zodat de h1 even ver van de bovenkant staat als op andere pagina's. */
   .article {
-    padding-block: calc(var(--page-head-pt) - 5.94rem) var(--section-y);
+    padding-block: calc(var(--page-head-pt) - 5.8rem) var(--section-y);
     max-width: 820px;
   }
 
@@ -122,10 +122,24 @@ const copy = lang === "en"
     padding: 0;
     margin: 0 0 var(--space-6);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: var(--space-2);
     font-size: var(--fs-small);
+    line-height: 1.5;
     color: var(--color-text-soft);
+  }
+
+  /* Altijd een regel: de lange titel in het kruimelpad wordt afgekapt, zodat de hoogte vast is. */
+  .article__breadcrumbs li {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .article__breadcrumbs li[aria-current="page"] {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .article__breadcrumbs li + li::before {
