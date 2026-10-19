@@ -1,6 +1,8 @@
 - id: info-support
   name: Info Support International Group
-  logo: "[PLACEHOLDER: logo nog aan te leveren door Daniel]"
+  logo: /images/logos/info-support.png
+  width: 370
+  height: 104
   order: 1
 - id: studielink
   name: Stichting Studielink
