@@ -123,31 +123,3 @@ button {
   padding-inline: var(--gutter);
 }
 
-/*
-  Homepage scroll-snap, switched on by src/scripts/snap.ts. Mandatory, so the wheel jumps to the
-  next segment. A segment taller than the screen still scrolls freely inside itself. Every
-  segment is a stop (a short one would otherwise be skipped); the footer snaps to its end so
-  the bottom of the page stays reachable.
-*/
-html[data-snap-active] {
-  scroll-snap-type: y mandatory;
-}
-
-html[data-snap-active] main > section {
-  scroll-snap-align: start;
-}
-
-/* The hero is the top of the page: its snap position must be scroll position 0. */
-html[data-snap-active] main > section:first-child {
-  scroll-margin-top: var(--header-h);
-}
-
-html[data-snap-active] .site-footer {
-  scroll-snap-align: end;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html[data-snap-active] {
-    scroll-snap-type: none;
-  }
-}
