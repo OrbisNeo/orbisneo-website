@@ -1,15 +1,11 @@
-# Privacy statement
-
-Last updated: [PLACEHOLDER: date of publication]
-
 Orbis Neo respects the privacy of its clients, contacts and visitors to this website. I handle the personal data you share with me carefully and confidentially, and process it in line with the General Data Protection Regulation (GDPR). This statement explains which data I process, why, for how long, who I share it with and what your rights are.
 
 ## 1. Who I am
 
-Orbis Neo [PLACEHOLDER: confirm "Orbis Neo Consulting" as trade name] is a sole proprietorship owned by Daniel Fokker, based in Amersfoort, the Netherlands, and registered in the Commercial Register of the Netherlands Chamber of Commerce (KvK). [PLACEHOLDER: confirm legal form]
+Orbis Neo Consulting (also trading as Orbis Neo) is a sole proprietorship owned by Daniel Fokker, based in Amersfoort, the Netherlands, and registered in the Commercial Register of the Netherlands Chamber of Commerce (KvK).
 
 - Website: https://www.orbisneoconsulting.com
-- Email: info@orbisneoconsulting.com [PLACEHOLDER: confirm address, open point 4]
+- Email: info@orbisneoconsulting.com
 - KvK number: 98659456
 
 Orbis Neo is the controller for the processing of your personal data as described in this statement.
@@ -21,7 +17,7 @@ Orbis Neo is the controller for the processing of your personal data as describe
 When you fill in the contact form, I receive your name, email address and your question, and, if you fill them in, your phone number and the topic you tick. The form also contains a hidden field that blocks spam, without a tracking captcha.
 
 - Purpose: to answer your question and, if you wish, to prepare an intro call or a proposal.
-- Legal basis: your consent, which you give with the checkbox below the form. [PLACEHOLDER: confirm legal basis]
+- Legal basis: your consent, which you give with the checkbox below the form.
 
 ### B. Email and services
 
@@ -34,7 +30,7 @@ When you email me or when we work together, I keep the data needed for that, suc
 
 To see which pages are read and to improve the site, I use Umami. Umami does not use cookies, according to its provider stores no personally identifiable information, and anonymises all data. You are not tracked across other websites.
 
-Umami counts, among other things, pages visited, the referring website, browser, operating system, device type and country. I also count a few actions on the site, such as a click on the email or phone link, sending the form (only the language and the chosen topic, not what you type), switching language and a click to an external website.
+Umami counts, among other things, pages visited, the referring website, browser, operating system, device type and country. I also count a few actions on the site, such as a click on the email link, sending the form (only the language and the chosen topic, not what you type), switching language and a click to an external website.
 
 - Purpose: to improve the website.
 - Legal basis: legitimate interest. Because no cookies are used and you cannot be identified, I do not ask for consent for this.
@@ -67,26 +63,26 @@ This site contains links to other websites, such as LinkedIn. No content from ot
 I do not sell your data. I only share it when that is needed to do my work or when the law requires it. These parties process data on my behalf:
 
 - **Netlify** (Netlify, Inc., United States): website hosting and handling of the contact form.
-- **Umami** (Umami Cloud): cookieless visitor statistics, on servers in the [PLACEHOLDER: confirm EU region].
-- **[PLACEHOLDER: email provider, currently TransIP; decision pending]**: email, including the contact form notifications.
+- **Umami** (Umami Cloud): cookieless visitor statistics, on servers in the European Union.
+- **Microsoft (Outlook)**: email, including the contact form notifications.
 - **My accountant**: for the financial records.
 
 The content of this website is stored at GitHub. No visitor or form data is stored there.
 
-With parties that process data on my behalf, I conclude a data processing agreement, so your data is protected and treated confidentially there as well. [PLACEHOLDER: confirm the processing agreements are in place]
+I only work with parties that commit in their terms to protecting your data and treating it confidentially.
 
 ## 6. Transfers outside the European Union
 
-Netlify is a US company. Netlify is certified under the EU-U.S. Data Privacy Framework, which the European Commission recognises as providing adequate protection for personal data transferred to Netlify. If that certification lapses, the European Commission's Standard Contractual Clauses apply, as agreed in Netlify's data processing agreement. [PLACEHOLDER: complete for Umami and the email provider once region and provider are confirmed]
+Netlify is a US company. Netlify is certified under the EU-U.S. Data Privacy Framework, which the European Commission recognises as providing adequate protection for personal data transferred to Netlify. If that certification lapses, the European Commission's Standard Contractual Clauses apply, as agreed in Netlify's data processing agreement. Microsoft is also certified under the EU-U.S. Data Privacy Framework. Umami processes the statistics within the European Union.
 
 ## 7. How long I keep data
 
 I do not keep your data longer than needed for the purpose for which I received it.
 
 - Contact requests and correspondence with potential clients are deleted if no assignment follows and the contact has ended.
-- Form submissions are deleted from Netlify [PLACEHOLDER: period, for example as soon as the notification is in my mailbox].
+- I delete form submissions from Netlify within 30 days. The message itself is then kept in my mailbox in line with the periods above.
 - Business records, such as invoices, are kept for 7 years because of the statutory tax retention obligation.
-- Visitor statistics in Umami are kept for [PLACEHOLDER: confirm 6 months].
+- Visitor statistics in Umami are kept for 6 months.
 - The `on_lang` cookie stays in your browser for 1 year, unless you delete it earlier.
 
 ## 8. Security
@@ -105,13 +101,11 @@ You have the right to:
 - object to processing based on legitimate interest;
 - withdraw your consent at any time, without affecting what happened before.
 
-Send your request to info@orbisneoconsulting.com. I will respond within one month. To be sure the request comes from you, I may ask you for additional information. [PLACEHOLDER: confirm this softer wording instead of "proof of identity"]
+Send your request to info@orbisneoconsulting.com. I will respond within one month. To be sure the request comes from you, I may ask you for additional information.
 
-If you are not happy with how I handle your data, please let me know first. You always have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens), via autoriteitpersoonsgegevens.nl.
+If you are not happy with how I handle your data, please let me know first. You always have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens), via [autoriteitpersoonsgegevens.nl](https://autoriteitpersoonsgegevens.nl).
 
 ## 10. Transparency on the use of AI
-
-[PLACEHOLDER: keep this section here or move it]
 
 Orbis Neo embraces technological progress. In line with my vision, using technology as an amplifier of human potential, this website was partly created with the help of generative AI.
 

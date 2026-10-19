@@ -1,15 +1,11 @@
-# Privacybeleid
-
-Laatst gewijzigd: [PLACEHOLDER: datum van publicatie]
-
 Orbis Neo respecteert de privacy van opdrachtgevers, relaties en bezoekers van deze website. Ik ga zorgvuldig en vertrouwelijk om met de persoonsgegevens die u mij geeft, en verwerk ze volgens de Algemene Verordening Gegevensbescherming (AVG). In deze verklaring leest u welke gegevens ik verwerk, waarom, hoe lang, met wie ik ze deel en welke rechten u heeft.
 
 ## 1. Wie ben ik
 
-Orbis Neo [PLACEHOLDER: "Orbis Neo Consulting" als handelsnaam bevestigen] is een eenmanszaak van Daniel Fokker, gevestigd in Amersfoort en ingeschreven in het Handelsregister van de Kamer van Koophandel. [PLACEHOLDER: rechtsvorm eenmanszaak bevestigen]
+Orbis Neo Consulting (ook handelend onder de naam Orbis Neo) is een eenmanszaak van Daniel Fokker, gevestigd in Amersfoort en ingeschreven in het Handelsregister van de Kamer van Koophandel.
 
 - Website: https://www.orbisneoconsulting.com
-- E-mail: info@orbisneoconsulting.com [PLACEHOLDER: adres bevestigen, open punt 4]
+- E-mail: info@orbisneoconsulting.com
 - KvK-nummer: 98659456
 
 Orbis Neo is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals beschreven in deze verklaring.
@@ -21,7 +17,7 @@ Orbis Neo is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals b
 Als u het contactformulier invult, ontvang ik uw naam, e-mailadres, uw vraag, en als u die invult ook uw telefoonnummer en het onderwerp dat u aanvinkt. Het formulier bevat ook een verborgen veld dat spam tegenhoudt, zonder trackende captcha.
 
 - Doel: uw vraag beantwoorden en, als u dat wilt, een kennismaking of offerte voorbereiden.
-- Grondslag: uw toestemming, die u geeft met het vinkje onder het formulier. [PLACEHOLDER: grondslag bevestigen]
+- Grondslag: uw toestemming, die u geeft met het vinkje onder het formulier.
 
 ### B. E-mail en dienstverlening
 
@@ -34,7 +30,7 @@ Als u mij mailt of als we samenwerken, bewaar ik de gegevens die daarvoor nodig 
 
 Om te zien welke pagina's worden gelezen en de site te verbeteren, gebruik ik Umami. Umami gebruikt geen cookies, slaat volgens de leverancier geen persoonlijk identificeerbare gegevens op en anonimiseert alle gegevens. U wordt niet gevolgd over andere websites.
 
-Umami telt onder meer bezochte pagina's, de verwijzende website, browser, besturingssysteem, type apparaat en land. Daarnaast tel ik een paar acties op de site, zoals een klik op de e-mail- of telefoonlink, het versturen van het formulier (alleen de taal en het gekozen onderwerp, niet wat u invult), het wisselen van taal en een klik naar een externe website.
+Umami telt onder meer bezochte pagina's, de verwijzende website, browser, besturingssysteem, type apparaat en land. Daarnaast tel ik een paar acties op de site, zoals een klik op de e-maillink, het versturen van het formulier (alleen de taal en het gekozen onderwerp, niet wat u invult), het wisselen van taal en een klik naar een externe website.
 
 - Doel: de website verbeteren.
 - Grondslag: gerechtvaardigd belang. Omdat er geen cookies worden gebruikt en u niet herkenbaar bent, vraag ik hiervoor geen toestemming.
@@ -67,26 +63,26 @@ Op deze site staan links naar andere websites, zoals LinkedIn. Er is geen inhoud
 Ik verkoop uw gegevens niet. Ik deel ze alleen als dat nodig is om mijn werk te doen of omdat de wet dat vraagt. Deze partijen verwerken gegevens in mijn opdracht:
 
 - **Netlify** (Netlify, Inc., Verenigde Staten): hosting van de website en verwerking van het contactformulier.
-- **Umami** (Umami Cloud): bezoekersstatistieken zonder cookies, op servers in de [PLACEHOLDER: EU-regio bevestigen].
-- **[PLACEHOLDER: mailprovider, nu TransIP; besluit volgt]**: e-mail, waaronder de meldingen van het contactformulier.
+- **Umami** (Umami Cloud): bezoekersstatistieken zonder cookies, op servers in de Europese Unie.
+- **Microsoft (Outlook)**: e-mail, waaronder de meldingen van het contactformulier.
 - **Mijn boekhouder**: voor de financiële administratie.
 
 De inhoud van deze website staat bij GitHub. Daar worden geen gegevens van bezoekers of formulieren opgeslagen.
 
-Met partijen die in mijn opdracht gegevens verwerken, sluit ik een verwerkersovereenkomst, zodat uw gegevens daar even goed beveiligd en vertrouwelijk worden behandeld. [PLACEHOLDER: bevestigen dat de verwerkersovereenkomsten er zijn]
+Ik werk alleen met partijen die zich in hun voorwaarden verplichten uw gegevens goed te beveiligen en vertrouwelijk te behandelen.
 
 ## 6. Doorgifte buiten de Europese Unie
 
-Netlify is een Amerikaans bedrijf. Netlify is gecertificeerd onder het EU-U.S. Data Privacy Framework. Daarmee is de doorgifte van persoonsgegevens naar Netlify volgens de Europese Commissie voldoende beschermd. Valt die certificering weg, dan gelden de standaardcontractbepalingen van de Europese Commissie, zoals afgesproken in de verwerkersovereenkomst van Netlify. [PLACEHOLDER: aanvullen voor Umami en de mailprovider zodra regio en provider bevestigd zijn]
+Netlify is een Amerikaans bedrijf. Netlify is gecertificeerd onder het EU-U.S. Data Privacy Framework. Daarmee is de doorgifte van persoonsgegevens naar Netlify volgens de Europese Commissie voldoende beschermd. Valt die certificering weg, dan gelden de standaardcontractbepalingen van de Europese Commissie, zoals afgesproken in de verwerkersovereenkomst van Netlify. Microsoft is eveneens gecertificeerd onder het EU-U.S. Data Privacy Framework. Umami verwerkt de statistieken binnen de Europese Unie.
 
 ## 7. Hoe lang ik gegevens bewaar
 
 Ik bewaar uw gegevens niet langer dan nodig is voor het doel waarvoor ik ze heb gekregen.
 
 - Contactverzoeken en correspondentie met potentiële klanten verwijder ik als er geen opdracht volgt en het contact is afgerond.
-- Formulierinzendingen verwijder ik uit Netlify [PLACEHOLDER: termijn, bijvoorbeeld zodra de melding in mijn mailbox staat].
+- Formulierinzendingen verwijder ik binnen 30 dagen uit Netlify. Het bericht zelf bewaar ik daarna in mijn mailbox volgens de termijnen hierboven.
 - Administratieve gegevens, zoals facturen, bewaar ik 7 jaar vanwege de wettelijke fiscale bewaarplicht.
-- Bezoekersstatistieken in Umami worden [PLACEHOLDER: 6 maanden bevestigen] bewaard.
+- Bezoekersstatistieken in Umami worden 6 maanden bewaard.
 - De cookie `on_lang` blijft 1 jaar in uw browser, tenzij u hem eerder verwijdert.
 
 ## 8. Beveiliging
@@ -105,13 +101,11 @@ U heeft het recht om:
 - bezwaar te maken tegen verwerking op basis van gerechtvaardigd belang;
 - uw toestemming op elk moment in te trekken, zonder dat dit gevolgen heeft voor wat daarvoor al is gebeurd.
 
-Stuur uw verzoek naar info@orbisneoconsulting.com. Ik reageer binnen een maand. Om zeker te weten dat het verzoek van u komt, kan ik u vragen om aanvullende gegevens. [PLACEHOLDER: akkoord met deze verzachting van "identiteitsbewijs"]
+Stuur uw verzoek naar info@orbisneoconsulting.com. Ik reageer binnen een maand. Om zeker te weten dat het verzoek van u komt, kan ik u vragen om aanvullende gegevens.
 
-Bent u niet tevreden over hoe ik met uw gegevens omga, laat het mij dan eerst weten. U heeft daarnaast altijd het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens, via autoriteitpersoonsgegevens.nl.
+Bent u niet tevreden over hoe ik met uw gegevens omga, laat het mij dan eerst weten. U heeft daarnaast altijd het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens, via [autoriteitpersoonsgegevens.nl](https://autoriteitpersoonsgegevens.nl).
 
 ## 10. Transparantie over het gebruik van AI
-
-[PLACEHOLDER: deze paragraaf hier laten staan of verplaatsen]
 
 Orbis Neo omarmt technologische vooruitgang. In lijn met mijn visie, technologie inzetten als versterker van menselijk potentieel, is deze website mede tot stand gekomen met behulp van generatieve AI.
 
