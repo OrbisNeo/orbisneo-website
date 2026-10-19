@@ -16,6 +16,8 @@
   let pointerDown = false;
   let skipUntil = 0; // keyboard, anchor links, find in page: do not interfere
   let lastUserScroll = 0; // wheel or touch
+  let lastDirection: "down" | "up" | null = null; // of the last wheel or touch movement
+  let touchY = 0;
 
   const headerHeight = () =>
     parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h-compact")) || 64;
@@ -29,8 +31,9 @@
     window.scrollTo({ top: window.scrollY, behavior: "auto" }); // cancels the smooth scroll
   };
 
-  const userTookOver = () => {
+  const userTookOver = (direction: "down" | "up" | null) => {
     lastUserScroll = Date.now();
+    if (direction) lastDirection = direction;
     stopAnimation();
   };
 
@@ -38,6 +41,8 @@
     if (!enabled() || animating || pointerDown) return;
     const now = Date.now();
     if (now < skipUntil || now - lastUserScroll > INPUT_MEMORY_MS) return;
+    // Only after a movement down. After scrolling up the reader is going back: never pull them down again.
+    if (lastDirection !== "down") return;
 
     const vh = window.innerHeight;
     const header = headerHeight();
@@ -82,12 +87,26 @@
   }
 
   // Wheel and touch are the only inputs we act on; any of them cancels a running animation.
-  window.addEventListener("wheel", userTookOver, { passive: true });
-  window.addEventListener("touchmove", userTookOver, { passive: true });
+  window.addEventListener(
+    "wheel",
+    (e) => userTookOver(e.deltaY > 0 ? "down" : e.deltaY < 0 ? "up" : null),
+    { passive: true },
+  );
+  window.addEventListener(
+    "touchmove",
+    (e) => {
+      const y = e.touches[0]?.clientY ?? touchY;
+      // Finger moving up means the page scrolls down.
+      userTookOver(y < touchY ? "down" : y > touchY ? "up" : null);
+      touchY = y;
+    },
+    { passive: true },
+  );
   window.addEventListener(
     "touchstart",
-    () => {
+    (e) => {
       pointerDown = true;
+      touchY = e.touches[0]?.clientY ?? 0;
       stopAnimation();
     },
     { passive: true },

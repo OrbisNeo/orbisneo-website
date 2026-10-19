@@ -7,7 +7,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  /* Sticky header must not cover anchors or snap targets. */
+  /* Sticky header must not cover anchors or the sections the scroll script aligns to. */
   scroll-padding-top: var(--header-h-compact);
 }
 
