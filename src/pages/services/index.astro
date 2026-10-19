@@ -45,8 +45,10 @@ const services = sortByOrder(inLang(all, "en"));
     padding-block: var(--section-y);
   }
 
+  /* One line on desktop: the full-size h1 wrapped at about 60% of the width. */
   .services-intro h1 {
-    max-width: 20ch;
+    font-size: clamp(2rem, 1rem + 2.6vw, 2.9rem);
+    text-wrap: balance;
   }
 
   .services-intro__lead {

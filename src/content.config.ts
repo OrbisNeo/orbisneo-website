@@ -74,6 +74,8 @@ const clients = defineCollection({
     id: z.string(),
     name: z.string(),
     logo: z.string(),
+    width: z.number().optional(),
+    height: z.number().optional(),
     order: z.number(),
   }),
 });

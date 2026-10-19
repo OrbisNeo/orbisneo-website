@@ -48,6 +48,13 @@
   --space-9: 6rem;
   --space-10: 8rem;
   --section-y: clamp(4rem, 2.5rem + 6.67vw, 8rem);
+  --section-y-compact: clamp(2.5rem, 1.6rem + 3.2vw, 4.5rem);
+
+  /* Header en logo: normale en gekrompen stand (zie SiteHeader.astro) */
+  --header-h: 88px;
+  --header-h-compact: 64px;
+  --logo-h: 56px;
+  --logo-h-compact: 36px;
   --gutter: clamp(1.25rem, 0.5rem + 3.33vw, 3rem);
   --container: 1280px;
   --container-narrow: 760px;
@@ -73,6 +80,13 @@
   --bp-lg: 1024px;
   --bp-md: 768px;
   --bp-sm: 480px;
+}
+
+@media (max-width: 1023.98px) {
+  :root {
+    --logo-h: 44px;
+    --logo-h-compact: 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

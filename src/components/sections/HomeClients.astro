@@ -23,7 +23,14 @@ const heading = lang === "en"
           {c.data.logo.startsWith("[PLACEHOLDER") ? (
             <span class="client__placeholder">{c.data.name}</span>
           ) : (
-            <img src={c.data.logo} alt={c.data.name} loading="lazy" />
+            <img
+              src={c.data.logo}
+              alt={c.data.name}
+              width={c.data.width}
+              height={c.data.height}
+              loading="lazy"
+              decoding="async"
+            />
           )}
         </li>
       ))}
@@ -33,13 +40,13 @@ const heading = lang === "en"
 
 <style>
   .clients {
-    padding-block: var(--section-y);
+    padding-block: var(--section-y-compact);
     background: var(--color-bg);
   }
 
   .clients h2 {
     text-align: center;
-    margin-bottom: var(--space-7);
+    margin-bottom: var(--space-5);
   }
 
   .clients__list {
@@ -48,14 +55,17 @@ const heading = lang === "en"
     padding: 0;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-4) var(--space-5);
     align-items: center;
     justify-items: center;
   }
 
+  /* Fixed height + width/height attributes: the box has a size before a lazy image loads. */
   .client img {
-    max-height: 48px;
+    display: block;
+    height: clamp(28px, 3vw, 44px);
     width: auto;
+    max-width: 100%;
     filter: grayscale(1);
     opacity: 0.75;
     transition: opacity var(--duration-base) var(--ease-out);
@@ -81,6 +91,6 @@ const heading = lang === "en"
 
   @media (max-width: 767.98px) {
     .clients__list { grid-template-columns: repeat(3, 1fr); }
-    .client img { max-height: 36px; }
+    .client img { height: 30px; }
   }
 </style>

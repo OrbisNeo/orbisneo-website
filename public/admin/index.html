@@ -11,6 +11,67 @@
     <script>
       if (window.CMS) {
         CMS.registerPreviewStyle("/admin/preview.css");
+
+        // Eenvoudige voorbeeldweergave, zodat het oog-icoon altijd iets laat zien.
+        const h = window.h || ((...a) => React.createElement(...a));
+        const field = (entry, name) => entry.getIn(["data", name]);
+
+        const Article = createClass({
+          render() {
+            const { entry, widgetFor } = this.props;
+            const hero = this.props.getAsset(field(entry, "heroImage") || "");
+            return h("article", {},
+              h("h1", {}, field(entry, "title") || ""),
+              field(entry, "description") ? h("p", { className: "lead" }, field(entry, "description")) : null,
+              hero && field(entry, "heroImage") ? h("img", { src: hero.toString(), alt: field(entry, "heroAlt") || "" }) : null,
+              widgetFor("body"));
+          },
+        });
+
+        const Case = createClass({
+          render() {
+            const { entry, widgetFor } = this.props;
+            return h("article", {},
+              h("h1", {}, field(entry, "org") || ""),
+              h("p", {}, [field(entry, "role"), field(entry, "period")].filter(Boolean).join(" | ")),
+              h("h3", {}, "Situatie"), h("p", {}, field(entry, "situation") || ""),
+              h("h3", {}, "Resultaat"), h("p", {}, field(entry, "result") || ""),
+              widgetFor("body"));
+          },
+        });
+
+        const Dienst = createClass({
+          render() {
+            const { entry, widgetFor } = this.props;
+            return h("article", {},
+              h("h1", {}, field(entry, "title") || ""),
+              h("p", { className: "lead" }, field(entry, "tagline") || ""),
+              h("p", {}, "Voor wie: " + (field(entry, "forWho") || "")),
+              h("p", {}, "Duur: " + (field(entry, "duration") || "")),
+              h("p", {}, "Oplevering: " + (field(entry, "delivery") || "")),
+              widgetFor("body"));
+          },
+        });
+
+        const Nieuws = createClass({
+          render() {
+            const { entry, widgetFor } = this.props;
+            const items = field(entry, "items");
+            return h("article", {},
+              h("h1", {}, field(entry, "title") || ""),
+              h("p", { className: "lead" }, field(entry, "summary") || ""),
+              items ? items.map((it, i) => h("section", { key: i },
+                h("h3", {}, it.get("title")),
+                h("p", {}, it.get("commentary")),
+                h("p", {}, it.get("source")))) : null,
+              widgetFor("body"));
+          },
+        });
+
+        CMS.registerPreviewTemplate("blog", Article);
+        CMS.registerPreviewTemplate("cases", Case);
+        CMS.registerPreviewTemplate("diensten", Dienst);
+        CMS.registerPreviewTemplate("nieuws", Nieuws);
       }
     </script>
   </body>

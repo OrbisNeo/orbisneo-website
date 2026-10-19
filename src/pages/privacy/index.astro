@@ -1,72 +1,62 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { PRIVACY_UPDATED } from "../../legal/meta";
+import { Content } from "../../legal/privacy.en.md";
+
+const updated = PRIVACY_UPDATED
+  ? new Date(PRIVACY_UPDATED).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+  : "[PLACEHOLDER: date of publication]";
 ---
 
 <BaseLayout
   title="Privacy | Orbis Neo"
-  description="Privacy statement of Orbis Neo Consulting, covering Netlify hosting, Umami cookieless analytics, Microsoft 365 e-mail and GitHub."
+  description="Privacy statement of Orbis Neo: which data is processed, why, for how long and what your rights are."
   lang="en"
 >
   <section class="prose container">
     <h1>Privacy statement</h1>
-    <p class="prose__lead">
-      [PLACEHOLDER: Updated text follows from Vera as a draft; Daniel approves (open point 18 in the product document).]
-    </p>
-
-    <h2>Who processes your data</h2>
-    <p>
-      Orbis Neo Consulting, Amersfoort, KvK 98659456. For questions:
-      <a href="mailto:info@orbisneoconsulting.com">info@orbisneoconsulting.com</a>.
-      [PLACEHOLDER: ontvangstadres te bevestigen, open punt 4.]
-    </p>
-
-    <h2>Processors we use</h2>
-    <ul>
-      <li>Netlify (hosting and form handling)</li>
-      <li>Umami (cookieless website statistics, EU servers)</li>
-      <li>Microsoft 365 (e-mail)</li>
-      <li>GitHub (content storage)</li>
-    </ul>
-
-    <h2>Functional cookie</h2>
-    <p>
-      We use one functional cookie, <code>on_lang</code>, to remember your language preference across visits. No consent banner is required for a functional cookie, but we mention it here for transparency.
-    </p>
-
-    <h2>Form submissions</h2>
-    <p>
-      Information you share through the contact form is used to answer your question. We keep it as long as needed for that purpose and no longer. You may request access, correction or deletion by emailing us.
-    </p>
-
-    <h2>Your rights</h2>
-    <p>
-      Under the GDPR you have the right to access, correct and delete your personal data, and to object to its processing. [PLACEHOLDER: volledige tekst volgt van Vera.]
-    </p>
+    <p class="prose__date">Last updated: {updated}</p>
+    <Content />
   </section>
 </BaseLayout>
 
 <style>
   .prose {
-    padding-block: var(--section-y);
+    padding-block: var(--section-y-compact);
     max-width: 820px;
+  }
+
+  .prose__date {
+    color: var(--color-text-soft);
+    margin-bottom: var(--space-5);
   }
 
   .prose h1 {
     margin-bottom: var(--space-4);
   }
 
-  .prose__lead {
-    font-size: var(--fs-lead);
-    color: var(--color-text-soft);
-    margin-bottom: var(--space-7);
+  .prose :global(h2) {
+    margin-top: var(--space-6);
   }
 
-  .prose h2 {
-    margin-top: var(--space-7);
+  .prose :global(h3) {
+    margin-top: var(--space-5);
   }
 
-  .prose p,
-  .prose ul {
+  .prose :global(p),
+  .prose :global(ul) {
     max-width: 68ch;
+  }
+
+  .prose :global(table) {
+    border-collapse: collapse;
+    margin-block: var(--space-4);
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    text-align: left;
+    padding: var(--space-2) var(--space-4) var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border);
   }
 </style>

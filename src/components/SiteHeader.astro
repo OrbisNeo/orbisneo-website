@@ -17,14 +17,15 @@ const copy = t(lang);
 const isActive = (href: string) => path === href;
 ---
 
-<header class="site-header" data-sticky>
+<header class="site-header" data-site-header>
+  <div class="site-header__bar">
   <div class="site-header__inner container">
     <a href={homeFor(lang)} class="site-header__brand" aria-label={copy.footer.brand}>
       <Image
         src={logo}
         alt="Orbis Neo Consulting"
-        widths={[220, 320, 440]}
-        sizes="220px"
+        widths={[180, 360, 540]}
+        sizes="(min-width: 1024px) 180px, 140px"
         loading="eager"
         class="site-header__logo"
       />
@@ -64,6 +65,7 @@ const isActive = (href: string) => path === href;
         </span>
       </button>
     </div>
+  </div>
   </div>
 
   <div
@@ -125,15 +127,73 @@ const isActive = (href: string) => path === href;
       if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") close();
     });
   }
+
+  // Shrinking sticky header: the outer element keeps its height, so nothing shifts.
+  const header = document.querySelector<HTMLElement>("[data-site-header]");
+  if (header) {
+    let shrunk = false;
+    let ticking = false;
+    const apply = () => {
+      ticking = false;
+      const y = window.scrollY;
+      // Hysteresis so the bar does not flicker around the threshold.
+      if (!shrunk && y > 56) shrunk = true;
+      else if (shrunk && y < 12) shrunk = false;
+      header.toggleAttribute("data-shrunk", shrunk);
+    };
+    apply();
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(apply);
+        }
+      },
+      { passive: true },
+    );
+  }
 </script>
 
 <style>
+  /*
+    The outer header always occupies --header-h, so shrinking never moves the page.
+    Only the bar inside changes size. Clicks pass through the transparent strip below it.
+  */
   .site-header {
+    --bar-h: var(--header-h);
+    --logo: var(--logo-h);
+    --nav-fs: 17px;
+    --ui-scale: 1;
     position: sticky;
     top: 0;
     z-index: var(--z-header);
+    height: var(--header-h);
+    pointer-events: none;
+  }
+
+  .site-header[data-shrunk] {
+    --bar-h: var(--header-h-compact);
+    --logo: var(--logo-h-compact);
+    --nav-fs: 14.5px;
+    --ui-scale: 0.86;
+  }
+
+  .site-header__bar {
+    height: var(--bar-h);
     background: var(--color-bg);
-    border-bottom: 1px solid transparent;
+    pointer-events: auto;
+    transition:
+      height 240ms var(--ease-out),
+      background-color 240ms var(--ease-out),
+      box-shadow 240ms var(--ease-out);
+  }
+
+  .site-header[data-shrunk] .site-header__bar {
+    background: rgba(255, 255, 255, 0.94);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
   }
 
   .site-header__inner {
@@ -141,7 +201,7 @@ const isActive = (href: string) => path === href;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-5);
-    min-height: 88px;
+    height: 100%;
   }
 
   .site-header__brand {
@@ -153,15 +213,9 @@ const isActive = (href: string) => path === href;
 
   .site-header__brand :global(.site-header__logo) {
     display: block;
-    height: 44px;
+    height: var(--logo);
     width: auto;
-    max-width: 220px;
-  }
-
-  @media (max-width: 1023.98px) {
-    .site-header__brand :global(.site-header__logo) {
-      height: 36px;
-    }
+    transition: height 240ms var(--ease-out);
   }
 
   .site-header__nav {
@@ -181,18 +235,13 @@ const isActive = (href: string) => path === href;
   .site-header__nav a {
     color: var(--color-text);
     text-decoration: none;
-    font-size: 17px;
+    font-size: var(--nav-fs);
     font-weight: 600;
     padding: var(--space-2) 0;
+    transition: font-size 240ms var(--ease-out);
   }
 
-  .site-header__nav a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--color-neo);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-  }
-
+  .site-header__nav a:hover,
   .site-header__nav a.is-active {
     text-decoration: underline;
     text-decoration-color: var(--color-neo);
@@ -204,6 +253,9 @@ const isActive = (href: string) => path === href;
     display: flex;
     align-items: center;
     gap: var(--space-4);
+    transform: scale(var(--ui-scale));
+    transform-origin: right center;
+    transition: transform 240ms var(--ease-out);
   }
 
   .site-header__menu-btn {
@@ -238,10 +290,11 @@ const isActive = (href: string) => path === href;
 
   .mobile-menu {
     position: fixed;
-    inset: 88px 0 0 0;
+    inset: var(--bar-h) 0 0 0;
     background: var(--color-bg);
     padding: var(--space-6) var(--gutter);
     overflow-y: auto;
+    pointer-events: auto;
   }
 
   .mobile-menu ul {
@@ -275,5 +328,14 @@ const isActive = (href: string) => path === href;
   @media (max-width: 1023.98px) {
     .site-header__nav { display: none; }
     .site-header__menu-btn { display: inline-flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__bar,
+    .site-header__brand :global(.site-header__logo),
+    .site-header__nav a,
+    .site-header__right {
+      transition: none;
+    }
   }
 </style>

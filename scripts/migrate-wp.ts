@@ -128,8 +128,7 @@ async function run(): Promise<void> {
   for (const p of posts) {
     console.log(`\n→ ${p.lang}/${p.translationKey} (wp ${p.wpId})`);
     const wp = await fetchJson<WpPost>(`${API}/posts/${p.wpId}`);
-    const slugDir = join(IMG_ROOT, p.translationKey);
-    await mkdir(slugDir, { recursive: true });
+    const slugDir = IMG_ROOT; // flat folder: Decap's media library only lists one level
 
     const title = stripHtml(wp.title.rendered);
     const description = (
@@ -149,7 +148,7 @@ async function run(): Promise<void> {
       try {
         const media = await fetchJson<WpMedia>(`${API}/media/${wp.featured_media}`);
         const ext = extForUrl(media.source_url);
-        heroFilename = `hero.${ext}`;
+        heroFilename = `${p.translationKey}-hero.${ext}`;
         heroStem = stemFromUrl(media.source_url);
         heroAlt = media.alt_text || title;
         await downloadImage(media.source_url, slugDir, heroFilename);
@@ -174,7 +173,7 @@ async function run(): Promise<void> {
       }
       bodyImgIndex++;
       const ext = extForUrl(img.src);
-      const filename = `img-${bodyImgIndex}.${ext}`;
+      const filename = `${p.translationKey}-img-${bodyImgIndex}.${ext}`;
       try {
         await downloadImage(img.src, slugDir, filename);
         console.log(`  body img → ${perLangTranslationKey}/${filename} (alt: ${img.alt.slice(0, 60) || "(empty)"})`);
@@ -185,7 +184,7 @@ async function run(): Promise<void> {
       // Build new img tag with local src so turndown keeps the alt
       const finalAlt = img.alt.trim() || title; // fallback to article title for decorative WP images
       const safeAlt = finalAlt.replace(/"/g, "&quot;");
-      const newTag = `<img src="../../../assets/blog/${perLangTranslationKey}/${filename}" alt="${safeAlt}" />`;
+      const newTag = `<img src="../../../assets/blog/${filename}" alt="${safeAlt}" />`;
       html = html.replace(img.fullTag, newTag);
     }
 
@@ -204,7 +203,7 @@ async function run(): Promise<void> {
       ...(includeModified ? [`updatedDate: ${modified}`] : []),
       `category: "AI in organisations"`,
       ...(heroFilename
-        ? [`heroImage: "../../../assets/blog/${p.translationKey}/${heroFilename}"`, `heroAlt: ${yamlString(heroAlt)}`]
+        ? [`heroImage: "../../../assets/blog/${heroFilename}"`, `heroAlt: ${yamlString(heroAlt)}`]
         : []),
       `legacyUrl: ${yamlString(wp.link)}`,
       "---",

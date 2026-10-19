@@ -38,7 +38,6 @@ const copy = lang === "en"
     <ol class="cases__list">
       {cases.map((c) => (
         <li class="case-card" data-reveal>
-          <p class="case-card__period">{c.data.period}</p>
           <h3 class="case-card__title">{c.data.role}</h3>
           <p class="case-card__org">{c.data.org}</p>
           <dl class="case-card__meta">
@@ -59,13 +58,14 @@ const copy = lang === "en"
 
 <style>
   .cases {
-    background: var(--color-surface);
-    padding-block: var(--section-y);
+    /* Same colour as the hero scrim, so no edge shows while scrolling over the fixed photo. */
+    background: var(--color-bg);
+    padding-block: var(--section-y-compact);
   }
 
   .cases__header {
     max-width: 68ch;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
 
   .cases__intro {
@@ -81,15 +81,15 @@ const copy = lang === "en"
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
+    gap: var(--space-5);
   }
 
   .case-card {
     counter-increment: case;
-    background: var(--color-bg);
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: var(--space-5);
     position: relative;
     transition: box-shadow var(--duration-base) var(--ease-out),
                 border-color var(--duration-base) var(--ease-out);
@@ -114,15 +114,6 @@ const copy = lang === "en"
     border-color: var(--color-neo);
   }
 
-  .case-card__period {
-    font-size: var(--fs-label);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-soft);
-    margin: 0 0 var(--space-2);
-  }
-
   .case-card__title {
     font-size: var(--fs-h3);
     margin: 0 0 var(--space-1);
@@ -132,7 +123,7 @@ const copy = lang === "en"
   .case-card__org {
     color: var(--color-action);
     font-weight: 600;
-    margin: 0 0 var(--space-4);
+    margin: 0 0 var(--space-3);
   }
 
   .case-card__meta {
@@ -155,7 +146,7 @@ const copy = lang === "en"
   }
 
   .cases__more {
-    margin-top: var(--space-7);
+    margin-top: var(--space-5);
     font-size: var(--fs-lead);
   }
 

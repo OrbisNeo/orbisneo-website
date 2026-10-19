@@ -10,6 +10,9 @@ backend:
     uploadMedia: "media: upload {{path}}"
     deleteMedia: "media: verwijder {{path}}"
 
+# Alleen actief op localhost: gebruikt dan de lokale proxy (npx decap-server) in plaats van GitHub.
+local_backend: true
+
 publish_mode: editorial_workflow
 site_url: https://www.orbisneoconsulting.com
 display_url: https://www.orbisneoconsulting.com
@@ -118,7 +121,7 @@ collections:
       - { name: curatedBy, label: "Samengesteld door", widget: string, default: Vera, i18n: duplicate }
       - { name: approvedBy, label: "Goedgekeurd door", widget: string, required: false, i18n: duplicate }
       - { name: draft, label: Concept, widget: boolean, default: true, i18n: duplicate }
-      - { name: body, label: Tekst (optioneel), widget: markdown, required: false, i18n: true }
+      - { name: body, label: Tekst, widget: markdown, required: false, i18n: true }
 
   - name: diensten
     label: Diensten
@@ -141,7 +144,7 @@ collections:
       - { name: delivery, label: Oplevering, widget: string, i18n: true }
       - { name: price, label: "Prijs (tekst, geen bedrag)", widget: string, i18n: true }
       - { name: anchor, label: Anker, widget: string, i18n: true }
-      - { name: body, label: "Volledige tekst (optioneel)", widget: markdown, required: false, i18n: true }
+      - { name: body, label: "Volledige tekst", widget: markdown, required: false, i18n: true }
 
   - name: cases
     label: "Loopbaan (cases)"
@@ -154,6 +157,7 @@ collections:
     extension: md
     identifier_field: org
     slug: "{{fields.translationKey}}"
+    summary: "{{org}} | {{role}} | {{period}}"
     sortable_fields: [order, period]
     fields:
       - { name: translationKey, label: Sleutel, widget: string, i18n: duplicate }
@@ -164,4 +168,4 @@ collections:
       - { name: situation, label: Situatie, widget: text, i18n: true }
       - { name: result, label: Resultaat, widget: text, i18n: true }
       - { name: featured, label: "Op homepage tonen", widget: boolean, default: false, i18n: duplicate }
-      - { name: body, label: Toelichting (optioneel), widget: markdown, required: false, i18n: true }
+      - { name: body, label: Toelichting, widget: markdown, required: false, i18n: true }

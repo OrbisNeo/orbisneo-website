@@ -43,8 +43,10 @@ const copy = lang === "en"
       <div class="container service-segment__inner">
         <p class="service-segment__number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</p>
         <div class="service-segment__body">
-          <h3 class="service-segment__title">{s.data.title}</h3>
-          <p class="service-segment__tagline">{s.data.tagline}</p>
+          <div class="service-segment__head">
+            <h3 class="service-segment__title">{s.data.title}</h3>
+            <p class="service-segment__tagline">{s.data.tagline}</p>
+          </div>
           <dl class="service-segment__meta">
             <div><dt>{copy.labels.forWho}</dt><dd>{s.data.forWho}</dd></div>
             <div><dt>{copy.labels.duration}</dt><dd>{s.data.duration}</dd></div>
@@ -78,85 +80,113 @@ const copy = lang === "en"
   }
 
   .services__intro {
-    padding-top: var(--section-y);
-    max-width: 68ch;
+    padding-top: var(--section-y-compact);
+    padding-bottom: var(--space-4);
+  }
+
+  .services__intro h2 {
+    margin-bottom: var(--space-2);
   }
 
   .services__intro p {
     font-size: var(--fs-lead);
     color: var(--color-text-soft);
+    margin: 0;
   }
 
+  /* One compact row per service: all four fit on a large screen. */
   .service-segment {
-    padding-block: var(--section-y);
+    padding-block: var(--space-5);
     border-top: 1px solid var(--color-border);
   }
 
   .service-segment__inner {
     display: grid;
-    grid-template-columns: minmax(120px, 2fr) 8fr;
-    gap: var(--space-7);
+    grid-template-columns: 4.5rem 1fr;
+    gap: var(--space-5);
     align-items: start;
   }
 
   .service-segment__number {
     font-family: var(--font-display);
     font-variation-settings: var(--font-display-settings);
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.25rem, 3.5vw, 3.25rem);
     font-weight: 600;
     color: var(--color-neo);
     line-height: 1;
     margin: 0;
-    position: sticky;
-    top: 100px;
+  }
+
+  .service-segment__body {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-5) var(--space-6);
+    align-items: start;
   }
 
   .service-segment__title {
-    font-size: var(--fs-h2);
-    margin: 0 0 var(--space-3);
+    font-size: var(--fs-h3);
+    margin: 0 0 var(--space-1);
   }
 
   .service-segment__tagline {
-    font-size: var(--fs-lead);
     color: var(--color-text-soft);
-    margin: 0 0 var(--space-6);
-    max-width: 48ch;
+    margin: 0;
+    max-width: 38ch;
   }
 
   .service-segment__meta {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-3) var(--space-5);
     margin: 0;
+    font-size: var(--fs-small);
   }
 
   .service-segment__meta dt {
-    font-size: var(--fs-label);
+    font-size: 0.8125rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-text-soft);
-    margin-bottom: var(--space-1);
+    margin-bottom: 2px;
   }
 
   .service-segment__meta dd {
     margin: 0;
+    line-height: 1.45;
   }
 
   .services__closing {
-    padding-block: var(--section-y);
+    padding-block: var(--space-6) var(--section-y-compact);
     text-align: center;
+  }
+
+  /* Global p has max-width 68ch; without auto margins the block sat left of centre. */
+  .services__closing p {
+    margin-inline: auto;
   }
 
   .services__closing p:first-child {
     font-size: var(--fs-lead);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .services__ctaLine {
+    margin-top: var(--space-4);
+    font-size: var(--fs-small);
+  }
+
+  .services__ctaLine a {
+    color: var(--color-action);
+    font-weight: 600;
   }
 
   .btn {
     display: inline-flex;
     align-items: center;
-    padding: 14px 28px;
+    justify-content: center;
+    padding: 12px 26px;
     font-weight: 700;
     font-size: var(--fs-label);
     letter-spacing: 0.02em;
@@ -175,14 +205,19 @@ const copy = lang === "en"
     background: var(--color-mist);
   }
 
+  @media (max-width: 1023.98px) {
+    .service-segment__body {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
   @media (max-width: 767.98px) {
     .service-segment__inner {
       grid-template-columns: 1fr;
-      gap: var(--space-4);
+      gap: var(--space-2);
     }
-    .service-segment__number {
-      position: static;
-    }
+
     .service-segment__meta {
       grid-template-columns: 1fr;
     }
@@ -199,9 +234,6 @@ const copy = lang === "en"
       opacity var(--duration-reveal) var(--ease-out),
       transform var(--duration-reveal) var(--ease-out);
   }
-  :global(.js) [data-reveal].is-visible > :global(*:nth-child(2)) { transition-delay: 80ms; }
-  :global(.js) [data-reveal].is-visible > :global(*:nth-child(3)) { transition-delay: 160ms; }
-  :global(.js) [data-reveal].is-visible > :global(*:nth-child(4)) { transition-delay: 240ms; }
 
   @media (prefers-reduced-motion: reduce) {
     :global(.js) [data-reveal] > :global(*) { opacity: 1; transform: none; transition: none; }

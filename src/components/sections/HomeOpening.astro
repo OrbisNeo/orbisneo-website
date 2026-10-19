@@ -17,7 +17,6 @@ const copy = lang === "en"
       scrollHint: "25 years in the domains AI is now changing most",
       cta: "Plan a short intro (15 min)",
       contactHref: "/contact/",
-      portraitAlt: "Daniel Fokker at work",
     }
   : {
       eyebrow: "Voor directies van middelgrote en grote organisaties",
@@ -26,7 +25,6 @@ const copy = lang === "en"
       scrollHint: "25 jaar in de domeinen die AI nu het sterkst verandert",
       cta: "Plan een kennismaking (15 min)",
       contactHref: "/kennismaken/",
-      portraitAlt: "Daniel Fokker aan het werk",
     };
 ---
 
@@ -35,12 +33,13 @@ const copy = lang === "en"
     <Image
       src={bureau}
       alt=""
-      widths={[720, 1080, 1440, 1920]}
-      sizes="100vw"
+      widths={[720, 1264]}
+      sizes="(max-width: 1023px) 100vw, min(100vw, 1480px)"
       loading="eager"
+      fetchpriority="high"
     />
+    <div class="opening__scrim"></div>
   </div>
-  <div class="opening__scrim" data-opening-bg aria-hidden="true"></div>
 
   <div class="opening__wrap container">
     <div class="opening__text">
@@ -49,12 +48,12 @@ const copy = lang === "en"
       <p class="opening__lead">{copy.lead}</p>
       <p class="opening__cta">
         <a
-        href={copy.contactHref}
-        class="opening__link"
-        data-umami-event="cta-intro-click"
-        data-umami-event-location="hero"
-        data-umami-event-lang={lang}
-      >{copy.cta}</a>
+          href={copy.contactHref}
+          class="opening__link"
+          data-umami-event="cta-intro-click"
+          data-umami-event-location="hero"
+          data-umami-event-lang={lang}
+        >{copy.cta}</a>
       </p>
       <p class="opening__scroll">{copy.scrollHint}</p>
     </div>
@@ -62,24 +61,22 @@ const copy = lang === "en"
 </section>
 
 <script>
-  const layers = Array.from(document.querySelectorAll<HTMLElement>("[data-opening-bg]"));
+  const bg = document.querySelector<HTMLElement>("[data-opening-bg]");
   const section = document.querySelector<HTMLElement>("[data-opening]");
 
-  if (section && layers.length && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    // Fade only applies when the background is fixed (desktop). On narrower
-    // viewports the background scrolls with the section, so no opacity drive.
+  if (section && bg && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // The photo is fixed on desktop and fades out while the page scrolls over it.
+    // Below 1024 px it scrolls with the hero, so no opacity drive there.
     const fixedMq = matchMedia("(min-width: 1024px)");
 
     const update = () => {
       if (!fixedMq.matches) {
-        for (const el of layers) el.style.opacity = "";
+        bg.style.opacity = "";
         return;
       }
       const rect = section.getBoundingClientRect();
       const h = window.innerHeight || 800;
-      const t = Math.max(0, Math.min(1, rect.bottom / h));
-      const opacity = String(t);
-      for (const el of layers) el.style.opacity = opacity;
+      bg.style.opacity = String(Math.max(0, Math.min(1, rect.bottom / h)));
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -91,66 +88,70 @@ const copy = lang === "en"
 <style>
   .opening {
     position: relative;
-    min-height: 100svh;
+    /* Header is sticky and in flow, so hero + header together fill one screen. */
+    min-height: calc(100svh - var(--header-h));
     display: grid;
     align-content: center;
-    overflow: hidden;
     isolation: isolate;
   }
 
-  /* Fixed layers: image + scrim stay in the viewport while the page scrolls over them. */
-  .opening__bg,
-  .opening__scrim {
+  /*
+    Photo box, fixed to the viewport while the page scrolls over it.
+    Width is capped and the box is anchored right, so on wide or tall screens
+    the photo is not enlarged: Daniel's head keeps its proportion and stays right.
+    Soft fade on the left and bottom edge so the box dissolves into the page.
+  */
+  .opening__bg {
+    --photo-w: min(100vw, 1480px);
     position: fixed;
-    inset: 0;
+    top: var(--header-h-compact);
+    right: 0;
+    width: var(--photo-w);
+    height: min(calc(100svh - var(--header-h-compact)), calc(var(--photo-w) * 0.6));
+    z-index: 0;
     pointer-events: none;
     will-change: opacity;
     transition: opacity 100ms linear;
-  }
-
-  .opening__bg {
-    z-index: 0;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 26%),
+      linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 26%),
+      linear-gradient(to bottom, #000 80%, transparent 100%);
+    mask-composite: intersect;
   }
 
   .opening__bg :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Position the crop so Daniel's head (at roughly 71% from left, 32% from top
-       of the source photo) stays in view at every width. */
-    object-position: 80% 40%;
-  }
-
-  @media (min-width: 1440px) {
-    /* On wide screens the image is scaled to the viewport width and the head
-       sits comfortably in the upper right; keep it near the right. */
-    .opening__bg :global(img) {
-      object-position: 90% 50%;
-    }
+    /* Head sits at about 71% from the left and 32% from the top of the source. */
+    object-position: 80% 30%;
   }
 
   .opening__scrim {
-    z-index: 1;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.97) 0%,
-        rgba(255, 255, 255, 0.94) 30%,
-        rgba(255, 255, 255, 0.6) 55%,
-        rgba(255, 255, 255, 0.15) 80%,
-        rgba(255, 255, 255, 0) 100%
-      );
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 255, 255, 0.92) 30%,
+      rgba(255, 255, 255, 0.55) 55%,
+      rgba(255, 255, 255, 0.12) 80%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   .opening__wrap {
     position: relative;
     z-index: 2;
-    padding-block: var(--section-y);
+    padding-block: var(--section-y-compact);
     width: 100%;
   }
 
   .opening__text {
-    max-width: 580px;
+    max-width: 40rem;
   }
 
   .opening__eyebrow {
@@ -159,14 +160,14 @@ const copy = lang === "en"
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-soft);
-    margin: 0 0 var(--space-4);
+    margin: 0 0 var(--space-3);
   }
 
   .opening__heading {
-    font-size: var(--fs-display);
+    font-size: clamp(2.25rem, 1.2rem + 2.6vw, 3.4rem);
     font-weight: 650;
-    line-height: var(--lh-tight);
-    margin: 0 0 var(--space-5);
+    line-height: 1.08;
+    margin: 0 0 var(--space-4);
     color: var(--color-text);
     text-wrap: balance;
   }
@@ -174,7 +175,7 @@ const copy = lang === "en"
   .opening__lead {
     font-size: var(--fs-lead);
     color: var(--color-text);
-    margin: 0 0 var(--space-6);
+    margin: 0 0 var(--space-5);
     font-weight: 500;
   }
 
@@ -198,59 +199,63 @@ const copy = lang === "en"
   .opening__scroll {
     font-size: var(--fs-small);
     color: var(--color-text-soft);
-    margin: var(--space-8) 0 0;
+    margin: var(--space-6) 0 0;
   }
 
   @media (max-width: 1023.98px) {
-    /* On narrow screens the face sits in the TOP half of the viewport and
-       the text drops to the bottom, so face and text do not overlap.
-       Photo and scrim are absolute (not fixed) so they scroll with the
-       hero; the text never crosses back over the face while scrolling. */
+    /*
+      Narrow screens: face in the top half, text in the bottom half, so they never
+      overlap. Photo and scrim scroll with the hero (absolute, not fixed).
+    */
     .opening {
       display: block;
+      min-height: 100svh;
     }
 
-    .opening__bg,
-    .opening__scrim {
+    .opening__bg {
       position: absolute;
+      inset: 0;
+      width: auto;
+      height: auto;
+      top: 0;
+      -webkit-mask-image: none;
+      mask-image: none;
     }
 
     .opening__wrap {
-      padding-top: 36svh;
+      padding-top: 28svh;
       padding-bottom: var(--space-4);
     }
 
+    .opening__eyebrow {
+      margin-bottom: var(--space-2);
+    }
+
     .opening__lead {
-      margin-bottom: var(--space-4);
+      font-size: 1.0625rem;
+      line-height: 1.45;
+      margin-bottom: var(--space-3);
     }
 
     .opening__bg :global(img) {
-      /* 79% horizontally pins Daniel's face (at ~71% of the source) in the
-         middle of the frame; 20% vertically keeps the head high. */
+      /* 79% pins Daniel's face in the middle of the frame, 20% keeps the head high. */
       object-position: 79% 20%;
     }
 
     .opening__scrim {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0.12) 30%,
-          rgba(255, 255, 255, 0.85) 44%,
-          rgba(255, 255, 255, 0.96) 58%,
-          rgba(255, 255, 255, 0.96) 100%
-        );
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.12) 30%,
+        rgba(255, 255, 255, 0.85) 44%,
+        rgba(255, 255, 255, 0.96) 58%,
+        rgba(255, 255, 255, 0.96) 100%
+      );
     }
 
-    /* Smaller display size on mobile so the heading does not wrap into
-       seven lines; lead and CTA fit above the fold. */
     .opening__heading {
       font-size: clamp(1.75rem, 1rem + 3.2vw, 2.25rem);
       line-height: 1.1;
-      margin-bottom: var(--space-3);
-    }
-
-    .opening__eyebrow {
       margin-bottom: var(--space-3);
     }
 
@@ -260,8 +265,7 @@ const copy = lang === "en"
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .opening__bg,
-    .opening__scrim {
+    .opening__bg {
       transition: none;
     }
   }

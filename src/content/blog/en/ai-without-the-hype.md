@@ -6,7 +6,7 @@ description: "Before tools and pilots, AI needs clear management decisions. Thes
 pubDate: 2025-11-04
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ai-without-the-hype/hero.jpg"
+heroImage: "../../../assets/blog/ai-without-the-hype-hero.jpg"
 heroAlt: "Close-up of a person reviewing charts and reports in an office setting."
 legacyUrl: "https://orbisneo.nl/ai-without-the-hype/"
 ---
