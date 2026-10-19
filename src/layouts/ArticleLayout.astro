@@ -111,8 +111,9 @@ const copy = lang === "en"
 </BaseLayout>
 
 <style>
+  /* Breadcrumbs en categorie staan boven de titel: aftrekken, zodat de h1 even ver van de bovenkant staat als op andere pagina's. */
   .article {
-    padding-block: var(--section-y);
+    padding-block: calc(var(--page-head-pt) - 5.94rem) var(--section-y);
     max-width: 820px;
   }
 
@@ -155,7 +156,6 @@ const copy = lang === "en"
   .article__header h1 {
     font-size: var(--fs-h1);
     margin: 0 0 var(--space-4);
-    max-width: 26ch;
   }
 
   .article__meta {
