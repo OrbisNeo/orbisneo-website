@@ -9,6 +9,17 @@ const EM_DASH = String.fromCharCode(0x2014);
 const RESERVED_SLUGS = ["overzicht", "feed.xml", "2", "3", "4", "5"];
 // Strict only for the real launch build: production context with indexing switched on.
 const STRICT = process.env.CONTEXT === "production" && process.env.PUBLIC_NOINDEX === "false";
+const NOINDEX_MODE = process.env.PUBLIC_NOINDEX === "true";
+// Pages that must never be indexed, also after launch.
+const ALWAYS_NOINDEX = new Set([
+  "404.html",
+  "410.html",
+  "__forms.html",
+  "admin/index.html",
+  "styleguide/index.html",
+  "contact/thanks/index.html",
+  "kennismaken/bedankt/index.html",
+]);
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -133,6 +144,43 @@ if (!html.length) {
   }
 }
 
+
+// 5. Indexing: meta tag, X-Robots-Tag header and robots.txt must agree
+const toml = await readFile(join(ROOT, "netlify.toml"), "utf8");
+for (const part of toml.split("[[headers]]").slice(1)) {
+  if (/for\s*=\s*"\/\*"/.test(part) && /X-Robots-Tag/.test(part)) {
+    fail('netlify.toml: vaste X-Robots-Tag op "/*" gevonden; die hoort per build gegenereerd te worden (astro.config.mjs)');
+  }
+}
+
+const readOptional = async (p: string): Promise<string | null> => {
+  try {
+    return await readFile(p, "utf8");
+  } catch {
+    return null;
+  }
+};
+
+if (html.length) {
+  const noindexMeta = /<meta[^>]+name="robots"[^>]+content="noindex/;
+  for (const f of html) {
+    const rel = relative(DIST, f);
+    const has = noindexMeta.test(await readFile(f, "utf8"));
+    if (NOINDEX_MODE && !has) fail(`${rel}: mist noindex-meta terwijl PUBLIC_NOINDEX=true`);
+    if (ALWAYS_NOINDEX.has(rel) && !has) fail(`${rel}: moet altijd noindex hebben`);
+    if (STRICT && has && !ALWAYS_NOINDEX.has(rel)) fail(`${rel}: heeft noindex in de lanceerbuild`);
+  }
+
+  const headers = await readOptional(join(DIST, "_headers"));
+  const hasHeader = headers?.includes("X-Robots-Tag") ?? false;
+  if (NOINDEX_MODE && !hasHeader) fail("dist/_headers mist X-Robots-Tag: noindex terwijl PUBLIC_NOINDEX=true");
+  if (STRICT && hasHeader) fail("dist/_headers bevat X-Robots-Tag in de lanceerbuild");
+
+  const robots = (await readOptional(join(DIST, "robots.txt"))) ?? "";
+  if (NOINDEX_MODE && !/^Disallow: \/\s*$/m.test(robots)) fail("robots.txt moet Disallow: / bevatten terwijl PUBLIC_NOINDEX=true");
+  if (STRICT && !robots.includes("Sitemap:")) fail("robots.txt verwijst in de lanceerbuild niet naar de sitemap");
+}
+
 for (const w of warnings) console.warn(`check-content, waarschuwing: ${w}`);
 if (errors.length) {
   console.error(`check-content: ${errors.length} fout(en)`);
@@ -140,5 +188,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `check-content: ${entries.length} contentbestanden, paren en slugs kloppen, geen em-streepjes${STRICT ? ", strikte lanceermodus" : ""}`,
+  `check-content: ${entries.length} contentbestanden, paren en slugs kloppen, geen em-streepjes, indexering consistent${STRICT ? ", strikte lanceermodus" : ""}`,
 );
