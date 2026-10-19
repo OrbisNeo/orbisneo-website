@@ -43,6 +43,12 @@ h1, h2, h3, h4 {
 
 h1 { font-size: var(--fs-h1); font-weight: 650; line-height: var(--lh-tight); }
 h2 { font-size: var(--fs-h2); font-weight: 600; }
+
+/* Alle paginatitels delen een maximale breedte; de homepage-hero heeft zijn eigen opbouw. */
+main h1:not(.opening__heading) {
+  max-width: var(--title-max);
+  text-wrap: balance;
+}
 h3 { font-size: var(--fs-h3); font-weight: 600; }
 h4 {
   font-size: var(--fs-h4);

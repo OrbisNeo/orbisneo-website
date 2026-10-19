@@ -48,6 +48,9 @@
   --space-9: 6rem;
   --space-10: 8rem;
   --section-y: clamp(4rem, 2.5rem + 6.67vw, 8rem);
+  /* Paginakop: afstand onder de header tot de titel, en maximale titelbreedte. */
+  --page-head-pt: max(var(--section-y), 6.5rem);
+  --title-max: 48rem;
   --section-y-compact: clamp(2.5rem, 1.6rem + 3.2vw, 4.5rem);
 
   /* Header en logo: normale en gekrompen stand (zie SiteHeader.astro) */

@@ -79,8 +79,9 @@ const dateLabel = edition.data.date.toLocaleDateString("nl-NL", {
 </BaseLayout>
 
 <style>
+  /* De metaregel staat boven de titel: aftrekken, zodat de h1 even ver van de bovenkant staat als elders. */
   .edition {
-    padding-block: var(--section-y);
+    padding-block: calc(var(--page-head-pt) - 2.4rem) var(--section-y);
     max-width: 820px;
   }
 
