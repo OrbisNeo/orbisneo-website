@@ -1,0 +1,167 @@
+backend:
+  name: github
+  repo: OrbisNeo/orbisneo-website
+  branch: main
+  base_url: https://api.netlify.com
+  commit_messages:
+    create: "content({{collection}}): nieuw {{slug}}"
+    update: "content({{collection}}): wijzig {{slug}}"
+    delete: "content({{collection}}): verwijder {{slug}}"
+    uploadMedia: "media: upload {{path}}"
+    deleteMedia: "media: verwijder {{path}}"
+
+publish_mode: editorial_workflow
+site_url: https://www.orbisneoconsulting.com
+display_url: https://www.orbisneoconsulting.com
+locale: nl
+
+media_folder: src/assets/blog
+public_folder: ../../../assets/blog
+
+i18n:
+  structure: multiple_folders
+  locales: [en, nl]
+  default_locale: en
+
+collections:
+  - name: blog
+    label: Blog
+    label_singular: Blogartikel
+    folder: src/content/blog
+    create: true
+    delete: true
+    i18n: true
+    format: frontmatter
+    extension: md
+    identifier_field: title
+    slug: "{{fields.translationKey}}"
+    summary: "{{title}} ({{pubDate | date('YYYY-MM-DD')}})"
+    sortable_fields: [pubDate, title]
+    fields:
+      - { name: title, label: Titel, widget: string, i18n: true }
+      - name: translationKey
+        label: "Vertaalsleutel (gelijk in beide talen)"
+        widget: string
+        i18n: duplicate
+        pattern: ["^[a-z0-9-]+$", "alleen kleine letters, cijfers en koppeltekens"]
+      - name: urlSlug
+        label: "URL-deel"
+        widget: string
+        i18n: true
+        pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "alleen kleine letters, cijfers en koppeltekens"]
+      - { name: description, label: Samenvatting, widget: text, i18n: true }
+      - { name: pubDate, label: Publicatiedatum, widget: datetime, format: "YYYY-MM-DD", time_format: false, i18n: duplicate }
+      - { name: updatedDate, label: "Bijgewerkt op", widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, i18n: duplicate }
+      - { name: category, label: Categorie, widget: string, i18n: true, default: "AI in organisations" }
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+        i18n: true
+        field: { name: tag, label: Tag, widget: string }
+      - { name: heroImage, label: Omslagafbeelding, widget: image, required: false, i18n: duplicate }
+      - { name: heroAlt, label: "Alt-tekst afbeelding", widget: string, required: false, i18n: true }
+      - { name: author, label: Auteur, widget: string, default: "Daniel Fokker", i18n: duplicate }
+      - { name: legacyUrl, label: "Oude URL (voor redirects)", widget: string, required: false, i18n: true }
+      - { name: draft, label: Concept, widget: boolean, default: true, i18n: duplicate }
+      - { name: body, label: Tekst, widget: markdown, i18n: true }
+
+  - name: nieuws
+    label: Nieuws
+    label_singular: Weekeditie
+    folder: src/content/nieuws
+    create: true
+    delete: true
+    i18n: true
+    format: frontmatter
+    extension: md
+    identifier_field: title
+    slug: "{{fields.translationKey}}"
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Titel, widget: string, i18n: true }
+      - name: translationKey
+        label: "Sleutel (JJJJ-week-WW)"
+        widget: string
+        i18n: duplicate
+        pattern: ["^\\d{4}-week-\\d{2}$", "bijvoorbeeld 2026-week-43"]
+      - name: urlSlug
+        label: "URL-deel (JJJJ-week-WW)"
+        widget: string
+        i18n: duplicate
+        pattern: ["^\\d{4}-week-\\d{2}$", "bijvoorbeeld 2026-week-43"]
+      - name: week
+        label: "ISO-week (JJJJ-WWW)"
+        widget: string
+        i18n: duplicate
+        pattern: ["^\\d{4}-W\\d{2}$", "bijvoorbeeld 2026-W43"]
+      - { name: date, label: Datum, widget: datetime, format: "YYYY-MM-DD", time_format: false, i18n: duplicate }
+      - { name: summary, label: Samenvatting, widget: text, i18n: true }
+      - name: items
+        label: Berichten
+        widget: list
+        i18n: true
+        min: 3
+        max: 8
+        fields:
+          - { name: title, label: Titel, widget: string }
+          - { name: url, label: Link, widget: string }
+          - { name: source, label: Bron, widget: string }
+          - { name: sourceDate, label: "Datum bron", widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false }
+          - { name: commentary, label: Duiding, widget: text }
+          - name: tags
+            label: Tags
+            widget: list
+            required: false
+            field: { name: tag, label: Tag, widget: string }
+      - { name: curatedBy, label: "Samengesteld door", widget: string, default: Vera, i18n: duplicate }
+      - { name: approvedBy, label: "Goedgekeurd door", widget: string, required: false, i18n: duplicate }
+      - { name: draft, label: Concept, widget: boolean, default: true, i18n: duplicate }
+      - { name: body, label: Tekst (optioneel), widget: markdown, required: false, i18n: true }
+
+  - name: diensten
+    label: Diensten
+    label_singular: Dienst
+    folder: src/content/diensten
+    create: false
+    delete: false
+    i18n: true
+    format: frontmatter
+    extension: md
+    identifier_field: title
+    slug: "{{fields.translationKey}}"
+    fields:
+      - { name: translationKey, label: Sleutel, widget: string, i18n: duplicate }
+      - { name: order, label: Volgorde, widget: number, value_type: int, min: 1, max: 10, i18n: duplicate }
+      - { name: title, label: Titel, widget: string, i18n: true }
+      - { name: tagline, label: Kernzin, widget: string, i18n: true }
+      - { name: forWho, label: "Voor wie", widget: string, i18n: true }
+      - { name: duration, label: Duur, widget: string, i18n: true }
+      - { name: delivery, label: Oplevering, widget: string, i18n: true }
+      - { name: price, label: "Prijs (tekst, geen bedrag)", widget: string, i18n: true }
+      - { name: anchor, label: Anker, widget: string, i18n: true }
+      - { name: body, label: "Volledige tekst (optioneel)", widget: markdown, required: false, i18n: true }
+
+  - name: cases
+    label: "Loopbaan (cases)"
+    label_singular: Case
+    folder: src/content/cases
+    create: true
+    delete: true
+    i18n: true
+    format: frontmatter
+    extension: md
+    identifier_field: org
+    slug: "{{fields.translationKey}}"
+    sortable_fields: [order, period]
+    fields:
+      - { name: translationKey, label: Sleutel, widget: string, i18n: duplicate }
+      - { name: order, label: Volgorde, widget: number, value_type: int, i18n: duplicate }
+      - { name: org, label: Organisatie, widget: string, i18n: true }
+      - { name: role, label: Rol, widget: string, i18n: true }
+      - { name: period, label: Periode, widget: string, i18n: true }
+      - { name: situation, label: Situatie, widget: text, i18n: true }
+      - { name: result, label: Resultaat, widget: text, i18n: true }
+      - { name: featured, label: "Op homepage tonen", widget: boolean, default: false, i18n: duplicate }
+      - { name: body, label: Toelichting (optioneel), widget: markdown, required: false, i18n: true }
