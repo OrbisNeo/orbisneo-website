@@ -6,7 +6,7 @@ description: "Ethical AI becomes practical when translated into clear agreements
 pubDate: 2025-10-24
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ethical-ai/hero.jpeg"
+heroImage: "../../../assets/blog/ethical-ai-hero.jpeg"
 heroAlt: "An unrecognizable person with binary code projected, symbolizing cybersecurity and digital coding."
 legacyUrl: "https://orbisneo.nl/ethical-ai-from-sentiment-to-working-agreements/"
 ---

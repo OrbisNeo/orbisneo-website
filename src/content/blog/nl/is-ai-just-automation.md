@@ -6,7 +6,7 @@ description: "Introductie Ik hoor het steeds vaker in gesprekken met managers, p
 pubDate: 2026-01-05
 updatedDate: 2026-01-06
 category: "AI in organisations"
-heroImage: "../../../assets/blog/is-ai-just-automation/hero.jpg"
+heroImage: "../../../assets/blog/is-ai-just-automation-hero.jpg"
 heroAlt: "Close-up of digital data analysis displayed on a computer monitor with blue tones."
 legacyUrl: "https://orbisneo.nl/nl/aigewoonautomatiseringmetnieuwlabel/"
 ---

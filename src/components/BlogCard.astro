@@ -25,9 +25,9 @@ const dateLabel = post.data.pubDate.toLocaleDateString(lang === "en" ? "en-GB" :
         <Image
           src={post.data.heroImage}
           alt={post.data.heroAlt ?? post.data.title}
-          widths={featured ? [720, 1080, 1280] : [360, 540, 720]}
+          widths={featured ? [520, 780, 1040] : [360, 540, 720]}
           sizes={featured
-            ? "(max-width: 767px) 100vw, 1200px"
+            ? "(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 520px"
             : "(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 400px"}
           loading="lazy"
         />
@@ -125,14 +125,33 @@ const dateLabel = post.data.pubDate.toLocaleDateString(lang === "en" ? "en-GB" :
   }
 
   .blog-card--featured .blog-card__image {
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 16 / 9;
   }
 
   .blog-card--featured .blog-card__title {
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h3);
   }
 
   .blog-card--featured .blog-card__body {
-    padding: var(--space-6);
+    padding: var(--space-5);
+  }
+
+  /* Desktop: horizontal card (image left, text right) instead of a tall banner. */
+  @media (min-width: 1024px) {
+    .blog-card--featured .blog-card__link {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      align-items: stretch;
+    }
+
+    .blog-card--featured .blog-card__image {
+      aspect-ratio: auto;
+      min-height: 220px;
+    }
+
+    .blog-card--featured .blog-card__body {
+      align-self: center;
+      padding: var(--space-6);
+    }
   }
 </style>

@@ -6,7 +6,7 @@ description: "Introduction I hear it more and more often in conversations with m
 pubDate: 2026-01-05
 updatedDate: 2026-01-13
 category: "AI in organisations"
-heroImage: "../../../assets/blog/is-ai-just-automation/hero.jpg"
+heroImage: "../../../assets/blog/is-ai-just-automation-hero.jpg"
 heroAlt: "Close-up of digital data analysis displayed on a computer monitor with blue tones."
 legacyUrl: "https://orbisneo.nl/is-ai-just-automation-with-a-new-label/"
 ---

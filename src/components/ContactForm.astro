@@ -243,6 +243,11 @@ const serviceKeys = ["board-scan", "ambition-session", "ai-financial-framework",
     font-size: 1rem;
   }
 
+  /* display:flex above would otherwise override the hidden attribute and always show the sign. */
+  .form__error[hidden] {
+    display: none;
+  }
+
   .form__fieldset {
     border: 0;
     padding: 0;

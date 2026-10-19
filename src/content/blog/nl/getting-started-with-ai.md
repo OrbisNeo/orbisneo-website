@@ -5,7 +5,7 @@ urlSlug: beginnen-met-ai
 description: "Start niet met tools, maar met de juiste vragen Stel je voor: je organisatie investeert tienduizenden euro’s in AI-tools. Er..."
 pubDate: 2026-01-20
 category: "AI in organisations"
-heroImage: "../../../assets/blog/getting-started-with-ai/hero.jpeg"
+heroImage: "../../../assets/blog/getting-started-with-ai-hero.jpeg"
 heroAlt: "Beginnen met AI?"
 legacyUrl: "https://orbisneo.nl/nl/beginnen_met_ai/"
 ---
@@ -60,7 +60,7 @@ AI wordt vaak “belegd” bij IT, innovatie of data. Maar beslissingen over wer
 Een effectieve start met AI begint niet met een tool, maar met **drie bestuurlijke vragen**:
 
 1.  **Waar willen wij als organisatie slimmer, sneller of consistenter beslissen of werken?**
-2.  **Welke processen zijn hiervoor kritisch — en waar zit vandaag frictie of verspilling?**
+2.  **Welke processen zijn hiervoor kritisch, en waar zit vandaag frictie of verspilling?**
 3.  **Welke risico’s accepteren we bewust, en welke niet?**
 
 Deze vragen zijn niet technisch. Ze zijn strategisch. Pas als hier helderheid over is, ontstaat ruimte voor verantwoorde inzet van AI.

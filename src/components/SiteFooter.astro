@@ -29,8 +29,8 @@ const phone = "+31 6 53 38 03 29";
       <Image
         src={logo}
         alt="Orbis Neo Consulting"
-        widths={[260, 400]}
-        sizes="260px"
+        widths={[180, 360, 540]}
+        sizes="(min-width: 1024px) 180px, 140px"
         loading="lazy"
         class="site-footer__logo"
       />
@@ -97,7 +97,7 @@ const phone = "+31 6 53 38 03 29";
 
   .site-footer__brand :global(.site-footer__logo) {
     display: block;
-    height: 54px;
+    height: var(--logo-h);
     width: auto;
   }
 

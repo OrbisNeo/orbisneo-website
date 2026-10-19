@@ -6,7 +6,7 @@ description: "Successful AI adoption does not start with tools. It starts with s
 pubDate: 2026-01-20
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/getting-started-with-ai/hero.jpeg"
+heroImage: "../../../assets/blog/getting-started-with-ai-hero.jpeg"
 heroAlt: "Getting Started with AI?"
 legacyUrl: "https://orbisneo.nl/getting-started-with-ai/"
 ---
@@ -57,7 +57,7 @@ The result: pilots without scaling, experiments without decisions.
 An effective start with AI does not begin with a tool, but with three management questions:
 
 -   Where do we, as an organisation, want to make decisions or work in a smarter, faster or more consistent way?
--   Which processes are critical for this — and where do we currently see friction or waste?
+-   Which processes are critical for this, and where do we currently see friction or waste?
 -   Which risks do we consciously accept, and which do we not?
 
 These questions are not technical. They are strategic. Only once there is clarity here does responsible AI adoption become possible.

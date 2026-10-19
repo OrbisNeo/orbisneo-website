@@ -7,6 +7,17 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Sticky header must not cover anchors or snap targets. */
+  scroll-padding-top: var(--header-h-compact);
+}
+
+/*
+  Page sections paint above fixed background layers (such as the homepage photo),
+  so content scrolls over them instead of being tinted by them.
+*/
+main > section {
+  position: relative;
+  z-index: 1;
 }
 
 body {
@@ -110,4 +121,19 @@ button {
   max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+/* Homepage scroll-snap, switched on by src/scripts/snap.ts for segments that fill the screen. */
+html[data-snap-active] {
+  scroll-snap-type: y proximity;
+}
+
+main > section[data-snap] {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-snap-active] {
+    scroll-snap-type: none;
+  }
 }

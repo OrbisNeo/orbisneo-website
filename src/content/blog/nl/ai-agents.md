@@ -6,7 +6,7 @@ description: "Van experiment naar infrastructuur: waarom AI-agenten een nieuwe o
 pubDate: 2026-02-12
 updatedDate: 2026-02-16
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ai-agents/hero.png"
+heroImage: "../../../assets/blog/ai-agents-hero.png"
 heroAlt: "Van Chaos naar Helderheid"
 legacyUrl: "https://orbisneo.nl/nl/ai-agents-in-organisaties/"
 ---

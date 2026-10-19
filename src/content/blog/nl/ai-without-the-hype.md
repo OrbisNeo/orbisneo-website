@@ -6,7 +6,7 @@ description: "Introductie Er is een patroon dat ik de afgelopen jaren steeds vak
 pubDate: 2025-11-04
 updatedDate: 2026-05-18
 category: "AI in organisations"
-heroImage: "../../../assets/blog/ai-without-the-hype/hero.jpg"
+heroImage: "../../../assets/blog/ai-without-the-hype-hero.jpg"
 heroAlt: "Close-up of a person reviewing charts and reports in an office setting."
 legacyUrl: "https://orbisneo.nl/nl/ai-zonder-hype/"
 ---
@@ -19,7 +19,7 @@ En dat is precies waarom AI governance in 2025 zo hard terrein won. Niet als rem
 
 .kb-image41\_ce7d08-8f .kb-image-has-overlay:after{opacity:0.3;}.kb-image41\_ce7d08-8f img.kb-img, .kb-image41\_ce7d08-8f .kb-img img{object-position:56.00000000000001% 33%;}
 
-![AI zonder hype: 7 managementbesluiten die je eerst moet nemen](../../../assets/blog/ai-without-the-hype/img-1.jpeg)
+![AI zonder hype: 7 managementbesluiten die je eerst moet nemen](../../../assets/blog/ai-without-the-hype-img-1.jpeg)
 
 ## **Besluit 1: Waar is waarde, en waar niet?**
 

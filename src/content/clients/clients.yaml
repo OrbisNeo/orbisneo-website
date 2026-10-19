@@ -5,36 +5,54 @@
 - id: studielink
   name: Stichting Studielink
   logo: /images/logos/studielink.png
+  width: 195
+  height: 80
   order: 2
 - id: vodafoneziggo
   name: VodafoneZiggo
   logo: /images/logos/vodafoneziggo.png
+  width: 526
+  height: 80
   order: 3
 - id: ziggo
   name: Ziggo
   logo: /images/logos/ziggo.png
+  width: 230
+  height: 80
   order: 4
 - id: ordina
   name: Ordina
   logo: /images/logos/ordina.png
+  width: 370
+  height: 130
   order: 5
 - id: ivo-rechtspraak
   name: IVO Rechtspraak
   logo: /images/logos/ivo-rechtspraak.webp
+  width: 1024
+  height: 581
   order: 6
 - id: essent
   name: Essent
   logo: /images/logos/essent.png
+  width: 363
+  height: 80
   order: 7
 - id: uwv
   name: UWV
   logo: /images/logos/uwv.png
+  width: 95
+  height: 80
   order: 8
 - id: rws
   name: Rijkswaterstaat
   logo: /images/logos/rws.png
+  width: 400
+  height: 400
   order: 9
 - id: gemeente-rotterdam
   name: Gemeente Rotterdam
   logo: /images/logos/gemeente-rotterdam.png
+  width: 320
+  height: 320
   order: 10
