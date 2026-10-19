@@ -157,3 +157,7 @@ Thumbs.db
 
 # Netlify
 .netlify/
+
+# Lighthouse CI
+.lighthouseci/
+reports/

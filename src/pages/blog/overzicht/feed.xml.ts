@@ -8,7 +8,7 @@ export async function GET(context: APIContext) {
   const posts = inLang(all, "nl").sort((a, b) => +b.data.pubDate - +a.data.pubDate);
 
   return rss({
-    title: "Orbis Neo — Blog",
+    title: "Orbis Neo Blog",
     description: "Visie op organisatie, strategie en AI.",
     site: context.site ?? "https://www.orbisneoconsulting.com",
     items: posts.map((p) => ({
