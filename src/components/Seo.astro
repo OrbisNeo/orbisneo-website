@@ -3,15 +3,29 @@ import type { Lang } from "../i18n/ui";
 import type { Alternates } from "../i18n/routes";
 import { alternatesFor } from "../i18n/routes";
 
+interface SeoImage {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
 interface Props {
   title: string;
   description?: string;
   lang: Lang;
   noindex?: boolean;
   alternates?: Alternates;
+  image?: SeoImage;
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  /** Extra JSON-LD nodes (for example BlogPosting and BreadcrumbList) added to the @graph. */
+  jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, lang, noindex, alternates } = Astro.props;
+const { title, description, lang, noindex, alternates, image, type = "website", publishedTime, modifiedTime, jsonLd = [] } =
+  Astro.props;
 const siteOrigin = Astro.site?.origin ?? "https://www.orbisneoconsulting.com";
 const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
 const envNoindex = import.meta.env.PUBLIC_NOINDEX === "true";
@@ -20,6 +34,52 @@ const noindexFinal = noindex ?? envNoindex;
 const alts: Alternates = alternates ?? alternatesFor(lang, Astro.url.pathname);
 const enUrl = alts.en ? new URL(alts.en, siteOrigin).toString() : null;
 const nlUrl = alts.nl ? new URL(alts.nl, siteOrigin).toString() : null;
+
+// Default brand image (1200 x 630, public/og-default.png); blog articles pass their own cover.
+const ogImage: SeoImage = image ?? { url: "/og-default.png", width: 1200, height: 630, alt: "Orbis Neo" };
+const ogImageUrl = new URL(ogImage.url, siteOrigin).toString();
+const alternateLocale = enUrl && nlUrl ? (lang === "en" ? "nl_NL" : "en_GB") : null;
+
+const orgId = `${siteOrigin}/#organization`;
+const personId = `${siteOrigin}/#daniel`;
+const graph: Record<string, unknown>[] = [
+  {
+    "@type": "ProfessionalService",
+    "@id": orgId,
+    name: "Orbis Neo",
+    url: `${siteOrigin}/`,
+    logo: `${siteOrigin}/images/orbisneo-logo.png`,
+    email: "info@orbisneoconsulting.com",
+    address: { "@type": "PostalAddress", addressLocality: "Amersfoort", addressCountry: "NL" },
+    identifier: { "@type": "PropertyValue", propertyID: "KvK", value: "98659456" },
+    founder: { "@id": personId },
+    sameAs: ["https://www.linkedin.com/in/danielfokker"],
+  },
+  {
+    "@type": "Person",
+    "@id": personId,
+    name: "Daniel Fokker",
+    jobTitle: "Interim manager and consultant in AI strategy, policy and governance",
+    worksFor: { "@id": orgId },
+    image: `${siteOrigin}/images/daniel-fokker.jpg`,
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: "Radboud University" },
+      { "@type": "CollegeOrUniversity", name: "Avans" },
+    ],
+    sameAs: ["https://www.linkedin.com/in/danielfokker"],
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${siteOrigin}/#website`,
+    url: `${siteOrigin}/`,
+    name: "Orbis Neo",
+    inLanguage: ["en", "nl"],
+    publisher: { "@id": orgId },
+  },
+  ...jsonLd,
+];
+// "<" escaped so the JSON can never close the script tag.
+const jsonLdHtml = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
 ---
 
 <title>{title}</title>
@@ -31,7 +91,19 @@ const nlUrl = alts.nl ? new URL(alts.nl, siteOrigin).toString() : null;
 <meta property="og:title" content={title} />
 {description && <meta property="og:description" content={description} />}
 <meta property="og:url" content={canonical} />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={type} />
+{type === "article" && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{type === "article" && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 <meta property="og:locale" content={lang === "en" ? "en_GB" : "nl_NL"} />
+{alternateLocale && <meta property="og:locale:alternate" content={alternateLocale} />}
+<meta property="og:image" content={ogImageUrl} />
+{ogImage.width && <meta property="og:image:width" content={String(ogImage.width)} />}
+{ogImage.height && <meta property="og:image:height" content={String(ogImage.height)} />}
+{ogImage.alt && <meta property="og:image:alt" content={ogImage.alt} />}
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+{description && <meta name="twitter:description" content={description} />}
+<meta name="twitter:image" content={ogImageUrl} />
+{ogImage.alt && <meta name="twitter:image:alt" content={ogImage.alt} />}
+<script type="application/ld+json" set:html={jsonLdHtml} />
 {noindexFinal && <meta name="robots" content="noindex, nofollow" />}

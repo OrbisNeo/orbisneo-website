@@ -20,9 +20,26 @@ interface Props {
   showChrome?: boolean;
   alternates?: Alternates;
   noindex?: boolean;
+  image?: { url: string; width?: number; height?: number; alt?: string };
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, lang = "en", showChrome = true, alternates, noindex } = Astro.props;
+const {
+  title,
+  description,
+  lang = "en",
+  showChrome = true,
+  alternates,
+  noindex,
+  image,
+  type,
+  publishedTime,
+  modifiedTime,
+  jsonLd,
+} = Astro.props;
 const copy = t(lang);
 const alts: Alternates = alternates ?? alternatesFor(lang, Astro.url.pathname);
 const altPath = lang === "en" ? alts.nl : alts.en;
@@ -36,7 +53,18 @@ const altPath = lang === "en" ? alts.nl : alts.en;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <Seo title={title} description={description} lang={lang} alternates={alts} noindex={noindex} />
+    <Seo
+      title={title}
+      description={description}
+      lang={lang}
+      alternates={alts}
+      noindex={noindex}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      jsonLd={jsonLd}
+    />
     <Analytics />
   </head>
   <body>
