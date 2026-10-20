@@ -14,7 +14,10 @@ const copy = lang === "en"
       eyebrow: "For boards of mid-market and larger companies",
       heading: "AI is transforming your organisation from the inside.",
       lead: "I help you stay in control of the areas it affects most. Not awareness sessions, but practical direction.",
-      scrollHint: "25 years in the domains AI is now changing most",
+      body: [
+        "AI doesn't stop at one department. It changes how your organisation hangs together: how software gets built, how IT is run, how you deploy your people and what it all costs. Solve that domain by domain and you miss how those choices affect each other.",
+        "I've spent twenty-five years in exactly those areas, from IT delivery and operations to enterprise architecture, HR and IT financial management. I work interim or part-time, for an agreed period and always with a clear endpoint.",
+      ],
       cta: "Plan a short intro (15 min)",
       contactHref: "/contact/",
     }
@@ -22,7 +25,10 @@ const copy = lang === "en"
       eyebrow: "Voor directies van middelgrote en grote organisaties",
       heading: "AI verandert uw organisatie van binnenuit.",
       lead: "Ik help u grip houden op de gebieden waar het grootste effect zit. Geen awareness-sessies, maar praktische sturing.",
-      scrollHint: "25 jaar in de domeinen die AI nu het sterkst verandert",
+      body: [
+        "AI raakt niet één afdeling, maar de samenhang van uw organisatie: hoe software wordt gebouwd, hoe IT wordt beheerd, hoe u uw mensen inzet en wat het allemaal kost. Wie dat per domein oplost, mist hoe die keuzes op elkaar ingrijpen.",
+        "Al vijfentwintig jaar werk ik in precies die domeinen, van IT-delivery en IT-beheer tot enterprise architecture, HR en IT financial management. Ik werk interim of op deeltijdbasis, voor een afgesproken periode en altijd met een helder eindpunt.",
+      ],
       cta: "Plan een kennismaking (15 min)",
       contactHref: "/kennismaken/",
     };
@@ -34,7 +40,7 @@ const copy = lang === "en"
       src={bureau}
       alt=""
       widths={[720, 1264]}
-      sizes="(max-width: 1023px) 100vw, min(100vw, 1480px)"
+      sizes="(max-width: 1023px) 100vw, min(100vw, 1440px)"
       loading="eager"
       fetchpriority="high"
     />
@@ -46,6 +52,9 @@ const copy = lang === "en"
       <p class="opening__eyebrow">{copy.eyebrow}</p>
       <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
       <p class="opening__lead">{copy.lead}</p>
+      <div class="opening__body">
+        {copy.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
       <p class="opening__cta">
         <a
           href={copy.contactHref}
@@ -55,7 +64,6 @@ const copy = lang === "en"
           data-umami-event-lang={lang}
         >{copy.cta}</a>
       </p>
-      <p class="opening__scroll">{copy.scrollHint}</p>
     </div>
   </div>
 </section>
@@ -75,8 +83,9 @@ const copy = lang === "en"
         return;
       }
       const rect = section.getBoundingClientRect();
-      const h = window.innerHeight || 800;
-      bg.style.opacity = String(Math.max(0, Math.min(1, rect.bottom / h)));
+      // Relative to the bottom of the photo box, so the photo starts fully visible on any screen.
+      const bgBottom = bg.getBoundingClientRect().bottom || window.innerHeight || 800;
+      bg.style.opacity = String(Math.max(0, Math.min(1, rect.bottom / bgBottom)));
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -87,39 +96,27 @@ const copy = lang === "en"
 
 <style>
   .opening {
+    /* One continuous photo size for all widths: never larger than at 1440 px wide. */
+    --photo-w: min(100vw, 1440px);
+    --photo-h: min(calc(100svh - var(--header-h-compact)), max(calc(var(--photo-w) * 0.6), 45svh));
     position: relative;
-    /* Header is sticky and in flow, so hero + header together fill one screen. */
-    min-height: calc(100svh - var(--header-h));
-    display: grid;
-    align-content: center;
     isolation: isolate;
   }
 
   /*
-    Photo box, fixed to the viewport while the page scrolls over it.
-    Width is capped and the box is anchored right, so on wide or tall screens
-    the photo is not enlarged: Daniel's head keeps its proportion and stays right.
-    Soft fade on the left and bottom edge so the box dissolves into the page.
+    Photo box. Desktop: fixed to the viewport while the page scrolls over it, anchored right,
+    with a soft fade on the left and bottom edge. Below 1024 px it scrolls along with the hero.
   */
   .opening__bg {
-    --photo-w: min(100vw, 1480px);
-    position: fixed;
-    top: var(--header-h-compact);
+    position: absolute;
+    top: 0;
     right: 0;
     width: var(--photo-w);
-    height: min(calc(100svh - var(--header-h-compact)), calc(var(--photo-w) * 0.6));
+    height: var(--photo-h);
     z-index: 0;
     pointer-events: none;
-    will-change: opacity;
-    transition: opacity 100ms linear;
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0%, #000 26%),
-      linear-gradient(to bottom, #000 80%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to right, transparent 0%, #000 26%),
-      linear-gradient(to bottom, #000 80%, transparent 100%);
-    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
   }
 
   .opening__bg :global(img) {
@@ -127,31 +124,26 @@ const copy = lang === "en"
     height: 100%;
     object-fit: cover;
     /* Head sits at about 71% from the left and 32% from the top of the source. */
-    object-position: 80% 30%;
+    object-position: 79% 20%;
   }
 
   .opening__scrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.97) 0%,
-      rgba(255, 255, 255, 0.92) 30%,
-      rgba(255, 255, 255, 0.55) 55%,
-      rgba(255, 255, 255, 0.12) 80%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    display: none;
   }
 
   .opening__wrap {
     position: relative;
     z-index: 2;
-    padding-block: var(--section-y-compact);
     width: 100%;
+    padding-top: calc(var(--photo-h) * 0.8);
+    padding-bottom: var(--section-y-compact);
   }
 
   .opening__text {
-    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: var(--title-max);
   }
 
   .opening__eyebrow {
@@ -160,23 +152,29 @@ const copy = lang === "en"
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-soft);
+    line-height: var(--lh-body);
     margin: 0 0 var(--space-3);
   }
 
   .opening__heading {
     font-size: var(--fs-h1);
     font-weight: 650;
-    line-height: 1.08;
-    margin: 0 0 var(--space-4);
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
     color: var(--color-text);
-    text-wrap: balance;
   }
 
   .opening__lead {
     font-size: var(--fs-lead);
     color: var(--color-text);
-    margin: 0 0 var(--space-5);
+    margin: 0 0 var(--space-4);
     font-weight: 500;
+  }
+
+  .opening__body p {
+    font-size: var(--fs-body);
+    color: var(--color-text);
+    margin: 0 0 var(--space-3);
   }
 
   .opening__cta {
@@ -196,39 +194,15 @@ const copy = lang === "en"
     color: var(--color-action-hover);
   }
 
-  .opening__scroll {
-    font-size: var(--fs-small);
-    color: var(--color-text-soft);
-    margin: var(--space-6) 0 0;
-  }
-
+  /* Below 1024 px: eyebrow, heading, lead and CTA first, the two paragraphs after the CTA. */
   @media (max-width: 1023.98px) {
-    /*
-      Narrow screens: face in the top half, text in the bottom half, so they never
-      overlap. Photo and scrim scroll with the hero (absolute, not fixed).
-    */
-    .opening {
-      display: block;
-      min-height: 100svh;
+    .opening__cta {
+      order: 1;
     }
 
-    .opening__bg {
-      position: absolute;
-      inset: 0;
-      width: auto;
-      height: auto;
-      top: 0;
-      -webkit-mask-image: none;
-      mask-image: none;
-    }
-
-    .opening__wrap {
-      padding-top: 28svh;
-      padding-bottom: var(--space-4);
-    }
-
-    .opening__eyebrow {
-      margin-bottom: var(--space-2);
+    .opening__body {
+      order: 2;
+      margin-top: var(--space-5);
     }
 
     .opening__lead {
@@ -236,30 +210,55 @@ const copy = lang === "en"
       line-height: 1.45;
       margin-bottom: var(--space-3);
     }
+  }
+
+  @media (min-width: 1024px) {
+    .opening {
+      /* Hero ends where the photo box ends (the fixed photo starts at the compact header). */
+      min-height: calc(var(--photo-h) + var(--header-h-compact) - var(--header-h));
+    }
+
+    .opening__bg {
+      position: fixed;
+      top: var(--header-h-compact);
+      will-change: opacity;
+      transition: opacity 100ms linear;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, #000 26%),
+        linear-gradient(to bottom, #000 80%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0%, #000 26%),
+        linear-gradient(to bottom, #000 80%, transparent 100%);
+      mask-composite: intersect;
+    }
 
     .opening__bg :global(img) {
-      /* 79% pins Daniel's face in the middle of the frame, 20% keeps the head high. */
-      object-position: 79% 20%;
+      object-position: 80% 30%;
     }
 
     .opening__scrim {
+      display: block;
+      position: absolute;
+      inset: 0;
       background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.12) 30%,
-        rgba(255, 255, 255, 0.85) 44%,
-        rgba(255, 255, 255, 0.96) 58%,
-        rgba(255, 255, 255, 0.96) 100%
+        90deg,
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(255, 255, 255, 0.92) 30%,
+        rgba(255, 255, 255, 0.55) 55%,
+        rgba(255, 255, 255, 0.12) 80%,
+        rgba(255, 255, 255, 0) 100%
       );
     }
 
-    .opening__heading {
-      line-height: 1.1;
-      margin-bottom: var(--space-3);
+    .opening__text {
+      /* Same maximum as other page titles, but never wider than the part left of the face. */
+      max-width: min(var(--title-max), 56vw);
     }
 
-    .opening__scroll {
-      display: none;
+    .opening__wrap {
+      /* Heading top = header + --page-head-pt, the same as the other pages. */
+      padding-top: calc(var(--page-head-pt) - var(--fs-label) * var(--lh-body) - var(--space-3));
     }
   }
 
