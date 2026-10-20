@@ -69,8 +69,9 @@
     // Bottom of the page (footer): nothing to align.
     if (window.scrollY + vh >= document.documentElement.scrollHeight - 2) return;
 
-    // First section that starts below the header line.
-    const next = sections.find((s) => s.getBoundingClientRect().top > header + 2);
+    // First section that starts below the header line. The hero (first section) is never a target:
+    // it is the top of the page, and at small scroll steps it would pull the reader back up.
+    const next = sections.slice(1).find((s) => s.getBoundingClientRect().top > header + 2);
     if (!next) return;
     const top = next.getBoundingClientRect().top;
     if (top >= vh * 0.5) return; // still in the lower half: keep reading
@@ -103,20 +104,29 @@
     if (direction) lastDirection = direction;
   };
 
+  // While we animate, downward wheel and touch movement is swallowed (preventDefault): the browser
+  // would otherwise scroll it natively while every frame sets an absolute position, which makes the
+  // page jump back and overshoot. Upward movement is not blocked and cancels the animation.
   window.addEventListener(
     "wheel",
-    (e) => userScrolled(e.deltaY > 0 ? "down" : e.deltaY < 0 ? "up" : null),
-    { passive: true },
+    (e) => {
+      const direction = e.deltaY > 0 ? "down" : e.deltaY < 0 ? "up" : null;
+      if (animating && direction === "down" && e.cancelable) e.preventDefault();
+      userScrolled(direction);
+    },
+    { passive: false },
   );
   window.addEventListener(
     "touchmove",
     (e) => {
       const y = e.touches[0]?.clientY ?? touchY;
       // Finger moving up means the page scrolls down.
-      userScrolled(y < touchY ? "down" : y > touchY ? "up" : null);
+      const direction = y < touchY ? "down" : y > touchY ? "up" : null;
+      if (animating && direction === "down" && e.cancelable) e.preventDefault();
+      userScrolled(direction);
       touchY = y;
     },
-    { passive: true },
+    { passive: false },
   );
   window.addEventListener(
     "touchstart",
