@@ -109,7 +109,10 @@ collections:
         max: 8
         fields:
           - { name: title, label: Titel, widget: string }
-          - { name: url, label: Link, widget: string }
+          - name: url
+            label: Link
+            widget: string
+            pattern: ['^https?://[^/?#@\s]+([/?#]\S*)?$', "Vul een volledig webadres in dat begint met http:// of https://, zonder gebruikersnaam of wachtwoord."]
           - { name: source, label: Bron, widget: string }
           - { name: sourceDate, label: "Datum bron", widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false }
           - { name: commentary, label: Duiding, widget: text }
