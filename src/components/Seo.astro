@@ -2,8 +2,6 @@
 import type { Lang } from "../i18n/ui";
 import type { Alternates } from "../i18n/routes";
 import { alternatesFor } from "../i18n/routes";
-import logo from "../assets/brand/logo.png";
-import portrait from "../assets/people/daniel-fokker.jpg";
 
 interface SeoImage {
   url: string;
@@ -50,7 +48,7 @@ const graph: Record<string, unknown>[] = [
     "@id": orgId,
     name: "Orbis Neo",
     url: `${siteOrigin}/`,
-    logo: new URL(logo.src, siteOrigin).toString(),
+    logo: `${siteOrigin}/images/orbisneo-logo.png`,
     email: "info@orbisneoconsulting.com",
     address: { "@type": "PostalAddress", addressLocality: "Amersfoort", addressCountry: "NL" },
     identifier: { "@type": "PropertyValue", propertyID: "KvK", value: "98659456" },
@@ -61,9 +59,9 @@ const graph: Record<string, unknown>[] = [
     "@type": "Person",
     "@id": personId,
     name: "Daniel Fokker",
-    jobTitle: "Interim Head of IT; consultant AI strategy, policy and governance",
+    jobTitle: "Interim manager and consultant in AI strategy, policy and governance",
     worksFor: { "@id": orgId },
-    image: new URL(portrait.src, siteOrigin).toString(),
+    image: `${siteOrigin}/images/daniel-fokker.jpg`,
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "Radboud University" },
       { "@type": "CollegeOrUniversity", name: "Avans" },

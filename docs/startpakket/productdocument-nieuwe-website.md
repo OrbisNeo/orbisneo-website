@@ -382,7 +382,7 @@ De homepage is één lange scrollpagina in vijf hoofdstukken. Elk hoofdstuk heef
 
 ### Sectie 1: Opening en loopbaan als cases (`#cases`)
 
-**Opening (eerste scherm).** Links groot de display-kop, overgenomen van de huidige homepage: "AI is transforming your organisation from the inside." (NL: "AI verandert uw organisatie van binnenuit."). Daarboven de eyebrow "For boards of mid-market and larger companies". Daaronder de lead: "I help you stay in control of the areas it affects most. Not awareness sessions, but practical direction." Rechts het portret van Daniel in een afgeronde uitsnede (radius 20 px) met naam en rol: "Daniel Fokker, interim Head of IT and consultant in AI strategy, policy and governance" (NL: "Daniel Fokker, interim Head of IT en adviseur AI-strategie, -beleid en -governance"). Onderaan het scherm een rustige scroll-aanwijzing ("25 years in the domains AI is now changing most"). Er staat geen opvallende knop in het eerste scherm; alleen een tekstlink "Plan a short intro (15 min)".
+**Opening (eerste scherm).** Links groot de display-kop, overgenomen van de huidige homepage: "AI is transforming your organisation from the inside." (NL: "AI verandert uw organisatie van binnenuit."). Daarboven de eyebrow "For boards of mid-market and larger companies". Daaronder de lead: "I help you stay in control of the areas it affects most. Not awareness sessions, but practical direction." Rechts het portret van Daniel in een afgeronde uitsnede (radius 20 px) met naam en rol: "Daniel Fokker, interim manager and consultant in AI strategy, policy and governance" (NL: "Daniel Fokker, interim manager en consultant in AI-strategie, beleid en governance"). Onderaan het scherm een rustige scroll-aanwijzing ("25 years in the domains AI is now changing most"). Er staat geen opvallende knop in het eerste scherm; alleen een tekstlink "Plan a short intro (15 min)".
 
 **Inleiding op de cases.** Eén alinea, overgenomen van de over-pagina: "I've spent twenty-five years working in the areas that AI is now disrupting most. IT delivery and software development, IT operations and management, enterprise architecture, HR, and IT financial management." Gevolgd door de zin over enterprise architecture als rode draad.
 
@@ -1161,7 +1161,7 @@ Elke pagina krijgt JSON-LD met een `@graph`. Op alle pagina's staan `Organizatio
       "@type": "Person",
       "@id": "https://www.orbisneoconsulting.com/#daniel",
       "name": "Daniel Fokker",
-      "jobTitle": "Interim Head of IT; consultant AI strategy, policy and governance",
+      "jobTitle": "Interim manager and consultant in AI strategy, policy and governance",
       "worksFor": { "@id": "https://www.orbisneoconsulting.com/#organization" },
       "image": "https://www.orbisneoconsulting.com/images/daniel-fokker.jpg",
       "alumniOf": [

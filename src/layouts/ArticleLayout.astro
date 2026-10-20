@@ -38,13 +38,16 @@ const siteOrigin = Astro.site?.origin ?? "https://www.orbisneoconsulting.com";
 const abs = (path: string) => new URL(path, siteOrigin).toString();
 const isoDate = (d: Date) => d.toISOString().slice(0, 10);
 
+// The article's own cover is only used when it is large enough for a 1200 x 630 card (it is cropped,
+// never upscaled). Otherwise Seo.astro falls back to the brand image, with matching size and alt.
 let ogImage: { url: string; width: number; height: number; alt: string } | undefined;
-if (post.data.heroImage) {
-  const cover = await getImage({ src: post.data.heroImage, width: 1200, height: 630, fit: "cover", format: "jpg" });
+const hero = post.data.heroImage;
+if (hero && hero.width >= 1200 && hero.height >= 630) {
+  const cover = await getImage({ src: hero, width: 1200, height: 630, fit: "cover", format: "jpg" });
   ogImage = {
     url: cover.src,
-    width: 1200,
-    height: 630,
+    width: Number(cover.attributes.width ?? 1200),
+    height: Number(cover.attributes.height ?? 630),
     alt: post.data.heroAlt ?? post.data.title,
   };
 }
@@ -84,7 +87,7 @@ const copy = lang === "en"
       breadcrumbHomeHref: "/",
       breadcrumbBlogHref: "/blog/",
       updatedLabel: "Updated",
-      authorLine: "Written by Daniel Fokker, interim Head of IT and consultant in AI strategy, policy and governance.",
+      authorLine: "Written by Daniel Fokker, interim manager and consultant in AI strategy, policy and governance.",
       alternateLabel: "Read this article in Dutch",
     }
   : {
@@ -93,7 +96,7 @@ const copy = lang === "en"
       breadcrumbHomeHref: "/welkom/",
       breadcrumbBlogHref: "/blog/overzicht/",
       updatedLabel: "Bijgewerkt",
-      authorLine: "Geschreven door Daniel Fokker, interim Head of IT en adviseur AI-strategie, -beleid en -governance.",
+      authorLine: "Geschreven door Daniel Fokker, interim manager en consultant in AI-strategie, beleid en governance.",
       alternateLabel: "Lees dit artikel in het Engels",
     };
 ---
