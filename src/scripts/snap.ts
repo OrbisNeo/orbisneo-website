@@ -84,7 +84,8 @@
     timer = window.setTimeout(evaluate, DEBOUNCE_MS);
   };
 
-  if ("onscrollend" in window) {
+  const supportsScrollEnd = "onscrollend" in window;
+  if (supportsScrollEnd) {
     window.addEventListener("scrollend", evaluate);
   } else {
     window.addEventListener(
@@ -138,7 +139,7 @@
   );
   const release = () => {
     pointerDown = false;
-    if (!("onscrollend" in window)) schedule();
+    if (!supportsScrollEnd) schedule();
   };
   window.addEventListener("touchend", release, { passive: true });
   window.addEventListener("touchcancel", release, { passive: true });
