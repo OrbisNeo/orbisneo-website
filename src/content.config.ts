@@ -93,7 +93,18 @@ const nieuws = defineCollection({
       .array(
         z.object({
           title: z.string(),
-          url: z.string().url(),
+          // Only http(s) links without credentials: the URL is rendered as a link on the site.
+          url: z.string().refine(
+            (value) => {
+              try {
+                const u = new URL(value);
+                return (u.protocol === "http:" || u.protocol === "https:") && !u.username && !u.password;
+              } catch {
+                return false;
+              }
+            },
+            { message: "alleen http- of https-adressen, zonder gebruikersnaam of wachtwoord" },
+          ),
           source: z.string(),
           sourceDate: z.coerce.date().optional(),
           commentary: z.string().max(400),
