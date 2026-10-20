@@ -4,7 +4,7 @@ import { PRIVACY_UPDATED } from "../../legal/meta";
 import { Content } from "../../legal/privacy.en.md";
 
 const updated = PRIVACY_UPDATED
-  ? new Date(PRIVACY_UPDATED).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+  ? new Date(PRIVACY_UPDATED).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "Europe/Amsterdam" })
   : "[PLACEHOLDER: date of publication]";
 ---
 
