@@ -1,0 +1,21 @@
+/*
+  Zachte sectie-scroll voor de homepage (/ en /welkom/), met native CSS scroll-snap.
+  "proximity": de browser trekt alleen bij als je vlak bij het begin van een sectie stopt. Een sectie
+  die hoger is dan het scherm blijft vrij te lezen. Geen scroll-snap-stop, dus snel scrollen slaat niets over.
+  Uit bij prefers-reduced-motion en bij een viewport lager dan 500px.
+  scroll-padding-top (base.css) houdt de vaste header vrij.
+*/
+@media (prefers-reduced-motion: no-preference) and (min-height: 500px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  main > section {
+    scroll-snap-align: start;
+  }
+
+  /* De hero is de bovenkant van de pagina: zijn snappunt is scrollpositie 0. */
+  main > section:first-child {
+    scroll-margin-top: var(--header-h);
+  }
+}
