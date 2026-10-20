@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import { langOf } from "../i18n/utils";
@@ -28,6 +28,55 @@ const updatedLabel = post.data.updatedDate?.toLocaleDateString(
   { day: "numeric", month: "long", year: "numeric" },
 );
 
+// SEO: seo.title and seo.description from the front matter win when set. seo.noindex is only passed
+// on when it is true, so the default (false) never overrides the environment noindex of previews.
+const seoTitle = post.data.seo?.title ?? `${post.data.title} | Orbis Neo`;
+const seoDescription = post.data.seo?.description ?? post.data.description;
+const seoNoindex = post.data.seo?.noindex === true ? true : undefined;
+
+const siteOrigin = Astro.site?.origin ?? "https://www.orbisneoconsulting.com";
+const abs = (path: string) => new URL(path, siteOrigin).toString();
+const isoDate = (d: Date) => d.toISOString().slice(0, 10);
+
+let ogImage: { url: string; width: number; height: number; alt: string } | undefined;
+if (post.data.heroImage) {
+  const cover = await getImage({ src: post.data.heroImage, width: 1200, height: 630, fit: "cover", format: "jpg" });
+  ogImage = {
+    url: cover.src,
+    width: 1200,
+    height: 630,
+    alt: post.data.heroAlt ?? post.data.title,
+  };
+}
+
+const orgId = abs("/#organization");
+const personId = abs("/#daniel");
+const blogHref = lang === "en" ? "/blog/" : "/blog/overzicht/";
+const homeHref = lang === "en" ? "/" : "/welkom/";
+const jsonLd: Record<string, unknown>[] = [
+  {
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    description: post.data.description,
+    inLanguage: lang,
+    datePublished: isoDate(post.data.pubDate),
+    dateModified: isoDate(post.data.updatedDate ?? post.data.pubDate),
+    author: { "@id": personId },
+    publisher: { "@id": orgId },
+    ...(ogImage ? { image: abs(ogImage.url) } : {}),
+    mainEntityOfPage: abs(selfPath),
+    ...(altPath ? { [lang === "en" ? "workTranslation" : "translationOfWork"]: { "@id": abs(altPath) } } : {}),
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: abs(homeHref) },
+      { "@type": "ListItem", position: 2, name: "Blog", item: abs(blogHref) },
+      { "@type": "ListItem", position: 3, name: post.data.title, item: abs(selfPath) },
+    ],
+  },
+];
+
 const copy = lang === "en"
   ? {
       breadcrumbHome: "Home",
@@ -50,10 +99,16 @@ const copy = lang === "en"
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Orbis Neo`}
-  description={post.data.description}
+  title={seoTitle}
+  description={seoDescription}
   lang={lang}
   alternates={alternates}
+  noindex={seoNoindex}
+  type="article"
+  publishedTime={isoDate(post.data.pubDate)}
+  modifiedTime={post.data.updatedDate ? isoDate(post.data.updatedDate) : undefined}
+  image={ogImage}
+  jsonLd={jsonLd}
 >
   <article class="article container">
     <nav class="article__breadcrumbs" aria-label="Breadcrumb">
