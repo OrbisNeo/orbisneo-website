@@ -10,11 +10,11 @@ heroAlt: "Agent sprawl: the new shadow IT"
 legacyUrl: "https://orbisneo.nl/agent-sprawl-the-new-shadow-it/"
 ---
 
-AI agents usually do not enter an organization through a big strategic programme. They start smaller.
+AI agents usually do not enter an organisation through a big strategic programme. They start smaller.
 
-An employee creates an agent that summarizes emails. A team builds a workflow that prepares proposals. Someone connects a chatbot to internal documents. A department experiments with automated reporting. It works, it saves time, and it feels logical to continue. Until nobody knows exactly how many agents are actually running.
+An employee creates an agent that summarises emails. A team builds a workflow that prepares proposals. Someone connects a chatbot to internal documents. A department experiments with automated reporting. It works, it saves time, and it feels logical to continue. Until nobody knows exactly how many agents are actually running.
 
-That is where agent sprawl begins: a growing landscape of AI agents, scripts, workflows and integrations that started out useful, but slowly move out of the organization’s field of view. And that makes it look a lot like something we already know: shadow IT.
+That is where agent sprawl begins: a growing landscape of AI agents, scripts, workflows and integrations that started out useful, but slowly move out of the organisation’s field of view. And that makes it look a lot like something we already know: shadow IT.
 
 ## From useful shortcut to invisible risk
 
@@ -38,13 +38,13 @@ A regular SaaS tool usually stores information or supports a process. An AI agen
 AI agents are attractive because they sit close to the work. They do not solve an abstract IT problem. They solve a concrete daily problem.
 
 -   A sales colleague wants to gather customer information faster.
--   A recruiter wants CVs summarized.
+-   A recruiter wants CVs summarised.
 -   A consultant wants notes turned into actions.
 -   A manager wants automatic updates from multiple systems.
 
 These use cases feel small and practical. So the risk also feels small. But agents are rarely used in isolation. They get access to documents, mailboxes, CRM systems, project tools or databases. They are connected to other workflows. They use prompts that start to behave almost like policy rules. And they produce output that people begin to trust.
 
-Before long, the organization no longer has one AI initiative. It has dozens of small AI initiatives running next to each other. Not necessarily wrong. Vulnerable, though, if nobody sees the whole picture.
+Before long, the organisation no longer has one AI initiative. It has dozens of small AI initiatives running next to each other. Not necessarily wrong. Vulnerable, though, if nobody sees the whole picture.
 
 ## The problem is not autonomy. It is ambiguity.
 
@@ -58,9 +58,9 @@ The problem starts when autonomy is not connected to ownership.
 -   An agent without evaluation is a risk.
 -   An agent that was once useful, but nobody really understands anymore, is definitely a risk.
 
-So the question is not: “Should teams be allowed to use AI agents?” The better question is: “How do we make sure teams can use AI agents without losing overview, safety and responsibility?”
+So the question is not: “Should teams be allowed to use AI agents?” The better question is: “How do we make sure teams can use AI agents without losing oversight, safety and responsibility?”
 
-## What organizations need
+## What organisations need
 
 Agent governance does not have to start heavy or bureaucratic. In fact, if it becomes too heavy, people will work around it. That is exactly how you recreate the shadow problem you were trying to prevent.
 
@@ -86,9 +86,9 @@ IT, security and management therefore need to be more than gatekeepers. They nee
 
 ## Start small, but start consciously
 
-Most organizations do not need a complete agent governance framework tomorrow. But waiting until the landscape has become unclear will make everything harder. Start with the agents that already exist. Map them. Look at access, ownership and impact. Decide which use cases are low risk and which ones need more attention. Grow from there.
+Most organisations do not need a complete agent governance framework tomorrow. But waiting until the landscape has become unclear will make everything harder. Start with the agents that already exist. Map them. Look at access, ownership and impact. Decide which use cases are low risk and which ones need more attention. Grow from there.
 
-Because agent sprawl does not happen because people are being irresponsible. It happens because good ideas grow faster than the agreements around them. That is the opportunity. Organizations that learn now how to use AI agents in a clear, safe and practical way are not just creating more control. They are building trust. And trust is exactly what is needed for AI to move beyond experimentation and become part of real work.
+Because agent sprawl does not happen because people are being irresponsible. It happens because good ideas grow faster than the agreements around them. That is the opportunity. Organisations that learn now how to use AI agents in a clear, safe and practical way are not just creating more control. They are building trust. And trust is exactly what is needed for AI to move beyond experimentation and become part of real work.
 
-**Start small, but keep overview.**  
+**Start small, but keep sight of the whole.**  
 If you want to start working with AI agents, make sure ownership, access and control are part of the design from the beginning. Orbis Neo can help you make that practical.

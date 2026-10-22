@@ -10,8 +10,8 @@ interface Props {
 
 const { service, index, lang } = Astro.props;
 const labels = lang === "en"
-  ? { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Price" }
-  : { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Prijs" };
+  ? { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Pricing" }
+  : { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Tariefafspraak" };
 ---
 
 <article id={service.data.anchor} class="service-detail">

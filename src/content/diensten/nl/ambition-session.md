@@ -1,7 +1,7 @@
 ---
 translationKey: ambition-session
 order: 2
-title: Ambitie- en positie sessie
+title: Ambitie- en positiesessie
 tagline: Uw directie bepaalt haar eigen AI-positie. Concreet, en vastgelegd.
 forWho: Directieteam, twee tot acht deelnemers
 duration: Voorbereiding plus halve tot hele dag

@@ -1,7 +1,7 @@
 ---
 translationKey: board-scan
 order: 1
-title: Directie scan
+title: Directiescan
 tagline: Binnen enkele dagen weet u waar u staat.
 forWho: CEO, CFO, CIO of directie
 duration: Drie tot vijf dagen

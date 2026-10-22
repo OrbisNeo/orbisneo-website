@@ -87,6 +87,6 @@ Skip it, and you pay the learning fee.
 
 I am happy to speak with executives and management teams who feel that AI is relevant, but have no appetite for hype or non-committal pilots.
 
-👉 Schedule a no-obligation introduction
+👉 [Request a no-obligation introductory call](/contact/)
 
 Together, we can determine whether your AI challenge is a technology problem, or actually a management decision.

@@ -2,7 +2,7 @@
 title: "Beginnen met AI?"
 translationKey: getting-started-with-ai
 urlSlug: beginnen-met-ai
-description: "Start niet met tools, maar met de juiste vragen Stel je voor: je organisatie investeert tienduizenden euro’s in AI-tools. Er..."
+description: "Een goede start met AI begint niet met tools, maar met strategische helderheid, eigenaarschap en de juiste managementvragen."
 pubDate: 2026-01-20
 category: "AI in organisations"
 heroImage: "../../../assets/blog/getting-started-with-ai-hero.jpeg"
@@ -20,11 +20,9 @@ AI faalt zelden technisch.
 
 AI faalt bestuurlijk.
 
-.kb-image44\_21e81f-13 .kb-image-has-overlay:after{opacity:0.3;}
-
 ## **De grootste misvatting bij starten met AI**
 
-Veel directies benaderen AI als een technologie-vraagstuk. Welke tool past bij ons? Welke leverancier is “leading”? Hoe snel kunnen we starten? Maar voor bestuurders is AI **geen IT-beslissing**. Het is een **strategische keuze** die raakt aan:
+Veel directies benaderen AI als een technologievraagstuk. Welke tool past bij ons? Welke leverancier is “leading”? Hoe snel kunnen we starten? Maar voor bestuurders is AI **geen IT-beslissing**. Het is een **strategische keuze** die raakt aan:
 
 -   de manier waarop werk wordt uitgevoerd
 -   verantwoordelijkheden en eigenaarschap
@@ -72,7 +70,7 @@ Daarom start ik AI-trajecten bewust met een korte, scherpe workshop voor directi
 In zo’n sessie werken we aan:
 
 -   een gedeeld beeld van wat AI _wel_ en _niet_ moet oplossen
--   prioritaire processen met concrete waarde-potentie
+-   prioritaire processen met concrete waardepotentieel
 -   expliciet bestuurlijk eigenaarschap
 -   randvoorwaarden rond mens, compliance en besluitvorming
 
@@ -82,7 +80,7 @@ In zo’n sessie werken we aan:
 
 Voor bestuurders geldt:
 
-AI is geen innovatie-project dat je “erbij doet”. Het is een hefboom die pas werkt als richting, verantwoordelijkheid en context kloppen. Wie dat goed organiseert, creëert ruimte voor echte impact.
+AI is geen innovatieproject dat je “erbij doet”. Het is een hefboom die pas werkt als richting, verantwoordelijkheid en context kloppen. Wie dat goed organiseert, creëert ruimte voor echte impact.
 
 Wie dat overslaat, betaalt leergeld.
 
@@ -90,6 +88,6 @@ Wie dat overslaat, betaalt leergeld.
 
 Ik ga graag in gesprek met directies en MT’s die voelen dat AI relevant is, maar geen zin hebben in hype of vrijblijvende pilots.
 
-👉 **Plan een vrijblijvende kennismaking**
+👉 **[Vraag een vrijblijvende kennismaking aan](/kennismaken/)**
 
-Dan kijken we samen of jullie AI-vraagstuk een technologieprobleem is, of eigenlijk een bestuurlijke keuze.
+Dan kijken we samen of het AI-vraagstuk in je organisatie een technologieprobleem is, of eigenlijk een bestuurlijke keuze.
