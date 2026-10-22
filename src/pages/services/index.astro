@@ -10,13 +10,13 @@ const services = sortByOrder(inLang(all, "en"));
 
 <BaseLayout
   title="Services | Orbis Neo"
-  description="Four services. Each with a clear outcome. Board scan, ambition and position session, AI financial framework and fractional support."
+  description="Four services. Each with a clear outcome. Leadership review, leadership decision workshop, AI financial framework and interim leadership support."
   lang="en"
 >
   <section class="services-intro container">
     <h1>Four services. Each with a clear outcome.</h1>
     <p class="services-intro__lead">
-      I don't deliver open-ended engagements or reports that gather dust. Each service has a clear outcome, a fixed shape and a visible endpoint.
+      Each service has a clear outcome, a fixed shape and a visible endpoint.
     </p>
     <nav class="services-intro__toc" aria-label="On this page">
       <ol>
@@ -35,7 +35,7 @@ const services = sortByOrder(inLang(all, "en"));
   {services.map((s, i) => <ServiceDetail service={s} index={i} lang="en" />)}
 
   <section class="services-closing container">
-    <p>Not sure which one fits? Start with the board scan.</p>
+    <p>Not sure which one fits? Start with the leadership review.</p>
     <a href="/contact/" class="btn btn--secondary">Request an introductory call</a>
   </section>
 </BaseLayout>

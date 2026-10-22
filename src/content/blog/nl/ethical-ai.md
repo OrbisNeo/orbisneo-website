@@ -7,7 +7,7 @@ pubDate: 2025-10-24
 updatedDate: 2026-01-06
 category: "AI in organisations"
 heroImage: "../../../assets/blog/ethical-ai-hero.jpeg"
-heroAlt: "An unrecognizable person with binary code projected, symbolizing cybersecurity and digital coding."
+heroAlt: "An unrecognisable person with binary code projected, symbolising cybersecurity and digital coding."
 legacyUrl: "https://orbisneo.nl/nl/ethisch_ai/"
 ---
 

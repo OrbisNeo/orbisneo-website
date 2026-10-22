@@ -16,9 +16,7 @@ Stel je voor: je organisatie investeert tienduizenden euro’s in AI-tools. Er w
 
 Dit scenario zie ik steeds vaker. Niet omdat AI geen waarde heeft, maar omdat organisaties **beginnen op de verkeerde plek**.
 
-AI faalt zelden technisch.
-
-AI faalt bestuurlijk.
+AI-initiatieven lopen zelden alleen op de techniek vast. Vaker stokken ze op bestuurlijke keuzes: wat is het doel, wie is eigenaar en wie beslist?
 
 ## **De grootste misvatting bij starten met AI**
 
@@ -70,7 +68,7 @@ Daarom start ik AI-trajecten bewust met een korte, scherpe workshop voor directi
 In zo’n sessie werken we aan:
 
 -   een gedeeld beeld van wat AI _wel_ en _niet_ moet oplossen
--   prioritaire processen met concrete waardepotentieel
+-   prioritaire processen met concreet waardepotentieel
 -   expliciet bestuurlijk eigenaarschap
 -   randvoorwaarden rond mens, compliance en besluitvorming
 

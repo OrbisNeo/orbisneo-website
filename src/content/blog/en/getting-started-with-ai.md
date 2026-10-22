@@ -17,9 +17,7 @@ Imagine this: your organisation invests tens of thousands of euros in AI tools. 
 
 I am seeing this scenario more and more often. Not because AI has no value, but because organisations start in the wrong place.
 
-AI rarely fails technically.
-
-AI fails at the management level.
+AI initiatives rarely stall on technology alone. More often they stall on governance choices: what is it for, who owns it and who decides?
 
 ## The biggest misconception when getting started with AI
 
