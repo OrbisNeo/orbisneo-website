@@ -30,7 +30,7 @@ Een gewone SaaS-tool bewaart meestal informatie of ondersteunt een proces. Een A
 
 ## Waarom agent sprawl zo snel kan ontstaan
 
-AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten. Ze lossen geen abstract IT-probleem op, maar een concreet dagelijks probleem: een paar voorbeelden:
+AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten. Ze lossen geen abstract IT-probleem op, maar een concreet dagelijks probleem. Een paar voorbeelden:
 
 -   Een salesmedewerker wil sneller klantinformatie verzamelen.
 -   Een recruiter wil cv’s laten samenvatten.
@@ -71,7 +71,7 @@ Een praktische basis bestaat uit een paar simpele afspraken.
 
 ## De rol van IT verandert
 
-Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents werkt dat niet meer. De behoefte aan experiment is te groot en de technologie ontwikkelt te snel. IT, security en management moeten daarom niet alleen poortwachter zijn, maar ook ontwerper van veilige speelruimte.
+Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents werkt dat niet meer. De behoefte aan experiment is te groot en de technologie ontwikkelt zich te snel. IT, security en management moeten daarom niet alleen poortwachter zijn, maar ook ontwerper van veilige speelruimte.
 
 Dat betekent: duidelijke kaders, herbruikbare bouwblokken en laagdrempelige begeleiding. Teams moeten weten wat mag, wat niet mag en wanneer ze hulp moeten vragen. Zo voorkom je dat governance voelt als controle achteraf. Het wordt dan onderdeel van het ontwerp vanaf het begin.
 

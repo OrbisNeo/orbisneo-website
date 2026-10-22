@@ -15,7 +15,7 @@ legacyUrl: "https://orbisneo.nl/ai-agents-in-organisations/"
 
 Imagine this: while you are sitting in a meeting, a digital assistant autonomously negotiates $4,200 off the price of your new car. No draft email. No suggestion. Just action.
 
-That same week, someone gave a similar agent access to their iMessage. Within a short time, the system had sent hundreds of unsolicited messages to his wife and entire contact list.
+That same week, someone gave a similar agent access to his iMessage. Within a short time, the system had sent hundreds of unsolicited messages to his wife and entire contact list.
 
 Two extremes. One technology. This is where we are now with AI agents. The value is enormous. The chaos is close by. So how do we adopt AI agents safely and successfully inside organisations?
 

@@ -14,21 +14,21 @@ const services = sortByOrder(inLang(all, lang));
 const copy = lang === "en"
   ? {
       heading: "Four services. Each with a clear outcome.",
-      intro: "I don't deliver open-ended engagements or reports that gather dust.",
-      closing: "Which service fits your situation? Not sure? Start with the board scan.",
+      intro: "Each service has a clear outcome, a fixed shape and a visible endpoint.",
+      closing: "Which service fits your situation? Not sure? Start with the leadership review.",
       more: "See all services",
       moreHref: "/services/",
       contactHref: "/contact/",
-      labels: { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Price" },
+      labels: { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Pricing" },
     }
   : {
       heading: "Vier diensten. Elk met een duidelijke uitkomst.",
-      intro: "Ik lever geen open trajecten of rapporten die in de kast blijven liggen.",
-      closing: "Welke dienst past bij uw situatie? Niet zeker? Begin met de directie scan.",
+      intro: "Elke dienst heeft een helder resultaat, een vaste vorm en een zichtbaar eindpunt.",
+      closing: "Welke dienst past bij uw situatie? Niet zeker? Begin met de directiescan.",
       more: "Bekijk alle diensten",
       moreHref: "/diensten/",
       contactHref: "/kennismaken/",
-      labels: { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Prijs" },
+      labels: { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Tariefafspraak" },
     };
 ---
 
@@ -69,7 +69,7 @@ const copy = lang === "en"
         data-umami-event="cta-intro-click"
         data-umami-event-location="services"
         data-umami-event-lang={lang}
-      >{lang === "en" ? "Or plan a short intro call →" : "Of plan direct een kennismaking →"}</a>
+      >{lang === "en" ? "Or request an introductory call →" : "Of vraag direct een kennismaking aan →"}</a>
     </p>
   </div>
 </section>

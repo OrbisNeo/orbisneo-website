@@ -2,7 +2,7 @@
 title: "Is AI soms gewoon automatisering met een nieuw label?"
 translationKey: is-ai-just-automation
 urlSlug: ai-gewoon-automatisering-met-nieuw-label
-description: "Introductie Ik hoor het steeds vaker in gesprekken met managers, product owners en architecten: “We willen iets met AI.” En..."
+description: "Veel AI-initiatieven had je ook met klassieke automatisering kunnen oplossen. Een besliskader: automation-first, AI waar het nodig is."
 pubDate: 2026-01-05
 updatedDate: 2026-01-06
 category: "AI in organisations"
@@ -22,8 +22,6 @@ Allemaal prima doelen. Alleen: veel van wat nu als “AI-initiatief” wordt ver
 Dat is geen aanval op AI. Integendeel. Het is een pleidooi voor volwassenheid: **we moeten beter worden in kiezen waar AI waarde toevoegt, en waar het vooral ruis is.**
 
 Een recente [KNIME-analyse](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which) zet die keuze heel helder neer door het onderscheid te maken tussen traditionele automatisering, generatieve AI en agentic varianten, inclusief wanneer welke aanpak logisch is.
-
-.kb-image43\_ebece6-7d .kb-image-has-overlay:after{opacity:0.3;}
 
 ## **De verwarring begint bij het woord “AI”**
 
@@ -45,7 +43,7 @@ Laat ik het onpopulair zeggen: heel veel “AI-use cases” zijn oude wijn in ni
 Voorbeelden die ik vaak voorbij zie:
 
 -   “AI-rapportages” die in de kern een goed BI-model nodig hebben
--   “AI-data analyse” die vooral vraagt om datakwaliteit, definities en een semantic layer
+-   “AI-data-analyse” die vooral vraagt om datakwaliteit, definities en een semantic layer
 -   “AI-procesoptimalisatie” die beter begint met workflow, integratie en heldere beslisregels
 
 Wat AI wél kan toevoegen in zulke situaties:
@@ -157,7 +155,7 @@ AI kan dan helpen met:
 
 Maar de onderliggende cijfers moeten deterministisch zijn. Anders krijg je een rapport dat goed klinkt en verkeerd is. En dat is een heel duur soort misleiding.
 
-### **Data analyse**
+### **Data-analyse**
 
 Als je bedoelt: segmenten, trends, KPI’s, drill-downs, dan is klassieke analytics vaak de basis.
 

@@ -11,25 +11,26 @@ const { lang } = Astro.props;
 
 const copy = lang === "en"
   ? {
-      eyebrow: "For boards of mid-market and larger companies",
-      heading: "AI is transforming your organisation from the inside.",
-      lead: "I help you stay in control of the areas it affects most. Not awareness sessions, but practical direction.",
+      eyebrow: "For leadership teams of mid-market and larger companies",
+      heading: "Clear decisions on IT and organisational change, with AI as the lever.",
+      lead: "I help you make the right choices and see them through: where AI can make your IT and organisation work better, what it costs, which risks come with it and how to organise delivery.",
       body: [
-        "AI doesn't stop at one department. It changes how your organisation hangs together: how software gets built, how IT is run, how you deploy your people and what it all costs. Solve that domain by domain and you miss how those choices affect each other.",
-        "I've spent twenty-five years in exactly those areas, from IT delivery and operations to enterprise architecture, HR and IT financial management. I work interim or part-time, for an agreed period and always with a clear endpoint.",
+        "AI changes how your organisation hangs together: how software gets built, how IT is run, how you deploy your people and what it all costs. Solve that domain by domain and you miss how those choices affect each other.",
+        "I've spent twenty-five years in exactly those areas, from IT delivery and operations to enterprise architecture, HR and IT financial management. I use that experience to turn questions about IT, architecture, finance and organisation into clear priorities, accountable owners and an executable plan, and to help carry it out. I work interim or part-time, for an agreed period and always with a clear endpoint.",
       ],
-      cta: "Plan a short intro (15 min)",
+      cta: "Request an introductory call (15 min)",
       contactHref: "/contact/",
     }
   : {
       eyebrow: "Voor directies van middelgrote en grote organisaties",
-      heading: "AI verandert uw organisatie van binnenuit.",
-      lead: "Ik help u grip houden op de gebieden waar het grootste effect zit. Geen awareness-sessies, maar praktische sturing.",
+      // Soft hyphen (U+00AD) in "organisatieverandering": the long word may break on narrow screens.
+      heading: "Heldere keuzes over IT en organisatie\u00adverandering, met AI als hefboom.",
+      lead: "Ik help u de juiste keuzes te maken en ze waar te maken: waar AI uw IT en organisatie beter laat werken, wat dat kost, welke risico's erbij horen en hoe u de uitvoering organiseert.",
       body: [
-        "AI raakt niet één afdeling, maar de samenhang van uw organisatie: hoe software wordt gebouwd, hoe IT wordt beheerd, hoe u uw mensen inzet en wat het allemaal kost. Wie dat per domein oplost, mist hoe die keuzes op elkaar ingrijpen.",
-        "Al vijfentwintig jaar werk ik in precies die domeinen, van IT-delivery en IT-beheer tot enterprise architecture, HR en IT financial management. Ik werk interim of op deeltijdbasis, voor een afgesproken periode en altijd met een helder eindpunt.",
+        "AI raakt de samenhang van uw organisatie: hoe software wordt gebouwd, hoe IT wordt beheerd, hoe u uw mensen inzet en wat het allemaal kost. Wie dat per domein oplost, mist hoe die keuzes op elkaar ingrijpen.",
+        "Al vijfentwintig jaar werk ik in precies die domeinen, van IT-delivery en IT-beheer tot enterprise architecture, HR en IT financial management. Daarmee vertaal ik vraagstukken over IT, architectuur, financiën en organisatie naar duidelijke prioriteiten, eigenaren en een uitvoerbaar plan, en help ik bij de uitvoering. Ik werk interim of op deeltijdbasis, voor een afgesproken periode en altijd met een helder eindpunt.",
       ],
-      cta: "Plan een kennismaking (15 min)",
+      cta: "Vraag een kennismaking aan (15 min)",
       contactHref: "/kennismaken/",
     };
 ---
@@ -52,9 +53,6 @@ const copy = lang === "en"
       <p class="opening__eyebrow">{copy.eyebrow}</p>
       <h1 id="opening-heading" class="opening__heading">{copy.heading}</h1>
       <p class="opening__lead">{copy.lead}</p>
-      <div class="opening__body">
-        {copy.body.map((paragraph) => <p>{paragraph}</p>)}
-      </div>
       <p class="opening__cta">
         <a
           href={copy.contactHref}
@@ -64,6 +62,9 @@ const copy = lang === "en"
           data-umami-event-lang={lang}
         >{copy.cta}</a>
       </p>
+      <div class="opening__body">
+        {copy.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
     </div>
   </div>
 </section>
@@ -178,7 +179,7 @@ const copy = lang === "en"
   }
 
   .opening__cta {
-    margin: 0;
+    margin: 0 0 var(--space-5);
   }
 
   .opening__link {
@@ -194,17 +195,7 @@ const copy = lang === "en"
     color: var(--color-action-hover);
   }
 
-  /* Below 1024 px: eyebrow, heading, lead and CTA first, the two paragraphs after the CTA. */
   @media (max-width: 1023.98px) {
-    .opening__cta {
-      order: 1;
-    }
-
-    .opening__body {
-      order: 2;
-      margin-top: var(--space-5);
-    }
-
     .opening__lead {
       font-size: 1.0625rem;
       line-height: 1.45;

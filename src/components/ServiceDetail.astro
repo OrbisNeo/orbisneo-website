@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import type { Lang } from "../i18n/ui";
 
 interface Props {
@@ -10,8 +10,9 @@ interface Props {
 
 const { service, index, lang } = Astro.props;
 const labels = lang === "en"
-  ? { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Price" }
-  : { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Prijs" };
+  ? { forWho: "For whom", duration: "Duration", delivery: "Delivery", price: "Pricing" }
+  : { forWho: "Voor wie", duration: "Duur", delivery: "Oplevering", price: "Tariefafspraak" };
+const { Content } = await render(service);
 ---
 
 <article id={service.data.anchor} class="service-detail">
@@ -26,6 +27,7 @@ const labels = lang === "en"
         <div><dt>{labels.delivery}</dt><dd>{service.data.delivery}</dd></div>
         <div><dt>{labels.price}</dt><dd>{service.data.price}</dd></div>
       </dl>
+      <div class="service-detail__text"><Content /></div>
     </div>
   </div>
 </article>
@@ -64,6 +66,24 @@ const labels = lang === "en"
     color: var(--color-text-soft);
     margin: 0 0 var(--space-6);
     max-width: 48ch;
+  }
+
+  .service-detail__text {
+    margin-top: var(--space-6);
+    max-width: 68ch;
+  }
+
+  .service-detail__text :global(h3) {
+    font-size: var(--fs-h4);
+    margin: var(--space-5) 0 var(--space-2);
+  }
+
+  .service-detail__text :global(h3:first-child) {
+    margin-top: 0;
+  }
+
+  .service-detail__text :global(p) {
+    margin: 0 0 var(--space-3);
   }
 
   .service-detail__meta {
