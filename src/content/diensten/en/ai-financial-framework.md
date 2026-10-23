@@ -5,7 +5,7 @@ title: AI financial framework
 tagline: A clear answer to the financial questions around AI.
 forWho: CFO, finance director, or IT leader with budget responsibility
 duration: Two to four weeks, depending on available data
-delivery: Framework, financial model and implementation plan for embedding
+delivery: Framework, financial model and a plan for integrating it into existing management processes
 price: Day rate, scope agreed upfront
 anchor: ai-financial-framework
 ---

@@ -38,7 +38,7 @@ If you call it all “AI”, you automatically get a weird discussion. Then it s
 
 ## **Old wine in new bottles, and why that’s okay**
 
-Let me say it unpopularly: a lot of “AI use cases” are old wine in new bottles.
+This may be unpopular, but a lot of “AI use cases” are old wine in new bottles.
 
 Examples I often come across:
 
@@ -194,4 +194,4 @@ The question you can ask yourself is simple:
 
 Once that is clear, the rest often falls into place surprisingly quickly.
 
-Do you want to apply this framework to your processes, without hype and without theatre? Then that’s exactly what I do in a short clarity session: for each process we decide between automation-first and AI-where-needed, and what a sensible first step is.
+Do you want to apply this framework to your processes, without hype and without theatre? Then that’s exactly what I do in a short [clarity session](/contact/): for each process we decide between automation-first and AI-where-needed, and what a sensible first step is.

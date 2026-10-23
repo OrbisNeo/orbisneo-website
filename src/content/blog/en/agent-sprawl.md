@@ -91,4 +91,4 @@ Most organisations do not need a complete agent governance framework tomorrow. B
 Because agent sprawl does not happen because people are being irresponsible. It happens because good ideas grow faster than the agreements around them. That is the opportunity. Organisations that learn now how to use AI agents in a clear, safe and practical way are not just creating more control. They are building trust. And trust is exactly what is needed for AI to move beyond experimentation and become part of real work.
 
 **Start small, but keep sight of the whole.**  
-If you want to start working with AI agents, make sure ownership, access and control are part of the design from the beginning. Orbis Neo can help you make that practical.
+If you want to start working with AI agents, make sure ownership, access and control are part of the design from the beginning. [Orbis Neo can help you make that practical](/contact/).

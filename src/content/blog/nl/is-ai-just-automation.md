@@ -194,4 +194,4 @@ De vraag die je jezelf kunt stellen is simpel:
 
 Als je dat eenmaal scherp hebt, valt de rest vaak verrassend snel op zijn plek.
 
-Wil je dit kader eens op jouw processen leggen, zonder hype en zonder theater? Dan is dat precies wat ik doe in een korte helderheidssessie: per proces bepalen we automation-first, AI-where-needed, en wat een verstandige eerste stap is.
+Wil je dit kader eens op jouw processen leggen, zonder hype en zonder theater? Dan is dat precies wat ik doe in een korte [helderheidssessie](/kennismaken/): per proces bepalen we automation-first, AI-where-needed, en wat een verstandige eerste stap is.

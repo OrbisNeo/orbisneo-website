@@ -5,7 +5,7 @@ title: Financieel kader voor AI
 tagline: Een helder antwoord op de financiële vragen rond AI.
 forWho: CFO, finance director of IT-leider met budgetverantwoordelijkheid
 duration: Twee tot vier weken, afhankelijk van beschikbare data
-delivery: Kader, financieel model en implementatieplan voor inbedding
+delivery: Kader, financieel model en een plan om het op te nemen in uw bestaande planning- en controlcyclus
 price: Dagtarief, scope vooraf afgesproken
 anchor: financieel-kader
 ---

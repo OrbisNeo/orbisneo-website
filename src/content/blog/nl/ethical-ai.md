@@ -112,4 +112,4 @@ De grootste misvatting is dat ethiek innovatie remt. In de praktijk geldt het te
 
 Mijn voorkeur is simpel: **maak het expliciet**. Eén pagina afspraken. Een kleine cadence. En dan doen.
 
-Wil je dit concreet maken voor jouw organisatie? Dan is dit precies het soort managementworkshop dat ik graag faciliteer. Twee uur. Whiteboard. Conclusies. Afspraken waar je maandag mee verder kunt.
+Wil je dit concreet maken voor jouw organisatie? Dan is dit precies het soort [managementworkshop](/kennismaken/) dat ik graag faciliteer. Twee uur. Whiteboard. Conclusies. Afspraken waar je maandag mee verder kunt.

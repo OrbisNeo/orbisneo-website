@@ -17,14 +17,14 @@ const copy = lang === "en"
       intro: "A few recent engagements that illustrate how I work in the areas AI is now disrupting most: IT delivery and software development, IT operations and management, enterprise architecture, HR and IT financial management. The full career is on the about page.",
       more: "Read the full career",
       moreHref: "/about/",
-      labels: { situation: "Situation", result: "Result" },
+      labels: { situation: "Situation", result: "Result", ongoing: "Mandate and progress" },
     }
   : {
       heading: "Een selectie uit vijfentwintig jaar",
       intro: "Een paar recente opdrachten die laten zien hoe ik werk, in de gebieden die AI nu het sterkst raakt: IT-delivery en softwareontwikkeling, IT-beheer, enterprise architecture, HR en IT financial management. De volledige loopbaan staat op de over-pagina.",
       more: "Lees de volledige loopbaan",
       moreHref: "/over/",
-      labels: { situation: "Situatie", result: "Resultaat" },
+      labels: { situation: "Situatie", result: "Resultaat", ongoing: "Opdracht en voortgang" },
     };
 ---
 
@@ -43,8 +43,12 @@ const copy = lang === "en"
           <dl class="case-card__meta">
             <dt>{copy.labels.situation}</dt>
             <dd>{c.data.situation}</dd>
-            <dt>{copy.labels.result}</dt>
-            <dd>{c.data.result}</dd>
+            {c.data.result?.trim() && (
+              <>
+                <dt>{c.data.ongoing ? copy.labels.ongoing : copy.labels.result}</dt>
+                <dd>{c.data.result}</dd>
+              </>
+            )}
           </dl>
         </li>
       ))}

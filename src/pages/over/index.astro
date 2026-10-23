@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBackdrop from "../../components/PageBackdrop.astro";
 import portrait from "../../assets/people/daniel-fokker.jpg";
 import { inLang, sortByOrder } from "../../i18n/utils";
 
@@ -14,6 +15,7 @@ const cases = sortByOrder(inLang(all, "nl"));
   description="Over Daniel Fokker en Orbis Neo. Vijfentwintig jaar in de domeinen die AI nu het sterkst raakt."
   lang="nl"
 >
+  <PageBackdrop flip />
   <section class="about container">
     <header class="about__header">
       <div class="about__intro">
@@ -60,8 +62,12 @@ const cases = sortByOrder(inLang(all, "nl"));
             <dl>
               <dt>Situatie</dt>
               <dd>{c.data.situation}</dd>
-              <dt>Resultaat</dt>
-              <dd>{c.data.result}</dd>
+              {c.data.result?.trim() && (
+                <>
+                  <dt>{c.data.ongoing ? "Opdracht en voortgang" : "Resultaat"}</dt>
+                  <dd>{c.data.result}</dd>
+                </>
+              )}
             </dl>
           </li>
         ))}

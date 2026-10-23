@@ -108,4 +108,4 @@ You do not have to throw away your existing structures, frameworks and processes
 
 If this topic feels familiar, start with these seven decisions. Only then come tooling, vendor selection and architecture.
 
-A short invitation: do you want to get clarity on this in one conversation? A 30 to 45 minute intake is enough to remove the noise.
+A short invitation: do you want to get clarity on this in one conversation? A [30 to 45 minute intake](/contact/) is enough to remove the noise.

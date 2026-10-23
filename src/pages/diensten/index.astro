@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBackdrop from "../../components/PageBackdrop.astro";
 import ServiceDetail from "../../components/ServiceDetail.astro";
 import { inLang, sortByOrder } from "../../i18n/utils";
 
@@ -13,6 +14,7 @@ const services = sortByOrder(inLang(all, "nl"));
   description="Vier diensten. Elk met een duidelijke uitkomst. Directiescan, ambitie- en positiesessie, financieel kader voor AI en interim-ondersteuning."
   lang="nl"
 >
+  <PageBackdrop />
   <section class="services-intro container">
     <h1>Vier diensten. Elk met een duidelijke uitkomst.</h1>
     <p class="services-intro__lead">

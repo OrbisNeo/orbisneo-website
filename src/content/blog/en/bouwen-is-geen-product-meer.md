@@ -6,6 +6,8 @@ description: "One developer used AI to build counterparts to Adobe programs with
 pubDate: 2026-10-20
 category: "AI in organisations"
 author: "Daniel Fokker"
+heroImage: "../../../assets/blog/bouwen-is-geen-product-meer-hero.jpg"
+heroAlt: "Close-up of a computer screen showing a command prompt: a ping gets no reply and the cursor sits after the words 'HELP ME...'."
 draft: false
 ---
 
