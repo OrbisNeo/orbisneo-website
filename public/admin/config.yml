@@ -169,6 +169,7 @@ collections:
       - { name: role, label: Rol, widget: string, i18n: true }
       - { name: period, label: Periode, widget: string, i18n: true }
       - { name: situation, label: Situatie, widget: text, i18n: true }
-      - { name: result, label: Resultaat, widget: text, i18n: true }
+      - { name: result, label: Resultaat, widget: text, required: false, i18n: true }
+      - { name: ongoing, label: "Lopende opdracht (toont 'Opdracht en voortgang')", widget: boolean, default: false, required: false, i18n: duplicate }
       - { name: featured, label: "Op homepage tonen", widget: boolean, default: false, i18n: duplicate }
       - { name: body, label: Toelichting, widget: markdown, required: false, i18n: true }

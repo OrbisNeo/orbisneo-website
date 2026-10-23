@@ -6,7 +6,7 @@ tagline: Senior support to carry decisions through, for an agreed period and wit
 forWho: Leadership team that needs senior capacity for delivery for a set period, without a permanent hire
 duration: One to four days a week, for a shorter or longer period
 delivery: Fixed rhythm, direct access, periodic reporting to the leadership team
-price: Day rate, agreed on days per week deployed
+price: Day rate, with weekly commitment agreed upfront
 anchor: fractional-support
 ---
 

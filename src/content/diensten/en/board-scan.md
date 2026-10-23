@@ -12,7 +12,7 @@ anchor: board-scan
 
 ### When do you need this?
 
-AI initiatives are running or planned, but nobody has the overview. What do they deliver, who owns them and where should you start?
+AI initiatives are running or planned, but there is no clear overall picture. What do they deliver, who owns them and where should you start?
 
 ### What do we look at?
 

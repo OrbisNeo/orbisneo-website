@@ -84,4 +84,4 @@ Want agent sprawl ontstaat niet omdat mensen onverantwoord bezig zijn. Het ontst
 Organisaties die nu leren hoe ze AI-agents overzichtelijk, veilig en praktisch inzetten, bouwen niet alleen meer controle in. Ze bouwen ook vertrouwen op. En vertrouwen is precies wat nodig is om AI niet alleen uit te proberen, maar echt onderdeel te maken van het werk.
 
 **Begin klein, maar houd overzicht.**  
-Als je met AI-agents aan de slag wilt, zorg dan dat eigenaarschap, toegang en controle vanaf het begin meedoen. Orbis Neo helpt je daar praktisch bij.
+Als je met AI-agents aan de slag wilt, zorg dan dat eigenaarschap, toegang en controle vanaf het begin meedoen. [Orbis Neo helpt je daar praktisch bij](/kennismaken/).

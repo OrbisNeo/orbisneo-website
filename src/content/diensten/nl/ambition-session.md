@@ -2,7 +2,7 @@
 translationKey: ambition-session
 order: 2
 title: Ambitie- en positiesessie
-tagline: Uw directie bepaalt haar positie op AI in IT en organisatie. Concreet, en vastgelegd.
+tagline: Uw directie bepaalt haar koers voor AI in IT en organisatie. Concreet, en vastgelegd.
 forWho: Directieteam, twee tot acht deelnemers
 duration: Voorbereiding plus halve tot hele dag
 delivery: Vastgelegd positiedocument over AI in IT en organisatie, klaar voor intern gebruik

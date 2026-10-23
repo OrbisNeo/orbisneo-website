@@ -112,4 +112,4 @@ The biggest misconception is that ethics slows innovation down. In practice, the
 
 My preference is simple: make it explicit. One page of agreements. A small cadence. And then act.
 
-Do you want to make this concrete for your organisation? This is exactly the kind of management workshop I like to facilitate. Two hours. Whiteboard. Conclusions. Agreements you can move forward with on Monday.
+Do you want to make this concrete for your organisation? This is exactly the kind of [management workshop](/contact/) I like to facilitate. Two hours. Whiteboard. Conclusions. Agreements you can move forward with on Monday.

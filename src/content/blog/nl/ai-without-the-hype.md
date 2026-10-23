@@ -110,4 +110,4 @@ Je hoeft je bestaande structuren, frameworks en processen niet weg te gooien. Je
 
 Als je dit onderwerp herkent: begin met deze zeven besluiten. Pas daarna komt tooling, leveranciersselectie en architectuur.
 
-**Korte uitnodiging:** wil je dit binnen één gesprek scherp krijgen? Dan is een intake van 30 tot 45 minuten genoeg om de ruis eruit te halen.
+**Korte uitnodiging:** wil je dit binnen één gesprek scherp krijgen? Dan is een [intake van 30 tot 45 minuten](/kennismaken/) genoeg om de ruis eruit te halen.

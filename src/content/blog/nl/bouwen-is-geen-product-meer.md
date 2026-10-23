@@ -6,6 +6,8 @@ description: "Eén ontwikkelaar bouwde met AI binnen dagen tegenhangers van Adob
 pubDate: 2026-10-20
 category: "AI in organisations"
 author: "Daniel Fokker"
+heroImage: "../../../assets/blog/bouwen-is-geen-product-meer-hero.jpg"
+heroAlt: "Close-up van een computerscherm met een opdrachtvenster: een ping krijgt geen antwoord en achter de cursor staat 'HELP ME...'."
 draft: false
 ---
 

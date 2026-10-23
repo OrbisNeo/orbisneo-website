@@ -48,7 +48,8 @@ const cases = defineCollection({
     role: z.string(),
     period: z.string(),
     situation: z.string(),
-    result: z.string(),
+    result: z.string().optional(),
+    ongoing: z.boolean().default(false),
     featured: z.boolean().default(true),
   }),
 });

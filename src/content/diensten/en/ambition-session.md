@@ -2,7 +2,7 @@
 translationKey: ambition-session
 order: 2
 title: Leadership decision workshop
-tagline: Your leadership team defines its position on AI in IT and organisation. Concrete, and agreed.
+tagline: Your leadership team sets its direction for AI in IT and organisation. Concrete, and agreed.
 forWho: Leadership team, two to eight participants
 duration: Preparation plus half a day to a full day
 delivery: Agreed position document on AI in IT and organisation, ready for internal use
