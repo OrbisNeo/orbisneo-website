@@ -1,197 +1,66 @@
 ---
-title: "Is AI soms gewoon automatisering met een nieuw label?"
+title: "AI of gewone automatisering: wat vraagt het werk?"
 translationKey: is-ai-just-automation
 urlSlug: ai-gewoon-automatisering-met-nieuw-label
-description: "Veel AI-initiatieven had je ook met klassieke automatisering kunnen oplossen. Een besliskader: automation-first, AI waar het nodig is."
+description: "Wanneer zijn vaste regels voldoende, wanneer helpt AI en wanneer combineer je beide? Een praktische afweging voor rapportages, analyse en werkprocessen."
 pubDate: 2026-01-05
-updatedDate: 2026-01-06
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/is-ai-just-automation-hero.jpg"
 heroAlt: "Close-up of digital data analysis displayed on a computer monitor with blue tones."
 legacyUrl: "https://orbisneo.nl/nl/aigewoonautomatiseringmetnieuwlabel/"
 ---
 
-## Introductie
+Ik hoor het steeds vaker in gesprekken met managers, product owners en architecten: "We willen iets met AI."
 
-Ik hoor het steeds vaker in gesprekken met managers, product owners en architecten: “We willen iets met AI.”
+Vaak gaat de vraag over heel praktisch werk: sneller rapporteren, minder gegevens overtypen of een dossier compleet krijgen. Dan wil ik eerst weten waar het werk vastloopt. Zijn de regels onduidelijk, ontbreken er gegevens of kost juist het interpreteren ervan veel tijd? Dat verschil bepaalt of je beter af bent met een procesaanpassing, gewone automatisering of AI.
 
-En dan blijkt na tien minuten dat het eigenlijk gaat om iets heel herkenbaars. Minder handwerk. Sneller rapporteren. Minder fouten. Betere doorlooptijden. Meer grip.
+## De verwarring begint bij het woord AI
 
-Allemaal prima doelen. Alleen: veel van wat nu als “AI-initiatief” wordt verkocht, had je ook kunnen oplossen met klassieke automatisering en goed ontworpen software. Soms slimmer. Soms goedkoper. Soms betrouwbaarder.
+"AI" is een containerbegrip geworden. Het kan bijvoorbeeld gaan om:
 
-Dat is geen aanval op AI. Integendeel. Het is een pleidooi voor volwassenheid: **we moeten beter worden in kiezen waar AI waarde toevoegt, en waar het vooral ruis is.**
+-   een model dat informatie interpreteert, zoals tekst of documenten
+-   hulp bij het ontwikkelen van software
+-   een agent die handelingen uitvoert
 
-Een recente [KNIME-analyse](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which) zet die keuze heel helder neer door het onderscheid te maken tussen traditionele automatisering, generatieve AI en agentic varianten, inclusief wanneer welke aanpak logisch is.
+Als je dat allemaal "AI" noemt, krijg je al snel een onvruchtbare discussie. Dan lijkt het alsof je voor of tegen AI moet zijn, terwijl de echte vraag is: **welk probleem lossen we op, en wat is de meest geschikte aanpak?**
 
-## **De verwarring begint bij het woord “AI”**
+## AI in de toepassing of in de ontwikkeling
 
-“AI” is een containerbegrip geworden. Het staat voor:
+Er zijn twee verschillende keuzes die in dit gesprek vaak door elkaar lopen. Je kunt AI onderdeel maken van een toepassing, bijvoorbeeld om documenten te interpreteren of voorstellen te formuleren. Dan moet je tijdens het gebruik rekening houden met de kwaliteit en beperkingen van het model.
 
--   een chatinterface bovenop bestaande systemen
--   een model dat teksten samenvat
--   een agent die acties uitvoert
--   een developer die sneller code schrijft
--   een classificatiemodel dat uitzonderingen herkent
--   en soms gewoon een workflow met slimme regels
+Je kunt AI ook alleen gebruiken om software te ontwikkelen: code schrijven, tests voorstellen of documentatie voorbereiden. Het opgeleverde systeem hoeft dan zelf geen AI te bevatten. Je beoordeelt in dat geval vooral de kwaliteit van het ontwikkelwerk en de manier waarop het team controleert. Beide vormen kunnen nuttig zijn. Welke tijdwinst ze opleveren, moet je vaststellen in het werk zelf.
 
-Als je dat allemaal “AI” noemt, krijg je automatisch een rare discussie. Dan lijkt het alsof je voor of tegen AI moet zijn, terwijl de echte vraag is: **welk probleem lossen we op, en wat is het meest geschikte mechanisme?**
+Dat meten is geen formaliteit. In een [onderzoek uit 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) hadden ervaren open-sourceontwikkelaars in de onderzochte omstandigheden meer tijd nodig met AI-hulp dan zonder, terwijl zij zelf tijdwinst verwachtten. Onderzoeksorganisatie METR wees in een [vervolgbericht uit februari 2026](https://metr.org/blog/2026-02-24-uplift-update/) op aanwijzingen voor een veranderd effect, maar ook op selectieproblemen die een betrouwbare schatting bemoeilijkten. De praktische les is om een onderzoeksresultaat niet als vaste productiviteitsfactor voor je eigen team te gebruiken.
 
-## **Oude wijn in nieuwe zakken, en waarom dat niet erg is**
+## Waarom AI soms wordt ingezet waar automatisering volstaat
 
-Laat ik het onpopulair zeggen: heel veel “AI-use cases” zijn oude wijn in nieuwe zakken.
+Daar zijn een paar herkenbare oorzaken voor. Het label AI kan het makkelijker maken om budget vrij te maken. Gegevensproblemen, zoals ontbrekende definities of verspreide gegevens, blijven bestaan, ook als een model de uitkomst netjes samenvat. En een overtuigende tekst over cijfers is nog geen controleerbare analyse.
 
-Voorbeelden die ik vaak voorbij zie:
+## Kies per onderdeel van het werk
 
--   “AI-rapportages” die in de kern een goed BI-model nodig hebben
--   “AI-data-analyse” die vooral vraagt om datakwaliteit, definities en een semantic layer
--   “AI-procesoptimalisatie” die beter begint met workflow, integratie en heldere beslisregels
+Gebruik vaste regels en berekeningen waar de gewenste uitkomst vooraf goed te beschrijven is. Denk aan het berekenen van bedragen, controleren van verplichte velden of doorzetten van een aanvraag op basis van vastgelegde voorwaarden.
 
-Wat AI wél kan toevoegen in zulke situaties:
+Onderzoek AI waar interpretatie nodig is, bijvoorbeeld bij tekst, documenten of patronen in gegevens. Test dan op representatieve voorbeelden: welke fouten ontstaan en kan iemand die tijdig herkennen?
 
--   een prettigere interface (vragen stellen in gewone taal)
--   samenvattingen en toelichtingen voor de mens
--   sneller varianten verkennen (hypotheses, scenario’s, conceptteksten)
+Vaak past een combinatie. Een model stelt gegevens of een antwoord voor; software voert controleerbare berekeningen en toegestane stappen uit; een medewerker beoordeelt uitzonderingen en besluiten met grote gevolgen. De verdeling volgt uit de taak en het risico, niet uit het etiket op de oplossing.
 
-Maar als de uitkomst reproduceerbaar moet zijn, auditbaar, en zonder verrassingen, dan wil je vaak iets anders dan een probabilistisch systeem.
+## Drie voorbeelden
 
-**Kort gezegd:** als het antwoord altijd hetzelfde moet zijn, dan is “klassiek” vaak gewoon beter.
+**Rapportages.** Bij een maandrapportage moeten de cijfers aansluiten op de afgesproken bronnen en definities. AI kan helpen om afwijkingen te verwoorden of vragen bij de cijfers te formuleren. Laat het model niet stilzwijgend ontbrekende bedragen of verklaringen invullen. Houd vast welke berekening is gemaakt, welke gegevens zijn gebruikt en wat nog een aanname is.
 
-## **Het verschil dat veel organisaties missen: AI als motor versus AI als versneller**
+**Data-analyse.** Gaat het om segmenten, trends en kengetallen, dan is gewone analyse vaak de basis. AI kan helpen om sneller hypotheses te formuleren en inzichten te verwoorden. Die hypotheses toets je daarna met de gebruikelijke analyse.
 
-Er zijn grofweg twee manieren waarop AI waarde kan leveren:
+**Procesverbetering.** Wil je minder overdrachten, minder wachttijd en minder herstelwerk, dan helpen standaardisatie, een duidelijke workflow, koppelingen en heldere verantwoordelijkheden vaak al veel. Of AI daar iets aan toevoegt, hangt af van de taak, de beschikbare gegevens en wat een fout kost.
 
-### **1) AI als motor in je oplossing**
+## Begin bij één proces
 
-Dan doet AI inhoudelijk werk in het proces, bijvoorbeeld:
+Neem één proces en verdeel het werk: wat kan met vaste regels, waar is interpretatie nodig en welke beoordeling wil je bij een medewerker houden? Dan kun je gericht testen wat helpt, zonder het hele proces tot AI-project te verklaren.
 
--   classificatie van vrije tekst
--   extractie uit documenten
--   aanbevelingen
--   ondersteuning van medewerkers met context en kennis
--   uitzonderingen afhandelen waar regels tekortschieten
+[Wil je die afweging voor een eigen proces maken? Neem contact op.](/kennismaken/)
 
-Hier hoort AI echt bij de werking. Je bouwt een oplossing die zonder AI niet hetzelfde kan.
+## Bronnen
 
-### **2) AI als versneller van je softwareontwikkeling**
-
-Dan zit AI níet in je product, maar helpt het jouw team om sneller te bouwen:
-
--   sneller code schrijven
--   tests genereren
--   documentatie samenvatten
--   alternatieven verkennen
--   refactor voorstellen
-
-Dat kan waardevol zijn. Alleen: het eindresultaat is vaak gewoon “software”. Geen AI-product. Geen AI-toepassing. Gewoon een betere of snellere oplevering.
-
-Het is belangrijk om dat onderscheid eerlijk te houden, omdat het je verwachtingen en je governance bepaalt. Als je “AI” vooral inzet om development te versnellen, dan moet je dus niet doen alsof je organisatie ineens “AI-gedreven” werkt. Je werkt dan vooral **efficiënter**.
-
-En zelfs dat is geen automatische winst. Een [METR-RCT](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) onder ervaren open-source developers liet in 2025 zien dat AI-tools in die context gemiddeld tot langere doorlooptijd leidden, terwijl de developers dachten sneller te zijn.  
-
-De nuance is belangrijk: AI kan helpen, maar niet overal, niet altijd, en niet zonder discipline.
-
-## **Waarom “AI waar automatisering volstaat” toch zo vaak gebeurt**
-
-Er zijn drie redenen waarom organisaties AI inzetten voor problemen die eigenlijk deterministisch zijn.
-
-### **1) Het label opent budgetten**
-
-Als iets “AI” heet, voelt het strategisch, innovatief, toekomstbestendig. Daardoor is het makkelijker om middelen vrij te maken. Dat is menselijk. Alleen: het maakt de inhoud niet beter.
-
-### **2) Men wil snelheid zonder het fundament te leggen**
-
-Rapportages en analyses zijn vaak langzaam omdat definities ontbreken, data verspreid is, ownership vaag is. Dat oplossen kost werk.
-
-AI lijkt dan een shortcut: “laat het model het maar samenvatten.” Dat werkt soms, maar het maskeert de echte oorzaak. En je betaalt later alsnog de rekening.
-
-### **3) Men verwart “praten over data” met “sturen op data”**
-
-Met AI kun je snel teksten genereren die klinken alsof je grip hebt.
-
-Maar grip ontstaat pas als je het kunt herleiden, kunt uitleggen en kunt sturen. Daar heb je vaak juist standaardisatie, datamodellen en heldere KPI-definities voor nodig.
-
-## **Een volwassen besliskader: automation-first, AI-where-needed**
-
-Dit is het simpele kader dat ik zelf gebruik om gesprekken met management en teams praktisch te houden.
-
-### **Kies automatisering als:**
-
--   de uitkomst reproduceerbaar moet zijn
--   audit, compliance of traceerbaarheid zwaar weegt
--   de input al gestructureerd is
--   het proces vooral bestaat uit vaste regels en voorspelbare stappen
--   fouten duur zijn en variatie laag is
-
-### **Kies AI (of AI als assist) als:**
-
--   de input ongestructureerd is (mail, documenten, notulen, vrije tekst)
--   er veel uitzonderingen en variatie zijn
--   je medewerkers vooral worstelen met interpretatie, samenvatten, zoeken
--   je snelheid wilt in kenniswerk, met menselijke controle waar nodig
-
-### **Kies hybride als:**
-
--   AI helpt met interpretatie of voorstel
--   automatisering voert uit
--   de mens beslist en borgt bij hogere impact
-
-Die hybride benadering zie je ook terug in recente analyses die het onderscheid tussen traditionele automatisering, generatieve AI en agentic oplossingen praktisch maken, inclusief wanneer “agents” vooral overkill zijn.  
-
-## **Een paar herkenbare voorbeelden (zonder magie)**
-
-### **Rapportages**
-
-Als je maandrapportages nu handwerk zijn, is het probleem meestal:
-
--   definities verschillen
--   data is versnipperd
--   het proces van “closing” is niet strak
-
-AI kan dan helpen met:
-
--   samenvatten van afwijkingen
--   narratief genereren (“wat valt op en waarom?”)
--   vragen beantwoorden over cijfers
-
-Maar de onderliggende cijfers moeten deterministisch zijn. Anders krijg je een rapport dat goed klinkt en verkeerd is. En dat is een heel duur soort misleiding.
-
-### **Data-analyse**
-
-Als je bedoelt: segmenten, trends, KPI’s, drill-downs, dan is klassieke analytics vaak de basis.
-
-AI kan helpen om sneller hypotheses te formuleren en inzichten te verwoorden, maar je wilt die hypotheses vervolgens “hard maken” met de normale analyse.
-
-### **Procesoptimalisatie**
-
-Als het doel is: minder overdrachten, minder wachttijd, minder herstelwerk, dan win je vaak al met:
-
--   processtandaardisatie
--   workflow
--   integraties
--   duidelijk eigenaarschap
-
-AI wordt pas interessant als je veel vrije tekst hebt, of als uitzonderingen het proces domineren. Dan kan AI het verschil maken door die uitzonderingen sneller te triëren of te routeren.
-
-## **De echte winst: eerlijk zijn over wat je aan het doen bent**
-
-De meest volwassen organisaties die ik zie, doen iets simpels:
-
--   ze noemen automatisering gewoon automatisering
--   ze noemen AI pas AI als het ook echt een rol speelt in de werking
--   ze beperken pilots, sturen op waarde, en durven ook te stoppen
-
-En vooral: ze gebruiken AI niet om bestaande structuren te slopen, maar om ze slimmer te maken. Portfoliokeuzes blijven portfoliokeuzes. Architectuur blijft architectuur. Governance blijft nodig. Alleen worden de accenten anders.
-
-## **Slot: “AI-toepassing” is niet het doel, resultaat wel**
-
-Als AI alleen helpt om sneller software te bouwen, is dat prima. Als AI alleen helpt om rapportages prettiger leesbaar te maken, ook prima. Als AI nergens echt nodig is, maar je wel waarde levert met automatisering, helemaal prima.
-
-Het enige dat ik zonde vind, is als het label “AI” de discussie vertroebelt, verwachtingen opblaast en de organisatie onnodig onzeker maakt.
-
-De vraag die je jezelf kunt stellen is simpel:
-
-**Moet dit voorspelbaar zijn, of mag het probabilistisch zijn?**
-
-Als je dat eenmaal scherp hebt, valt de rest vaak verrassend snel op zijn plek.
-
-Wil je dit kader eens op jouw processen leggen, zonder hype en zonder theater? Dan is dat precies wat ik doe in een korte [helderheidssessie](/kennismaken/): per proces bepalen we automation-first, AI-where-needed, en wat een verstandige eerste stap is.
+- [METR: Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity (10 juli 2025)](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)
+- [METR: We are Changing our Developer Productivity Experiment Design (24 februari 2026)](https://metr.org/blog/2026-02-24-uplift-update/)
+- Aanvullend, van een leverancier: [KNIME: Traditional Automation vs. Generative AI vs. Agentic AI: When to Use Which](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which)

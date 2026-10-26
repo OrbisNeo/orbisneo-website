@@ -1,90 +1,57 @@
 ---
-title: "Getting Started with AI?"
+title: "Getting started with AI: choose the problem before the tool"
 translationKey: getting-started-with-ai
 urlSlug: getting-started-with-ai
-description: "Successful AI adoption does not start with tools. It starts with strategic clarity, ownership and the right management questions."
+description: "Choose a specific problem, assign responsibility and agree how to judge the result. Give your first AI trial a clear purpose before selecting tools."
 pubDate: 2026-01-20
-updatedDate: 2026-05-18
+updatedDate: 2026-10-26
 category: "AI in organisations"
 heroImage: "../../../assets/blog/getting-started-with-ai-hero.jpeg"
 heroAlt: "Getting Started with AI?"
 legacyUrl: "https://orbisneo.nl/getting-started-with-ai/"
 ---
 
-## Do not start with tools, start with the right questions
+Starting an AI trial is often easier than deciding what it should prove. Consider a team that spends a great deal of time handling customer enquiries. Is the aim to draft replies faster, reduce handovers or improve accuracy? Each objective calls for a different trial and a different measure of success.
 
-Imagine this: your organisation invests tens of thousands of euros in AI tools. Demos are given, pilots are launched, licences are purchased. Three months later, the enthusiasm has faded. Usage is low. Impact is unclear. And the management team starts asking the first uncomfortable question: “Are we doing the right thing here?”
-
-I am seeing this scenario more and more often. Not because AI has no value, but because organisations start in the wrong place.
-
-AI initiatives rarely stall on technology alone. More often they stall on governance choices: what is it for, who owns it and who decides?
+Leadership teams need to settle those questions early. What should improve, who is responsible, and what evidence would justify continuing?
 
 ## The biggest misconception when getting started with AI
 
-Many leadership teams approach AI as a technology issue. Which tool suits us? Which vendor is “leading”? How quickly can we start? But for executives, AI is not an IT decision. It is a strategic choice that affects:
+Many leadership teams approach AI as a technology issue. Which tool suits us? Which supplier fits the task? How quickly can we start? Choosing an AI application often also changes how work, responsibility and cost are distributed. That includes:
 
 -   the way work is carried out
--   responsibilities and ownership
--   cost structures and productivity
--   risks, compliance and reputation
+-   who is responsible for what
+-   cost and productivity
+-   risk, compliance and reputation
 
-If you start with tools before answering these questions, you create confusion instead of acceleration.
+If you start with tools before answering these questions, it is often unclear afterwards what the tool was meant to solve.
 
 ## Three reasons why AI initiatives get stuck in the management team
 
 ### 1\. There is no shared definition of the problem
 
-Within management teams, there are often different views of what AI is supposed to achieve. One person sees cost savings. Another sees innovation. A third sees “something we cannot afford to miss”. Without an explicit choice, AI remains a catch-all concept. And what belongs to everyone belongs to no one.
-
-The result: isolated initiatives without coherence or priority.
+Within management teams, there are often different views of what AI is supposed to achieve. One person sees cost savings, another sees innovation, a third sees "something we cannot afford to miss". Without an explicit choice, AI remains a catch-all concept, and nobody has the mandate to set priorities and make a decision. The result is separate initiatives competing for time and attention.
 
 ### 2\. AI is treated separately from existing processes
 
-AI is introduced as something new, on top of the organisation. But the real value is found in existing bottlenecks: decision-making, handovers, administrative burden, reporting. If those processes are not understood first, AI becomes an extra layer of complexity.
+AI is introduced as something new, on top of the organisation. But the benefit usually lies in existing bottlenecks: decision-making, handovers, administrative burden, reporting. If those processes are not understood first, AI becomes an extra layer of complexity, with tools that do not become part of the team's work.
 
-The result: tools that are smart, but never truly land anywhere.
+### 3\. Nobody has a clear mandate to decide
 
-### 3\. Executive ownership remains vague
+AI is often "assigned" to IT, innovation or data. But decisions about work, risk and human behaviour belong in the management team. Without a named decision-maker with the authority to act, people hold back and decisions are deferred. Pilots are not extended, and experiments end without a decision.
 
-AI is often “assigned” to IT, innovation or data. But decisions about work, risk and human behaviour belong in the management team. As long as ownership is not explicit, hesitation appears. Or worse: paralysis driven by fear.
+## Three questions before the trial
 
-The result: pilots without scaling, experiments without decisions.
+Start with three questions:
 
-## What a good start with AI really requires
+1. Which task or decision should improve, and how is it handled today?
+2. Who will assess the change, and what evidence will they use?
+3. Which errors or adverse effects would make us change or stop the trial?
 
-An effective start with AI does not begin with a tool, but with three management questions:
+Use the answers to select one initial application. Then work with the people doing the job and the IT team to assess what is feasible. AI may be useful; a change to the process or existing software may be enough.
 
--   Where do we, as an organisation, want to make decisions or work in a smarter, faster or more consistent way?
--   Which processes are critical for this, and where do we currently see friction or waste?
--   Which risks do we consciously accept, and which do we not?
+## What should the first discussion produce?
 
-These questions are not technical. They are strategic. Only once there is clarity here does responsible AI adoption become possible.
+I want that discussion to produce a decision: which application will we investigate, who will lead it and what must the trial demonstrate? The team also needs boundaries for data use and a clear plan for reviewing the results. That gives people a basis for the next step and gives management something concrete to assess.
 
-## Why an AI workshop at management level works
-
-That is why I deliberately start AI programmes with a short, focused workshop for the executive and management team. Not to demonstrate tools. But to create shared clarity.
-
-In a session like this, we work on:
-
--   a shared view of what AI should and should not solve
--   priority processes with concrete value potential
--   explicit executive ownership
--   conditions around people, compliance and decision-making
-
-The result: not an abstract AI strategy, but a clear starting point that leads to decisions.
-
-## AI is not the goal. It is a means.
-
-For executives, the principle is simple:
-
-AI is not an innovation project you do “on the side”. It is a lever that only works when direction, responsibility and context are right. Organise that well, and you create room for real impact.
-
-Skip it, and you pay the learning fee.
-
-## Want to explore whether your organisation is starting in the right place?
-
-I am happy to speak with executives and management teams who feel that AI is relevant, but have no appetite for hype or non-committal pilots.
-
-👉 [Request a no-obligation introductory call](/contact/)
-
-Together, we can determine whether your AI challenge is a technology problem, or actually a management decision.
+[Want to define a first application? Let's discuss it.](/contact/)

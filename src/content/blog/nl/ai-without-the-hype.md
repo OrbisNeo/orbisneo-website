@@ -1,113 +1,50 @@
 ---
-title: "AI zonder hype: 7 managementbesluiten die je eerst moet nemen"
+title: "Zeven besluiten voordat een AI-toepassing onderdeel van het werk wordt"
 translationKey: ai-without-the-hype
 urlSlug: ai-zonder-hype
-description: "Voor tools en pilots heeft AI heldere managementbesluiten nodig. Deze zeven keuzes helpen organisaties sneller en veiliger te bewegen."
+description: "Leg doel, verantwoordelijkheid, gegevensgebruik en controle vast. Zeven besluiten die helpen om een AI-toepassing te beoordelen en bij te sturen."
 pubDate: 2025-11-04
-updatedDate: 2026-05-18
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/ai-without-the-hype-hero.jpg"
 heroAlt: "Close-up of a person reviewing charts and reports in an office setting."
 legacyUrl: "https://orbisneo.nl/nl/ai-zonder-hype/"
 ---
 
-## Introductie
+Een AI-proef kan nuttige resultaten opleveren en toch vastlopen zodra het team ermee verder wil. Wie beslist over uitbreiding? Welke gegevens mogen worden gebruikt? Wie beoordeelt fouten? Het helpt om die vragen te beantwoorden terwijl de toepassing nog overzichtelijk is.
 
-Er is een patroon dat ik de afgelopen jaren steeds vaker zie. Een managementteam voelt druk om “iets met AI” te doen. Er wordt een pilot gestart, iemand koopt een licentie, er komt een werkgroep en na drie maanden is iedereen vooral moe. Niet omdat AI niks kan, maar omdat de basis ontbreekt: **heldere besluiten**.
+Voor mij zijn dit zeven besluiten die op tafel horen voordat een proef onderdeel wordt van het dagelijkse werk.
 
-En dat is precies waarom AI-governance in 2025 zo hard terrein won. Niet als rem, maar als manier om projecten sneller en veiliger te laten landen.
+## 1. Welke verbetering willen we zien?
 
-![AI zonder hype: 7 managementbesluiten die je eerst moet nemen](../../../assets/blog/ai-without-the-hype-img-1.jpeg)
+Kies een concreet doel, zoals minder tijd besteden aan het verzamelen van dossierinformatie. Leg vast hoe het werk nu verloopt en hoe je de verandering beoordeelt. Neem daarbij ook de tijd voor controle en herstel mee. Een sneller eerste concept is nog geen kortere doorlooptijd voor het hele proces.
 
-## **Besluit 1: Waar is waarde, en waar niet?**
+## 2. Wie is verantwoordelijk voor het gebruik?
 
-AI is geen doel. Het is een hefboom. Dus begin met één simpele vraag: **welke uitkomst willen we verbeteren?**
+Wijs iemand aan die besluiten kan nemen over doel, gebruik en voortzetting van de toepassing. Dat kan, afhankelijk van het werk, ook iemand uit IT zijn. Spreek af wie technische wijzigingen beheert en wie betrokken moet worden bij risico's. Verantwoordelijkheid vraagt om beschikbare tijd en bevoegdheden.
 
-Voorbeelden van waarde die ik vaak wél zie:
+## 3. Welke gegevens mogen waar worden verwerkt?
 
--   kortere doorlooptijd in klantcontact of backoffice
--   minder fouten in rapportages en handmatige controles
--   betere vindbaarheid van kennis en besluiten
+Sluit aan op de bestaande indeling van informatie. Beoordeel per toepassing welke gegevens nodig zijn, welke dienst ze verwerkt en wie toegang krijgt. Maak ook afspraken over opslag, hergebruik en verwijdering. Het label "openbaar" of "intern" is op zichzelf niet genoeg om een dienst goed te keuren.
 
-Voorbeelden waar je meestal spijt krijgt:
+## 4. Wat moeten gebruikers weten en kunnen?
 
--   “we willen ook een chatbot” zonder doel en zonder eigenaar
--   “we willen iedereen Copilot geven” zonder afspraken en training
+Geef medewerkers instructies en oefeningen die passen bij hun taak. Kunnen zij een onjuiste uitkomst herkennen? Weten zij welke gegevens niet mogen worden ingevoerd en waar zij hulp krijgen? De [Europese Commissie licht toe](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers) dat AI-geletterdheid afhangt van onder meer de betrokken mensen en gebruikscontext. Een korte introductie kan helpen, maar is geen bewijs dat iedereen zijn taak verantwoord kan uitvoeren.
 
-> **Managementbesluit:** we kiezen maximaal drie waardecases die meetbaar zijn. Alles daarbuiten is parkeren.
+## 5. Hoe beoordelen we kwaliteit?
 
-## **Besluit 2: Wie is de eigenaar, echt?**
+Kies controles die passen bij de gevolgen van fouten. Leg vast wanneer een medewerker moet beoordelen en of dat vóór uitvoering nodig is. Bepaal wat je moet registreren om fouten te onderzoeken, wie die informatie mag zien en hoe lang je haar bewaart. "Er kijkt een mens mee" is pas bruikbaar als duidelijk is waarop die persoon moet letten.
 
-AI-initiatieven sterven vaak een stille dood omdat niemand eigenaar is. Dan is het “van IT”, of “van innovatie”. En dat betekent meestal: van niemand.
+## 6. Wanneer gaan we door, passen we aan of stoppen we?
 
-> **Managementbesluit:** elke AI-case heeft één eigenaar uit de business die verantwoordelijk is voor resultaat, risico en adoptie. IT is partner, geen eindverantwoordelijke.
+Spreek vooraf een beoordelingsmoment en criteria af. Bekijk het resultaat, de kosten, de belasting voor medewerkers en eventuele nadelige gevolgen. Bepaal ook wie het besluit neemt. Bij een ernstig probleem moet ingrijpen mogelijk zijn vóór het geplande evaluatiemoment.
 
-Dit klinkt simpel. In de praktijk is dit het besluit dat ineens ongemakkelijk wordt. Dat is vaak een goed teken.
+## 7. Waar passen deze besluiten in het bestaande overleg?
 
-## **Besluit 3: Welke data mag AI aanraken?**
+Gebruik waar mogelijk het overleg waarin al over het proces, budget en risico's wordt beslist. Betrek IT en de relevante deskundigen tijdig om haalbaarheid en afhankelijkheden te beoordelen. Kies een ritme dat past bij het gebruik en de veranderingen in de toepassing.
 
-AI zonder data is een demonstratie. AI met de verkeerde data is een incident.
+## Loop de besluiten na voor één toepassing
 
-Het probleem is zelden de modelkwaliteit. Het probleem is dat je organisatie niet scherp heeft wat “gevoelig” is, wat “intern” is en wat “openbaar” is. Dat sluit aan bij de bredere security-discussie over een groeiende “AI exposure gap” wanneer adoptie sneller gaat dan basale beheersing.  
+Neem één toepassing en loop deze besluiten na. Wat al goed is geregeld, hoeft niet opnieuw. De open punten vormen de agenda voor het volgende gesprek.
 
-**Managementbesluit:** we definiëren 3 tot 4 dataklassen en koppelen daar simpele regels aan. Bijvoorbeeld:
-
--   Openbaar: mag in een publieke AI-tool
--   Intern: alleen in goedgekeurde tools, geen copy-paste naar publieke modellen
--   Vertrouwelijk: alleen in afgeschermde omgevingen, met logging
--   Bijzonder gevoelig: niet gebruiken, punt
-
-## **Besluit 4: Wat zijn de spelregels voor gebruik, en hoe leren mensen dat?**
-
-AI literacy is geen “nice to have”. In de EU AI Act is AI-geletterdheid expliciet onderdeel van de eerste verplichtingen die gefaseerd van kracht worden.  
-
-Maar los van wetgeving: als je mensen geen simpele spelregels geeft, gaan ze hun eigen regels verzinnen. Dat gebeurt altijd. De enige vraag is of jij het georganiseerd doet of per ongeluk.
-
-**Managementbesluit:** we publiceren een korte AI-gedragscode van één pagina, plus een training van 45 minuten. Niet om iedereen expert te maken, maar om schade te voorkomen.
-
-## **Besluit 5: Hoe borgen we kwaliteit, audit en verantwoordelijkheid?**
-
-Als AI iets “verzint” in een intern memo, is dat vervelend. Als AI iets “verzint” in een besluit, dossier of klantcommunicatie, is dat duur.
-
-Daarom zie je dat CIO’s steeds meer inzetten op guardrails en audit trails, juist om snelheid mogelijk te maken.  
-
-**Managementbesluit:** we kiezen een kwaliteitsniveau per use-case:
-
--   lage impact: lichte controle, snelle iteratie
--   middel: check door mens, logging van prompts en outputs
--   hoog: human in the loop, traceerbaarheid, periodieke review
-
-Dit is governance light: klein, maar serieus.
-
-## **Besluit 6: Hoe sturen we op portfolio, en wanneer stoppen we?**
-
-AI-pilots hebben een magisch talent: ze kunnen eeuwig doorgaan zonder dat iemand durft te stoppen. Omdat “we zijn nog aan het leren”. Klopt. Maar leren zonder besluitmoment is hobby.
-
-**Managementbesluit:** elke AI-case krijgt:
-
--   een startdatum
--   een succesmetric
--   een stopdatum of stopcriteria
--   een moment waarop het MT beslist: opschalen, bijsturen of stoppen
-
-Als je dit niet doet, bouw je vanzelf een AI-dierentuin. Iedereen één experimentje. Niemand verantwoordelijkheid.
-
-## **Besluit 7: Welke governance is minimaal nodig om tempo te maken?**
-
-Dit is de grap. Veel teams zijn bang dat governance tempo kost. Maar in 2025 zie je juist de beweging dat governance wordt ingezet om snelheid te vergroten, omdat het discussie, risico en rework reduceert.  
-
-**Managementbesluit:** we zetten een kleine “AI cadence” neer:
-
--   tweewekelijkse review van lopende use-cases
--   besluitvorming over nieuwe intake
--   korte risicocheck op data, privacy, reputatie, security
-
-Geen dikke commissies. Geen politiek. Wel ritme.
-
-## **Slot: waarom dit werkt in bestaande organisaties**
-
-Je hoeft je bestaande structuren, frameworks en processen niet weg te gooien. Je moet ze **bijstellen** zodat AI een plek krijgt zonder chaos. Dat is precies waar ik vaak word ingevlogen: als er tegelijk geleverd moet worden en er toch richting nodig is.
-
-Als je dit onderwerp herkent: begin met deze zeven besluiten. Pas daarna komt tooling, leveranciersselectie en architectuur.
-
-**Korte uitnodiging:** wil je dit binnen één gesprek scherp krijgen? Dan is een [intake van 30 tot 45 minuten](/kennismaken/) genoeg om de ruis eruit te halen.
+[Wil je die agenda voor een eigen toepassing opstellen? Neem contact op met Orbis Neo.](/kennismaken/)

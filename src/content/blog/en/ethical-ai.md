@@ -1,115 +1,63 @@
 ---
-title: "Ethical AI: From Sentiment to Agreements That Work"
+title: "Ethical AI: whose interests do your rules protect?"
 translationKey: ethical-ai
 urlSlug: ethical-ai-from-sentiment-to-working-agreements
-description: "Ethical AI becomes practical when translated into clear agreements on purpose, transparency, data, oversight and improvement."
+description: "Ethical AI involves choices about interests, boundaries and challenge. Make clear who decides, who is affected and how an outcome can be reviewed."
 pubDate: 2025-10-24
-updatedDate: 2026-05-18
+updatedDate: 2026-10-26
 category: "AI in organisations"
 heroImage: "../../../assets/blog/ethical-ai-hero.jpeg"
 heroAlt: "An unrecognisable person with binary code projected, symbolising cybersecurity and digital coding."
 legacyUrl: "https://orbisneo.nl/ethical-ai-from-sentiment-to-working-agreements/"
 ---
 
-## Introduction
+A faster assessment may benefit an organisation while putting the person being assessed at a disadvantage. Suppose an AI-generated summary of a job application omits relevant experience. Who would notice? Can the applicant have the error corrected? Will someone return to the original material before making a decision?
 
-Ethical AI is a topic on which people quickly become very principled. And understandably so. AI touches privacy, power, work and identity. But if you discuss ethics only as sentiment, it remains a feeling. And then one of two things happens inside the organisation:
+These questions give an ethics discussion something concrete to address. Whose interests are involved, where should the boundaries sit, and what can someone do if the result is wrong? Working agreements help put those choices into practice. They do not resolve the underlying choices for us.
 
--   people do all kinds of things in the wild
--   or people no longer dare to do anything at all
+## 1. Define the purpose, the people affected and the limits
 
-Both are bad. The mature version is this: translate ethics into agreements.
+Describe what the application is intended to do and who may be affected. A shorter process is one interest; fair and careful treatment is another. Decide which judgements an employee must make and how the system may support them.
 
-That is also the direction we now see in legal and standards frameworks. The EU AI Act is being phased in and places increasing emphasis on governance, transparency and responsibilities, including around general purpose AI. And NIST has created a profile for generative AI that helps organisations manage risks in concrete terms.
+In the recruitment example, an organisation might require the original application to remain available and an employee to check relevant information before deciding. That is an example of a working rule, not a complete assessment of whether the application is appropriate.
 
-Here is my practical approach: five types of agreements that suddenly make “ethical AI” executable. Without an ethics committee that meets once a quarter and then disappears again.
+## 2. Make results open to scrutiny and challenge
 
-## 1\. Agreements about purpose and boundaries
+A plausible explanation is not enough. A reviewer needs to establish what information was used and where significant uncertainty remains. People also need a way to report an error or adverse effect, with someone responsible for considering a request for reassessment.
 
-Ethics starts with the question: what do we use AI for, and what do we not use it for? This is not a technical discussion. It is a management choice.
+Explain the role of AI where people need that information to assess an outcome fairly or where disclosure is required. The appropriate detail depends on the application and the people involved.
 
-Examples of clear agreements:
+## 3. Use and retain only the data needed
 
--   AI may support, but not autonomously decide on rejections or sanctions
--   AI may summarise, but not enter case files without source references
--   AI may write, but not send customer communication without human review
+Establish what data the application requires and the terms under which a supplier processes it. Apply the same scrutiny to the records retained for oversight. Comprehensive logs can contain sensitive information too. Decide what to record, who can access it and when it will be deleted.
 
-Output: a short list of “yes” and “no”. Done.
+Assess personal data, confidential information and rights in the material used. A supplier contract does not remove the need for those decisions.
 
-## 2\. Agreements about transparency and explainability
+## 4. Give someone authority to intervene
 
-Much of the fear around AI comes from invisibility. People want to know: where does this come from, and can I check it?
+Human oversight requires more than a name on an approval. The responsible person must be able to challenge a result, request further evidence and interrupt use. Make the route for raising problems accessible both to staff and to people affected by the application.
 
-In its Generative AI Profile, NIST specifically emphasises the importance of transparency, documentation and appropriate controls depending on context and impact.
+Agree on the warning signs that should trigger a pause and who can make that decision.
 
-Practical examples:
+## 5. Review consequences you did not anticipate
 
--   for medium and high impact use cases, we log prompts, outputs and sources used
--   we label AI output as AI-assisted
--   we define a minimum explanation: “why this answer is plausible”
+Once the application is in use, look beyond time savings and error rates. Examine complaints, recurring exceptions and groups receiving different treatment from what was intended. Involve affected people where appropriate. Revise the application or its rules if the original judgement no longer holds.
 
-Not perfect. But mature.
-
-## 3\. Agreements about data, privacy and copyright
-
-This is where ethics and compliance meet. Especially with generative AI, things can go wrong quickly with:
-
--   personal data
--   trade secrets
--   copyrighted material
-
-The European Commission has explicitly stated that GPAI rules touch on transparency and copyright obligations.
-
-Examples:
-
--   data classes and permitted tools
--   no customer data in public models
--   rules for processing documents and code
--   clear vendor agreements: where data is processed, what is stored and for how long
-
-This is not sexy, but it prevents the pleasant surprise of your prompt suddenly showing up in an audit.
-
-## 4\. Agreements about human oversight and escalation
-
-Ethical AI without human responsibility is a fairy tale. The most important mechanism is simple: who is watching, and what do we do when something goes wrong?
-
-This is how I usually write it down:
-
--   human in the loop for high impact decisions
--   an escalation path: from team lead to security/privacy to the management team
--   a stop rule: when do we immediately switch off a use case?
-
-This also fits the governance trend CIOs use to maintain speed without losing safety.
-
-## 5\. Agreements about continuous improvement and management system thinking
-
-You do not need to enter a full certification route immediately, but it does help to think in a simple management cycle: plan, do, check, adjust.
-
-ISO/IEC 42001 is exactly that kind of AI management system standard. It has been published as an international standard and describes requirements and guidance for setting up and improving AI management.
-
-Practical implementation:
-
--   we create an AI register, even if it is small
--   every use case has an owner, purpose, risk assessment and controls
--   every quarter we recalibrate: what do we stop, what do we scale?
-
-This is not bureaucracy. This is how you prevent AI from becoming a loose collection of disconnected projects.
+There are resources to help organise this work. NIST offers a voluntary risk framework with a [profile for generative AI](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence). [ISO/IEC 42001](https://www.iso.org/standard/42001) sets requirements for an AI management system. The [legal obligations](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) that apply require a separate assessment of the specific application and the organisation's role.
 
 ## How this connects to Common Sense Management
 
-Common Sense Management is essentially about clarity, responsibility and simple, workable agreements. Not thick manuals. AI asks for exactly the same thing. Calm only appears when you make it small:
+Common Sense Management is essentially about clarity, responsibility and simple, workable agreements, not thick manuals. AI asks for exactly the same thing. Things only settle down when you keep it small:
 
 -   clear goals
--   clear owner
+-   a clear owner
 -   clear agreements
--   regular rhythm
+-   a regular rhythm
 
-Ethical AI is therefore not “extra”. It is a mature form of management in a new context.
+Ethical AI is therefore not an extra layer on top of the work. It is good management in a new context.
 
-## Closing: ethics as enablement
+## How I would assess an ethical AI policy
 
-The biggest misconception is that ethics slows innovation down. In practice, the opposite is true. When people know what is allowed, they dare to move. When things remain vague, everyone hits the brakes. Or everyone secretly accelerates.
+A useful agreement explains what happens when interests conflict or someone challenges a result. That is how I would assess an ethical AI policy: can the people involved use it when the situation becomes difficult?
 
-My preference is simple: make it explicit. One page of agreements. A small cadence. And then act.
-
-Do you want to make this concrete for your organisation? This is exactly the kind of [management workshop](/contact/) I like to facilitate. Two hours. Whiteboard. Conclusions. Agreements you can move forward with on Monday.
+[Want to work through these questions for an application in your organisation? Let's talk.](/contact/)

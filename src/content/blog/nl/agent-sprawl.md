@@ -1,87 +1,66 @@
 ---
-title: "Agent sprawl: de nieuwe shadow IT"
+title: "AI-agents buiten beeld: wie houdt het overzicht?"
 translationKey: agent-sprawl
 urlSlug: agent-sprawl-de-nieuwe-shadow-it
-description: "AI-agents beginnen vaak klein en nuttig. Maar zonder overzicht, eigenaarschap en spelregels ontstaat agent sprawl: de nieuwe shadow IT."
+description: "Teams gebruiken steeds meer AI-agents. Breng in kaart wie ervoor verantwoordelijk is, welke toegang ze hebben en wanneer ze moeten stoppen."
 pubDate: 2026-05-18
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/agent-sprawl-hero.jpg"
 heroAlt: "Agent sprawl: de nieuwe shadow IT"
 legacyUrl: "https://orbisneo.nl/nl/agent-sprawl-de-nieuwe-shadow-it/"
 ---
 
-AI-agents komen vaak niet binnen via een groot strategisch programma. Ze beginnen kleiner. Een medewerker maakt een agent die mails samenvat. Een team bouwt een workflow die offertes voorbereidt. Iemand koppelt een chatbot aan interne documenten. Een afdeling experimenteert met automatische rapportages. Het werkt, het bespaart tijd en het voelt logisch om ermee door te gaan. Tot niemand meer precies weet hoeveel agents er draaien. Dat is het moment waarop agent sprawl ontstaat: een groeiend landschap van AI-agents, scripts, workflows en koppelingen die nuttig zijn begonnen, maar langzaam buiten het zicht van de organisatie raken.
+Stel dat een verkoopteam een agent gebruikt om offertes voor te bereiden. Een medewerker heeft de koppeling met het klantensysteem gemaakt en de instructies geschreven. Een halfjaar later heeft die medewerker een andere functie. Wie weet dan nog welke gegevens de agent mag gebruiken en wie de instructies bijhoudt?
 
-En daarmee lijkt het sterk op iets wat we al kennen: shadow IT.
+Dat is het praktische probleem achter *agent sprawl*: er komen steeds meer agents en koppelingen bij, terwijl het overzicht achterblijft. Zoals bij shadow IT kan nuttig lokaal gebruik buiten het zicht van de organisatie raken.
 
 ## Van handige oplossing naar onzichtbaar risico
 
-Shadow IT ontstond doordat teams sneller wilden werken dan de centrale IT-afdeling kon leveren. Ze gebruikten eigen tools, spreadsheets, cloudapps en automatiseringen. Vaak met goede intenties. Vaak ook met echte productiviteitswinst. Maar na verloop van tijd ontstonden vragen.
+Shadow IT is IT-gebruik buiten de afgesproken inrichting en het zicht van de organisatie. Het ontstond doordat teams sneller wilden werken dan de centrale IT-afdeling kon leveren. Ze gebruikten eigen tools, spreadsheets, cloudapps en automatiseringen, vaak met goede bedoelingen en met echte productiviteitswinst. Maar na verloop van tijd ontstonden vragen.
 
 -   Wie heeft toegang?
--   Waar staat de data?
+-   Waar staan de gegevens?
 -   Welke versie is leidend?
 -   Wat gebeurt er als iemand vertrekt?
 -   Wie grijpt in als iets misgaat?
 
-Met AI-agents komen daar nieuwe vragen bij. Welke acties mag een agent zelfstandig uitvoeren? Op basis van welke bronnen neemt hij beslissingen? Welke prompts, instructies en rechten gebruikt hij? Wie is eigenaar van de output? Hoe controleren we of hij nog doet wat de bedoeling is?
+Met AI-agents komen daar nieuwe vragen bij. Welke handelingen mag een agent zelfstandig uitvoeren? Op basis van welke bronnen bereidt hij beslissingen voor? Welke instructies en rechten gebruikt hij? Wie beoordeelt de uitkomst en handelt fouten af? Hoe controleren we of hij nog doet wat de bedoeling is?
 
-Een gewone SaaS-tool bewaart meestal informatie of ondersteunt een proces. Een AI-agent kan ook handelen. Dat maakt de impact groter.
+Ook gewone bedrijfssoftware kan gegevens wijzigen of berichten versturen. Bij een AI-agent moet je daarnaast rekening houden met de ruimte die het model krijgt om vervolgstappen te kiezen. Welke handelingen het mag uitvoeren en met welke gegevens, verdient daarom expliciete aandacht.
 
 ## Waarom agent sprawl zo snel kan ontstaan
 
-AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten. Ze lossen geen abstract IT-probleem op, maar een concreet dagelijks probleem. Een paar voorbeelden:
+AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten. Ze lossen een concreet probleem in het dagelijkse werk op. Daardoor lijkt het risico ook klein. Maar agents worden zelden geïsoleerd gebruikt. Ze krijgen toegang tot documenten, mailboxen, klantsystemen, projecttools of databases. Ze worden gekoppeld aan andere werkprocessen. Ze krijgen instructies die bepalen welke keuzes de agent maakt. En ze leveren uitkomsten waarop mensen gaan vertrouwen. Voor je het weet, heeft de organisatie niet één AI-initiatief, maar tientallen kleine naast elkaar. Dat is niet per se verkeerd, maar wel kwetsbaar als niemand het geheel ziet.
 
--   Een salesmedewerker wil sneller klantinformatie verzamelen.
--   Een recruiter wil cv’s laten samenvatten.
--   Een consultant wil notities omzetten naar acties.
--   Een manager wil automatisch updates uit systemen halen.
+## Wie is verantwoordelijk als er iets verandert?
 
-Dat soort toepassingen voelt klein en praktisch. Daardoor lijkt het risico ook klein. Maar agents worden zelden geïsoleerd gebruikt. Ze krijgen toegang tot documenten, mailboxen, CRM-systemen, projecttools of databases. Ze worden gekoppeld aan andere workflows. Ze krijgen prompts die bijna beleidsregels worden. En ze maken output waarop mensen gaan vertrouwen. Voor je het weet, heeft de organisatie niet één AI-initiatief, maar tientallen kleine AI-initiatieven naast elkaar. Niet per se verkeerd. Wel kwetsbaar als niemand het geheel ziet.
-
-## Het probleem is niet autonomie, maar onduidelijkheid
-
-AI-agents hoeven niet allemaal centraal dichtgetimmerd te worden. Dat zou juist de waarde eruit halen. De kracht zit in snelheid, nabijheid en experiment. Het probleem ontstaat wanneer autonomie niet gekoppeld is aan eigenaarschap.
-
--   Een agent zonder eigenaar is een risico.
--   Een agent zonder toegangsbeleid is een risico.
--   Een agent zonder logging is een risico.
--   Een agent zonder evaluatie is een risico.
--   Een agent die ooit nuttig was, maar niemand meer begrijpt, is zeker een risico.
-
-De vraag is dus niet: “Mogen teams AI-agents gebruiken?” De betere vraag is: “Hoe zorgen we dat teams AI-agents kunnen gebruiken zonder dat overzicht, veiligheid en verantwoordelijkheid verdwijnen?”
+Teams moeten kunnen experimenteren zonder voor iedere kleine wijziging een zwaar traject te doorlopen. Wel moet duidelijk zijn wie de toepassing beheert. Die persoon beoordeelt wijzigingen in doel en toegang, volgt problemen op en zorgt dat de agent wordt stopgezet wanneer hij niet meer nodig is. Een naam in een register helpt alleen als daar ook tijd en bevoegdheden bij horen.
 
 ## Wat organisaties nodig hebben
 
-Agent governance hoeft niet zwaar of bureaucratisch te beginnen. Sterker nog: als het te zwaar wordt, gaan mensen eromheen werken. Dan creëer je precies het shadow-probleem dat je wilde voorkomen.
+Afspraken over het beheer en gebruik van agents hoeven niet zwaar of bureaucratisch te beginnen. Als ze te zwaar worden, gaan mensen eromheen werken. Dan ontstaat precies het probleem dat je wilde voorkomen.
 
-Een praktische basis bestaat uit een paar simpele afspraken.
+Een praktische basis bestaat uit een paar eenvoudige afspraken.
 
-**1\. Maak agents zichtbaar:** Begin met een register. Welke agents bestaan er? Waarvoor worden ze gebruikt? Welke systemen raken ze? Wie is eigenaar?
+**1\. Maak agents zichtbaar:** Begin met een register. Welke agents bestaan er? Waarvoor worden ze gebruikt? Tot welke systemen hebben ze toegang? Wie is verantwoordelijk?
 
-**2\. Leg eigenaarschap vast:** Elke agent heeft een functionele eigenaar nodig. Niet alleen een technisch contact, maar iemand die verantwoordelijk is voor het doel, de werking en de risico’s.
+**2\. Leg eigenaarschap vast:** Elke agent heeft een eigenaar nodig. Niet alleen een technisch contact, maar iemand die verantwoordelijk is voor het doel, de werking en de risico's.
 
-**3\. Beperk toegang bewust:** Een agent moet niet meer rechten krijgen dan nodig. Zeker niet “voor het gemak” brede toegang tot mailboxen, drives of klantdata.
+**3\. Geef alleen de toegang die nodig is:** Een agent moet niet meer rechten krijgen dan nodig. Zeker niet "voor het gemak" brede toegang tot mailboxen, drives of klantgegevens.
 
-**4\. Log belangrijke acties:** Als een agent informatie ophaalt, beslissingen voorbereidt of acties uitvoert, wil je kunnen terugzien wat er is gebeurd.
+**4\. Leg belangrijke handelingen vast:** Als een agent informatie ophaalt, beslissingen voorbereidt of handelingen uitvoert, wil je kunnen terugzien wat er is gebeurd. Leg vast wat je daarvoor nodig hebt, en spreek af wie het mag inzien en hoe lang je het bewaart.
 
-**5\. Evalueer periodiek:** Agents veranderen mee met processen, data en teams. Wat vandaag klopt, kan over drie maanden achterhaald zijn.
+**5\. Evalueer periodiek:** Agents veranderen mee met processen, gegevens en teams. Wat vandaag klopt, kan over drie maanden achterhaald zijn.
 
-**6\. Maak stoppen normaal:** Niet elke agent hoeft te blijven bestaan. Tijdelijke experimenten mogen tijdelijk zijn. Opruimen is onderdeel van volwassen gebruik.
+**6\. Stop toepassingen die niet meer nodig zijn:** Tijdelijke experimenten mogen tijdelijk blijven. Opruimen hoort bij gewoon gebruik.
 
-## De rol van IT verandert
+## Maak ondersteuning bereikbaar
 
-Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents werkt dat niet meer. De behoefte aan experiment is te groot en de technologie ontwikkelt zich te snel. IT, security en management moeten daarom niet alleen poortwachter zijn, maar ook ontwerper van veilige speelruimte.
+Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents is de behoefte aan experiment groot en ontwikkelt de technologie zich snel. Teams hebben daarom vooral baat bij ondersteuning die ze makkelijk kunnen vinden: een vast aanspreekpunt, een overzicht van toegestane koppelingen en een route voor uitzonderingen. Dan weten ze wat mag, wat niet mag en wanneer ze hulp moeten vragen. Vragen worden zo beantwoord voordat een agent in gebruik gaat, en niet pas achteraf.
 
-Dat betekent: duidelijke kaders, herbruikbare bouwblokken en laagdrempelige begeleiding. Teams moeten weten wat mag, wat niet mag en wanneer ze hulp moeten vragen. Zo voorkom je dat governance voelt als controle achteraf. Het wordt dan onderdeel van het ontwerp vanaf het begin.
+## Begin bij één team
 
-## Begin klein, maar begin bewust
+Begin bij één team. Zet op een rij welke agents het gebruikt, wie de toegang kan wijzigen en wie een fout opvolgt. Je merkt dan snel welke afspraken ontbreken. Breid dat overzicht uit voordat je het volgende experiment toevoegt.
 
-De meeste organisaties hoeven niet morgen een volledig agent governance framework te hebben. Maar wachten tot het landschap onoverzichtelijk is, maakt alles moeilijker. Begin met de agents die er al zijn. Breng ze in kaart. Kijk naar toegang, eigenaarschap en impact. Bepaal welke toepassingen laag risico zijn en welke extra aandacht nodig hebben. Van daaruit kun je groeien.
-
-Want agent sprawl ontstaat niet omdat mensen onverantwoord bezig zijn. Het ontstaat omdat goede ideeën sneller groeien dan de afspraken eromheen. Daar ligt de kans.
-
-Organisaties die nu leren hoe ze AI-agents overzichtelijk, veilig en praktisch inzetten, bouwen niet alleen meer controle in. Ze bouwen ook vertrouwen op. En vertrouwen is precies wat nodig is om AI niet alleen uit te proberen, maar echt onderdeel te maken van het werk.
-
-**Begin klein, maar houd overzicht.**  
-Als je met AI-agents aan de slag wilt, zorg dan dat eigenaarschap, toegang en controle vanaf het begin meedoen. [Orbis Neo helpt je daar praktisch bij](/kennismaken/).
+Wil je de agents in je organisatie in kaart brengen? [Bespreek de eerste stap met Orbis Neo](/kennismaken/).
