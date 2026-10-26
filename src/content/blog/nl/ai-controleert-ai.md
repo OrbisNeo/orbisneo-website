@@ -7,6 +7,8 @@ pubDate: 2026-10-26
 category: "AI in organisations"
 author: "Daniel Fokker"
 draft: false
+heroImage: "../../../assets/blog/ai-controleert-ai-hero.jpg"
+heroAlt: "Robotarmen controleren elkaars werk op een productielijn, terwijl mensen toekijken naast een stopknop"
 ---
 
 Wie aanspreekbaar is op werk waar hij geen inzicht in heeft en waarover hij niets te zeggen heeft, is geen eigenaar. Die zet een handtekening. Dat is voor mij de kern van de vraag die opkomt nu AI steeds vaker het werk van AI controleert. Half oktober beschreef Anthropic hoe het team achter Claude Code daarmee omgaat. Het antwoord is niet minder controle, maar controle op een andere plek: machines lezen het werk, mensen beoordelen de risico's en blijven verantwoordelijk voor wat er live gaat. Ik herken er veel in uit de organisatiekunde. Maar het roept ook de vraag op die er voor bestuurders het meest toe doet: als niemand het werk zelf nog doet of leest, wie draagt dan de verantwoordelijkheid, en heeft die persoon genoeg inzicht en zeggenschap om dat waar te maken?

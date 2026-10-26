@@ -7,6 +7,8 @@ pubDate: 2026-10-26
 category: "AI in organisations"
 author: "Daniel Fokker"
 draft: false
+heroImage: "../../../assets/blog/ai-controleert-ai-hero.jpg"
+heroAlt: "Robot arms check each other's work on a production line while people watch beside a stop button"
 ---
 
 If you are accountable for work you do not understand and have no authority over, you are not an owner. You are a signature. To me, that is the heart of the question now that AI increasingly checks the work of AI. In mid October, Anthropic described how the team behind Claude Code handles this. The answer is not less checking, but checking in a different place: machines read the work, people assess the risks, and people remain accountable for what goes live. Much of it is familiar from organisation theory. But it also raises the question that matters most to leadership teams: if nobody does or reads the work themselves any more, who is accountable, and do they have the understanding and authority to make that accountability real?
