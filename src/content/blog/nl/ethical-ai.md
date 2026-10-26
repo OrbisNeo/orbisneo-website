@@ -1,115 +1,63 @@
 ---
-title: "Ethische AI: van sentiment naar afspraken die wel werken"
+title: "Ethische AI: welke afspraken beschermen de mensen om wie het gaat?"
 translationKey: ethical-ai
 urlSlug: ethische-ai
-description: "Ethische AI wordt praktisch als je het vertaalt naar heldere afspraken over doel, transparantie, data, toezicht en verbetering."
+description: "Ethische AI vraagt om keuzes over belangen, grenzen en bezwaar. Maak zichtbaar wie beslist, wie gevolgen ondervindt en hoe een uitkomst kan worden herzien."
 pubDate: 2025-10-24
-updatedDate: 2026-01-06
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/ethical-ai-hero.jpeg"
 heroAlt: "An unrecognisable person with binary code projected, symbolising cybersecurity and digital coding."
 legacyUrl: "https://orbisneo.nl/nl/ethisch_ai/"
 ---
 
-## Introductie
+Een snellere beoordeling kan prettig zijn voor een organisatie en nadelig uitpakken voor degene die beoordeeld wordt. Denk aan een AI-samenvatting van een sollicitatie waarin relevante ervaring ontbreekt. Wie merkt dat op? Kan de sollicitant een fout laten herstellen? En kijkt iemand opnieuw naar het oorspronkelijke materiaal?
 
-Ethische AI is een onderwerp waar mensen heel snel heel principieel over worden. En dat is begrijpelijk. AI raakt privacy, macht, werk en identiteit. Alleen: als je ethiek alleen als sentiment bespreekt, blijft het bij gevoel. En dan gebeurt er in de organisatie precies dit:
+Zulke vragen maken ethische AI concreet. Je moet bepalen welke belangen tellen, waar je grenzen trekt en wat iemand kan doen als de uitkomst niet klopt. Afspraken helpen om die keuzes in het dagelijkse werk zichtbaar te maken. Ze vervangen het gesprek over de keuzes zelf niet.
 
--   of men doet van alles in het wild
--   of men durft niets meer
+## 1. Leg doel, betrokkenen en grenzen vast
 
-Beide zijn slecht. De volwassen variant is: **ethiek vertalen naar afspraken**.
+Beschrijf waarvoor je AI wilt gebruiken en wie daar gevolgen van kan ondervinden. Een sneller proces is een belang; zorgvuldige behandeling is dat ook. Spreek af welke afweging een medewerker zelf moet maken en welke rol het systeem daarin krijgt.
 
-Dat is ook de richting die je nu in wet- en normenkaders ziet. De [EU AI Act](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act) gaat gefaseerd in werking en legt steeds meer nadruk op governance, transparantie en verantwoordelijkheden, onder meer rond general purpose AI. En NIST heeft voor generatieve AI een profiel gemaakt dat organisaties helpt om risico’s concreet te managen.  
+Bij het sollicitatievoorbeeld zou je bijvoorbeeld kunnen afspreken dat een samenvatting het originele dossier niet vervangt en dat een medewerker relevante informatie controleert voordat er een besluit valt. Dat is een voorbeeld van een werkafspraak, geen volledige beoordeling van de toepassing.
 
-Hier is mijn nuchtere aanpak: vijf soorten afspraken waarmee “ethische AI” ineens uitvoerbaar wordt. Zonder ethiekcommissie die één keer per kwartaal vergadert en daarna weer verdwijnt.
+## 2. Maak uitkomsten controleerbaar en bespreekbaar
 
-## **1\. Afspraken over doel en grens**
+Een plausibele toelichting is niet genoeg. Een beoordelaar moet kunnen nagaan welke informatie is gebruikt en waar belangrijke onzekerheden zitten. Bepaal ook hoe betrokkenen een fout of ongewenst gevolg kunnen melden en wie een verzoek tot herbeoordeling behandelt.
 
-Ethiek begint bij de vraag: **waarvoor gebruiken we AI wel, en waarvoor niet?** Dit is geen technische discussie. Dit is een managementkeuze.
+Wees duidelijk over de rol van AI waar dat nodig is voor een eerlijke beoordeling of waar regels dat vereisen. Welke informatie je precies verstrekt, hangt af van de toepassing en de betrokken mensen.
 
-##### Voorbeelden van heldere grenzen:
+## 3. Beperk het gebruik van gegevens tot wat nodig is
 
-> -   AI mag ondersteunen, maar niet autonoom beslissen over afwijzingen of sancties
-> -   AI mag samenvatten, maar niet zonder bronverwijzing in dossiers terechtkomen
-> -   AI mag schrijven, maar niet verzenden zonder menselijke review bij klantcontact
+Leg vast welke gegevens de toepassing nodig heeft en onder welke afspraken de leverancier die verwerkt. Doe hetzelfde voor de gegevens die je bewaart om het gebruik te controleren. Een volledig log kan ook gevoelige informatie bevatten. Spreek daarom af wat je vastlegt, wie toegang krijgt en wanneer gegevens worden verwijderd.
 
-**Output:** een korte lijst met “wel” en “niet”. Klaar.
+Neem persoonsgegevens, vertrouwelijke informatie en rechten op gebruikt materiaal afzonderlijk mee in die beoordeling. Een contract met een leverancier neemt die afweging niet van je over.
 
-## **2\. Afspraken over transparantie en uitlegbaarheid**
+## 4. Geef iemand de bevoegdheid om in te grijpen
 
-Veel angst rond AI komt door onzichtbaarheid. Mensen willen weten: _waar komt dit vandaan, en kan ik het controleren?_
+Menselijk toezicht vraagt om meer dan een naam onder een goedkeuring. De verantwoordelijke moet de uitkomst kunnen betwisten, aanvullende informatie kunnen opvragen en het gebruik kunnen onderbreken. Maak de route bij problemen bereikbaar voor de mensen die ermee werken én voor degenen die er gevolgen van ondervinden.
 
-NIST benadrukt in het Generative AI Profile juist het belang van transparantie, documentatie en passende controls afhankelijk van context en impact.  
+Spreek vooraf af welke signalen aanleiding zijn om een toepassing tijdelijk stil te zetten en wie daarover beslist.
 
-##### **Praktische afspraak:**
+## 5. Beoordeel ook wat je niet had voorzien
 
-> -   bij use-cases met middelgrote en hoge impact loggen we prompts, output en gebruikte bronnen
-> -   we labelen AI-output als “AI-assisted”
-> -   we definiëren een minimale uitleg: “waarom dit antwoord plausibel is”
+Bekijk na ingebruikname niet alleen tijdwinst en foutpercentages. Onderzoek ook klachten, terugkerende uitzonderingen en groepen die anders worden behandeld dan bedoeld. Betrek waar passend de mensen die gevolgen ondervinden. Pas de toepassing of afspraken aan als de oorspronkelijke afweging niet meer houdbaar is.
 
-Niet perfect. Wel volwassen.
+Voor het organiseren van die opvolging bestaan hulpmiddelen. NIST publiceerde een vrijwillig raamwerk met een [profiel voor generatieve AI](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence). [ISO/IEC 42001](https://www.iso.org/standard/42001) beschrijft eisen aan een AI-managementsysteem. Welke [wettelijke verplichtingen](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) daarnaast gelden, vraagt een beoordeling van de concrete toepassing en de rol van de organisatie.
 
-## **3\. Afspraken over data, privacy en copyright**
+## Hoe dit aansluit op Common Sense Management
 
-Dit is waar ethiek en compliance elkaar ontmoeten. Vooral bij generatieve AI gaat het snel mis met:
-
--   persoonsgegevens
--   bedrijfsgeheimen
--   auteursrechtelijk materiaal
-
-De Europese Commissie heeft expliciet benoemd dat GPAI-regels transparantie- en copyrightverplichtingen raken.  
-
-##### **Praktische afspraak:**
-
-> -   dataklassen en toegestane tools
-> -   geen klantdata in publieke modellen
-> -   regels voor het verwerken van documenten en code
-> -   duidelijke afspraken met leveranciers: waar wordt data verwerkt, wat wordt opgeslagen, hoe lang
-
-Dit is niet sexy, maar het voorkomt de leuke verrassing dat je prompt ineens in een audit terugkomt.
-
-## **4\. Afspraken over menselijk toezicht en escalatie**
-
-Ethische AI zonder menselijke verantwoordelijkheid is een sprookje. Het belangrijkste mechanisme is simpel: **wie kijkt mee, en wat doen we als het fout gaat?**
-
-##### Ik leg dit meestal vast als:
-
-> -   human in the loop bij beslissingen met hoge impact
-> -   een escalatiepad: van teamlead naar security/privacy naar MT
-> -   een stopregel: wanneer zetten we een use-case direct uit?
-
-Dit sluit ook aan bij de governancetrend die CIO’s gebruiken om snelheid te maken zonder veiligheid te verliezen.  
-
-## **5\. Afspraken over continu verbeteren en “management system” denken**
-
-Je hoeft niet meteen een hele certificeringsroute in, maar het helpt wél om te denken in een eenvoudige managementcyclus: plannen, uitvoeren, controleren, bijstellen.
-
-ISO/IEC 42001 is precies zo’n AI management system standaard. Hij is gepubliceerd als internationale standaard en beschrijft eisen en guidance voor het opzetten en verbeteren van AI management.  
-
-##### **Praktische afspraak:**
-
-> -   we maken een AI-register, ook al is het klein
-> -   elke use-case krijgt eigenaar, doel, risico-inschatting, controles
-> -   elk kwartaal herijken we: wat stoppen we, wat schalen we op?
-
-Dit is geen bureaucratie. Dit is hoe je voorkomt dat AI een verzameling losse projecten wordt.
-
-## **Hoe dit aansluit op Common Sense Management**
-
-Common Sense Management gaat in de kern over helderheid, verantwoordelijkheid en simpel werkbare afspraken. Niet over dikke handboeken. AI vraagt precies datzelfde. Je krijgt pas rust als je het klein maakt:
+Common Sense Management gaat in de kern over helderheid, verantwoordelijkheid en eenvoudig werkbare afspraken, niet over dikke handboeken. AI vraagt precies datzelfde. Rust ontstaat pas als je het klein houdt:
 
 -   duidelijke doelen
--   duidelijke eigenaar
+-   een duidelijke eigenaar
 -   duidelijke afspraken
--   regelmatig ritme
+-   een vast ritme
 
-Ethische AI is dus niet “extra”. Het is een volwassen vorm van management in een nieuwe context.
+Ethische AI is dus geen extra laag bovenop het werk. Het is goed management in een nieuwe context.
 
-## **Slot: ethiek als enablement**
+## Waar ik een afspraak op toets
 
-De grootste misvatting is dat ethiek innovatie remt. In de praktijk geldt het tegenovergestelde. Als mensen weten wat mag, durven ze te bewegen. Als het vaag blijft, gaat iedereen op de rem. Of iedereen gaat stiekem gas geven.
+Een goede afspraak maakt duidelijk wat er gebeurt wanneer belangen botsen of iemand de uitkomst betwist. Dáár zou ik een gesprek over ethische AI op toetsen. Kunnen de betrokken mensen met de afspraken uit de voeten, ook als de situatie lastig wordt?
 
-Mijn voorkeur is simpel: **maak het expliciet**. Eén pagina afspraken. Een kleine cadence. En dan doen.
-
-Wil je dit concreet maken voor jouw organisatie? Dan is dit precies het soort [managementworkshop](/kennismaken/) dat ik graag faciliteer. Twee uur. Whiteboard. Conclusies. Afspraken waar je maandag mee verder kunt.
+[Wil je deze vragen uitwerken voor een toepassing in jouw organisatie? Laten we kennismaken.](/kennismaken/)

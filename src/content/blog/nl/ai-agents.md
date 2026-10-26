@@ -1,84 +1,69 @@
 ---
-title: "Van Chaos naar Helderheid"
+title: "Wat mag een AI-agent zelfstandig doen?"
 translationKey: ai-agents
 urlSlug: ai-agents-in-organisaties
-description: "Van experiment naar infrastructuur: waarom AI-agenten een nieuwe organisatielaag vormen en wat dit betekent voor bestuur, data, autonomie en governance."
+description: "Een AI-agent kan taken uitvoeren en systemen gebruiken. Bepaal vooraf welke handelingen zijn toegestaan, wie beslist en wanneer een mens ingrijpt."
 pubDate: 2026-02-12
-updatedDate: 2026-02-16
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/ai-agents-hero.png"
 heroAlt: "Van Chaos naar Helderheid"
 legacyUrl: "https://orbisneo.nl/nl/ai-agents-in-organisaties/"
 ---
 
-## **Waarom AI-agents geen tool zijn, maar een nieuwe organisatielaag**
+Een agent die een antwoord op een klantvraag voorbereidt, laat de beslissing nog bij een medewerker. Geef diezelfde agent toegang om zelf te verzenden, prijzen aan te passen of een levering toe te zeggen, en de opdracht verandert. Dan gaat het ook over bevoegdheden.
 
-Stel je voor: terwijl jij in een vergadering zit, onderhandelt een digitale assistent autonoom 4.200 dollar van de prijs van je nieuwe auto af. Geen conceptmail. Geen suggestie. Gewoon handelen.
+Dat verschil moet je vastleggen voordat je een agent in het werkproces opneemt. Welke handelingen mag het systeem zelfstandig uitvoeren, welke vragen goedkeuring en wie kan ingrijpen? Daar begint voor mij het ontwerp van een bruikbare AI-agent.
 
-In dezelfde week gaf iemand een vergelijkbare agent toegang tot zijn iMessage. Binnen korte tijd verstuurde het systeem honderden ongevraagde berichten naar zijn vrouw en volledige contactenlijst.
+## Van voorstel naar handeling
 
-Twee uitersten. Eén technologie. Dit is waar we nu staan met AI-agents. De waarde is enorm. De chaos ligt op de loer. Hoe adopteren we AI-agents in organisaties veilig en succesvol?
+Chatbots werden beter in antwoorden. Systemen konden samenvatten, schrijven en uitleggen. Een AI-agent gaat een stap verder: hij krijgt een doel en kan met toegang tot tools, systemen en gegevens ook taken uitvoeren. Een agent kan binnen de gegeven instructies en toegang vervolgstappen kiezen. Denk aan:
 
-## Van praten naar handelen
-
-Chatbots werden beter in antwoorden. Systemen konden samenvatten, schrijven en uitleggen. Maar onder de oppervlakte is iets fundamenteel veranderd. AI-agents praten niet alleen. Ze handelen. Ze krijgen een doel en zoeken vervolgens zelf naar de beste route om dat doel te bereiken. Met toegang tot tools, systemen en data kunnen ze:
-
--   zelfstandig e-mail verwerken
--   agenda’s beheren
+-   e-mail verwerken
 -   rapportages samenstellen
--   werkprocessen monitoren
 -   voorstellen en besluiten voorbereiden
--   en in sommige gevallen zelfstandig acties uitvoeren
 
-Dit is geen nieuwe functie maar een verschuiving in logica. Traditionele IT werkt met expliciete regels: als A gebeurt, doe B. Agents werken doelgericht: bereik resultaat X, binnen deze context. Dat verschil lijkt subtiel maar organisatorisch is het ingrijpend.
+Bij een vaste workflow ligt de volgorde vooraf vast. Een agent kan binnen een taak zelf vervolgstappen kiezen. In de praktijk kunnen die twee werkwijzen samengaan. Dat verschil lijkt klein, maar voor de organisatie is het ingrijpend.
 
-## Autonomie is een spectrum
+## Hoeveel zelfstandigheid krijgt een agent?
 
-De discussie over AI wordt vaak zwart-wit gevoerd. Wel of geen autonomie. Wel of geen controle. In werkelijkheid is autonomie een schaal. Een agent kan:
+De discussie over AI wordt vaak zwart-wit gevoerd: wel of geen autonomie, wel of geen controle. In werkelijkheid is zelfstandigheid een schaal. Een agent kan:
 
 1.  alleen informatie voorbereiden
 2.  aanbevelingen doen
 3.  beslissingen uitvoeren binnen strikte kaders
-4.  of volledig autonoom handelen
+4.  of bepaalde taken zonder tussentijdse goedkeuring uitvoeren
 
-Het gekozen niveau van autonomie bepaalt het risicoprofiel.
+Het risico hangt samen met de handelingsruimte, toegang, taak en gevolgen van fouten.
 
-Veel organisaties experimenteren met agents zonder expliciet vast te leggen waar op dit spectrum ze opereren. Dat is geen technologisch probleem. Het is een bestuurlijk ontwerpvraagstuk. Zodra een systeem zelfstandig acties kan uitvoeren, verschuift de verantwoordelijkheid.
+Veel organisaties experimenteren met agents zonder vast te leggen waar op deze schaal ze zitten. Dat is ook een bestuurlijke ontwerpvraag. Zodra een systeem zelfstandig handelingen kan uitvoeren, moet duidelijk zijn wie die handelingen toestaat en wie bij fouten ingrijpt.
 
--   Wie is aansprakelijk als een agent een verkeerde toezegging doet?
--   Wie bewaakt consistentie in klantcommunicatie?
--   Wie controleert uitlegbaarheid van beslissingen?
+-   Wie is verantwoordelijk als een agent een verkeerde toezegging doet?
+-   Wie bewaakt de samenhang in de communicatie met klanten?
+-   Wie controleert of beslissingen uit te leggen zijn?
 
-Zolang AI wordt gezien als een hulpmiddel, blijven deze vragen impliciet. Zodra je AI ziet als digitale medewerker, worden ze onvermijdelijk.
+Die vragen blijven gemakkelijk impliciet. Behandel toegang en bevoegdheden daarom als expliciete ontwerpkeuzes.
 
-## De echte kwetsbaarheid: context en data
+## Gegevens en afhankelijkheden
 
-Agents zijn zo effectief als de omgeving waarin ze opereren. Slechte data. Versnipperde processen. Onduidelijke verantwoordelijkheden. Dan versterkt een agent geen efficiëntie, maar versnelt hij chaos.
+Een agent werkt zo goed als de omgeving waarin hij draait. Als gegevens onbetrouwbaar zijn, processen versnipperd en verantwoordelijkheden onduidelijk, maakt een agent het werk niet efficiënter. Hij versnelt dan vooral de verwarring.
 
-Wat ik in organisaties zie, is dat de technologische ambitie vaak groter is dan de datavolwassenheid. Dat is geen reden om stil te staan, maar wel een reden om bewust na te denken over het ontwerp, en de inbedding in de organisatie-, applicatie-, data- en technische architectuur. Niet alles wat kan, moet direct autonoom.
+De technologische ambitie kan groter zijn dan de kwaliteit en ordening van de gegevens. Dat is geen reden om stil te staan, wel een reden om bewust na te denken over het ontwerp en over de werkprocessen, gegevens en systemen waarop de agent is aangesloten. Niet alles wat zelfstandig kan, hoeft direct zelfstandig te gebeuren.
 
-## De spagaat: snelheid versus controle
+## Maak de grenzen uitvoerbaar
 
-Consumenten accepteren dat een agent soms een fout maakt. Als het tijd bespaart, is dat voldoende. Een organisatie kan zich dat niet permitteren. Je kunt een autonoom systeem geen toegang geven tot klantdata, contractcommunicatie of financiële processen zonder duidelijke architectuur en governance.
+Welke fouten aanvaardbaar zijn, hangt af van de toepassing en de gevolgen. Een onhandig conceptbericht is iets anders dan een verkeerd verstuurde toezegging. Bij klantgegevens, contracten en financiële handelingen moet daarom vooraf duidelijk zijn welke toegang nodig is, welke controle geldt en hoe iemand kan ingrijpen.
 
-Tegelijkertijd zie je dat medewerkers al experimenteren. Shadow AI ontstaat. IT probeert bij te houden. Security wordt reactief of restrictief. Het management ziet vooral de potentie, maar mist soms het kader. De technologie ontwikkelt zich sneller dan de organisatorische infrastructuur.
+Tegelijk experimenteren medewerkers vaak al met AI-tools buiten de afgesproken inrichting. IT probeert bij te houden en beveiliging reageert achteraf of wordt juist streng. Het management ziet de mogelijkheden, maar mist soms een kader. Dat vraagt om expliciete keuzes:
 
-Daar ontstaat de spanning.
-
-## Van experiment naar infrastructuur
-
-De komst van AI-agents is geen toolkeuze. Het is een (enterprise) architectuurvraag. Dat vraagt om expliciete keuzes:
-
-1.  Welke taken willen we automatiseren, en waarom?
-2.  Welk autonomieniveau is gewenst?
+1.  Welke taken willen we laten uitvoeren, en waarom?
+2.  Hoeveel zelfstandigheid is gewenst?
 3.  Welke beheersmaatregelen bouwen we in?
-4.  Waar is human-in-the-loop noodzakelijk?
-5.  Hoe borgen we logging, transparantie en aansprakelijkheid?
+4.  Welke handelingen vragen vooraf toestemming van een medewerker?
+5.  Wat leggen we vast, hoe maken we handelingen controleerbaar en wie is verantwoordelijk?
 
-Dit zijn strategische ontwerpvragen. Geen technische details. Het verschil tussen waarde en chaos zit zelden in het model zelf. Het zit in de manier waarop je het inbedt.
+## Drie besluiten voordat een agent aan het werk gaat
 
-## **We zitten in een overgangsfase**
+Leg vast welke handelingen de agent mag uitvoeren, welke eerst toestemming vragen en wie hem kan stopzetten. Controleer vervolgens of die afspraken ook in de toegangsrechten en het werkproces zijn verwerkt. Een instructie op papier helpt weinig als de agent technisch meer kan dan is toegestaan.
 
-AI-agents ontwikkelen zich sneller dan de structuren waarin ze landen. Dat voelt riskant. Maar het biedt ook een voorsprong voor organisaties die deze ontwikkeling niet reduceren tot experimenteren met een nieuwe tool, maar zien als een nieuwe organisatielaag.
-
-AI-agents zijn geen hype en ook geen dreiging. Ze zijn uitvoerende entiteiten binnen je processen. De vraag is niet of je ze inzet. De vraag is of je ze goed ontwerpt. En dat is waar de echte stap van chaos naar helderheid begint.
+Daarna kun je gericht beproeven of deze toepassing bruikbaar is. Dat kan ook tot de conclusie leiden dat een eenvoudiger oplossing beter past.

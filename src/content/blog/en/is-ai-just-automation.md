@@ -1,197 +1,66 @@
 ---
-title: "Is AI just automation with a new label?"
+title: "AI or conventional automation: what does the task need?"
 translationKey: is-ai-just-automation
 urlSlug: is-ai-just-automation-with-a-new-label
-description: "Much of what is sold as AI could also be solved with classic automation. A decision framework: automation-first, AI where needed."
+description: "When are fixed rules enough, when can AI help, and when should you combine them? A practical way to assess reporting, analysis and workflows."
 pubDate: 2026-01-05
-updatedDate: 2026-01-13
+updatedDate: 2026-10-26
 category: "AI in organisations"
 heroImage: "../../../assets/blog/is-ai-just-automation-hero.jpg"
 heroAlt: "Close-up of digital data analysis displayed on a computer monitor with blue tones."
 legacyUrl: "https://orbisneo.nl/is-ai-just-automation-with-a-new-label/"
 ---
 
-## Introduction
+I hear it more and more often in conversations with managers, product owners and architects: "We want something with AI."
 
-I hear it more and more often in conversations with managers, product owners and architects: “We want something with AI.”
+Often the underlying need is straightforward: prepare a report sooner, stop retyping data or complete a case file. My first question is where the work gets stuck. Are the rules unclear, is information missing, or does interpreting it take too much time? The answer helps distinguish a process problem from a task that might benefit from automation or AI.
 
-And then after ten minutes it turns out that it is actually something very recognisable. Less manual work. Reporting faster. Fewer errors. Better lead times. More control.
+## The confusion begins with the word AI
 
-All good goals. Only: much of what is now sold as an “AI initiative” could also have been solved with classic automation and well-designed software. Sometimes smarter. Sometimes cheaper. Sometimes more reliable.
+"AI" has become a catch-all term. It can mean, for example:
 
-This is not an attack on AI. On the contrary. It is a plea for maturity: **we need to get better at choosing where AI adds value, and where it is mainly noise.**
+-   a model that interprets information, such as text or documents
+-   help with developing software
+-   an agent that carries out actions
 
-A recent [KNIME analysis](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which) sets out that choice very clearly by distinguishing between traditional automation, generative AI and agentic variants, including when which approach makes sense.
+If you call all of that "AI", you quickly end up in an unhelpful debate. It starts to seem as if you have to be for or against AI, while the real question is: **what problem are we solving, and what is the most suitable approach?**
 
-## **The confusion begins with the word “AI”**
+## AI in the application or in its development
 
-“AI” has become a catch-all term. It stands for:
+Two different choices often get mixed together. AI can be part of the application itself, interpreting documents or drafting recommendations. In that case, the model's quality and limitations remain relevant whenever the application is used.
 
--   A chat interface on top of existing systems
--   A model that summarises texts
--   An agent performing actions
--   A developer who writes code faster
--   A classification model that recognises exceptions
--   And sometimes just a workflow with smart rules
+Alternatively, a team can use AI to help write code, propose tests or prepare documentation. The resulting software may contain no AI at all. The main questions then concern the quality of the development work and how the team checks it. Either approach can be useful. Any time saving needs to be measured in the actual work.
 
-If you call it all “AI”, you automatically get a weird discussion. Then it seems like you have to be for or against AI, while the real question is: **what problem do we solve, and what is the most appropriate mechanism?**
+Measurement matters. In a [2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), experienced open-source developers took longer with AI assistance in the setting studied, despite expecting to save time. In [February 2026, METR reported](https://metr.org/blog/2026-02-24-uplift-update/) indications that the effect had changed, alongside selection problems that made the size of the effect difficult to estimate reliably. Neither result provides a fixed productivity multiplier for another team.
 
-## **Old wine in new bottles, and why that’s okay**
+## Why AI gets used where automation would do
 
-This may be unpopular, but a lot of “AI use cases” are old wine in new bottles.
+There are a few recognisable reasons. The AI label can make it easier to secure a budget. Data problems, such as missing definitions or scattered sources, remain even when a model summarises the result neatly. And a persuasive text about the figures is not the same as an analysis you can check.
 
-Examples I often come across:
+## Choose an approach for each part of the task
 
--   “AI reports” that need a good BI model at their core
--   “AI data analysis” that mainly requires data quality, definitions and a semantic layer
--   “AI process optimisation” that starts better with workflow, integration and clear decision rules
+Use rules and calculations where the required behaviour can be specified clearly. Examples include calculating totals, checking mandatory fields and routing a request against agreed conditions.
 
-What AI can add in such situations:
+Consider AI where interpretation is needed, such as working with text, documents or patterns in data. Test it on representative examples and establish which errors occur and whether someone can detect them in time.
 
--   A more pleasant interface (asking questions in regular language)
--   Summaries and explanations for humans
--   Explore variants faster (hypotheses, scenarios, draft texts)
+A combined approach may be appropriate. A model proposes information or a response; software performs verifiable calculations and permitted actions; a person reviews exceptions and consequential decisions. Divide the work according to the task and its risks, rather than the label on the solution.
 
-But if the outcome has to be reproducible, auditable, and without surprises, then you often want something other than a probabilistic system.
+## Three examples
 
-**In short**: if the answer always has to be the same, then “classic” is often just better.
+**Reporting.** A monthly report needs figures that can be traced to agreed sources and definitions. AI can help describe variances or suggest questions about the numbers. It should not silently fill in missing amounts or explanations. Keep the calculations, source data and assumptions visible.
 
-## **The difference that many organisations miss: AI as an engine versus AI as an accelerator**
+**Data analysis.** For segments, trends and key figures, conventional analytics is usually the foundation. AI can help formulate hypotheses more quickly and put insights into words. You then test those hypotheses with the usual analysis.
 
-There are roughly two ways AI can deliver value:
+**Process improvement.** If the aim is fewer handovers, less waiting time and less rework, standardisation, a clear workflow, integrations and clear responsibilities often go a long way. Whether AI adds anything depends on the task, the available data and the cost of an error.
 
-### **1) AI as an engine in your solution**
+## Start with one process
 
-Then AI does substantive work in the process, for example:
+Take one process and separate the work: what can follow fixed rules, where is interpretation needed, and which judgements should remain with a person? That gives you something specific to test without turning the entire process into an AI project.
 
--   Classification of free text
--   Extraction from documents
--   Recommendations
--   Support of employees with context and knowledge
--   Handle exceptions where rules fall short
+[Want to assess one of your own processes? Get in touch.](/contact/)
 
-This is where AI is really part of the operation. You build a solution that could not do the same without AI.
+## Sources
 
-### **2) AI as an accelerator of your software development**
-
-Then AI is not in your product, but it helps your team to build faster:
-
--   Write code faster
--   Generate tests
--   Summarise documentation
--   Explore alternatives
--   Propose refactorings
-
-That can be valuable. Only: the end result is often just “software”. Not an AI product. No AI application. Just a better or faster delivery.
-
-It is important to keep that distinction honest, because it determines your expectations and your governance. If you mainly use “AI” to accelerate development, then you should not pretend that your organisation is suddenly “AI-driven”. You mainly work more **efficiently**.
-
-And even that is not an automatic gain. A [METR-RCT](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) among experienced open-source developers showed in 2025 that AI tools in that context led to longer lead times on average, while the developers thought they were faster.
-
-The nuance is important: AI can help, but not everywhere, not always, and not without discipline.
-
-## **Why “AI where automation is enough” happens so often**
-
-There are three reasons why organisations use AI for problems that are actually deterministic.
-
-### **1) The label opens budgets**
-
-When something is called “AI”, it feels strategic, innovative, future-proof. This makes it easier to release resources. That is human. Only: it doesn’t make the content better.
-
-### **2) Organisations want speed without laying the foundation**
-
-Reporting and analysis are often slow because definitions are missing, data is scattered, ownership is vague. Solving that takes work.
-
-AI then seems like a shortcut: “let the model summarise it.” That sometimes works, but it masks the real cause. And you pay the bill later.
-
-### **3) Organisations confuse “talking about data” with “managing by data”**
-
-With AI, you can quickly generate texts that sound as if you are in control.
-
-But you are only in control when you can trace, explain and act on it. That often requires standardisation, data models and clear KPI definitions.
-
-## **A mature decision-making framework: automation-first, AI-where-needed**
-
-This is the simple framework that I use myself to keep conversations with management and teams practical.
-
-### **Choose automation if:**
-
--   The outcome must be reproducible
--   Audit, compliance or traceability weighs heavily
--   The input is already structured
--   The process mainly consists of fixed rules and predictable steps
--   Mistakes are expensive and variation is low
-
-### **Choose AI (or AI as an assistant) if:**
-
--   The input is unstructured (mail, documents, minutes, free text)
--   There are many exceptions and variation
--   Your employees mainly struggle with interpreting, summarising and searching
--   You want speed in knowledge work, with human control where necessary
-
-### **Choose hybrid if:**
-
--   AI helps with interpretation or proposal
--   Automation carries out
--   People review higher-impact decisions and remain accountable.
-
-This hybrid approach is also reflected in recent analyses that make the distinction between traditional automation, generative AI and agentic solutions practical, including when “agents” are mainly overkill.
-
-## **A few recognisable examples (without magic)**
-
-### **Reports**
-
-If your monthly reports are now manual work, the problem is usually:
-
--   Definitions differ
--   Data is fragmented
--   The process of “closing” is not tight
-
-AI can then help with:
-
--   Summary of deviations
--   Narrative generation (“what stands out and why?”)
--   Answer questions about numbers
-
-But the underlying figures must be deterministic. Otherwise you get a report that sounds good and is wrong. And that is a very expensive kind of deception.
-
-### **Data Analysis**
-
-When you mean: segments, trends, KPIs, drill-downs, then classic analytics is often the basis.
-
-AI can help formulate hypotheses and articulate insights faster, but you then want to test those hypotheses against the evidence with normal analysis.
-
-### **Process optimisation**
-
-If the goal is: fewer handovers, less waiting time, less rework, then you often already win with:
-
--   Process standardisation
--   Workflow
--   Integrations
--   Clear ownership
-
-AI only becomes interesting if you have a lot of free text, or when exceptions dominate the process. Then AI can make the difference by sorting or routing those exceptions faster.
-
-## **The real gain: being honest about what you are doing**
-
-The most mature organisations I see are doing something simple:
-
--   They just call automation automation
--   They only call AI AI when it really plays a role in the operation
--   They limit pilots, steer by value, and also dare to stop
-
-And most importantly, they don’t use AI to destroy existing structures, but to make them smarter. Portfolio choices remain portfolio choices. Architecture remains architecture. Governance is still needed. Only the emphasis shifts.
-
-## **Conclusion: “AI application” is not the goal, result is**
-
-If AI only helps build software faster, that’s fine. If AI only helps to make reports more readable, that’s fine too. If AI is not really needed anywhere, but you do provide value with automation, that’s fine.
-
-The only thing I find a shame is when the label “AI” clouds the discussion, inflates expectations and makes the organisation unnecessarily uncertain.
-
-The question you can ask yourself is simple:
-
-**Should this be predictable, or can it be probabilistic?**
-
-Once that is clear, the rest often falls into place surprisingly quickly.
-
-Do you want to apply this framework to your processes, without hype and without theatre? Then that’s exactly what I do in a short [clarity session](/contact/): for each process we decide between automation-first and AI-where-needed, and what a sensible first step is.
+- [METR: Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity (10 July 2025)](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)
+- [METR: We are Changing our Developer Productivity Experiment Design (24 February 2026)](https://metr.org/blog/2026-02-24-uplift-update/)
+- Further reading, from a supplier: [KNIME: Traditional Automation vs. Generative AI vs. Agentic AI: When to Use Which](https://www.knime.com/blog/traditional-automation-vs-generative-ai-vs-agentic-ai-when-use-which)

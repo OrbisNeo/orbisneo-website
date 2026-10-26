@@ -1,91 +1,57 @@
 ---
-title: "Beginnen met AI?"
+title: "Beginnen met AI: kies eerst het werk dat beter moet"
 translationKey: getting-started-with-ai
 urlSlug: beginnen-met-ai
-description: "Een goede start met AI begint niet met tools, maar met strategische helderheid, eigenaarschap en de juiste managementvragen."
+description: "Kies een concrete opgave, wijs een verantwoordelijke aan en spreek af wanneer een proef geslaagd is. Zo krijgt een eerste AI-toepassing richting."
 pubDate: 2026-01-20
-category: "AI in organisations"
+updatedDate: 2026-10-26
+category: "AI in organisaties"
 heroImage: "../../../assets/blog/getting-started-with-ai-hero.jpeg"
 heroAlt: "Beginnen met AI?"
 legacyUrl: "https://orbisneo.nl/nl/beginnen_met_ai/"
 ---
 
-## **Start niet met tools, maar met de juiste vragen**
+Je kunt snel een AI-proef beginnen. Lastiger is vooraf afspreken wat die proef moet aantonen. Neem een team dat veel tijd kwijt is aan klantvragen. Wil je sneller een antwoord opstellen, minder vragen hoeven doorsturen of fouten in de beantwoording verminderen? Elk doel vraagt om een andere proef en een andere manier van beoordelen.
 
-Stel je voor: je organisatie investeert tienduizenden euro’s in AI-tools. Er worden demo’s gegeven, pilots gestart, licenties aangeschaft. Drie maanden later is het enthousiasme weg. Het gebruik is laag. De impact onduidelijk. En in het MT ontstaat de eerste twijfel: _“Doen we hier wel het juiste?”_
+Voor een directie begint de keuze daar. Welk onderdeel van het werk moet beter, wie is daarvoor verantwoordelijk en waaraan merken we dat de verandering helpt?
 
-Dit scenario zie ik steeds vaker. Niet omdat AI geen waarde heeft, maar omdat organisaties **beginnen op de verkeerde plek**.
+## De grootste misvatting bij starten met AI
 
-AI-initiatieven lopen zelden alleen op de techniek vast. Vaker stokken ze op bestuurlijke keuzes: wat is het doel, wie is eigenaar en wie beslist?
-
-## **De grootste misvatting bij starten met AI**
-
-Veel directies benaderen AI als een technologievraagstuk. Welke tool past bij ons? Welke leverancier is “leading”? Hoe snel kunnen we starten? Maar voor bestuurders is AI **geen IT-beslissing**. Het is een **strategische keuze** die raakt aan:
+Veel directies benaderen AI als een technologievraagstuk. Welke tool past bij ons? Welke leverancier past bij de opgave? Hoe snel kunnen we starten? Een keuze voor AI raakt vaak ook de verdeling van werk, verantwoordelijkheid en kosten. Denk aan:
 
 -   de manier waarop werk wordt uitgevoerd
--   verantwoordelijkheden en eigenaarschap
--   kostenstructuren en productiviteit
--   risico’s, compliance en reputatie
+-   wie waarvoor verantwoordelijk is
+-   kosten en productiviteit
+-   risico's, regelgeving en reputatie
 
-Wie start met tools voordat deze vragen zijn beantwoord, creëert verwarring in plaats van versnelling.
+Wie met tools begint voordat die vragen beantwoord zijn, weet achteraf vaak niet wat de tool had moeten oplossen.
 
-* * *
+## Drie redenen waarom AI-initiatieven vastlopen in het MT
 
-## **Drie redenen waarom AI-initiatieven vastlopen in het MT**
+### 1\. Er is geen gedeelde probleemdefinitie
 
-### **1\. Er is geen gedeelde probleemdefinitie**
+Binnen het MT bestaan vaak verschillende beelden van waar AI voor bedoeld is. De één ziet kostenbesparing, de ander innovatie, een derde "iets wat we niet mogen missen". Zonder expliciete keuze blijft AI een containerbegrip, en niemand heeft het mandaat om prioriteiten te stellen en een besluit te nemen. Dan ontstaan losse initiatieven die met elkaar concurreren om tijd en aandacht.
 
-Binnen het MT bestaan vaak verschillende beelden van _waar AI voor bedoeld is_. De één ziet kostenbesparing. De ander innovatie. Een derde “iets wat we niet mogen missen”. Zonder expliciete keuze blijft AI een containerbegrip. En wat van iedereen is, is van niemand.
+### 2\. AI wordt los gezien van bestaande processen
 
-**Gevolg:** losse initiatieven zonder samenhang of prioriteit.
+AI wordt geïntroduceerd als iets nieuws, bovenop de organisatie. Terwijl de opbrengst juist zit in bestaande knelpunten: besluitvorming, overdrachten, administratieve lasten, rapportages. Als die processen niet eerst worden begrepen, wordt AI een extra laag complexiteit, met tools die geen onderdeel worden van het werk van het team.
 
-### **2\. AI wordt los gezien van bestaande processen**
+### 3\. Het mandaat om te besluiten blijft vaag
 
-AI wordt geïntroduceerd als iets nieuws, bovenop de organisatie. Terwijl de echte waarde juist zit in **bestaande knelpunten**: besluitvorming, overdrachten, administratieve lasten, rapportages. Als die processen niet eerst worden begrepen, wordt AI een extra laag complexiteit.
+AI wordt vaak "belegd" bij IT, innovatie of data. Maar beslissingen over werk, risico en menselijk handelen horen thuis in het MT. Zolang er geen verantwoordelijke is met mandaat om besluiten te nemen, ontstaat terughoudendheid, of blijven besluiten liggen. Pilots worden dan niet uitgebreid en experimenten eindigen zonder besluit.
 
-**Gevolg:** tools die slim zijn, maar nergens écht landen.
+## Drie vragen vóór de proef
 
-### **3\. Bestuurlijk eigenaarschap blijft vaag**
+Begin met drie vragen:
 
-AI wordt vaak “belegd” bij IT, innovatie of data. Maar beslissingen over werk, risico en menselijk handelen horen thuis in het MT. Zolang eigenaarschap niet expliciet is, ontstaat terughoudendheid. Of erger: stilstand uit angst.
+1. Welke taak of beslissing willen we verbeteren, en hoe verloopt die nu?
+2. Wie beoordeelt of de verandering helpt, op basis van welke gegevens?
+3. Welke fouten of nadelige gevolgen maken dat we de proef aanpassen of stoppen?
 
-**Gevolg:** pilots zonder opschaling, experimenten zonder besluit.
+Gebruik de antwoorden om één eerste toepassing te kiezen. Onderzoek daarna met de betrokken medewerkers en IT welke aanpak haalbaar is. Soms is dat AI, soms een aanpassing in het proces of de bestaande software.
 
-## **Wat een goede start met AI wél vraagt**
+## Wat moet het eerste gesprek opleveren?
 
-Een effectieve start met AI begint niet met een tool, maar met **drie bestuurlijke vragen**:
+Ik wil uit zo'n gesprek een besluit kunnen meenemen: welke toepassing onderzoeken we, wie trekt die en wat moet een proef aantonen? Daar horen ook afspraken bij over gegevensgebruik en de mensen die de uitkomsten beoordelen. Met die basis kan het team de volgende stap voorbereiden en kan de directie later besluiten of doorgaan zinvol is.
 
-1.  **Waar willen wij als organisatie slimmer, sneller of consistenter beslissen of werken?**
-2.  **Welke processen zijn hiervoor kritisch, en waar zit vandaag frictie of verspilling?**
-3.  **Welke risico’s accepteren we bewust, en welke niet?**
-
-Deze vragen zijn niet technisch. Ze zijn strategisch. Pas als hier helderheid over is, ontstaat ruimte voor verantwoorde inzet van AI.
-
-## **Waarom een AI-workshop op MT-niveau werkt**
-
-Daarom start ik AI-trajecten bewust met een korte, scherpe workshop voor directie en MT. Niet om tools te demonstreren. Maar om **gezamenlijk scherpte te creëren**.
-
-In zo’n sessie werken we aan:
-
--   een gedeeld beeld van wat AI _wel_ en _niet_ moet oplossen
--   prioritaire processen met concreet waardepotentieel
--   expliciet bestuurlijk eigenaarschap
--   randvoorwaarden rond mens, compliance en besluitvorming
-
-**Resultaat:** geen abstracte AI-strategie, maar een helder startpunt waar keuzes op volgen.
-
-## **AI is geen doel. Het is een middel.**
-
-Voor bestuurders geldt:
-
-AI is geen innovatieproject dat je “erbij doet”. Het is een hefboom die pas werkt als richting, verantwoordelijkheid en context kloppen. Wie dat goed organiseert, creëert ruimte voor echte impact.
-
-Wie dat overslaat, betaalt leergeld.
-
-## **Wil je verkennen of jouw organisatie op de juiste plek begint?**
-
-Ik ga graag in gesprek met directies en MT’s die voelen dat AI relevant is, maar geen zin hebben in hype of vrijblijvende pilots.
-
-👉 **[Vraag een vrijblijvende kennismaking aan](/kennismaken/)**
-
-Dan kijken we samen of het AI-vraagstuk in je organisatie een technologieprobleem is, of eigenlijk een bestuurlijke keuze.
+[Wil je een eerste toepassing afbakenen? Laten we kennismaken.](/kennismaken/)
