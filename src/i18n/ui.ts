@@ -4,7 +4,7 @@ export const ui = {
   en: {
     nav: {
       services: "Services",
-      about: "About",
+      about: "About me",
       blog: "Blog",
       contact: "Contact",
       menuOpen: "Open menu",
@@ -29,7 +29,7 @@ export const ui = {
   nl: {
     nav: {
       services: "Diensten",
-      about: "Over",
+      about: "Over mij",
       blog: "Blog",
       contact: "Kennismaken",
       menuOpen: "Menu openen",
