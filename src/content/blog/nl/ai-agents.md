@@ -11,23 +11,23 @@ heroAlt: "Van Chaos naar Helderheid"
 legacyUrl: "https://orbisneo.nl/nl/ai-agents-in-organisaties/"
 ---
 
-Een agent die een antwoord op een klantvraag voorbereidt, laat de beslissing nog bij een medewerker. Geef diezelfde agent toegang om zelf te verzenden, prijzen aan te passen of een levering toe te zeggen, en de opdracht verandert. Dan gaat het ook over bevoegdheden.
+Een agent die een antwoord op een klantvraag voorbereidt, laat de beslissing nog bij een medewerker. Mag diezelfde agent zelf verzenden, prijzen aanpassen of een levering toezeggen, dan verandert de opdracht en gaat het ook over bevoegdheden.
 
 Dat verschil moet je vastleggen voordat je een agent in het werkproces opneemt. Welke handelingen mag het systeem zelfstandig uitvoeren, welke vragen goedkeuring en wie kan ingrijpen? Daar begint voor mij het ontwerp van een bruikbare AI-agent.
 
 ## Van voorstel naar handeling
 
-Chatbots werden beter in antwoorden. Systemen konden samenvatten, schrijven en uitleggen. Een AI-agent gaat een stap verder: hij krijgt een doel en kan met toegang tot tools, systemen en gegevens ook taken uitvoeren. Een agent kan binnen de gegeven instructies en toegang vervolgstappen kiezen. Denk aan:
+Chatbots werden steeds beter in antwoorden, samenvatten en uitleggen. Een AI-agent krijgt ook een doel en toegang tot tools, systemen en gegevens, zodat hij zelf taken kan uitvoeren. Binnen de instructies en toegang die hij heeft, kiest hij de vervolgstappen. Denk aan:
 
 -   e-mail verwerken
 -   rapportages samenstellen
 -   voorstellen en besluiten voorbereiden
 
-Bij een vaste workflow ligt de volgorde vooraf vast. Een agent kan binnen een taak zelf vervolgstappen kiezen. In de praktijk kunnen die twee werkwijzen samengaan. Dat verschil lijkt klein, maar voor de organisatie is het ingrijpend.
+Bij een vaste workflow ligt de volgorde vooraf vast. Een agent kiest binnen een taak zelf de volgende stap. In de praktijk kunnen die twee werkwijzen samengaan. Voor de organisatie heeft dat verschil grote gevolgen.
 
 ## Hoeveel zelfstandigheid krijgt een agent?
 
-De discussie over AI wordt vaak zwart-wit gevoerd: wel of geen autonomie, wel of geen controle. In werkelijkheid is zelfstandigheid een schaal. Een agent kan:
+De discussie over AI gaat vaak over wel of geen autonomie en wel of geen controle. Zelfstandigheid is eerder een schaal. Een agent kan:
 
 1.  alleen informatie voorbereiden
 2.  aanbevelingen doen
@@ -42,13 +42,13 @@ Veel organisaties experimenteren met agents zonder vast te leggen waar op deze s
 -   Wie bewaakt de samenhang in de communicatie met klanten?
 -   Wie controleert of beslissingen uit te leggen zijn?
 
-Die vragen blijven gemakkelijk impliciet. Behandel toegang en bevoegdheden daarom als expliciete ontwerpkeuzes.
+Die vragen blijven makkelijk liggen. Leg toegang en bevoegdheden daarom bewust vast in het ontwerp.
 
 ## Gegevens en afhankelijkheden
 
 Een agent werkt zo goed als de omgeving waarin hij draait. Als gegevens onbetrouwbaar zijn, processen versnipperd en verantwoordelijkheden onduidelijk, maakt een agent het werk niet efficiënter. Hij versnelt dan vooral de verwarring.
 
-De technologische ambitie kan groter zijn dan de kwaliteit en ordening van de gegevens. Dat is geen reden om stil te staan, wel een reden om bewust na te denken over het ontwerp en over de werkprocessen, gegevens en systemen waarop de agent is aangesloten. Niet alles wat zelfstandig kan, hoeft direct zelfstandig te gebeuren.
+De technologische ambitie kan groter zijn dan de kwaliteit en ordening van de gegevens. Je hoeft daarom niet stil te staan. Denk wel bewust na over het ontwerp en over de werkprocessen, gegevens en systemen waarop de agent is aangesloten. Niet alles wat zelfstandig kan, hoeft direct zelfstandig te gebeuren.
 
 ## Maak de grenzen uitvoerbaar
 
@@ -56,7 +56,7 @@ Welke fouten aanvaardbaar zijn, hangt af van de toepassing en de gevolgen. Een o
 
 Tegelijk experimenteren medewerkers vaak al met AI-tools buiten de afgesproken inrichting. IT probeert bij te houden en beveiliging reageert achteraf of wordt juist streng. Het management ziet de mogelijkheden, maar mist soms een kader. Dat vraagt om expliciete keuzes:
 
-1.  Welke taken willen we laten uitvoeren, en waarom?
+1.  Welke taken willen we laten uitvoeren en waarom?
 2.  Hoeveel zelfstandigheid is gewenst?
 3.  Welke beheersmaatregelen bouwen we in?
 4.  Welke handelingen vragen vooraf toestemming van een medewerker?

@@ -12,7 +12,7 @@ anchor: interim-ondersteuning
 
 ### Wanneer heeft u dit nodig?
 
-De richting is gekozen, maar u mist tijdelijk de senior capaciteit om het te organiseren en uit te voeren, en een vaste aanstelling past niet.
+De richting is gekozen, maar u mist tijdelijk de senior capaciteit om het te organiseren en uit te voeren. Een vaste aanstelling past niet.
 
 ### Wat doen we?
 
@@ -20,7 +20,7 @@ We spreken een opdracht af met concrete opleveringen, een vast ritme en een eind
 
 ### Wat krijgt u in handen?
 
-Een vast ritme, directe toegang, periodieke rapportage aan de directie, en bij het einde een overdracht aan een interne eigenaar.
+Een vast ritme, directe toegang, periodieke rapportage aan de directie en bij het einde een overdracht aan een interne eigenaar.
 
 ### Waar mijn achtergrond meeweegt
 

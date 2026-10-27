@@ -11,12 +11,12 @@ const services = sortByOrder(inLang(all, "nl"));
 
 <BaseLayout
   title="Diensten | Orbis Neo"
-  description="Vier diensten. Elk met een duidelijke uitkomst. Directiescan, ambitie- en positiesessie, financieel kader voor AI en interim-ondersteuning."
+  description="Vier diensten, elk met een duidelijke uitkomst: directiescan, ambitie- en positiesessie, financieel kader voor AI en interim-ondersteuning."
   lang="nl"
 >
   <PageBackdrop />
   <section class="services-intro container">
-    <h1>Vier diensten. Elk met een duidelijke uitkomst.</h1>
+    <h1>Vier diensten, elk met een duidelijke uitkomst.</h1>
     <p class="services-intro__lead">
       Elke dienst heeft een helder resultaat, een vaste vorm en een zichtbaar eindpunt.
     </p>
@@ -37,7 +37,7 @@ const services = sortByOrder(inLang(all, "nl"));
   {services.map((s, i) => <ServiceDetail service={s} index={i} lang="nl" />)}
 
   <section class="services-closing container">
-    <p>Niet zeker welke past? Begin met de directiescan.</p>
+    <p>Weet u nog niet welke dienst past? Begin dan met de directiescan.</p>
     <a href="/kennismaken/" class="btn btn--secondary">Vraag een kennismaking aan</a>
   </section>
 </BaseLayout>

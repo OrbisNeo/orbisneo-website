@@ -11,9 +11,9 @@ heroAlt: "An unrecognisable person with binary code projected, symbolising cyber
 legacyUrl: "https://orbisneo.nl/ethical-ai-from-sentiment-to-working-agreements/"
 ---
 
-A faster assessment may benefit an organisation while putting the person being assessed at a disadvantage. Suppose an AI-generated summary of a job application omits relevant experience. Who would notice? Can the applicant have the error corrected? Will someone return to the original material before making a decision?
+A faster assessment may benefit an organisation while putting the person being assessed at a disadvantage. Suppose an AI-generated summary of a job application omits relevant experience. You then want to know who would notice, whether the applicant can have the error corrected and whether someone returns to the original material before a decision is made.
 
-These questions give an ethics discussion something concrete to address. Whose interests are involved, where should the boundaries sit, and what can someone do if the result is wrong? Working agreements help put those choices into practice. They do not resolve the underlying choices for us.
+These questions give an ethics discussion something concrete to address. You have to decide whose interests count, where the boundaries sit and what someone can do if the result is wrong. Working agreements help put those choices into practice. They do not resolve the underlying choices for us.
 
 ## 1. Define the purpose, the people affected and the limits
 
@@ -47,14 +47,14 @@ There are resources to help organise this work. NIST offers a voluntary risk fra
 
 ## How this connects to Common Sense Management
 
-Common Sense Management is essentially about clarity, responsibility and simple, workable agreements, not thick manuals. AI asks for exactly the same thing. Things only settle down when you keep it small:
+Common Sense Management is about clarity, responsibility and simple agreements that work in practice. Thick manuals are not part of it. The same applies to AI. Keep it small:
 
 -   clear goals
 -   a clear owner
 -   clear agreements
 -   a regular rhythm
 
-Ethical AI is therefore not an extra layer on top of the work. It is good management in a new context.
+Seen this way, ethical AI is simply part of good management. It does not need to be an extra layer on top of the work.
 
 ## How I would assess an ethical AI policy
 

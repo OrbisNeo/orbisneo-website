@@ -1,4 +1,4 @@
-Orbis Neo respecteert de privacy van opdrachtgevers, relaties en bezoekers van deze website. Ik ga zorgvuldig en vertrouwelijk om met de persoonsgegevens die u mij geeft, en verwerk ze volgens de Algemene Verordening Gegevensbescherming (AVG). In deze verklaring leest u welke gegevens ik verwerk, waarom, hoe lang, met wie ik ze deel en welke rechten u heeft.
+Orbis Neo respecteert de privacy van opdrachtgevers, relaties en bezoekers van deze website. Ik ga zorgvuldig en vertrouwelijk om met de persoonsgegevens die u mij geeft en verwerk ze volgens de Algemene Verordening Gegevensbescherming (AVG). In deze verklaring leest u welke gegevens ik verwerk, waarom, hoe lang, met wie ik ze deel en welke rechten u heeft.
 
 ## 1. Wie ben ik
 
@@ -14,7 +14,7 @@ Orbis Neo is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals b
 
 ### A. Contactformulier
 
-Als u het contactformulier invult, ontvang ik uw naam, e-mailadres, uw vraag, en als u die invult ook uw telefoonnummer en het onderwerp dat u aanvinkt. Het formulier bevat ook een verborgen veld dat spam tegenhoudt, zonder trackende captcha.
+Als u het contactformulier invult, ontvang ik uw naam, e-mailadres en vraag en, als u die invult, ook uw telefoonnummer en het onderwerp dat u aanvinkt. Het formulier bevat ook een verborgen veld dat spam tegenhoudt, zonder trackende captcha.
 
 - Doel: uw vraag beantwoorden en, als u dat wilt, een kennismaking of offerte voorbereiden.
 - Grondslag: uw toestemming, die u geeft met het vinkje onder het formulier.
@@ -52,7 +52,7 @@ Deze website plaatst één functionele cookie:
 |---|---|---|
 | `on_lang` | Onthoudt of u de site in het Nederlands of Engels wilt zien | 1 jaar |
 
-Voor deze functionele cookie is geen toestemming nodig. Er worden geen analytische, tracking- of advertentiecookies geplaatst, en daarom ziet u ook geen cookiebanner.
+Voor deze functionele cookie is geen toestemming nodig. Er worden geen analytische, tracking- of advertentiecookies geplaatst. Daarom ziet u ook geen cookiebanner.
 
 ## 4. Links naar andere websites
 

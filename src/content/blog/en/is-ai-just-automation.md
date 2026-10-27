@@ -23,7 +23,7 @@ Often the underlying need is straightforward: prepare a report sooner, stop rety
 -   help with developing software
 -   an agent that carries out actions
 
-If you call all of that "AI", you quickly end up in an unhelpful debate. It starts to seem as if you have to be for or against AI, while the real question is: **what problem are we solving, and what is the most suitable approach?**
+If you call all of that "AI", you quickly end up in an unhelpful debate. It starts to seem as if you have to be for or against AI, while the real question is which problem you are solving and which approach suits it best.
 
 ## AI in the application or in its development
 
@@ -43,7 +43,7 @@ Use rules and calculations where the required behaviour can be specified clearly
 
 Consider AI where interpretation is needed, such as working with text, documents or patterns in data. Test it on representative examples and establish which errors occur and whether someone can detect them in time.
 
-A combined approach may be appropriate. A model proposes information or a response; software performs verifiable calculations and permitted actions; a person reviews exceptions and consequential decisions. Divide the work according to the task and its risks, rather than the label on the solution.
+A combined approach may be appropriate. A model proposes information or a response; software performs verifiable calculations and permitted actions; a person reviews exceptions and consequential decisions. Divide the work according to the task and its risks. Whether the solution is called AI makes no difference.
 
 ## Three examples
 

@@ -25,7 +25,7 @@ Shadow IT is technology used outside the organisation's agreed set-up and out of
 -   What happens when someone leaves?
 -   Who steps in when something goes wrong?
 
-AI agents add a new layer of questions. Which actions is an agent allowed to perform on its own? Which sources does it use to prepare decisions? Which instructions and permissions shape its behaviour? Who reviews the result and deals with errors? How do we check whether it still does what it was meant to do?
+AI agents add new questions. You need to know which actions an agent may perform on its own, which sources it uses to prepare decisions and which instructions and permissions shape its behaviour. It also has to be clear who reviews the result, who deals with errors and how you check that the agent still does what it was meant to do.
 
 Conventional business software can also change records or send messages. With an AI agent, you must also consider how much discretion the model has to choose its next step. Its permissions, data access and permitted actions need to be explicit.
 
@@ -33,7 +33,7 @@ Conventional business software can also change records or send messages. With an
 
 AI agents are attractive because they sit close to the work and solve a concrete, everyday problem. So the risk also feels small. But agents are rarely used in isolation. They get access to documents, mailboxes, customer systems, project tools or databases. They are connected to other workflows. Their instructions shape the choices they make. And they produce results that people begin to trust.
 
-Before long, the organisation no longer has one AI initiative. It has dozens of small ones running side by side. That is not necessarily wrong, but it leaves the organisation exposed if nobody sees the whole picture.
+Before long, the organisation has dozens of small AI initiatives running side by side. That need not be wrong, but it leaves the organisation exposed if nobody sees the whole picture.
 
 ## Who takes responsibility when things change?
 
@@ -45,17 +45,17 @@ Rules for managing and using agents do not have to start heavy or bureaucratic. 
 
 A practical foundation starts with a few simple agreements.
 
-**1\. Make agents visible:** Start with a register. Which agents exist? What are they used for? Which systems can they access? Who is responsible for them?
+1. Make agents visible. Start with a register that records which agents exist, what they are used for, which systems they can access and who is responsible for them.
 
-**2\. Define ownership:** Every agent needs a named person responsible for the application. Not just a technical contact, but someone responsible for its purpose, behaviour and risks.
+2. Define ownership. Every agent needs a named owner who is responsible for its purpose, behaviour and risks. A technical contact is not enough.
 
-**3\. Limit access deliberately:** An agent should not receive more permissions than it needs. Especially not broad access to mailboxes, drives or customer data "just to make things easier".
+3. Limit access deliberately. An agent should not receive more permissions than it needs, and certainly not broad access to mailboxes, drives or customer data "just to make things easier".
 
-**4\. Log important actions:** If an agent retrieves information, prepares decisions or performs actions, you want to be able to see what happened afterwards. Record what you need for that review, and agree who can see it and how long it is kept.
+4. Log important actions. If an agent retrieves information, prepares decisions or performs actions, you want to be able to see what happened afterwards. Record what you need for that review, and agree who can see it and how long it is kept.
 
-**5\. Review periodically:** Agents change along with processes, data and teams. What is valid today may be outdated three months from now.
+5. Review periodically. Agents change along with processes, data and teams. What is valid today may be outdated three months from now.
 
-**6\. Retire agents that are no longer needed:** Temporary experiments can stay temporary. Cleaning up is part of normal use.
+6. Retire agents that are no longer needed. Temporary experiments can stay temporary. Cleaning up is part of normal use.
 
 ## Make support easy to access
 
@@ -63,6 +63,6 @@ With classic shadow IT, IT was often seen as the brake. With AI agents, the need
 
 ## Start with one team
 
-Start with one team. List the agents it uses, who can change their access and who follows up when something goes wrong. That will show you where the gaps are. Extend the inventory before adding the next experiment.
+List the agents one team uses, who can change their access and who follows up when something goes wrong. That will show you where the gaps are. Extend the inventory before adding the next experiment.
 
 Want to map the agents already in use in your organisation? [Discuss a first step with Orbis Neo](/contact/).

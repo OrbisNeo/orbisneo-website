@@ -17,17 +17,17 @@ That boundary needs to be explicit before the agent becomes part of the workflow
 
 ## From proposal to action
 
-Chatbots became better at answering questions. Systems could summarise, write and explain. An AI agent goes a step further: it is given a goal and, with access to tools, systems and data, it can also carry out tasks. An agent can choose subsequent steps within the instructions and access it has been given. For example, it can:
+Chatbots became steadily better at answering, summarising and explaining. An AI agent is also given a goal and access to tools, systems and data, so it can carry out tasks itself. Within the instructions and access it has, it chooses its own next steps. For example, it can:
 
 -   process email
 -   compile reports
 -   prepare proposals and decisions
 
-A fixed workflow follows a predefined sequence. An agent may select its next steps within a task. A system can combine both approaches. The difference may seem subtle, but for the organisation it is significant.
+A fixed workflow follows a predefined sequence. An agent selects its own next step within a task. A system can combine both approaches. For the organisation, that difference has real consequences.
 
 ## How much independence should an agent have?
 
-The discussion about AI is often framed in black and white terms: autonomy or none, control or none. In reality, independence is a scale. An agent can:
+The discussion about AI is often framed as autonomy or none, control or none. Independence is better seen as a scale. An agent can:
 
 -   only prepare information
 -   make recommendations
@@ -42,13 +42,13 @@ Many organisations experiment with agents without defining where on this scale t
 -   Who keeps customer communication consistent?
 -   Who checks whether decisions can be explained?
 
-These questions easily stay implicit. Make access and delegated authority explicit design choices.
+These questions are easily left unanswered. Build access and delegated authority into the design deliberately.
 
 ## Data and dependencies
 
 An agent is only as effective as the environment it works in. If data is unreliable, processes are fragmented and responsibilities are unclear, an agent will not make the work more efficient. It mainly speeds up the confusion.
 
-Technological ambition can run ahead of the quality and organisation of the data. That is not a reason to stand still, but it is a reason to think deliberately about design and about the workflows, data and systems the agent relies on. Not everything that could run independently should do so straight away.
+Technological ambition can run ahead of the quality and organisation of the data. You do not have to stand still. Do think carefully about the design and about the workflows, data and systems the agent relies on. Not everything that could run independently should do so straight away.
 
 ## Put the boundaries into practice
 

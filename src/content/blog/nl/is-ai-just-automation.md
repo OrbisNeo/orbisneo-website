@@ -23,7 +23,7 @@ Vaak gaat de vraag over heel praktisch werk: sneller rapporteren, minder gegeven
 -   hulp bij het ontwikkelen van software
 -   een agent die handelingen uitvoert
 
-Als je dat allemaal "AI" noemt, krijg je al snel een onvruchtbare discussie. Dan lijkt het alsof je voor of tegen AI moet zijn, terwijl de echte vraag is: **welk probleem lossen we op, en wat is de meest geschikte aanpak?**
+Als je dat allemaal "AI" noemt, krijg je al snel een onvruchtbare discussie. Dan lijkt het alsof je voor of tegen AI moet zijn, terwijl het eigenlijk gaat om welk probleem je oplost en welke aanpak daar het best bij past.
 
 ## AI in de toepassing of in de ontwikkeling
 
@@ -31,7 +31,7 @@ Er zijn twee verschillende keuzes die in dit gesprek vaak door elkaar lopen. Je 
 
 Je kunt AI ook alleen gebruiken om software te ontwikkelen: code schrijven, tests voorstellen of documentatie voorbereiden. Het opgeleverde systeem hoeft dan zelf geen AI te bevatten. Je beoordeelt in dat geval vooral de kwaliteit van het ontwikkelwerk en de manier waarop het team controleert. Beide vormen kunnen nuttig zijn. Welke tijdwinst ze opleveren, moet je vaststellen in het werk zelf.
 
-Dat meten is geen formaliteit. In een [onderzoek uit 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) hadden ervaren open-sourceontwikkelaars in de onderzochte omstandigheden meer tijd nodig met AI-hulp dan zonder, terwijl zij zelf tijdwinst verwachtten. Onderzoeksorganisatie METR wees in een [vervolgbericht uit februari 2026](https://metr.org/blog/2026-02-24-uplift-update/) op aanwijzingen voor een veranderd effect, maar ook op selectieproblemen die een betrouwbare schatting bemoeilijkten. De praktische les is om een onderzoeksresultaat niet als vaste productiviteitsfactor voor je eigen team te gebruiken.
+Dat meten is geen formaliteit. In een [onderzoek uit 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) hadden ervaren open-sourceontwikkelaars in de onderzochte omstandigheden meer tijd nodig met AI-hulp dan zonder, terwijl zij zelf tijdwinst verwachtten. Onderzoeksorganisatie METR wees in een [vervolgbericht uit februari 2026](https://metr.org/blog/2026-02-24-uplift-update/) op aanwijzingen voor een veranderd effect, maar ook op selectieproblemen die een betrouwbare schatting bemoeilijkten. Gebruik zo'n onderzoeksresultaat dus niet als vaste productiviteitsfactor voor je eigen team.
 
 ## Waarom AI soms wordt ingezet waar automatisering volstaat
 
@@ -43,7 +43,7 @@ Gebruik vaste regels en berekeningen waar de gewenste uitkomst vooraf goed te be
 
 Onderzoek AI waar interpretatie nodig is, bijvoorbeeld bij tekst, documenten of patronen in gegevens. Test dan op representatieve voorbeelden: welke fouten ontstaan en kan iemand die tijdig herkennen?
 
-Vaak past een combinatie. Een model stelt gegevens of een antwoord voor; software voert controleerbare berekeningen en toegestane stappen uit; een medewerker beoordeelt uitzonderingen en besluiten met grote gevolgen. De verdeling volgt uit de taak en het risico, niet uit het etiket op de oplossing.
+Vaak past een combinatie. Een model stelt gegevens of een antwoord voor. Software voert controleerbare berekeningen en toegestane stappen uit. Een medewerker beoordeelt uitzonderingen en besluiten met grote gevolgen. Verdeel het werk op basis van de taak en het risico. Hoe de oplossing heet, doet er niet toe.
 
 ## Drie voorbeelden
 

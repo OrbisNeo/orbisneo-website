@@ -11,7 +11,7 @@ heroAlt: "Close-up of a person reviewing charts and reports in an office setting
 legacyUrl: "https://orbisneo.nl/ai-without-the-hype/"
 ---
 
-An AI trial can produce useful results and still stall when the team wants to put it into regular use. Who can approve the next step? What data is permitted? Who deals with errors? Settle those questions while the application is still manageable.
+An AI trial can produce useful results and still stall when the team wants to put it into regular use. At that point it has to be clear who can approve the next step, what data is permitted and who deals with errors. Those questions are easiest to settle while the application is still manageable.
 
 These are the seven decisions I would bring to the table before a trial becomes part of everyday work.
 
