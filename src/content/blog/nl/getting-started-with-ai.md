@@ -15,9 +15,9 @@ Je kunt snel een AI-proef beginnen. Lastiger is vooraf afspreken wat die proef m
 
 Voor een directie begint de keuze daar. Welk onderdeel van het werk moet beter, wie is daarvoor verantwoordelijk en waaraan merken we dat de verandering helpt?
 
-## De grootste misvatting bij starten met AI
+## Meer dan een keuze voor tools
 
-Veel directies benaderen AI als een technologievraagstuk. Welke tool past bij ons? Welke leverancier past bij de opgave? Hoe snel kunnen we starten? Een keuze voor AI raakt vaak ook de verdeling van werk, verantwoordelijkheid en kosten. Denk aan:
+Veel directies benaderen AI als een technologievraagstuk en praten vooral over tools, leveranciers en hoe snel ze kunnen starten. Een keuze voor AI raakt vaak ook de verdeling van werk, verantwoordelijkheid en kosten. Denk aan:
 
 -   de manier waarop werk wordt uitgevoerd
 -   wie waarvoor verantwoordelijk is
@@ -30,27 +30,27 @@ Wie met tools begint voordat die vragen beantwoord zijn, weet achteraf vaak niet
 
 ### 1\. Er is geen gedeelde probleemdefinitie
 
-Binnen het MT bestaan vaak verschillende beelden van waar AI voor bedoeld is. De één ziet kostenbesparing, de ander innovatie, een derde "iets wat we niet mogen missen". Zonder expliciete keuze blijft AI een containerbegrip, en niemand heeft het mandaat om prioriteiten te stellen en een besluit te nemen. Dan ontstaan losse initiatieven die met elkaar concurreren om tijd en aandacht.
+Binnen het MT bestaan vaak verschillende beelden van waar AI voor bedoeld is. De één ziet kostenbesparing, de ander innovatie, een derde "iets wat we niet mogen missen". Zonder expliciete keuze blijft AI een containerbegrip. Niemand heeft dan het mandaat om prioriteiten te stellen en een besluit te nemen. Dan ontstaan losse initiatieven die met elkaar concurreren om tijd en aandacht.
 
 ### 2\. AI wordt los gezien van bestaande processen
 
-AI wordt geïntroduceerd als iets nieuws, bovenop de organisatie. Terwijl de opbrengst juist zit in bestaande knelpunten: besluitvorming, overdrachten, administratieve lasten, rapportages. Als die processen niet eerst worden begrepen, wordt AI een extra laag complexiteit, met tools die geen onderdeel worden van het werk van het team.
+AI wordt geïntroduceerd als iets nieuws bovenop de organisatie, terwijl de opbrengst juist zit in bestaande knelpunten zoals besluitvorming, overdrachten, administratieve lasten en rapportages. Wie die processen niet eerst begrijpt, voegt met AI vooral complexiteit toe. De tools worden dan geen onderdeel van het werk van het team.
 
 ### 3\. Het mandaat om te besluiten blijft vaag
 
-AI wordt vaak "belegd" bij IT, innovatie of data. Maar beslissingen over werk, risico en menselijk handelen horen thuis in het MT. Zolang er geen verantwoordelijke is met mandaat om besluiten te nemen, ontstaat terughoudendheid, of blijven besluiten liggen. Pilots worden dan niet uitgebreid en experimenten eindigen zonder besluit.
+AI wordt vaak "belegd" bij IT, innovatie of data. Maar beslissingen over werk, risico en menselijk handelen horen thuis in het MT. Zolang er geen verantwoordelijke is met mandaat om besluiten te nemen, ontstaat terughoudendheid of blijven besluiten liggen. Pilots worden dan niet uitgebreid en experimenten eindigen zonder besluit.
 
 ## Drie vragen vóór de proef
 
 Begin met drie vragen:
 
-1. Welke taak of beslissing willen we verbeteren, en hoe verloopt die nu?
+1. Welke taak of beslissing willen we verbeteren en hoe verloopt die nu?
 2. Wie beoordeelt of de verandering helpt, op basis van welke gegevens?
 3. Welke fouten of nadelige gevolgen maken dat we de proef aanpassen of stoppen?
 
 Gebruik de antwoorden om één eerste toepassing te kiezen. Onderzoek daarna met de betrokken medewerkers en IT welke aanpak haalbaar is. Soms is dat AI, soms een aanpassing in het proces of de bestaande software.
 
-## Wat moet het eerste gesprek opleveren?
+## Wat het eerste gesprek moet opleveren
 
 Ik wil uit zo'n gesprek een besluit kunnen meenemen: welke toepassing onderzoeken we, wie trekt die en wat moet een proef aantonen? Daar horen ook afspraken bij over gegevensgebruik en de mensen die de uitkomsten beoordelen. Met die basis kan het team de volgende stap voorbereiden en kan de directie later besluiten of doorgaan zinvol is.
 

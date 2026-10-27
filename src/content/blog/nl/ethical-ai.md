@@ -11,7 +11,7 @@ heroAlt: "An unrecognisable person with binary code projected, symbolising cyber
 legacyUrl: "https://orbisneo.nl/nl/ethisch_ai/"
 ---
 
-Een snellere beoordeling kan prettig zijn voor een organisatie en nadelig uitpakken voor degene die beoordeeld wordt. Denk aan een AI-samenvatting van een sollicitatie waarin relevante ervaring ontbreekt. Wie merkt dat op? Kan de sollicitant een fout laten herstellen? En kijkt iemand opnieuw naar het oorspronkelijke materiaal?
+Een snellere beoordeling kan prettig zijn voor een organisatie en nadelig uitpakken voor degene die beoordeeld wordt. Denk aan een AI-samenvatting van een sollicitatie waarin relevante ervaring ontbreekt. Dan wil je weten wie dat opmerkt, of de sollicitant de fout kan laten herstellen en of iemand opnieuw naar het oorspronkelijke materiaal kijkt.
 
 Zulke vragen maken ethische AI concreet. Je moet bepalen welke belangen tellen, waar je grenzen trekt en wat iemand kan doen als de uitkomst niet klopt. Afspraken helpen om die keuzes in het dagelijkse werk zichtbaar te maken. Ze vervangen het gesprek over de keuzes zelf niet.
 
@@ -41,20 +41,20 @@ Spreek vooraf af welke signalen aanleiding zijn om een toepassing tijdelijk stil
 
 ## 5. Beoordeel ook wat je niet had voorzien
 
-Bekijk na ingebruikname niet alleen tijdwinst en foutpercentages. Onderzoek ook klachten, terugkerende uitzonderingen en groepen die anders worden behandeld dan bedoeld. Betrek waar passend de mensen die gevolgen ondervinden. Pas de toepassing of afspraken aan als de oorspronkelijke afweging niet meer houdbaar is.
+Kijk na ingebruikname verder dan tijdwinst en foutpercentages. Onderzoek ook klachten, terugkerende uitzonderingen en groepen die anders worden behandeld dan bedoeld. Betrek waar passend de mensen die gevolgen ondervinden. Pas de toepassing of afspraken aan als de oorspronkelijke afweging niet meer houdbaar is.
 
 Voor het organiseren van die opvolging bestaan hulpmiddelen. NIST publiceerde een vrijwillig raamwerk met een [profiel voor generatieve AI](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence). [ISO/IEC 42001](https://www.iso.org/standard/42001) beschrijft eisen aan een AI-managementsysteem. Welke [wettelijke verplichtingen](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) daarnaast gelden, vraagt een beoordeling van de concrete toepassing en de rol van de organisatie.
 
 ## Hoe dit aansluit op Common Sense Management
 
-Common Sense Management gaat in de kern over helderheid, verantwoordelijkheid en eenvoudig werkbare afspraken, niet over dikke handboeken. AI vraagt precies datzelfde. Rust ontstaat pas als je het klein houdt:
+Common Sense Management draait om helderheid, verantwoordelijkheid en eenvoudige afspraken die in het werk bruikbaar zijn. Dikke handboeken horen daar niet bij. Voor AI geldt hetzelfde. Houd het klein:
 
 -   duidelijke doelen
 -   een duidelijke eigenaar
 -   duidelijke afspraken
 -   een vast ritme
 
-Ethische AI is dus geen extra laag bovenop het werk. Het is goed management in een nieuwe context.
+Zo bekeken hoort ethische AI gewoon bij goed management. Het hoeft geen extra laag bovenop het werk te zijn.
 
 ## Waar ik een afspraak op toets
 

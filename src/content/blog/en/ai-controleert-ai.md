@@ -15,7 +15,7 @@ Accountability means little if you cannot understand the work or intervene when 
 
 ## What Anthropic describes
 
-It starts with volume. In Anthropic's large central codebase, its monorepo, the number of changes per day went from about 2,500 in May to more than 30,000 in September, according to the company. Claude Code lives in a separate repository, but the pressure is rising there too. No team reads that volume line by line. So Anthropic asks a different question. Not "did a human read this?", but what could go wrong with this change, and which check, automated or human, is best placed to catch it?
+It starts with volume. In Anthropic's large central codebase, its monorepo, the number of changes per day went from about 2,500 in May to more than 30,000 in September, according to the company. Claude Code lives in a separate repository, but the pressure is rising there too. No team reads that volume line by line. So Anthropic asks a different question. Instead of "did a human read this?", it asks what could go wrong with a change and which check, automated or human, is best placed to catch it.
 
 The answer is a series of checks rather than one gate at the end. The AI first has to show that its work runs, with the output of a test, instead of just saying it is done. An AI reviewer then assesses every change. Automated checks block changes that fail the configured checks.
 
@@ -35,7 +35,7 @@ The order of these changes also matters. New features are released internally fi
 
 ## How independent is the second AI?
 
-Anthropic is candid about the quirks of an AI reviewer. It can flag too much, or go back and forth endlessly with the AI that wrote the code. One change went through more than fifty rounds of review and fixes in a single night, until someone stopped it. But there is a more fundamental issue. A second AI judgement is not automatically an independent check. Two agents can share the same wrong assumption or miss the same problem. You then get agreement without established quality. The value of a second AI review depends on which errors it catches and which blind spots it shares with the first. Which errors are caught by tests with a known outcome? Where is human judgement still needed? And who examines whether the writer and the reviewer share the same blind spot?
+Anthropic is candid about the quirks of an AI reviewer. It can flag too much, or go back and forth endlessly with the AI that wrote the code. One change went through more than fifty rounds of review and fixes in a single night, until someone stopped it. More important to me is that a second AI judgement is not automatically an independent check. Two agents can share the same wrong assumption or miss the same problem. You then get agreement without established quality. The value of a second AI review depends on which errors it catches and which blind spots it shares with the first. So you need to know which errors tests with a known outcome catch, where human judgement is still needed and who examines whether the writer and the reviewer share the same blind spot.
 
 ## Another reading
 

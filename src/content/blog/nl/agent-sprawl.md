@@ -25,13 +25,13 @@ Shadow IT is IT-gebruik buiten de afgesproken inrichting en het zicht van de org
 -   Wat gebeurt er als iemand vertrekt?
 -   Wie grijpt in als iets misgaat?
 
-Met AI-agents komen daar nieuwe vragen bij. Welke handelingen mag een agent zelfstandig uitvoeren? Op basis van welke bronnen bereidt hij beslissingen voor? Welke instructies en rechten gebruikt hij? Wie beoordeelt de uitkomst en handelt fouten af? Hoe controleren we of hij nog doet wat de bedoeling is?
+Met AI-agents komen daar nieuwe vragen bij. Je moet weten welke handelingen een agent zelfstandig mag uitvoeren, op basis van welke bronnen hij beslissingen voorbereidt en welke instructies en rechten hij gebruikt. Ook moet duidelijk zijn wie de uitkomst beoordeelt, wie fouten afhandelt en hoe je controleert of de agent nog doet wat de bedoeling is.
 
-Ook gewone bedrijfssoftware kan gegevens wijzigen of berichten versturen. Bij een AI-agent moet je daarnaast rekening houden met de ruimte die het model krijgt om vervolgstappen te kiezen. Welke handelingen het mag uitvoeren en met welke gegevens, verdient daarom expliciete aandacht.
+Ook gewone bedrijfssoftware kan gegevens wijzigen of berichten versturen. Bij een AI-agent moet je daarnaast rekening houden met de ruimte die het model krijgt om vervolgstappen te kiezen. Welke handelingen het mag uitvoeren en met welke gegevens, moet je daarom expliciet vastleggen.
 
 ## Waarom agent sprawl zo snel kan ontstaan
 
-AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten. Ze lossen een concreet probleem in het dagelijkse werk op. Daardoor lijkt het risico ook klein. Maar agents worden zelden geïsoleerd gebruikt. Ze krijgen toegang tot documenten, mailboxen, klantsystemen, projecttools of databases. Ze worden gekoppeld aan andere werkprocessen. Ze krijgen instructies die bepalen welke keuzes de agent maakt. En ze leveren uitkomsten waarop mensen gaan vertrouwen. Voor je het weet, heeft de organisatie niet één AI-initiatief, maar tientallen kleine naast elkaar. Dat is niet per se verkeerd, maar wel kwetsbaar als niemand het geheel ziet.
+AI-agents zijn aantrekkelijk omdat ze dicht op het werk zitten en een concreet probleem in het dagelijkse werk oplossen. Daardoor lijkt het risico ook klein. Maar agents staan zelden op zichzelf. Ze krijgen toegang tot documenten, mailboxen, klantsystemen, projecttools of databases en worden gekoppeld aan andere werkprocessen. Hun instructies bepalen welke keuzes ze maken. Mensen gaan op hun uitkomsten vertrouwen. Voor je het weet, heeft de organisatie tientallen kleine AI-initiatieven naast elkaar. Dat hoeft niet verkeerd te zijn, maar het wordt kwetsbaar als niemand het geheel ziet.
 
 ## Wie is verantwoordelijk als er iets verandert?
 
@@ -43,24 +43,24 @@ Afspraken over het beheer en gebruik van agents hoeven niet zwaar of bureaucrati
 
 Een praktische basis bestaat uit een paar eenvoudige afspraken.
 
-**1\. Maak agents zichtbaar:** Begin met een register. Welke agents bestaan er? Waarvoor worden ze gebruikt? Tot welke systemen hebben ze toegang? Wie is verantwoordelijk?
+1. Maak agents zichtbaar. Begin met een register waarin staat welke agents er zijn, waarvoor ze worden gebruikt, tot welke systemen ze toegang hebben en wie verantwoordelijk is.
 
-**2\. Leg eigenaarschap vast:** Elke agent heeft een eigenaar nodig. Niet alleen een technisch contact, maar iemand die verantwoordelijk is voor het doel, de werking en de risico's.
+2. Leg eigenaarschap vast. Elke agent heeft een eigenaar nodig die verantwoordelijk is voor het doel, de werking en de risico's. Een technisch contactpersoon is niet genoeg.
 
-**3\. Geef alleen de toegang die nodig is:** Een agent moet niet meer rechten krijgen dan nodig. Zeker niet "voor het gemak" brede toegang tot mailboxen, drives of klantgegevens.
+3. Geef alleen de toegang die nodig is. Geef een agent dus ook niet "voor het gemak" brede toegang tot mailboxen, drives of klantgegevens.
 
-**4\. Leg belangrijke handelingen vast:** Als een agent informatie ophaalt, beslissingen voorbereidt of handelingen uitvoert, wil je kunnen terugzien wat er is gebeurd. Leg vast wat je daarvoor nodig hebt, en spreek af wie het mag inzien en hoe lang je het bewaart.
+4. Leg belangrijke handelingen vast. Als een agent informatie ophaalt, beslissingen voorbereidt of handelingen uitvoert, wil je kunnen terugzien wat er is gebeurd. Leg vast wat je daarvoor nodig hebt. Spreek ook af wie het mag inzien en hoe lang je het bewaart.
 
-**5\. Evalueer periodiek:** Agents veranderen mee met processen, gegevens en teams. Wat vandaag klopt, kan over drie maanden achterhaald zijn.
+5. Evalueer periodiek. Agents veranderen mee met processen, gegevens en teams. Wat vandaag klopt, kan over drie maanden achterhaald zijn.
 
-**6\. Stop toepassingen die niet meer nodig zijn:** Tijdelijke experimenten mogen tijdelijk blijven. Opruimen hoort bij gewoon gebruik.
+6. Stop toepassingen die niet meer nodig zijn. Tijdelijke experimenten mogen tijdelijk blijven. Opruimen hoort bij gewoon gebruik.
 
 ## Maak ondersteuning bereikbaar
 
-Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents is de behoefte aan experiment groot en ontwikkelt de technologie zich snel. Teams hebben daarom vooral baat bij ondersteuning die ze makkelijk kunnen vinden: een vast aanspreekpunt, een overzicht van toegestane koppelingen en een route voor uitzonderingen. Dan weten ze wat mag, wat niet mag en wanneer ze hulp moeten vragen. Vragen worden zo beantwoord voordat een agent in gebruik gaat, en niet pas achteraf.
+Bij klassieke shadow IT werd IT vaak gezien als rem. Bij AI-agents is de behoefte aan experiment groot en ontwikkelt de technologie zich snel. Teams hebben daarom vooral baat bij ondersteuning die ze makkelijk kunnen vinden: een vast aanspreekpunt, een overzicht van toegestane koppelingen en een route voor uitzonderingen. Dan weten ze wat mag, wat niet mag en wanneer ze hulp moeten vragen. Zo komen vragen op tafel voordat een agent in gebruik gaat en niet pas achteraf.
 
 ## Begin bij één team
 
-Begin bij één team. Zet op een rij welke agents het gebruikt, wie de toegang kan wijzigen en wie een fout opvolgt. Je merkt dan snel welke afspraken ontbreken. Breid dat overzicht uit voordat je het volgende experiment toevoegt.
+Zet op een rij welke agents één team gebruikt, wie de toegang kan wijzigen en wie een fout opvolgt. Je merkt dan snel welke afspraken ontbreken. Breid dat overzicht uit voordat je het volgende experiment toevoegt.
 
 Wil je de agents in je organisatie in kaart brengen? [Bespreek de eerste stap met Orbis Neo](/kennismaken/).

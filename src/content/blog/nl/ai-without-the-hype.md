@@ -11,7 +11,7 @@ heroAlt: "Close-up of a person reviewing charts and reports in an office setting
 legacyUrl: "https://orbisneo.nl/nl/ai-zonder-hype/"
 ---
 
-Een AI-proef kan nuttige resultaten opleveren en toch vastlopen zodra het team ermee verder wil. Wie beslist over uitbreiding? Welke gegevens mogen worden gebruikt? Wie beoordeelt fouten? Het helpt om die vragen te beantwoorden terwijl de toepassing nog overzichtelijk is.
+Een AI-proef kan nuttige resultaten opleveren en toch vastlopen zodra het team ermee verder wil. Dan moet duidelijk zijn wie over uitbreiding beslist, welke gegevens gebruikt mogen worden en wie fouten beoordeelt. Die vragen beantwoord je het makkelijkst zolang de toepassing nog overzichtelijk is.
 
 Voor mij zijn dit zeven besluiten die op tafel horen voordat een proef onderdeel wordt van het dagelijkse werk.
 
@@ -21,7 +21,7 @@ Kies een concreet doel, zoals minder tijd besteden aan het verzamelen van dossie
 
 ## 2. Wie is verantwoordelijk voor het gebruik?
 
-Wijs iemand aan die besluiten kan nemen over doel, gebruik en voortzetting van de toepassing. Dat kan, afhankelijk van het werk, ook iemand uit IT zijn. Spreek af wie technische wijzigingen beheert en wie betrokken moet worden bij risico's. Verantwoordelijkheid vraagt om beschikbare tijd en bevoegdheden.
+Wijs iemand aan die besluiten kan nemen over doel, gebruik en voortzetting van de toepassing. Dat kan, afhankelijk van het werk, ook iemand uit IT zijn. Spreek af wie technische wijzigingen beheert en wie betrokken moet worden bij risico's. Die persoon heeft daar wel tijd en bevoegdheden voor nodig.
 
 ## 3. Welke gegevens mogen waar worden verwerkt?
 

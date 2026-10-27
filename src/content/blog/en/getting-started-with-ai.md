@@ -15,9 +15,9 @@ Starting an AI trial is often easier than deciding what it should prove. Conside
 
 Leadership teams need to settle those questions early. What should improve, who is responsible, and what evidence would justify continuing?
 
-## The biggest misconception when getting started with AI
+## More than a choice of tools
 
-Many leadership teams approach AI as a technology issue. Which tool suits us? Which supplier fits the task? How quickly can we start? Choosing an AI application often also changes how work, responsibility and cost are distributed. That includes:
+Many leadership teams approach AI as a technology issue and talk mainly about tools, suppliers and how quickly they can start. Choosing an AI application often also changes how work, responsibility and cost are distributed. That includes:
 
 -   the way work is carried out
 -   who is responsible for what
@@ -34,7 +34,7 @@ Within management teams, there are often different views of what AI is supposed 
 
 ### 2\. AI is treated separately from existing processes
 
-AI is introduced as something new, on top of the organisation. But the benefit usually lies in existing bottlenecks: decision-making, handovers, administrative burden, reporting. If those processes are not understood first, AI becomes an extra layer of complexity, with tools that do not become part of the team's work.
+AI is introduced as something new on top of the organisation, while the benefit usually lies in existing bottlenecks such as decision-making, handovers, administrative burden and reporting. If those processes are not understood first, AI mostly adds complexity. The tools then never become part of the team's work.
 
 ### 3\. Nobody has a clear mandate to decide
 
@@ -50,7 +50,7 @@ Start with three questions:
 
 Use the answers to select one initial application. Then work with the people doing the job and the IT team to assess what is feasible. AI may be useful; a change to the process or existing software may be enough.
 
-## What should the first discussion produce?
+## What the first discussion should produce
 
 I want that discussion to produce a decision: which application will we investigate, who will lead it and what must the trial demonstrate? The team also needs boundaries for data use and a clear plan for reviewing the results. That gives people a basis for the next step and gives management something concrete to assess.
 
