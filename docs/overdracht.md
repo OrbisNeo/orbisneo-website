@@ -67,9 +67,8 @@ Gecontroleerd op 2 november 2026 met `gh` (alleen lezen).
 
 | Punt | Stand | Wie beslist |
 |---|---|---|
-| PR 35, review Willem verwerkt | Open, CI groen, wacht op merge | Daniel |
 | Weekeditie W44 | Staat bij Vera klaar | Vera levert, Daniel keurt goed (`approvedBy`, `draft: false`) |
-| CLS op het artikel agent sprawl | Eenmalig 0,129 gemeten, waarschijnlijk font swap bij het heroplaatje. Bewust niet in PR 34 meegenomen. | Daniel geeft akkoord, dan een aparte PR |
+| CLS op het artikel agent sprawl | Eenmalig 0,129 gemeten. Oorzaak volgens Vera: de "Updated"-regel boven het artikel loopt over twee regels, niet het wisselen van het lettertype (eerder vermoed). Nog niet door Claude Code nagemeten. Bewust niet in PR 34 meegenomen. | Daniel geeft akkoord, dan een aparte PR |
 | Alt-teksten en CTA's (vervolgcommit van Vera) | Nog niet in een PR | Daniel geeft akkoord |
 | Hero-CTA onder de vouw op 360 x 740 | Opties eerder voorgelegd: kleinere h1 onder ongeveer 380 px of tekst hoger laten beginnen | Daniel kiest |
 | Maildienst en mailrecords | Keuze van de aanbieder staat open | Daniel |
