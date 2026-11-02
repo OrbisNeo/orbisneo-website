@@ -40,10 +40,9 @@ Volledige structuur: § 5.2 van het productdocument. In het kort:
 |---|---|---|
 | Deploy preview | `true` | `deploy-preview-<n>--orbisneo-website.netlify.app` |
 | Branch deploy | `true` | `<branch>--orbisneo-website.netlify.app` |
-| Productie (tot lancering) | `true` | `test.orbisneoconsulting.com` |
-| Productie (na lancering) | `false` | `www.orbisneoconsulting.com` |
+| Productie | `false` | `www.orbisneoconsulting.com` |
 
-De schakelaar `PUBLIC_NOINDEX` zet Daniel pas op `false` bij go-live. Nooit automatisch, nooit door de bouwer.
+In `netlify.toml` staat `PUBLIC_NOINDEX` in de productiecontext op `false`. Deploy previews en branch deploys blijven op `true`. Daniel merget deze stand pas nadat de DNS voor www naar Netlify wijst en het certificaat actief is.
 
 ## Werkwijze
 

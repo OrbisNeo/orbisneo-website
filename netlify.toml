@@ -7,7 +7,7 @@
 
 [context.production.environment]
   PUBLIC_SITE_ENV = "production"
-  PUBLIC_NOINDEX = "true"
+  PUBLIC_NOINDEX = "false"
   LANG_USE_GEO = "false"
 
 [context.deploy-preview.environment]
