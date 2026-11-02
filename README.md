@@ -47,8 +47,8 @@ De schakelaar `PUBLIC_NOINDEX` zet Daniel pas op `false` bij go-live. Nooit auto
 
 ## Werkwijze
 
-Elke wijziging gaat via een pull request met deploy preview. Alleen Daniel voegt samen naar `main` en wijzigt DNS. Zie `docs/startpakket/werkafspraak.md` en `docs/startpakket/github-repo-stappen.md`.
+Elke wijziging gaat via een pull request met deploy preview. Alleen Daniel voegt samen naar `main` en wijzigt DNS. Vera geeft opdrachten en controleert previews, Cursor cloud agents voeren uit. Regels voor agents: `AGENTS.md`. Schrijfregels: `docs/schrijfregels.md`. Overdracht, toegang en openstaande punten: `docs/overdracht.md`. Zie verder `docs/startpakket/werkafspraak.md` en `docs/startpakket/github-repo-stappen.md`.
 
 ## Status
 
-Pull request 1 van 13: repo-scaffold. Volgende stappen staan in `docs/startpakket/startopdracht-claude-code.md` § 5.
+De site staat op de testomgeving en de teksten zijn grotendeels af. Openstaande punten en de weg naar de lancering staan in `docs/overdracht.md` (sectie 6) en in het productdocument. De oorspronkelijke bouwvolgorde (PR 1 tot en met 13) staat in `docs/startpakket/startopdracht-claude-code.md` § 5.
