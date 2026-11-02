@@ -49,7 +49,7 @@ Gecontroleerd op 2 november 2026 met `gh` (alleen lezen).
 - [ ] **C. Controleer na installatie** dat de app geen admin-rol of bypass heeft: in Settings, Collaborators and teams, en in de bypass-lijst van de ruleset. Alleen Write is nodig.
 - [ ] **D. Cloud agent-omgeving:** Node 22 (`.nvmrc`), installatie met `npm ci`. Geen geheimen of tokens nodig voor build en checks. Zet geen Netlify- of DNS-gegevens in de agentomgeving.
 - [ ] **E. GitHub Issues aanzetten** voor deze repo (Settings, Features, Issues) als dat nog niet zo is, en besluit of Vera de lijst in sectie 6 daar neerzet.
-- [ ] **F. `orbisneo-builder`** (rol read): was bedoeld voor Claude Code maar wordt niet gebruikt. Verwijder het account uit de repo als je het niet meer nodig hebt.
+- [ ] **F. `orbisneo-builder` niet verwijderen** (rol read): Cursor cloud agents gebruiken dit GitHub-account om te pushen en pull requests te openen. Het account blijft staan zolang die werkwijze in gebruik is.
 - [ ] **G. Na de geslaagde test** (sectie 7): niets in te trekken voor Claude Code, want die gebruikt je eigen aanmelding. Wil je dat een lokale agent op je MacBook nooit meer kan pushen, meld dan `gh` af (`gh auth logout`) of laat Claude Code geen toegang meer tot de map.
 
 ## 5. Valkuilen die niet in de code staan

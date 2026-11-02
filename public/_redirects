@@ -40,18 +40,38 @@
 /comments/feed/          /blog/feed.xml            301!
 /nl/feed/                /blog/overzicht/feed.xml  301!
 
+/sitemap_index.xml       /sitemap.xml              301!
+/post-sitemap.xml        /sitemap.xml              301!
+/page-sitemap.xml        /sitemap.xml              301!
+/category-sitemap.xml    /sitemap.xml              301!
+/post_tag-sitemap.xml    /sitemap.xml              301!
+/author-sitemap.xml      /sitemap.xml              301!
+
 /wp-admin/*              /410.html   410!
 /wp-login.php            /410.html   410!
 /xmlrpc.php              /410.html   410!
 /wp-json/*               /410.html   410!
 /wp-content/*            /410.html   410!
 
-# 2. Oude domeinen: alles wat hierboven niet matcht, met padbehoud
-https://orbisneo.nl/*        https://www.orbisneoconsulting.com/:splat  301!
-https://www.orbisneo.nl/*    https://www.orbisneoconsulting.com/:splat  301!
-https://orbisneo.com/*       https://www.orbisneoconsulting.com/:splat  301!
-https://www.orbisneo.com/*   https://www.orbisneoconsulting.com/:splat  301!
-http://orbisneo.nl/*         https://www.orbisneoconsulting.com/:splat  301!
-http://www.orbisneo.nl/*     https://www.orbisneoconsulting.com/:splat  301!
-http://orbisneo.com/*        https://www.orbisneoconsulting.com/:splat  301!
-http://www.orbisneo.com/*    https://www.orbisneoconsulting.com/:splat  301!
+# 2. Domeinregels, na de padregels en voor een eventuele catch-all.
+#    :splat behoudt het pad. danielfokker.nl gaat altijd naar de homepage.
+#    orbisneo-website.netlify.app is alleen die exacte host.
+#    deploy-preview-N--orbisneo-website.netlify.app valt buiten deze regel.
+https://orbisneo.nl/*                      https://www.orbisneoconsulting.com/:splat  301!
+https://www.orbisneo.nl/*                  https://www.orbisneoconsulting.com/:splat  301!
+https://orbisneo.com/*                     https://www.orbisneoconsulting.com/:splat  301!
+https://www.orbisneo.com/*                 https://www.orbisneoconsulting.com/:splat  301!
+https://test.orbisneoconsulting.com/*      https://www.orbisneoconsulting.com/:splat  301!
+https://orbisneoconsulting.com/*           https://www.orbisneoconsulting.com/:splat  301!
+https://orbisneo-website.netlify.app/*     https://www.orbisneoconsulting.com/:splat  301!
+https://danielfokker.nl/*                  https://www.orbisneoconsulting.com/        301!
+https://www.danielfokker.nl/*              https://www.orbisneoconsulting.com/        301!
+http://orbisneo.nl/*                       https://www.orbisneoconsulting.com/:splat  301!
+http://www.orbisneo.nl/*                   https://www.orbisneoconsulting.com/:splat  301!
+http://orbisneo.com/*                      https://www.orbisneoconsulting.com/:splat  301!
+http://www.orbisneo.com/*                  https://www.orbisneoconsulting.com/:splat  301!
+http://test.orbisneoconsulting.com/*       https://www.orbisneoconsulting.com/:splat  301!
+http://orbisneoconsulting.com/*            https://www.orbisneoconsulting.com/:splat  301!
+http://orbisneo-website.netlify.app/*      https://www.orbisneoconsulting.com/:splat  301!
+http://danielfokker.nl/*                   https://www.orbisneoconsulting.com/        301!
+http://www.danielfokker.nl/*               https://www.orbisneoconsulting.com/        301!
