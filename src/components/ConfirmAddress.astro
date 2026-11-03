@@ -1,0 +1,258 @@
+---
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === "en"
+  ? {
+      title: "Confirm your email address",
+      descriptionLead: "You asked to get in touch through the site. Press the button to confirm this address. Only that click counts.",
+      button: "Confirm my address",
+      successTitle: "Confirmation received",
+      success: "Thank you. I am processing your confirmation. You can close this page.",
+      alreadyTitle: "Already confirmed",
+      already: "This address is already confirmed in this browser. There is no need to press again.",
+      invalidTitle: "Link not usable",
+      invalid: "This link is invalid or has expired. Use the form again if you still want to get in touch.",
+      formHref: "/contact/",
+      formLink: "Back to the form",
+      retry: "That did not work just now. Try again in a few minutes.",
+      noscript: "The button on this page needs a script. Without that script you cannot confirm here. Email info@orbisneoconsulting.com instead.",
+    }
+  : {
+      title: "Bevestig uw e-mailadres",
+      descriptionLead: "U vroeg via de site om contact. Druk op de knop om dit adres te bevestigen. Alleen die klik telt.",
+      button: "Bevestig mijn adres",
+      successTitle: "Bevestiging ontvangen",
+      success: "Dank. Ik verwerk uw bevestiging. U kunt deze pagina sluiten.",
+      alreadyTitle: "Al bevestigd",
+      already: "Dit adres is in deze browser al bevestigd. Opnieuw drukken hoeft niet.",
+      invalidTitle: "Link niet bruikbaar",
+      invalid: "Deze link is ongeldig of verlopen. Vul het formulier opnieuw in als u nog contact wilt.",
+      formHref: "/kennismaken/",
+      formLink: "Naar het formulier",
+      retry: "Dit lukt nu even niet. Probeer het over een paar minuten opnieuw.",
+      noscript: "De knop op deze pagina heeft een script nodig. Zonder script kunt u hier niet bevestigen. Mail dan naar info@orbisneoconsulting.com.",
+    };
+---
+
+<section
+  class="confirm container"
+  data-confirm
+  data-endpoint="/api/confirm-address"
+  data-storage-key="on-email-confirm"
+>
+  <h1 id="confirm-title" tabindex="-1">{copy.title}</h1>
+  <div data-confirm-live aria-live="polite">
+    <div data-confirm-state="ready" data-title={copy.title} hidden>
+      <p class="confirm__lead">{copy.descriptionLead}</p>
+      <form method="post" data-confirm-form>
+        <button type="submit" class="confirm__submit">{copy.button}</button>
+        <p class="confirm__retry" data-confirm-retry hidden>{copy.retry}</p>
+      </form>
+    </div>
+    <div data-confirm-state="success" data-title={copy.successTitle} hidden>
+      <p class="confirm__lead">{copy.success}</p>
+    </div>
+    <div data-confirm-state="already" data-title={copy.alreadyTitle} hidden>
+      <p class="confirm__lead">{copy.already}</p>
+    </div>
+    <div data-confirm-state="invalid" data-title={copy.invalidTitle} hidden>
+      <p class="confirm__lead">{copy.invalid}</p>
+      <p class="confirm__links">
+        <a href={copy.formHref} class="confirm__link">{copy.formLink}</a>
+      </p>
+    </div>
+  </div>
+  <noscript>
+    <p class="confirm__lead">{copy.noscript}</p>
+  </noscript>
+</section>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector("[data-confirm]");
+    if (!root || root.getAttribute("data-confirm-ready") === "true") return;
+    root.setAttribute("data-confirm-ready", "true");
+
+    const tokenPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const params = new URLSearchParams(location.search);
+    const raw = (params.get("t") || "").trim();
+    const token = tokenPattern.test(raw) ? raw.toLowerCase() : "";
+    const title = document.getElementById("confirm-title");
+    const form = root.querySelector("[data-confirm-form]");
+    const retry = root.querySelector("[data-confirm-retry]");
+    const endpoint = root.getAttribute("data-endpoint") || "/api/confirm-address";
+    const storageKey = (root.getAttribute("data-storage-key") || "on-email-confirm") + ":" + token;
+
+    const expiryPassed = (value) => {
+      if (!value) return false;
+      const day = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.trim());
+      if (day) {
+        const end = Date.UTC(Number(day[1]), Number(day[2]) - 1, Number(day[3]), 23, 59, 59, 999);
+        return Date.now() > end;
+      }
+      const instant = Date.parse(value);
+      if (Number.isNaN(instant)) return false;
+      return Date.now() > instant;
+    };
+
+    const remembered = () => {
+      if (!token) return false;
+      try {
+        return localStorage.getItem(storageKey) === "1";
+      } catch {
+        return false;
+      }
+    };
+
+    const remember = () => {
+      try {
+        localStorage.setItem(storageKey, "1");
+      } catch {
+        // De pagina werkt ook als de browser geen opslag toestaat.
+      }
+    };
+
+    const show = (name, moveFocus) => {
+      const states = root.querySelectorAll("[data-confirm-state]");
+      let label = "";
+      for (const state of states) {
+        const on = state.getAttribute("data-confirm-state") === name;
+        state.hidden = !on;
+        if (on) label = state.getAttribute("data-title") || "";
+      }
+      if (title && label) title.textContent = label;
+      if (moveFocus && title) title.focus();
+    };
+
+    if (token) {
+      const expiry = params.get("v");
+      for (const link of document.querySelectorAll("[data-lang-switch]")) {
+        const url = new URL(link.href, location.origin);
+        url.searchParams.set("t", token);
+        if (expiry) url.searchParams.set("v", expiry);
+        link.href = url.pathname + url.search;
+      }
+    }
+
+    if (!token || expiryPassed(params.get("v") || "")) {
+      if (token && remembered()) show("already", false);
+      else show("invalid", false);
+    } else if (remembered()) {
+      show("already", false);
+    } else {
+      show("ready", false);
+    }
+
+    if (!form) return;
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!token) {
+        show("invalid", true);
+        return;
+      }
+      const button = form.querySelector("button");
+      if (button) button.disabled = true;
+      if (retry) retry.hidden = true;
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json", accept: "application/json" },
+          body: JSON.stringify({ token }),
+          credentials: "same-origin",
+          cache: "no-store",
+        });
+        let data = null;
+        try {
+          data = await res.json();
+        } catch {
+          data = null;
+        }
+        if (res.ok && data && data.status === "received") {
+          remember();
+          show("success", true);
+          return;
+        }
+      } catch {
+        // Netwerkfout: zelfde tekst als een tijdelijke weigering.
+      }
+      if (button) button.disabled = false;
+      if (retry) retry.hidden = false;
+    });
+  })();
+</script>
+
+<style>
+  .confirm {
+    padding-block: var(--page-head-pt) var(--section-y);
+    max-width: 680px;
+  }
+
+  .confirm__lead {
+    font-size: var(--fs-lead);
+    color: var(--color-text-soft);
+    margin: var(--space-4) 0 var(--space-7);
+    max-width: var(--measure);
+  }
+
+  .confirm__retry {
+    color: var(--color-text);
+    margin: var(--space-4) 0 0;
+  }
+
+  .confirm__links {
+    display: flex;
+    gap: var(--space-4);
+    align-items: baseline;
+    font-size: var(--fs-lead);
+  }
+
+  .confirm__link {
+    color: var(--color-action);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .confirm__submit {
+    justify-self: start;
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: var(--fs-label);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    background: var(--color-action);
+    color: #fff;
+    border: 2px solid var(--color-action);
+    cursor: pointer;
+    min-height: 44px;
+    transition: background var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .confirm__submit:hover {
+    background: var(--color-action-hover);
+    border-color: var(--color-action-hover);
+  }
+
+  .confirm__submit:active {
+    background: var(--color-action-active);
+    border-color: var(--color-action-active);
+  }
+
+  .confirm__submit:disabled {
+    cursor: progress;
+    opacity: 0.75;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .confirm__submit {
+      transition: none;
+    }
+  }
+</style>

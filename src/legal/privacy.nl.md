@@ -16,8 +16,16 @@ Orbis Neo is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals b
 
 Als u het contactformulier invult, ontvang ik uw naam, e-mailadres en vraag en, als u die invult, ook uw telefoonnummer en het onderwerp dat u aanvinkt. Het formulier bevat ook een verborgen veld dat spam tegenhoudt, zonder trackende captcha.
 
-- Doel: uw vraag beantwoorden en, als u dat wilt, een kennismaking of offerte voorbereiden.
+- Doel: uw vraag beantwoorden, uw e-mailadres bevestigen en, als u dat wilt, een kennismaking of offerte voorbereiden.
 - Grondslag: uw toestemming, die u geeft met het vinkje onder het formulier.
+
+Voordat ik materiaal of een offerte stuur, vraag ik u het e-mailadres te bevestigen. U krijgt daarvoor één mail met een link. Die link werkt 7 dagen. Op de pagina drukt u zelf op een knop. Alleen die klik telt als bevestiging.
+
+Bij die bevestiging bewaar ik het willekeurige kenmerk uit de link en het tijdstip van de klik. Die registratie staat bij Netlify. Uw contactgegevens staan samen met het kenmerk, de vervaldatum van de link en de bevestiging in een contactenoverzicht in Excel in Microsoft 365.
+
+Een contactverzoek waarvan het adres niet is bevestigd, verwijder ik na 30 dagen uit dat overzicht. Materiaal en offertes stuur ik alleen naar een bevestigd adres.
+
+Herhaalde verzoeken vanaf hetzelfde netwerkadres worden afgeremd. Dat adres bewaar ik niet bij uw contactgegevens.
 
 ### B. E-mail en dienstverlening
 
@@ -62,9 +70,9 @@ Op deze site staan links naar andere websites, zoals LinkedIn. Er is geen inhoud
 
 Ik verkoop uw gegevens niet. Ik deel ze alleen als dat nodig is om mijn werk te doen of omdat de wet dat vraagt. Deze partijen verwerken gegevens in mijn opdracht:
 
-- **Netlify** (Netlify, Inc., Verenigde Staten): hosting van de website en verwerking van het contactformulier.
+- **Netlify** (Netlify, Inc., Verenigde Staten): hosting van de website, verwerking van het contactformulier en opslag van de bevestiging (het kenmerk en het tijdstip).
 - **Umami** (Umami Cloud): bezoekersstatistieken zonder cookies, op servers in de Europese Unie.
-- **Microsoft (Outlook)**: e-mail, waaronder de meldingen van het contactformulier.
+- **Microsoft (Outlook en Excel)**: e-mail, waaronder de meldingen van het contactformulier en de bevestigingsmail, en het contactenoverzicht.
 - **Mijn boekhouder**: voor de financiële administratie.
 
 De inhoud van deze website staat bij GitHub. Daar worden geen gegevens van bezoekers of formulieren opgeslagen.
@@ -81,6 +89,7 @@ Ik bewaar uw gegevens niet langer dan nodig is voor het doel waarvoor ik ze heb 
 
 - Contactverzoeken en correspondentie met potentiële klanten verwijder ik als er geen opdracht volgt en het contact is afgerond.
 - Formulierinzendingen verwijder ik binnen 30 dagen uit Netlify. Het bericht zelf bewaar ik daarna in mijn mailbox volgens de termijnen hierboven.
+- Is het adres niet bevestigd, dan verwijder ik het contactverzoek na 30 dagen uit het contactenoverzicht. De link in de bevestigingsmail werkt 7 dagen.
 - Administratieve gegevens, zoals facturen, bewaar ik 7 jaar vanwege de wettelijke fiscale bewaarplicht.
 - Bezoekersstatistieken in Umami worden 6 maanden bewaard.
 - De cookie `on_lang` blijft 1 jaar in uw browser, tenzij u hem eerder verwijdert.
