@@ -15,8 +15,8 @@ const abs = (path: string) => new URL(path, SITE).toString();
 export async function GET(_context: APIContext) {
   const entries: Entry[] = [];
 
-  // Fixed, indexable pages. Thank-you pages are deliberately noindex and
-  // not in the sitemap.
+  // Fixed, indexable pages. Thank-you pages and the address confirmation
+  // pages are noindex and stay out of the sitemap.
   const existingKeys = new Set([
     "/",
     "/services/",

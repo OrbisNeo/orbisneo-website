@@ -16,8 +16,16 @@ Orbis Neo is the controller for the processing of your personal data as describe
 
 When you fill in the contact form, I receive your name, email address and your question, and, if you fill them in, your phone number and the topic you tick. The form also contains a hidden field that blocks spam, without a tracking captcha.
 
-- Purpose: to answer your question and, if you wish, to prepare an intro call or a proposal.
-- Legal basis: your consent, which you give with the checkbox below the form.
+- Purpose: to answer your question, confirm your email address and, if you wish, prepare an intro call or a proposal.
+- Legal basis: legitimate interest in answering your question, confirming the address and staying in contact.
+
+Before I send material or a proposal, I ask you to confirm the email address. You receive one email with a link. The link works for 7 days. On the page you press a button yourself. Only that click counts as confirmation.
+
+For that confirmation I keep the random identifier from the link and the time of the click. That record is stored at Netlify. Your contact details are stored with the identifier, the link's expiry date and the confirmation in an Excel file in my OneDrive (Microsoft 365).
+
+I delete a contact request from that file after 30 days if the address was not confirmed. I send material and proposals only to a confirmed address.
+
+Repeated requests from the same network address are slowed down. I do not keep that address with your contact details.
 
 ### B. Email and services
 
@@ -62,9 +70,9 @@ This site contains links to other websites, such as LinkedIn. No content from ot
 
 I do not sell your data. I only share it when that is needed to do my work or when the law requires it. These parties process data on my behalf:
 
-- **Netlify** (Netlify, Inc., United States): website hosting and handling of the contact form.
+- **Netlify** (Netlify, Inc., United States): website hosting, handling of the contact form and storage of the confirmation (the identifier and the time).
 - **Umami** (Umami Cloud): cookieless visitor statistics, on servers in the European Union.
-- **Microsoft (Outlook)**: email, including the contact form notifications.
+- **Microsoft (Outlook, Excel and OneDrive)**: email, including the contact form notifications and the confirmation email, and the Excel file in OneDrive (Microsoft 365).
 - **My accountant**: for the financial records.
 
 The content of this website is stored at GitHub. No visitor or form data is stored there.
@@ -79,8 +87,9 @@ Netlify is a US company. Netlify is certified under the EU-U.S. Data Privacy Fra
 
 I do not keep your data longer than needed for the purpose for which I received it.
 
-- Contact requests and correspondence with potential clients are deleted if no assignment follows and the contact has ended.
-- I delete form submissions from Netlify within 30 days. The message itself is then kept in my mailbox in line with the periods above.
+- I keep a confirmed contact that does not become a client for as long as the contact is relevant to a possible collaboration.
+- I delete form submissions from Netlify within 30 days. This 30-day period does not apply to the notification in my mailbox or the click record at Netlify.
+- If the address is not confirmed, I remove the contact request from the Excel file after 30 days. The link in the confirmation email works for 7 days.
 - Business records, such as invoices, are kept for 7 years because of the statutory tax retention obligation.
 - Visitor statistics in Umami are kept for 6 months.
 - The `on_lang` cookie stays in your browser for 1 year, unless you delete it earlier.

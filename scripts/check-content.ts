@@ -19,6 +19,8 @@ const ALWAYS_NOINDEX = new Set([
   "styleguide/index.html",
   "contact/thanks/index.html",
   "kennismaken/bedankt/index.html",
+  "confirm/index.html",
+  "bevestig/index.html",
 ]);
 
 const errors: string[] = [];
