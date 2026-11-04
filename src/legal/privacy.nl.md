@@ -19,13 +19,13 @@ Als u het contactformulier invult, ontvang ik uw naam, e-mailadres en vraag en, 
 - Doel: uw vraag beantwoorden, uw e-mailadres bevestigen en, als u dat wilt, een kennismaking of offerte voorbereiden.
 - Grondslag: gerechtvaardigd belang om uw vraag te beantwoorden, het adres te bevestigen en het contact bij te houden.
 
-Voordat ik materiaal of een offerte stuur, vraag ik u het e-mailadres te bevestigen. U krijgt daarvoor één mail met een link. Die link werkt 7 dagen. Op de pagina drukt u zelf op een knop. Alleen die klik telt als bevestiging.
+Voordat ik materiaal of een offerte stuur, vraag ik u het e-mailadres te bevestigen. U krijgt daarvoor één e-mail met een link. Die link werkt 7 dagen. Op de pagina drukt u zelf op een knop. Alleen die klik telt als bevestiging.
 
 Bij die bevestiging bewaar ik het willekeurige kenmerk uit de link en het tijdstip van de klik. Die registratie staat bij Netlify. Uw contactgegevens staan samen met het kenmerk, de vervaldatum van de link en de bevestiging in een Excel-bestand in mijn OneDrive (Microsoft 365).
 
 Een contactverzoek waarvan het adres niet is bevestigd, verwijder ik na 30 dagen uit dat bestand. Materiaal en offertes stuur ik alleen naar een bevestigd adres.
 
-Herhaalde verzoeken vanaf hetzelfde netwerkadres worden afgeremd. Dat adres bewaar ik niet bij uw contactgegevens.
+Herhaalde verzoeken vanaf hetzelfde netwerkadres worden afgeremd. Dat netwerkadres bewaar ik niet bij uw contactgegevens.
 
 ### B. E-mail en dienstverlening
 
