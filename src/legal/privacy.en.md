@@ -86,7 +86,7 @@ Netlify is a US company. Netlify is certified under the EU-U.S. Data Privacy Fra
 I do not keep your data longer than needed for the purpose for which I received it.
 
 - I keep a confirmed contact that does not become a client for as long as the contact is relevant to a possible collaboration.
-- I delete form submissions from Netlify within 30 days. This 30-day period does not apply to the notification in my mailbox or the click record at Netlify.
+- I delete form submissions from Netlify within 30 days. This 30-day period does not apply to the notification in my mailbox.
 - If the address is not confirmed, I remove the contact request from the Excel file after 30 days. The link in the confirmation email works for 7 days.
 - Business records, such as invoices, are kept for 7 years because of the statutory tax retention obligation.
 - Visitor statistics in Umami are kept for 6 months.

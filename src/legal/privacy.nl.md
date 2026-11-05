@@ -86,7 +86,7 @@ Netlify is een Amerikaans bedrijf. Netlify is gecertificeerd onder het EU-U.S. D
 Ik bewaar uw gegevens niet langer dan nodig is voor het doel waarvoor ik ze heb gekregen.
 
 - Een bevestigd contact zonder opdracht bewaar ik zolang het contact relevant is voor een mogelijke samenwerking.
-- Formulierinzendingen verwijder ik binnen 30 dagen uit Netlify. De melding in mijn mailbox en de registratie van de klik bij Netlify vallen buiten die termijn.
+- Formulierinzendingen verwijder ik binnen 30 dagen uit Netlify. De melding in mijn mailbox valt buiten die termijn.
 - Is het adres niet bevestigd, dan verwijder ik het contactverzoek na 30 dagen uit het Excel-bestand. De link in de bevestigingsmail werkt 7 dagen.
 - Administratieve gegevens, zoals facturen, bewaar ik 7 jaar vanwege de wettelijke fiscale bewaarplicht.
 - Bezoekersstatistieken in Umami worden 6 maanden bewaard.
