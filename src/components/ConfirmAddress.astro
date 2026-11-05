@@ -43,14 +43,26 @@ const copy = lang === "en"
 <section
   class="confirm container"
   data-confirm
-  data-endpoint="/api/confirm-address"
   data-storage-key="on-email-confirm"
 >
   <h1 id="confirm-title" tabindex="-1">{copy.title}</h1>
   <div data-confirm-live aria-live="polite">
     <div data-confirm-state="ready" data-title={copy.title} hidden>
       <p class="confirm__lead">{copy.descriptionLead}</p>
-      <form method="post" data-confirm-form>
+      <form
+        name="bevestiging"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-confirm-form
+      >
+        <input type="hidden" name="form-name" value="bevestiging" />
+        <input type="hidden" name="token" value="" />
+        <input type="hidden" name="vervaldatum" value="" />
+        <input type="hidden" name="taal" value={lang} />
+        <p class="visually-hidden" aria-hidden="true">
+          <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
         <button type="submit" class="confirm__submit">{copy.button}</button>
         <p class="confirm__retry" data-confirm-retry hidden>{copy.retry}</p>
       </form>
@@ -83,10 +95,10 @@ const copy = lang === "en"
     const params = new URLSearchParams(location.search);
     const raw = (params.get("t") || "").trim();
     const token = tokenPattern.test(raw) ? raw.toLowerCase() : "";
+    const expiryRaw = (params.get("v") || "").trim();
     const title = document.getElementById("confirm-title");
     const form = root.querySelector("[data-confirm-form]");
     const retry = root.querySelector("[data-confirm-retry]");
-    const endpoint = root.getAttribute("data-endpoint") || "/api/confirm-address";
     const storageKey = (root.getAttribute("data-storage-key") || "on-email-confirm") + ":" + token;
 
     const expiryPassed = (value) => {
@@ -131,16 +143,16 @@ const copy = lang === "en"
     };
 
     if (token) {
-      const expiry = params.get("v");
       for (const link of document.querySelectorAll("[data-lang-switch]")) {
         const url = new URL(link.href, location.origin);
         url.searchParams.set("t", token);
-        if (expiry) url.searchParams.set("v", expiry);
+        if (expiryRaw) url.searchParams.set("v", expiryRaw);
         link.href = url.pathname + url.search;
       }
     }
 
-    if (!token || expiryPassed(params.get("v") || "")) {
+    const expired = expiryPassed(expiryRaw);
+    if (!token || expired) {
       if (token && remembered()) show("already", false);
       else show("invalid", false);
     } else if (remembered()) {
@@ -150,30 +162,35 @@ const copy = lang === "en"
     }
 
     if (!form) return;
+    const tokenField = form.querySelector('input[name="token"]');
+    const expiryField = form.querySelector('input[name="vervaldatum"]');
+    if (tokenField) tokenField.value = token;
+    if (expiryField) expiryField.value = expiryRaw;
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      if (!token) {
-        show("invalid", true);
+      if (!token || expiryPassed(expiryRaw)) {
+        show(token && remembered() ? "already" : "invalid", true);
         return;
       }
       const button = form.querySelector("button");
       if (button) button.disabled = true;
       if (retry) retry.hidden = true;
+      if (tokenField) tokenField.value = token;
+      if (expiryField) expiryField.value = expiryRaw;
       try {
-        const res = await fetch(endpoint, {
+        const body = new URLSearchParams();
+        for (const [key, value] of new FormData(form).entries()) {
+          body.append(key, String(value));
+        }
+        const res = await fetch("/", {
           method: "POST",
-          headers: { "content-type": "application/json", accept: "application/json" },
-          body: JSON.stringify({ token }),
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
           credentials: "same-origin",
           cache: "no-store",
         });
-        let data = null;
-        try {
-          data = await res.json();
-        } catch {
-          data = null;
-        }
-        if (res.ok && data && data.status === "received") {
+        if (res.ok) {
           remember();
           show("success", true);
           return;

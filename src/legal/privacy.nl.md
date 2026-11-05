@@ -19,13 +19,11 @@ Als u het contactformulier invult, ontvang ik uw naam, e-mailadres en vraag en, 
 - Doel: uw vraag beantwoorden, uw e-mailadres bevestigen en, als u dat wilt, een kennismaking of offerte voorbereiden.
 - Grondslag: gerechtvaardigd belang om uw vraag te beantwoorden, het adres te bevestigen en het contact bij te houden.
 
-Voordat ik materiaal of een offerte stuur, vraag ik u het e-mailadres te bevestigen. U krijgt daarvoor één e-mail met een link. Die link werkt 7 dagen. Op de pagina drukt u zelf op een knop. Alleen die klik telt als bevestiging.
+Voordat ik materiaal of een offerte stuur, vraag ik u het e-mailadres te bevestigen. U krijgt daarvoor één e-mail met een link. Die link werkt 7 dagen. Op de pagina drukt u zelf op een knop. Alleen die klik telt als bevestiging. Het formulier op die pagina heeft een verborgen veld dat spam tegenhoudt, zonder trackende captcha.
 
-Bij die bevestiging bewaar ik het willekeurige kenmerk uit de link en het tijdstip van de klik. Die registratie staat bij Netlify. Uw contactgegevens staan samen met het kenmerk, de vervaldatum van de link en de bevestiging in een Excel-bestand in mijn OneDrive (Microsoft 365).
+Bij die bevestiging gaat een formulierinzending naar Netlify met het willekeurige kenmerk uit de link, de vervaldatum van de link en de taal van de pagina. Netlify bewaart het tijdstip van die inzending en mailt de inzending naar Orbis Neo. Daarna staat de bevestiging samen met uw contactgegevens, het kenmerk en de vervaldatum van de link in een Excel-bestand in mijn OneDrive (Microsoft 365).
 
 Een contactverzoek waarvan het adres niet is bevestigd, verwijder ik na 30 dagen uit dat bestand. Materiaal en offertes stuur ik alleen naar een bevestigd adres.
-
-Herhaalde verzoeken vanaf hetzelfde netwerkadres worden afgeremd. Dat netwerkadres bewaar ik niet bij uw contactgegevens.
 
 ### B. E-mail en dienstverlening
 
@@ -70,9 +68,9 @@ Op deze site staan links naar andere websites, zoals LinkedIn. Er is geen inhoud
 
 Ik verkoop uw gegevens niet. Ik deel ze alleen als dat nodig is om mijn werk te doen of omdat de wet dat vraagt. Deze partijen verwerken gegevens in mijn opdracht:
 
-- **Netlify** (Netlify, Inc., Verenigde Staten): hosting van de website, verwerking van het contactformulier en opslag van de bevestiging (het kenmerk en het tijdstip).
+- **Netlify** (Netlify, Inc., Verenigde Staten): hosting van de website, verwerking van het contactformulier en verwerking van de bevestiging als formulierinzending (het kenmerk, de vervaldatum, de taal en het tijdstip). Netlify mailt die inzending naar Orbis Neo.
 - **Umami** (Umami Cloud): bezoekersstatistieken zonder cookies, op servers in de Europese Unie.
-- **Microsoft (Outlook, Excel en OneDrive)**: e-mail, waaronder de meldingen van het contactformulier en de bevestigingsmail, en het Excel-bestand in OneDrive (Microsoft 365).
+- **Microsoft (Outlook, Excel en OneDrive)**: e-mail, waaronder de melding van het contactformulier, de melding van de bevestiging en de bevestigingsmail, en het Excel-bestand in OneDrive (Microsoft 365).
 - **Mijn boekhouder**: voor de financiële administratie.
 
 De inhoud van deze website staat bij GitHub. Daar worden geen gegevens van bezoekers of formulieren opgeslagen.
